@@ -1,0 +1,110 @@
+{
+  "tuyen_sinh": {
+    "nganh_dao_tao": "Học viện Công nghệ Bưu chính Viễn thông hiện đang đào tạo các ngành như:\n - Kỹ thuật Điện tử viễn thông\n - Công nghệ Kỹ thuật Điện, điện tử\n - Công nghệ thông tin\n - An toàn thông tin\n - Công nghệ đa phương tiện\n - Quản trị kinh doanh\n - Marketing\n - Kế toán",
+    "bac": {
+      "ma_truong": "BVH",
+      "2023": {
+        "nganh": [
+          {
+            "key_word": ["dtvt", "dien tu"],
+            "ma_nganh": 7520207,
+            "tgian": 4.5,
+            "ten_nganh": "Kỹ thuật điện tử viễn thông",
+            "chi_tieu": {
+              "TN": 50,
+              "KH": 25,
+              "DG": 15
+            },
+            "to_hop": ["Toán lý hóa (mã A00)", "Toán lý anh (mã A01)"],
+            "diem_chuan": {
+              "diem": 22.36,
+              "dieu_kien": "TTNV = 1"
+            }
+          },{
+            "key_word": ["CN kỹ thuật điện, điện tử"],
+            "tgian": 4.5,
+            "ten_nganh": "CN kỹ thuật điện, điện tử",
+            "diem_chuan": {
+              "diem": 21.20,
+              "dieu_kien": "TTNV"
+            }
+          },
+          {
+            "key_word": ["cntt", "Công nghệ thông tin", "cong nghe thong tin", "it"],
+            "tgian": 4.5,
+            "ten_nganh": "Công nghệ thông tin",
+            "diem_chuan": {
+              "diem": 28.03,
+              "dieu_kien": "TTNV"
+            }
+          },
+           {
+             "key_word": ["antt", "An toàn thông tin", "an toan thong tin"],
+            "tgian": 4.5,
+            "ten_nganh": "An toàn thông tin",
+            "diem_chuan": {
+              "diem": 27.43,
+              "dieu_kien": "TTNV"
+            }
+          }, {
+             "key_word": ["khmt", "Khoa học máy tính", "khoa hoc may tinh"],
+            "tgian": 4.5,
+            "ten_nganh": "Khoa học máy tính",
+            "diem_chuan": {
+              "diem": 28.10,
+              "dieu_kien": "TTNV"
+            }
+          }, {
+             "key_word": ["cndpt", "dpt", "Công nghệ đa phương tiện", "cong nghe da phuong tien", "cn da phuong tien"],
+            "tgian": 4,
+            "ten_nganh": "Công nghệ đa phương tiện",
+            "diem_chuan": {
+              "diem": 26.77,
+              "dieu_kien": "TTNV"
+            }
+          }, {
+               "key_word": ["ttdpt", "Truyền thông đa phương tiện", "truyen thong da phuong tien"],
+            "tgian": 4,
+            "ten_nganh": "Truyền thông đa phương tiện",
+            "diem_chuan": {
+              "diem": 26.74,
+              "dieu_kien": "TTNV"
+            }
+          }, {
+                "key_word": ["qtkd", "Quản trị kinh doanh", "quan tri kinh doanh"],
+            "tgian": 4,
+            "ten_nganh": "Quản trị kinh doanh",
+            "diem_chuan": {
+              "diem": 20.87,
+              "dieu_kien": "TTNV"
+            }
+          }
+        ],
+        "phuong_thuc_tuyen_sinh": {
+          "noi_dung": "- Tuyển thẳng và ưu tiên xét tuyển: Học viên xét tuyển thẳng và ưu tiên xét tuyển theo Quy chế hiện hành của Bộ Giáo dục và Đào tạo và của Học viện (Có thông báo riêng)\n - Xét tuyển dựa vào kết quả điểm thi tốt nghiệp THPT năm 2023\n - Xét tuyển kết hợp giữa kết quả học tập ở bậc THPT với một trong các loại Chứng chủ quốc tế hoặc Thành tích cá nhân trong các kỳ tuyển chọn học sinh giỏi hoặc Thành tích học tập tại các trường THPT chuyên\n - Xét tuyển dựa vào kết quả các kỳ thi đánh giá năng lực, đánh giá tư duy ",
+          "so": 4
+        },
+        "chinh_sach_hoc_bong": {
+          "so": 400,
+          "gia_tri": "khoảng 3 tỷ đồng",
+          "chi_tiet": [
+            {
+              "100": {
+                "so": 100,
+                "noi_dung": " Học bổng miễn 100% học phí trong năm học thứ nhất với tối đa 100 suất cho các thí sinh đạt giải trong kỳ thi học sinh giỏi quốc tế, quốc gia hoặc thí sinh đạt giải Nhất, Nhì, Ba trong kỳ thi học sinh giải cấp Tỉnh, Thành phố trực thuộc TW các môn Toán, Lý, Hóa và Tin học hoặc đạt kết quả cao trong kỳ thi tốt nghiệp THPT."
+              },
+              "50": {
+                "so": 300,
+                "noi_dung": "Học bổng miễn 50% học phí trong năm học thứ nhất với tối đa 300 suất cho các thí sinh đạt giải trong các kỳ thi học sinh giỏi và các thí sinh đạt kết quả cao trong kỳ thi tốt nghiệp THPT."
+              }
+            }
+          ]
+        },
+        "xac_nhan_nhap_hoc": 23423
+      }
+    },
+    "nam": {
+       "ma_truong": "BVS"
+    }
+  }
+}
