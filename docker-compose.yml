@@ -11,3 +11,30 @@ services:
     volumes:
       - ./client:/app
       - ./client/.env:/app/.env
+  server:
+    build:
+      context: ./server
+    container_name: rtc_server
+    image: duc/rtc_server
+    ports:
+      - 5000:5000
+    expose:
+      - 5000
+    volumes:
+      - ./server:/app
+    depends_on:
+      - db
+  db:
+    image: mysql
+    container_name: rtc_db
+    restart: always
+    ports:
+      - 33060:3306
+    expose:
+      - 3306
+    volumes:
+      - ./db/data:/var/lib/mysql
+      # - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=abc
+      - MYSQL_DATABASE=rtc_db
