@@ -22,7 +22,7 @@ const RenderRoutes = ({}: RenderRoutesProps) => {
 
   return (
     <Suspense fallback={<h1>Loading 99%...</h1>}>
-      <RouterProvider router={router}></RouterProvider>;
+      <RouterProvider router={router}></RouterProvider>
     </Suspense>
   );
 };

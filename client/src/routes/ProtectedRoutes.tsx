@@ -1,14 +1,13 @@
-import React from "react";
+import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 
 type ProtectedRoutesProps = {};
 
 const ProtectedRoutes = ({}: ProtectedRoutesProps) => {
   return (
-    <div>
-      ProtectedRoutes
+    <Fragment>
       <Outlet />
-    </div>
+    </Fragment>
   );
 };
 

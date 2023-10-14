@@ -1,11 +1,10 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 
-type Props = {};
+type AuthLayoutProps = {};
 
-const AuthLayout = (props: Props) => {
+const AuthLayout = ({}: AuthLayoutProps) => {
   return (
-    <div className="min-h-screen bg-[#edf3f4] flex flex-col items-center justify-center">
+    <div className="min-h-screen  bg-[#edf3f4] flex flex-col items-center justify-center">
       <Outlet />
     </div>
   );

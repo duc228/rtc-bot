@@ -1,13 +1,13 @@
-import React from "react";
+import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 
 type PublicRoutesProps = {};
 
 const PublicRoutes = ({}: PublicRoutesProps) => {
   return (
-    <div>
+    <Fragment>
       <Outlet />
-    </div>
+    </Fragment>
   );
 };
 
