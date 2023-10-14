@@ -1,5 +1,6 @@
 import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import ChatItem from "./ChatItem";
 
 type ChatListProps = {};
 
@@ -19,7 +20,7 @@ export const ChatList = ({}: ChatListProps) => {
     }, 500);
   };
   return (
-    <div className="h-full overflow-y-auto" id="scrollableDiv">
+    <div className="h-full overflow-y-auto px-2" id="scrollableDiv">
       <InfiniteScroll
         dataLength={items.length}
         next={fetchMoreData}
@@ -33,17 +34,7 @@ export const ChatList = ({}: ChatListProps) => {
         scrollableTarget="scrollableDiv"
       >
         {items.map((i, index) => (
-          <div
-            key={index}
-            style={{
-              height: 30,
-              border: "1px solid green",
-              margin: 6,
-              padding: 8,
-            }}
-          >
-            div - #{index}
-          </div>
+          <ChatItem key={index} item={` div - #{index}${index}`} />
         ))}
       </InfiniteScroll>
     </div>

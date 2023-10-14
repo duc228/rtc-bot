@@ -14,10 +14,10 @@ const Sidebar = ({}: SidebarProps) => {
       <div className="w-full p-2 h-10">
         <SideBarHeader />
       </div>
-      <div className="mt-2 p-2 w-full flex-1 overflow-auto">
+      <div className="mt-2 w-full flex-1 overflow-auto">
         <ChatList />
       </div>
-      <div className="w-full" id="scrollableDiv">
+      <div className="w-full">
         <SideBarFooter />
       </div>
     </div>

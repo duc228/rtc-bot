@@ -4,7 +4,7 @@ type MessageInputProps = {};
 
 const MessageInput = ({}: MessageInputProps) => {
   return (
-    <div className="w-full bg-white rounded-lg drop-shadow-lg">
+    <div className="w-full sm:max-w-[800px] bg-white rounded-lg drop-shadow-lg">
       <div className="flex h-12 items-center px-4">
         <input
           placeholder="Send a message..."

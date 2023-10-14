@@ -1,10 +1,10 @@
-import { useState } from "react";
-
+import MessageItem from "../../features/message/components/MessageItem";
+import { Message } from "../../types/message";
 import InfiniteScroll from "react-infinite-scroll-component";
-import MessageItem from "./MessageItem";
-import { Message } from "../../../types/message";
+import { useState } from "react";
+import { MessageBody } from "../../features/message/components";
 
-type MessageBodyProps = {};
+type ChatPageProps = {};
 
 const generateMessage = (n: number) => {
   const arr: Message[] = [];
@@ -24,7 +24,7 @@ const generateMessage = (n: number) => {
   return arr;
 };
 
-export const MessageBody = ({}: MessageBodyProps) => {
+const ChatPage = ({}: ChatPageProps) => {
   const [items, setItems] = useState(generateMessage(40));
   const [hasMore, setHasMore] = useState(true);
   const fetchMoreData = () => {
@@ -42,30 +42,13 @@ export const MessageBody = ({}: MessageBodyProps) => {
     }, 500);
   };
   return (
-    <InfiniteScroll
-      dataLength={items.length}
-      next={fetchMoreData}
-      hasMore={hasMore}
-      loader={<h4>Loading...</h4>}
-      endMessage={
-        <p style={{ textAlign: "center" }}>
-          <b>Yay! You have seen it all</b>
-        </p>
-      }
-      scrollableTarget="scrollMessage"
+    <div
+      className=" overflow-y-auto bg-red-200 mx-auto flex sm:w-[800px] flex-col-reverse gap-2 py-2"
+      id="scrollMessage"
     >
-      {items.map((i: Message, index: number) => (
-        <div
-          key={index}
-          className={`w-full my-1 flex ${
-            i.isBot ? "justify-start" : "justify-end"
-          }`}
-        >
-          <MessageItem message={i.content} />
-        </div>
-      ))}
-    </InfiniteScroll>
+      <MessageBody />
+    </div>
   );
 };
 
-export default MessageBody;
+export default ChatPage;
