@@ -9,16 +9,16 @@ const AuthLayout = lazy(() => import("../components/layouts/auth/AuthLayout"));
 // DEFAULT PAGES
 const LoginPage = lazy(() => import("../pages/default/Login"));
 const SignUpPage = lazy(() => import("../pages/default/SignUp"));
-const HomePage = lazy(() => import("../pages/default/Home"))
+const HomePage = lazy(() => import("../pages/default/Home"));
 
-export const AppRoutes: any = {
+export const AppRoutes = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   HOME: "/",
   CHAT: "/chat",
 };
 
-export const routes: any = [
+export const routes = [
   {
     protected: false,
     element: <AuthLayout />,
@@ -36,9 +36,6 @@ export const routes: any = [
   {
     protected: true,
     element: <DefaultLayout />,
-    children: [
-      {path:AppRoutes.HOME,
-      element: <HomePage />}
-    ]
+    children: [{ path: AppRoutes.HOME, element: <HomePage /> }],
   },
 ];

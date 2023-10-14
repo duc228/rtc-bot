@@ -5,8 +5,7 @@ type Props = {};
 
 const AuthLayout = (props: Props) => {
   return (
-    <div>
-      AuthLayout
+    <div className="min-h-screen bg-[#edf3f4] flex flex-col items-center justify-center">
       <Outlet />
     </div>
   );
