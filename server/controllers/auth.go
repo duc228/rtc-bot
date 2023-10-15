@@ -32,13 +32,15 @@ func SignUp(c *gin.Context) {
 
 	result := configs.DB.Create(&newUser)
 
+	token := utils.GenerateToken(newUser.Id)
+
 	if result.Error != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "Failed to create user",
 		})
 	}
 
-	c.JSON(http.StatusCreated, &newUser)
+	c.JSON(http.StatusCreated, gin.H{"token": token})
 }
 
 func Login(c *gin.Context) {

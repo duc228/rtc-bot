@@ -56,3 +56,6 @@ export const SignUpForm = ({}: SignUpProps) => {
 };
 
 export default SignUpForm;
+function setAccessToken(token: any) {
+  throw new Error("Function not implemented.");
+}
