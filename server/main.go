@@ -36,6 +36,7 @@ func getRoutes() {
 
 	routes.UserRoutes(v1.Group("/user"))
 	routes.AuthRoutes(v1.Group("/auth"))
+	routes.ConversationRoutes(v1.Group("/conversation"))
 }
 
 func CORSConfig() cors.Config {

@@ -59,7 +59,8 @@ func IsAuthenticated(c *gin.Context) {
 
 		}
 
-		c.Set("user", user)
+		// c.Set("user", user)
+		c.Set("userId", user.Id)
 		c.Next()
 
 	} else {
