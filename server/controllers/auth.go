@@ -74,8 +74,10 @@ func Login(c *gin.Context) {
 func GetProfile(c *gin.Context) {
 
 	user, _ := c.Get("user")
-	fmt.Printf("Getting User %v", user.(models.User))
+	var userInfo models.User
+	configs.DB.Select("id", "full_name", "email").First(&userInfo, user.(models.User).Id)
+
 	c.JSON(http.StatusOK, gin.H{"validate": "ok",
-		"user": user})
+		"user": userInfo})
 
 }
