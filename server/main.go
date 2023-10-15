@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"rct_server/configs"
@@ -25,7 +26,6 @@ func main() {
 	migrations.Migrate()
 
 	getRoutes()
-	// server.Run(":5000")
 	server.Run()
 }
 
@@ -41,8 +41,9 @@ func getRoutes() {
 func CORSConfig() cors.Config {
 
 	client := os.Getenv("CLIENT_URI")
+	fmt.Println("Client URI %v", client)
 	if client == "" {
-		client = "http://localhost:3000"
+		client = "http://localhost:5173"
 	}
 
 	corsConfig := cors.DefaultConfig()

@@ -1,5 +1,11 @@
 import { useForm } from "react-hook-form";
 import { Button, Input } from "@mui/material";
+import { useMutation } from "@tanstack/react-query";
+import { login } from "../../../services/auth-service";
+import { useState } from "react";
+import useAuthStore from "../../../stores/useAuthStore";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../../routes/router";
 
 type LoginFormProps = {};
 
@@ -9,6 +15,11 @@ type LoginInputs = {
 };
 
 export const LoginForm = ({}: LoginFormProps) => {
+  const [message, setMessage] = useState("");
+
+  const setAccessToken = useAuthStore((state) => state.setAccessToken);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -16,7 +27,23 @@ export const LoginForm = ({}: LoginFormProps) => {
     formState: { errors },
   } = useForm<LoginInputs>();
 
-  const onSubmit = (data: LoginInputs) => {};
+  const { mutate: loginMutation } = useMutation({
+    mutationFn: login,
+    onSuccess: (data: any) => {
+      console.log("data return ", data);
+      setAccessToken(data?.token);
+      navigate(AppRoutes.HOME);
+    },
+    onError: (error: any) => {
+      console.log("error ", error);
+      setMessage(error?.error);
+    },
+  });
+
+  const onSubmit = (data: LoginInputs) => {
+    console.log("onSubmit", data);
+    loginMutation(data);
+  };
 
   return (
     <form
@@ -43,6 +70,7 @@ export const LoginForm = ({}: LoginFormProps) => {
       >
         <span className="text-[1rem] normal-case">Login</span>
       </Button>
+      <p className="italic text-red-600 text-sm">{message ? message : ""}</p>
     </form>
   );
 };

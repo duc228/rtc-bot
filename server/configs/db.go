@@ -18,7 +18,7 @@ func DBConnect() *gorm.DB {
 		panic(err)
 	}
 
-	log.Println("Connect DB success", db)
+	log.Println("Connect DB success")
 	DB = db
 	return db
 }
