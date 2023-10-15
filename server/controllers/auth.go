@@ -71,7 +71,11 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"token": token})
 }
 
-func Validate(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"validate": "ok"})
+func GetProfile(c *gin.Context) {
+
+	user, _ := c.Get("user")
+	fmt.Printf("Getting User %v", user.(models.User))
+	c.JSON(http.StatusOK, gin.H{"validate": "ok",
+		"user": user})
 
 }
