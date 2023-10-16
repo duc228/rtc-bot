@@ -12,11 +12,13 @@ const SignUpPage = lazy(() => import("../pages/default/SignUp"));
 const HomePage = lazy(() => import("../pages/default/Home"));
 const ChatPage = lazy(() => import("../pages/default/Chat"));
 
+export const CHAT_PATH = "/chat";
+
 export const AppRoutes = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   HOME: "/",
-  CHAT: "/chat/:conversationId",
+  CHAT_SLUG: `${CHAT_PATH}/:coversationId`,
 };
 
 export const routes = [
@@ -39,7 +41,7 @@ export const routes = [
     element: <DefaultLayout />,
     children: [
       { path: AppRoutes.HOME, element: <HomePage /> },
-      { path: AppRoutes.CHAT, element: <ChatPage /> },
+      { path: AppRoutes.CHAT_SLUG, element: <ChatPage /> },
     ],
   },
 ];
