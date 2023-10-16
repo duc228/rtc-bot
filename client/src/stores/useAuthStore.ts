@@ -5,7 +5,7 @@ import { User } from "../types/user";
 interface AuthState {
   isAuthenticated: boolean;
   user: null | User;
-  accessToken: string;
+  accessToken: null | string;
   logout: () => void;
   setUser: (user: User) => void;
   setAccessToken: (accessToken: string) => void;
@@ -35,6 +35,7 @@ const useAuthStore = create<AuthState>()(
         set((state) => ({
           ...state,
           user: null,
+          accessToken: null,
           isAuthenticated: false,
         }));
       },

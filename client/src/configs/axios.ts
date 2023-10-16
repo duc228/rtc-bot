@@ -2,6 +2,7 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import toast from "react-hot-toast";
 import { ENV } from "../constants/env";
+import useAuthStore from "../stores/useAuthStore";
 
 const baseURL = ENV.APP_API_URL;
 
@@ -29,13 +30,13 @@ export const axiosClientPrivate = axios.create({
 
 axiosClientPrivate.interceptors.request.use(
   async (config) => {
-    // const accessToken = store.getState().user.data.accessToken;
-    // const locale = store.getState().themeConfig.locale;
+    const accessToken = useAuthStore.getState().accessToken;
 
-    // config.headers["Authorization"] = `Bearer ${accessToken}`;
-    // if (accessToken) {
-    //   config.headers["Authorization"] = `Bearer ${res.data.token}`;
-    // }
+    if (accessToken) {
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
+    } else {
+      useAuthStore.getState().logout();
+    }
 
     return config;
   },
@@ -55,7 +56,7 @@ axiosClientPrivate.interceptors.response.use(
       toast.error("Đã có lỗi xảy ra");
     }
     if (error.response?.status === 401) {
-      //      store.dispatch(logout());
+      useAuthStore.getState().logout();
     }
     // console.log('error axios', error);
     return Promise.reject(error?.response?.data);

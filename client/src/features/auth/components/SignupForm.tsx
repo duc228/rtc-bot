@@ -1,5 +1,10 @@
 import { useForm } from "react-hook-form";
 import { Button, Input } from "@mui/material";
+import { useMutation } from "@tanstack/react-query";
+import { signUp } from "../../../services/auth-service";
+import { useState } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import useAuthStore from "../../../stores/useAuthStore";
 
 type SignUpProps = {};
 
@@ -10,6 +15,10 @@ type SignUpInputs = {
 };
 
 export const SignUpForm = ({}: SignUpProps) => {
+  const [message, setMessage] = useState("");
+
+  const setAccessToken = useAuthStore((state) => state.setAccessToken);
+
   const {
     register,
     handleSubmit,
@@ -17,8 +26,21 @@ export const SignUpForm = ({}: SignUpProps) => {
     formState: { errors },
   } = useForm<SignUpInputs>();
 
+  const { mutate: signUpMutation, isLoading } = useMutation({
+    mutationFn: signUp,
+    onSuccess: (data: any) => {
+      console.log("data sign up ", data);
+      setAccessToken(data?.token);
+    },
+    onError: (data: any) => {
+      console.log("error: ", data);
+      setMessage(data?.error);
+    },
+  });
+
   const onSubmit = (data: SignUpInputs) => {
     console.log("data login", data);
+    signUpMutation(data);
   };
   return (
     <form
@@ -47,15 +69,19 @@ export const SignUpForm = ({}: SignUpProps) => {
       <Button
         type="submit"
         variant="contained"
-        className="btn bg-sky-500 hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full normal-case"
+        disabled={isLoading}
+        className="btn bg-sky-500 hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full flex items-center gap-2"
       >
-        <span className="text-[1rem]">Sign Up</span>
+        {isLoading ? <CircularProgress color="inherit" size={20} /> : <></>}
+        <span className="text-[1rem] normal-case">Sign Up</span>
       </Button>
+      {message ? (
+        <p className="italic text-red-500 text-sm">{message}</p>
+      ) : (
+        <></>
+      )}
     </form>
   );
 };
 
 export default SignUpForm;
-function setAccessToken(token: any) {
-  throw new Error("Function not implemented.");
-}
