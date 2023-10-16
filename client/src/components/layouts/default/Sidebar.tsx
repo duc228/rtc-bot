@@ -55,15 +55,17 @@ const SideBarFooter = () => {
   const { user, logout } = useAuthStore();
   return (
     <div className="w-full bg-white border-t-2 p-1">
-      <button
-        className="w-full flex items-center p-3 hover:cursor-pointer rounded-md hover:bg-slate-200 justify-between gap-5"
-        onClick={handleClick}
-      >
-        <div className="flex-1 overflow-hidden">
-          <p className="truncate text-sm">{user?.email}</p>
-        </div>
-        <EllipsisHorizontalIcon className="h-5 w-5" />
-      </button>
+      <div className="w-full  p-3 hover:cursor-pointer rounded-md hover:bg-slate-200 ">
+        <button
+          className="flex items-center justify-between gap-5 w-full"
+          onClick={handleClick}
+        >
+          <div className="flex-1 overflow-hidden">
+            <p className="truncate text-sm">{user?.email}</p>
+          </div>
+          <EllipsisHorizontalIcon className="h-5 w-5" />
+        </button>
+      </div>
       <Menu
         id="basic-menu"
         anchorEl={menu}
@@ -73,7 +75,6 @@ const SideBarFooter = () => {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem
           onClick={() => {

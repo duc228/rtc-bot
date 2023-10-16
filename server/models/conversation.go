@@ -2,12 +2,10 @@ package models
 
 import (
 	"time"
-
-	"gorm.io/gorm"
 )
 
 type Conversation struct {
-	gorm.Model
+	// gorm.Model
 	Id           uint `json:"id" gorm:"primaryKey;autoIncrement"`
 	UserId       uint `json:"userId"`
 	LastMesageID uint `json:"lastMesageId"`

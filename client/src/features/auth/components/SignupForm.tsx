@@ -30,7 +30,9 @@ export const SignUpForm = ({}: SignUpProps) => {
     mutationFn: signUp,
     onSuccess: (data: any) => {
       console.log("data sign up ", data);
-      setAccessToken(data?.token);
+      if (data?.token) {
+        setAccessToken(data?.token);
+      }
     },
     onError: (data: any) => {
       console.log("error: ", data);
@@ -40,7 +42,12 @@ export const SignUpForm = ({}: SignUpProps) => {
 
   const onSubmit = (data: SignUpInputs) => {
     console.log("data login", data);
-    signUpMutation(data);
+    signUpMutation({
+      full_name: data.fullName,
+      email: data.email,
+      password: data.password,
+    });
+    // signUpMutation(data);
   };
   return (
     <form

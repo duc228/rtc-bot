@@ -14,7 +14,10 @@ import (
 
 func SignUp(c *gin.Context) {
 	var signUpInfo models.User
+
 	c.BindJSON(&signUpInfo)
+	// c.JSON(http.StatusCreated, gin.H{"token": &signUpInfo, "fullName": signUpInfo.FullName})
+	// return
 
 	hash, err := bcrypt.GenerateFromPassword([]byte(signUpInfo.Password), 10)
 
@@ -40,19 +43,24 @@ func SignUp(c *gin.Context) {
 		})
 	}
 
-	c.JSON(http.StatusCreated, gin.H{"token": token})
+	c.JSON(http.StatusCreated, gin.H{"token": token, "user": &newUser, "signup": signUpInfo.FullName})
+
 }
 
 func Login(c *gin.Context) {
 	var LoginInfo dto.Credentials
 	c.BindJSON(&LoginInfo)
 	fmt.Printf("%v\n, ", &LoginInfo)
+
 	var user models.User
 	configs.DB.Where("email=?", LoginInfo.Email).Find(&user)
 
+	// c.JSON(http.StatusOK, gin.H{"token": &LoginInfo, "user": &user, "password": &user.Password})
+	// return
+
 	if user.Id == 0 {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Invalid email or password",
+			"error": "Invalid email or password 1",
 		})
 		return
 	}
@@ -60,7 +68,7 @@ func Login(c *gin.Context) {
 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(LoginInfo.Password))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Invalid email or password",
+			"error": "Invalid email or password 2",
 		})
 		return
 	}
@@ -83,7 +91,7 @@ func GetProfile(c *gin.Context) {
 	}
 
 	var userInfo models.User
-	configs.DB.Select("id", "email").Where("id=?", userId.(uint)).First(&userInfo)
+	configs.DB.Select("id", "email", "full_name").Where("id=?", userId.(uint)).First(&userInfo)
 
 	c.JSON(http.StatusOK, gin.H{"success": true,
 		"data": userInfo})

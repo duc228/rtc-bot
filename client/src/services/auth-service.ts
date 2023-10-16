@@ -3,8 +3,8 @@ import { User } from "../types/user";
 const url = "/auth";
 
 const authService = {
-  login: (data: Partial<User>) => axiosClient.post(`${url}/login`, data),
-  signUp: (data: Partial<User>) => axiosClient.post(`${url}/signup`, data),
+  login: (data: any) => axiosClient.post(`${url}/login`, data),
+  signUp: (data: any) => axiosClient.post(`${url}/signup`, data),
   getProfile: () => axiosClientPrivate.get(`${url}/me`),
 };
 

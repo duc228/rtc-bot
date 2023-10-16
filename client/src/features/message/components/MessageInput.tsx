@@ -1,7 +1,7 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
-import { AppRoutes, CHAT_PATH } from "../../../routes/router";
+import { CHAT_PATH } from "../../../routes/router";
 
 type MessageInputProps = {};
 
