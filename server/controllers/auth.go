@@ -75,11 +75,17 @@ func Login(c *gin.Context) {
 
 func GetProfile(c *gin.Context) {
 
-	user, _ := c.Get("user")
-	var userInfo models.User
-	configs.DB.Select("id", "full_name", "email").First(&userInfo, user.(models.User).Id)
+	// user, _ := c.Get("user")
+	userId, _ := c.Get("userId")
+	if userId == nil {
+		c.JSON(http.StatusOK, gin.H{"error": "has error",
+			"user": userId})
+	}
 
-	c.JSON(http.StatusOK, gin.H{"validate": "ok",
-		"user": userInfo})
+	var userInfo models.User
+	configs.DB.Select("id", "email").Where("id=?", userId.(uint)).First(&userInfo)
+
+	c.JSON(http.StatusOK, gin.H{"success": true,
+		"data": userInfo})
 
 }

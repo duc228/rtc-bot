@@ -5,6 +5,7 @@ import {
   EllipsisHorizontalIcon,
 } from "@heroicons/react/24/solid";
 import { ChatList } from "../../../features/chat/components";
+import useAuthStore from "../../../stores/useAuthStore";
 
 type SidebarProps = {};
 
@@ -42,11 +43,12 @@ export const SideBarHeader = () => {
 };
 
 const SideBarFooter = () => {
+  const { user } = useAuthStore();
   return (
     <div className="w-full bg-white border-t-2 p-1">
       <div className="w-full flex items-center p-3 hover:cursor-pointer rounded-md hover:bg-slate-200 justify-between gap-5">
         <div className="flex-1 overflow-hidden ">
-          <p className="truncate text-sm">nguyen_trungduc@ca-adv.co.jp</p>
+          <p className="truncate text-sm">{user?.email}</p>
         </div>
         <EllipsisHorizontalIcon className="h-5 w-5" />
       </div>
