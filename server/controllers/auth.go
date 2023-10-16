@@ -78,7 +78,7 @@ func Login(c *gin.Context) {
 	c.SetSameSite(http.SameSiteLaxMode)
 	c.SetCookie("auth", token, 3600*24, "", "", false, true)
 
-	c.JSON(http.StatusOK, gin.H{"token": token})
+	c.JSON(http.StatusOK, gin.H{"token": token, "id": user.Id})
 }
 
 func GetProfile(c *gin.Context) {
@@ -91,9 +91,9 @@ func GetProfile(c *gin.Context) {
 	}
 
 	var userInfo models.User
-	configs.DB.Select("id", "email", "full_name").Where("id=?", userId.(uint)).First(&userInfo)
+	configs.DB.Select("id", "Email", "FullName").Where("id =  ?", userId.(uint)).Find(&userInfo)
 
 	c.JSON(http.StatusOK, gin.H{"success": true,
-		"data": userInfo})
+		"data": userInfo, "id": userId.(uint)})
 
 }

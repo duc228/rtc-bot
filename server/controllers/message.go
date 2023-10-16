@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetAllMessageByConversationId(c *gin.Context) {
+func GetAllMessagesByConversationId(c *gin.Context) {
 	conversationId := c.Param("conversationId")
 	userId, _ := c.Get("userId")
 
