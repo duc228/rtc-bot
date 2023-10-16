@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, Menu, MenuItem } from "@mui/material";
 import {
   PlusIcon,
   AdjustmentsHorizontalIcon,
@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { ChatList } from "../../../features/chat/components";
 import useAuthStore from "../../../stores/useAuthStore";
+import React from "react";
 
 type SidebarProps = {};
 
@@ -43,15 +44,46 @@ export const SideBarHeader = () => {
 };
 
 const SideBarFooter = () => {
-  const { user } = useAuthStore();
+  const [menu, setMenu] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(menu);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setMenu(event.currentTarget);
+  };
+  const handleClose = () => {
+    setMenu(null);
+  };
+  const { user, logout } = useAuthStore();
   return (
     <div className="w-full bg-white border-t-2 p-1">
-      <div className="w-full flex items-center p-3 hover:cursor-pointer rounded-md hover:bg-slate-200 justify-between gap-5">
-        <div className="flex-1 overflow-hidden ">
+      <button
+        className="w-full flex items-center p-3 hover:cursor-pointer rounded-md hover:bg-slate-200 justify-between gap-5"
+        onClick={handleClick}
+      >
+        <div className="flex-1 overflow-hidden">
           <p className="truncate text-sm">{user?.email}</p>
         </div>
         <EllipsisHorizontalIcon className="h-5 w-5" />
-      </div>
+      </button>
+      <Menu
+        id="basic-menu"
+        anchorEl={menu}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            logout();
+          }}
+        >
+          Logout
+        </MenuItem>
+      </Menu>
     </div>
   );
 };

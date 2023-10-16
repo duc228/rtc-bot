@@ -16,7 +16,10 @@ const generateMessage = (n: number) => {
       });
     } else {
       arr.push({
-        content: "This is bot" + i,
+        content:
+          "This is bot" +
+          i +
+          " content longcontent longcontent longcontent longcontent longcontent longcontent longcontent long",
         isBot: true,
       });
     }
@@ -34,10 +37,7 @@ export const MessageBody = ({}: MessageBodyProps) => {
     }
     const arr = generateMessage(40);
 
-    // a fake async api call like which sends
-    // 20 more records in .5 secs
     setTimeout(() => {
-      //   setItems((prev) => prev.concat(Array.from({ length: 40 })));
       setItems((prev) => [...prev, ...arr]);
     }, 500);
   };

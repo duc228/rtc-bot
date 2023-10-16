@@ -1,0 +1,9 @@
+.rasa
+models/
+*.db*
+*.dot
+terms/
+results/
+.venv
+env/
+venv/
