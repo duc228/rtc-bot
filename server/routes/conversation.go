@@ -9,7 +9,8 @@ import (
 
 func ConversationRoutes(rg *gin.RouterGroup) {
 
-	rg.POST("/", middlewares.IsAuthenticated, controllers.CreateConversation)
-	rg.GET("/all", middlewares.IsAuthenticated, controllers.GetAllConversationsByUserId)
 	rg.GET("/", middlewares.IsAuthenticated, controllers.GetConverastionByUserId)
+
+	rg.GET("/all", middlewares.IsAuthenticated, controllers.GetAllConversationsByUserId)
+	rg.POST("/", middlewares.IsAuthenticated, controllers.CreateConversation)
 }

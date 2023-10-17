@@ -79,6 +79,13 @@ func GetConverastionByUserId(c *gin.Context) {
 		prevPage = 0
 	}
 
+	// var conversations []models.Conversation
+	// configs.DB.Where("user_id = ?", userId).Find(&conversations)
+	// c.JSON(http.StatusOK, gin.H{
+	// 	"data":  conversations,
+	// 	"total": len(conversations),
+	// })
+
 	var conversations []models.Conversation
 	configs.DB.Limit(limit).Offset(page*limit).Where("user_id = ?", userId).Find(&conversations)
 

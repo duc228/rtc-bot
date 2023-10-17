@@ -5,4 +5,5 @@ export type Conversation = {
   userId: number;
   messages?: Message[];
   lastMessageId?: number;
+  lastMessage?: Message;
 } & Base;

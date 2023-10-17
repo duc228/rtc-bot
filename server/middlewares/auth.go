@@ -18,6 +18,10 @@ func TestMid(c *gin.Context) {
 
 func IsAuthenticated(c *gin.Context) {
 	// tokenString, err := c.Cookie("auth")
+	authHeader := c.Request.Header["Authorization"]
+	if authHeader == nil {
+		c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})
+	}
 	tokenString := strings.Split(c.Request.Header["Authorization"][0], " ")[1]
 	fmt.Printf("token string %s\n", tokenString)
 
