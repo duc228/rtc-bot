@@ -30,6 +30,7 @@ func CreateMessage(c *gin.Context) {
 
 	userId, _ := c.Get("userId")
 
+	// store message to db
 	message := models.Message{
 		UserId:         userId.(uint),
 		Content:        data.Content,
@@ -38,15 +39,30 @@ func CreateMessage(c *gin.Context) {
 
 	result := configs.DB.Create(&message)
 
-	if result.Error != nil {
-		fmt.Println("error123: ", result.Error)
+	// send request to bot
+
+	// store response from bot to server
+	messageBot := models.Message{
+		Content:        "Toi la bot",
+		ConversationId: data.ConversationId,
+	}
+
+	resultBot := configs.DB.Create(&messageBot)
+
+	// return data contains both message user and response bot
+
+	if result.Error != nil || resultBot.Error != nil {
+		fmt.Println("error123: ", result.Error, resultBot.Error)
 
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "Failed to create message",
 		})
 	}
 
-	c.JSON(http.StatusCreated, &message)
+	c.JSON(http.StatusCreated, gin.H{
+		"message":    message,
+		"messageBot": messageBot,
+	})
 }
 
 func GetMessagesByConversationId(c *gin.Context) {
@@ -88,7 +104,7 @@ func GetMessagesByConversationId(c *gin.Context) {
 	}
 
 	var messages []models.Message
-	configs.DB.Limit(limit).Offset(page*limit).Where("conversation_id = ?", conversationId).Find(&messages)
+	configs.DB.Limit(limit).Offset(page*limit).Order("created_at desc").Where("conversation_id = ?", conversationId).Find(&messages)
 
 	c.JSON(http.StatusOK, gin.H{
 		"data":            &messages,

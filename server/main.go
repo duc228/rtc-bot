@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"rct_server/configs"
+	"rct_server/controllers"
 	"rct_server/migrations"
 	"rct_server/routes"
 	"rct_server/socket"
@@ -34,6 +35,8 @@ func main() {
 
 	getRoutes()
 	WsRoutes(server, wsHandler)
+	server.GET("/exter", controllers.GetExternal)
+	server.POST("/exter", controllers.PostExternal)
 
 	server.Run()
 }

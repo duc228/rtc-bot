@@ -6,8 +6,6 @@ import useAuthStore from "../stores/useAuthStore";
 
 const baseURL = ENV.APP_API_URL;
 
-// console.log('baseURL', baseURL);
-
 const axiosClient = axios.create({
   baseURL,
   headers: {
@@ -52,7 +50,6 @@ axiosClientPrivate.interceptors.response.use(
   function (error) {
     // console.log('error', error);
     if (error.code === "ERR_NETWORK") {
-      // window.location.href = '/404';
       toast.error("Đã có lỗi xảy ra");
     }
     if (error.response?.status === 401) {
@@ -77,14 +74,9 @@ axiosClient.interceptors.response.use(
     return response.data;
   },
   function (error) {
-    if (error?.response?.status === 401) {
-      // window.location.href = '/404';
-      //   store.dispatch(logout());
-    }
     if (error?.code === "ERR_NETWORK") {
       toast.error("Đã có lỗi xảy ra");
     }
-    // console.log('error axios client', error);
 
     return Promise.reject(error?.response?.data);
   }

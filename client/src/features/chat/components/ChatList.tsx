@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ChatItem from "./ChatItem";
 import { useInfiniteQuery } from "@tanstack/react-query";
@@ -30,8 +30,6 @@ export const ChatList = ({}: ChatListProps) => {
   const conversations = useMemo(() => {
     return data?.pages.map((page) => page.data).flat() ?? [];
   }, [data]);
-
-  // console.log("data loading", data, conversations);
 
   return (
     <div className="h-full overflow-y-auto px-2" id="scrollableDiv">

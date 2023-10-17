@@ -15,7 +15,10 @@ const DefaultLayout = ({}: DefaultLayoutProps) => {
             className="flex flex-col items-center mx-auto w-full h-full pb-3 
         "
           >
-            <div className="flex-1 w-full overflow-auto ">
+            <div
+              className="flex-1 w-full overflow-auto flex flex-col-reverse"
+              id="scrollMessage"
+            >
               <Outlet />
             </div>
             <MessageInput />

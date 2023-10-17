@@ -1,27 +1,47 @@
-import { useState, useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 import MessageItem from "./MessageItem";
 import { Message } from "../../../types/message";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { getMessagesByConversationId } from "../../../services/message-service";
-import { useParams, useNavigate } from "react-router-dom";
+import { MessageTyping } from ".";
+import useConversationStore from "../../../stores/useConversationStore";
+import { useNavigate, useParams } from "react-router-dom";
 import { AppRoutes } from "../../../routes/router";
 
 type MessageBodyProps = {};
 
 export const MessageBody = ({}: MessageBodyProps) => {
+  const { tempMessage, setConversationId, conversationId } =
+    useConversationStore();
+
   const navigate = useNavigate();
   const params = useParams();
-  let conversationId: number = -1;
-  if (!params?.conversationId) {
-    navigate(AppRoutes.HOME);
-  } else {
-    conversationId = parseInt(params?.conversationId) || -1;
-    if (conversationId === -1) {
+  // if (!params?.conversationId) {
+  //   navigate(AppRoutes.HOME);
+  // } else {
+  //   conversationId = parseInt(params?.conversationId) || -1;
+  //   if (conversationId === -1) {
+  //     navigate(AppRoutes.HOME);
+  //   }
+  //   // setConversationId(conversationId);
+  // }
+
+  useEffect(() => {
+    let id: number = -1;
+
+    if (!params?.conversationId) {
+      alert("Please params");
       navigate(AppRoutes.HOME);
+    } else {
+      id = parseInt(params?.conversationId as string) || -1;
+      if (id === -1) {
+        navigate(AppRoutes.HOME);
+      }
+      setConversationId(id);
     }
-  }
+  }, [params]);
 
   const {
     data,
@@ -32,7 +52,8 @@ export const MessageBody = ({}: MessageBodyProps) => {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery({
-    queryKey: ["messages", conversationId],
+    queryKey: ["messages", 1],
+    enabled: conversationId !== -1,
     queryFn: ({ pageParam }) => {
       return getMessagesByConversationId(conversationId, {
         page: pageParam,
@@ -52,31 +73,43 @@ export const MessageBody = ({}: MessageBodyProps) => {
   }, [data]);
 
   return (
-    <div
-      className="overflow-y-auto h-full mx-auto flex sm:w-[800px] flex-col-reverse gap-2 py-2"
-      id="scrollMessage"
+    <InfiniteScroll
+      dataLength={messages.length}
+      next={fetchNextPage}
+      hasMore={hasNextPage || false}
+      loader={<h4>Loading...</h4>}
+      endMessage={<>end message</>}
+      scrollableTarget="scrollMessage"
+      inverse={true}
+      className="flex flex-col-reverse gap-2 sm:w-[800px] mx-auto"
     >
-      <InfiniteScroll
-        dataLength={messages.length}
-        next={fetchNextPage}
-        hasMore={hasNextPage || false}
-        loader={<h4>Loading...</h4>}
-        endMessage={<>end message</>}
-        scrollableTarget="scrollMessage"
-      >
-        {messages.map((message: Message, index: number) => (
-          <div
-            key={index}
-            className={`w-full my-1 flex ${
-              !message.userId ? "justify-start" : "justify-end"
-            }`}
-          >
-            <MessageItem message={message.content} />
-          </div>
-        ))}
-      </InfiniteScroll>
-    </div>
+      {tempMessage ? <MessageTyping /> : <></>}
+      {tempMessage ? <MessageTemp /> : <></>}
+      {/* <div className="sm:w-[800px]"></div> */}
+      {messages.map((message: Message, index: number) => (
+        <div
+          key={index}
+          className={`w-full my-1 flex ${
+            !message.userId ? "justify-start" : "justify-end"
+          }`}
+        >
+          <MessageItem message={message.content} />
+        </div>
+      ))}
+    </InfiniteScroll>
   );
 };
 
 export default MessageBody;
+
+export const MessageTemp = () => {
+  const { tempMessage } = useConversationStore();
+  return (
+    <div
+      className={`w-full my-1 flex justify-end
+  }`}
+    >
+      <MessageItem message={tempMessage!} />
+    </div>
+  );
+};
