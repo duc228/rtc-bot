@@ -18,7 +18,8 @@ export const AppRoutes = {
   LOGIN: "/login",
   SIGNUP: "/signup",
   HOME: "/",
-  CHAT_SLUG: `${CHAT_PATH}/:coversationId`,
+  CHAT: "/chat",
+  CHAT_SLUG: `${CHAT_PATH}/:conversationId`,
 };
 
 export const routes = [
@@ -42,6 +43,7 @@ export const routes = [
     children: [
       { path: AppRoutes.HOME, element: <HomePage /> },
       { path: AppRoutes.CHAT_SLUG, element: <ChatPage /> },
+      { path: AppRoutes.CHAT, element: <ChatPage /> },
     ],
   },
 ];

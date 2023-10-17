@@ -7,21 +7,6 @@ import { getConverastionByUserId } from "../../../services/conversation-service"
 type ChatListProps = {};
 
 export const ChatList = ({}: ChatListProps) => {
-  const [items, setItems] = useState(Array.from({ length: 40 }));
-  const [hasMore, setHasMore] = useState(true);
-
-  const fetchMoreData = () => {
-    if (items.length >= 500) {
-      setHasMore(false);
-      return;
-    }
-    // a fake async api call like which sends
-    // 20 more records in .5 secs
-    setTimeout(() => {
-      setItems((prev) => prev.concat(Array.from({ length: 40 })));
-    }, 500);
-  };
-
   const {
     data,
     error,
@@ -31,13 +16,11 @@ export const ChatList = ({}: ChatListProps) => {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery({
-    queryKey: ["projects"],
+    queryKey: ["conversations"],
     queryFn: ({ pageParam }) => {
-      console.log("pageProperties", pageParam);
       return getConverastionByUserId({ page: pageParam, limit: 20 });
     },
-    getNextPageParam: (lastPage: any, pages) => {
-      console.log("lastPAge", lastPage);
+    getNextPageParam: (lastPage: any) => {
       if (lastPage?.hasNextPage) {
         return lastPage?.nextPage;
       }

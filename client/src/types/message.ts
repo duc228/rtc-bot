@@ -2,5 +2,5 @@ import { Base } from "./base";
 
 export type Message = {
   content: string;
-  isBot: boolean;
+  userId: string;
 } & Base;

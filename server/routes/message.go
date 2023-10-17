@@ -11,5 +11,6 @@ func MessageRoutes(rg *gin.RouterGroup) {
 
 	rg.POST("/", middlewares.IsAuthenticated, controllers.CreateMessage)
 	rg.GET("/:conversationId/all", middlewares.IsAuthenticated, controllers.GetAllMessagesByConversationId)
+	rg.GET("/:conversationId", middlewares.IsAuthenticated, controllers.GetMessagesByConversationId)
 
 }
