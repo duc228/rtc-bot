@@ -10,7 +10,7 @@ const conversationService = {
       url: url,
       query: params,
     });
-    console.log("path", path);
+    // console.log("path", path);
     // return axiosClientPrivate.get(path);
     return axiosClientPrivate.get(
       `${url}/?limit=${params.limit}&page=${params.page}`

@@ -7,6 +7,7 @@ import (
 	"rct_server/configs"
 	"rct_server/migrations"
 	"rct_server/routes"
+	"rct_server/socket"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -25,8 +26,24 @@ func main() {
 
 	migrations.Migrate()
 
+	// Websocket
+	// server.GET("/ws", socket.ConnectWS)
+	hub := socket.NewHub()
+	wsHandler := socket.NewHandler(hub)
+	go hub.Run()
+
 	getRoutes()
+	WsRoutes(server, wsHandler)
+
 	server.Run()
+}
+
+func WsRoutes(rg *gin.Engine, wsHandler *socket.Handler) {
+
+	rg.POST("/ws/createRoom", wsHandler.CreateRoom)
+	rg.GET("/ws/joinRoom/:roomId", wsHandler.JoinRoom)
+	rg.GET("/ws/getRooms", wsHandler.GetRooms)
+	rg.GET("/ws/getClients/:roomId", wsHandler.GetClients)
 }
 
 func getRoutes() {
