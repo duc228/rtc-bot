@@ -1,12 +1,10 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate } from "react-router-dom";
-import { AppRoutes, CHAT_PATH } from "../../../routes/router";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../../routes/router";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createMessage } from "../../../services/message-service";
 import useConversationStore from "../../../stores/useConversationStore";
-import { Message } from "../../../types/message";
-import useAuthStore from "../../../stores/useAuthStore";
 
 type MessageInputProps = {};
 
@@ -15,22 +13,15 @@ type MessageInput = {
 };
 
 export const MessageInput = ({}: MessageInputProps) => {
-  const { pathname } = useLocation();
-  const isNew = pathname.includes(CHAT_PATH);
-  const { user } = useAuthStore();
+  // const { pathname } = useLocation();
+  // const { user } = useAuthStore();
   const { setTempMessage, conversationId, setConversationId } =
     useConversationStore();
 
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    formState: { errors },
-  } = useForm<MessageInput>();
+  const { register, handleSubmit, setValue } = useForm<MessageInput>();
 
   const { mutate: createMessageMutation } = useMutation({
     mutationFn: createMessage,

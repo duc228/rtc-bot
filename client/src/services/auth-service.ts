@@ -1,5 +1,4 @@
 import axiosClient, { axiosClientPrivate } from "../configs/axios";
-import { User } from "../types/user";
 const url = "/auth";
 
 const authService = {

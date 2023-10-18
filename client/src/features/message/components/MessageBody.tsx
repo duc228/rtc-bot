@@ -37,12 +37,12 @@ export const MessageBody = ({}: MessageBodyProps) => {
 
   const {
     data,
-    error,
     fetchNextPage,
     hasNextPage,
-    isFetching,
-    isFetchingNextPage,
-    status,
+    // error,
+    // isFetching,
+    // isFetchingNextPage,
+    // status,
   } = useInfiniteQuery({
     queryKey: ["messages", conversationId],
     enabled: conversationId !== -1,

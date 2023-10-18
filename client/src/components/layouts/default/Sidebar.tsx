@@ -1,9 +1,5 @@
 import { Button, Menu, MenuItem } from "@mui/material";
-import {
-  PlusIcon,
-  AdjustmentsHorizontalIcon,
-  EllipsisHorizontalIcon,
-} from "@heroicons/react/24/solid";
+import { PlusIcon, EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 import { ChatList } from "../../../features/chat/components";
 import useAuthStore from "../../../stores/useAuthStore";
 import React from "react";

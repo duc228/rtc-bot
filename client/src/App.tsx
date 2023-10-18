@@ -16,7 +16,7 @@ function App({ children }: AppProps) {
     onSuccess: (data: any) => {
       setUser(data?.data);
     },
-    onError: (error: any) => {
+    onError: () => {
       logout();
     },
   });

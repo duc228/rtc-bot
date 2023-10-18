@@ -19,12 +19,12 @@ export const ChatList = ({}: ChatListProps) => {
 
   const {
     data,
-    error,
     fetchNextPage,
     hasNextPage,
-    isFetching,
-    isFetchingNextPage,
-    status,
+    // error,
+    // isFetching,
+    // isFetchingNextPage,
+    // status,
     refetch,
   } = useInfiniteQuery({
     queryKey: ["conversations"],

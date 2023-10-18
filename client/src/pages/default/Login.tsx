@@ -1,11 +1,10 @@
-import React from "react";
 import { LoginForm } from "../../features/auth/components";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../../routes/router";
 
-type Props = {};
+type LoginPageProps = {};
 
-export const LoginPage = (props: Props) => {
+export const LoginPage = ({}: LoginPageProps) => {
   return (
     <div className="w-full sm:w-[350px] md:w-[440px]">
       <h3 className="font-bold text-black text-3xl text-center">

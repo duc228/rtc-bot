@@ -19,12 +19,7 @@ export const SignUpForm = ({}: SignUpProps) => {
 
   const setAccessToken = useAuthStore((state) => state.setAccessToken);
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<SignUpInputs>();
+  const { register, handleSubmit } = useForm<SignUpInputs>();
 
   const { mutate: signUpMutation, isLoading } = useMutation({
     mutationFn: signUp,

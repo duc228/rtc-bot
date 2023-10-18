@@ -1,14 +1,9 @@
-import React, { useEffect } from "react";
-import useAuthStore from "../stores/useAuthStore";
-import socket from "../configs/socket";
-
 type SocketProviderProps = {};
 
 const SocketProvider = ({}: SocketProviderProps) => {
   if (!window["WebSocket"]) {
     alert("Error: Your browser does not support web sockets.");
   }
-  const { user } = useAuthStore();
   // useEffect(() => {
   //   console.log("start ws");
   //   socket.onopen = (evt) => {

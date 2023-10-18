@@ -23,8 +23,8 @@ export const LoginForm = ({}: LoginFormProps) => {
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
+    // watch,
+    // formState: { errors },
   } = useForm<LoginInputs>();
 
   const { mutate: loginMutation } = useMutation({
