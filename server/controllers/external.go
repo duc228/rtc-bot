@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -51,10 +52,11 @@ func GetExternal(c *gin.Context) {
 }
 
 func PostExternal(c *gin.Context) {
-	posturl := "https://jsonplaceholder.typicode.com/posts"
+	fmt.Printf("UserId:\n")
+	posturl := "http://exter:6001/"
 
 	body := []byte(`{
-		"title": "Post title",''
+		"title": "Post 1231",
 		"body": "Post description",
 		"userId": 1
 	}`)
@@ -64,32 +66,32 @@ func PostExternal(c *gin.Context) {
 		panic(err)
 	}
 
-	r.Header.Add("Content-Type", "application/json")
+	r.Header.Set("Content-Type", "application/json")
 
 	client := &http.Client{}
 	res, err := client.Do(r)
 	if err != nil {
-		// panic(err)
+		fmt.Println("Error sending request:", err)
+		return
 	}
 
 	defer res.Body.Close()
 
-	post := &Post{}
-	derr := json.NewDecoder(res.Body).Decode(post)
-	if derr != nil {
-		panic(derr)
+	var jons interface{}
+	resBody, err := io.ReadAll(res.Body)
+	if err != nil {
+		fmt.Println("Error reading response body:", err)
+		return
 	}
+	fmt.Println("Response:", resBody)
 
-	if res.StatusCode != http.StatusCreated {
-		panic(res.Status)
+	errr := json.Unmarshal(resBody, &jons)
+	if errr != nil {
+		panic(err.Error())
 	}
-
-	fmt.Println("Id:", post.Id)
-	fmt.Println("Title:", post.Title)
-	fmt.Println("Body:", post.Body)
-	fmt.Println("UserId:", post.UserId)
-
 	c.JSON(200, gin.H{
-		"data": post,
+		"data": string(resBody),
+		"daa":  jons,
+		// "data1": string(responseBody),
 	})
 }
