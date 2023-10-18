@@ -1,12 +1,22 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import ChatItem from "./ChatItem";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { getConverastionByUserId } from "../../../services/conversation-service";
+import useConversationStore from "../../../stores/useConversationStore";
 
 type ChatListProps = {};
 
 export const ChatList = ({}: ChatListProps) => {
+  const { conversationId } = useConversationStore();
+
+  useEffect(() => {
+    if (conversationId !== -1) {
+      refetch();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [conversationId]);
+
   const {
     data,
     error,
@@ -15,6 +25,7 @@ export const ChatList = ({}: ChatListProps) => {
     isFetching,
     isFetchingNextPage,
     status,
+    refetch,
   } = useInfiniteQuery({
     queryKey: ["conversations"],
     queryFn: ({ pageParam }) => {

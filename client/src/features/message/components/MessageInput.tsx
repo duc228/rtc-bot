@@ -1,7 +1,7 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { useForm } from "react-hook-form";
-import { useLocation } from "react-router-dom";
-import { CHAT_PATH } from "../../../routes/router";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AppRoutes, CHAT_PATH } from "../../../routes/router";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createMessage } from "../../../services/message-service";
 import useConversationStore from "../../../stores/useConversationStore";
@@ -17,12 +17,12 @@ type MessageInput = {
 export const MessageInput = ({}: MessageInputProps) => {
   const { pathname } = useLocation();
   const isNew = pathname.includes(CHAT_PATH);
-  // console.log("pathname", pathname, isNew);
   const { user } = useAuthStore();
-  const { setTempMessage, tempMessage, conversationId } =
+  const { setTempMessage, conversationId, setConversationId } =
     useConversationStore();
 
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -32,11 +32,20 @@ export const MessageInput = ({}: MessageInputProps) => {
     formState: { errors },
   } = useForm<MessageInput>();
 
-  const { mutate: createMessageMutation, isLoading } = useMutation({
+  const { mutate: createMessageMutation } = useMutation({
     mutationFn: createMessage,
-    onSuccess: (data) => {
-      console.log("onSuccess", data);
-      queryClient.invalidateQueries(["messages", conversationId]);
+    onSuccess: (data: any) => {
+      console.log("onSuccess", data, conversationId);
+      setTempMessage("");
+
+      if (conversationId == -1) {
+        setConversationId(data.message.conversationId);
+        navigate(`${AppRoutes.CHAT}/${data.message.conversationId}`);
+      } else {
+        queryClient.invalidateQueries(["messages", conversationId]);
+      }
+    },
+    onError: () => {
       setTempMessage("");
     },
   });

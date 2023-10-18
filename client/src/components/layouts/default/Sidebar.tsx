@@ -7,6 +7,8 @@ import {
 import { ChatList } from "../../../features/chat/components";
 import useAuthStore from "../../../stores/useAuthStore";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../../routes/router";
 
 type SidebarProps = {};
 
@@ -29,9 +31,14 @@ const Sidebar = ({}: SidebarProps) => {
 export default Sidebar;
 
 export const SideBarHeader = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex gap-2 ">
-      <Button variant="outlined" className="rounded-md flex-1 border-sky-500">
+      <Button
+        variant="outlined"
+        className="rounded-md flex-1 border-sky-500"
+        onClick={() => navigate(AppRoutes.CHAT)}
+      >
         <PlusIcon className="h-4 w-4" />
 
         <span className="normal-case ml-3 ">New Chat</span>

@@ -25,26 +25,52 @@ func GetAllMessagesByConversationId(c *gin.Context) {
 }
 
 func CreateMessage(c *gin.Context) {
+
 	var data dto.MessageDto
 	c.BindJSON(&data)
 
 	userId, _ := c.Get("userId")
 
+	//refactor later
+
+	// check if new conversation
+	var conversation models.Conversation
+	if data.ConversationId == -1 {
+		conversation = models.Conversation{
+			UserId: userId.(uint),
+		}
+
+		resultConversation := configs.DB.Create(&conversation)
+		if resultConversation.Error != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": "Failed to create conversation",
+			})
+		}
+	}
+
+	var conversationId uint = uint(data.ConversationId)
+	if conversation.Id != 0 {
+		conversationId = uint(conversation.Id)
+	}
+	fmt.Print("conversationId: ", conversationId)
+
 	// store message to db
 	message := models.Message{
 		UserId:         userId.(uint),
 		Content:        data.Content,
-		ConversationId: data.ConversationId,
+		ConversationId: conversationId,
 	}
 
 	result := configs.DB.Create(&message)
+	// update lastest message to conversation
+	configs.DB.Model(&models.Conversation{}).Where("id = ? ", data.ConversationId).Update("lastMesageId", message.Id)
 
 	// send request to bot
 
 	// store response from bot to server
 	messageBot := models.Message{
 		Content:        "Toi la bot",
-		ConversationId: data.ConversationId,
+		ConversationId: conversationId,
 	}
 
 	resultBot := configs.DB.Create(&messageBot)

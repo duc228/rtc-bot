@@ -14,8 +14,7 @@ const messageService = {
       url: url,
       query: params,
     });
-    console.log("path", path);
-    // return axiosClientPrivate.get(path);
+    // console.log("path", path);
     return axiosClientPrivate.get(
       `${url}/${conversationId}?limit=${params.limit}&page=${params.page}`
     );

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 import MessageItem from "./MessageItem";
@@ -13,27 +13,18 @@ import { AppRoutes } from "../../../routes/router";
 type MessageBodyProps = {};
 
 export const MessageBody = ({}: MessageBodyProps) => {
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const { tempMessage, setConversationId, conversationId } =
     useConversationStore();
 
   const navigate = useNavigate();
   const params = useParams();
-  // if (!params?.conversationId) {
-  //   navigate(AppRoutes.HOME);
-  // } else {
-  //   conversationId = parseInt(params?.conversationId) || -1;
-  //   if (conversationId === -1) {
-  //     navigate(AppRoutes.HOME);
-  //   }
-  //   // setConversationId(conversationId);
-  // }
 
   useEffect(() => {
     let id: number = -1;
 
     if (!params?.conversationId) {
-      alert("Please params");
-      navigate(AppRoutes.HOME);
+      setConversationId(-1);
     } else {
       id = parseInt(params?.conversationId as string) || -1;
       if (id === -1) {
@@ -41,6 +32,7 @@ export const MessageBody = ({}: MessageBodyProps) => {
       }
       setConversationId(id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
 
   const {
@@ -52,7 +44,7 @@ export const MessageBody = ({}: MessageBodyProps) => {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery({
-    queryKey: ["messages", 1],
+    queryKey: ["messages", conversationId],
     enabled: conversationId !== -1,
     queryFn: ({ pageParam }) => {
       return getMessagesByConversationId(conversationId, {
@@ -61,7 +53,7 @@ export const MessageBody = ({}: MessageBodyProps) => {
       });
     },
     getNextPageParam: (lastPage: any) => {
-      console.log("lastPAge", lastPage);
+      // console.log("lastPAge", lastPage);
       if (lastPage?.hasNextPage) {
         return lastPage?.nextPage;
       }
@@ -70,6 +62,15 @@ export const MessageBody = ({}: MessageBodyProps) => {
 
   const messages = useMemo(() => {
     return data?.pages.map((page) => page.data).flat() ?? [];
+  }, [data]);
+
+  const scrollToBottom = () => {
+    // smooth
+    messagesEndRef.current?.scrollIntoView({ behavior: "instant" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
   }, [data]);
 
   return (
@@ -83,6 +84,8 @@ export const MessageBody = ({}: MessageBodyProps) => {
       inverse={true}
       className="flex flex-col-reverse gap-2 sm:w-[800px] mx-auto"
     >
+      <div ref={messagesEndRef} />
+
       {tempMessage ? <MessageTyping /> : <></>}
       {tempMessage ? <MessageTemp /> : <></>}
       {/* <div className="sm:w-[800px]"></div> */}

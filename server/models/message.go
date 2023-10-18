@@ -3,7 +3,6 @@ package models
 import "time"
 
 type Message struct {
-	// gorm.Model
 	Id uint `json:"id" gorm:"primaryKey;autoIncrement"`
 	// IsBot  bool `json:"isBot"`
 	Content        string    `json:"content" `
