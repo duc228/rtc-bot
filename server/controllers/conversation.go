@@ -86,7 +86,7 @@ func GetConverastionByUserId(c *gin.Context) {
 	// 	"total": len(conversations),
 	// })
 
-	var conversations []models.Conversation
+	var conversations []models.Conversation = make([]models.Conversation, 0)
 	configs.DB.Limit(limit).Offset(page*limit).Order("updated_at desc").Where("user_id = ?", userId).Preload("LastMessage").Find(&conversations)
 
 	c.JSON(http.StatusOK, gin.H{

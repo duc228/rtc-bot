@@ -34,6 +34,7 @@ func CreateMessage(c *gin.Context) {
 	//refactor later
 
 	// check if new conversation
+	var isNewConversation bool = false
 	var conversation models.Conversation
 	if data.ConversationId == -1 {
 		conversation = models.Conversation{
@@ -51,6 +52,8 @@ func CreateMessage(c *gin.Context) {
 	var conversationId uint = uint(data.ConversationId)
 	if conversation.Id != 0 {
 		conversationId = uint(conversation.Id)
+		isNewConversation = true
+
 	}
 	fmt.Print("conversationId: ", conversationId)
 
@@ -63,7 +66,9 @@ func CreateMessage(c *gin.Context) {
 
 	result := configs.DB.Create(&message)
 	// update lastest message to conversation
-	configs.DB.Model(&models.Conversation{}).Where("id = ? ", data.ConversationId).Update("lastMesageId", message.Id)
+	if isNewConversation {
+		configs.DB.Model(&models.Conversation{}).Where("id = ? ", conversationId).Update("last_message_id", message.Id)
+	}
 
 	// send request to bot
 
