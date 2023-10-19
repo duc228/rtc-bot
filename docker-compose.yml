@@ -28,7 +28,6 @@ services:
   db:
     image: mysql
     container_name: rtc_db
-    restart: always
     ports:
       - 33065:3306
     expose:
