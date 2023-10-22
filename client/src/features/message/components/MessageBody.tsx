@@ -96,7 +96,7 @@ export const MessageBody = ({}: MessageBodyProps) => {
             !message.userId ? "justify-start" : "justify-end"
           }`}
         >
-          <MessageItem message={message.content} />
+          <MessageItem message={message.content} isBot={!!message.userId} />
         </div>
       ))}
     </InfiniteScroll>
