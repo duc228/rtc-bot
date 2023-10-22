@@ -1,16 +1,16 @@
 version: "3.8"
 
 services:
-  client:
-    build:
-      context: ./client
-    image: duc/rtc_client
-    container_name: rtc_client
-    ports:
-      - 5173:5173
-    volumes:
-      - ./client:/app
-      - ./client/.env:/app/.env
+  # client:
+  #   build:
+  #     context: ./client
+  #   image: duc/rtc_client
+  #   container_name: rtc_client
+  #   ports:
+  #     - 5173:5173
+  #   volumes:
+  #     - ./client:/app
+  #     - ./client/.env:/app/.env
   server:
     build:
       context: ./server
@@ -39,16 +39,26 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=abc
       - MYSQL_DATABASE=rtc_db
-  bot:
-    build:
-      context: ./bot
-    container_name: rtc_bot
-    image: duc/rtc_bot
+  # bot:
+  #   build:
+  #     context: ./bot
+  #   container_name: rtc_bot
+  #   image: duc/rtc_bot
+  #   ports:
+  #     - 5005:5005
+  #   expose:
+  #     - 5005
+  #   volumes:
+  #     - ./bot:/app
+  #   depends_on:
+  #     - db
+  nginx:
+    build: 
+      context: ./nginx
+    container_name: rtc_nginx
+    image: duc/rtc_nginx
     ports:
-      - 5005:5005
-    expose:
-      - 5005
-    volumes:
-      - ./bot:/app
+      - 81:80
     depends_on:
-      - db
+      - server
+      # - client
