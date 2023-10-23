@@ -3,10 +3,9 @@ version: "3.8"
 services:
   client:
     build:
-      dockerfile: ./Dockerfile.dev
       context: ./client
-    image: duc/rtc_client
-    container_name: rtc_client
+    image: duc/rtc_client_prod
+    container_name: rtc_client_prod
     ports:
       - 5173:5173
     volumes:
@@ -15,8 +14,8 @@ services:
   server:
     build:
       context: ./server
-    container_name: rtc_server
-    image: duc/rtc_server
+    container_name: rtc_server_prod
+    image: duc/rtc_server_prod
     ports:
       - 5000:5000
     expose:
@@ -28,7 +27,7 @@ services:
       - db
   db:
     image: mysql
-    container_name: rtc_db
+    container_name: rtc_db_prod
     ports:
       - 33065:3306
     expose:
@@ -42,8 +41,8 @@ services:
   bot:
     build:
       context: ./bot
-    container_name: rtc_bot
-    image: duc/rtc_bot
+    container_name: rtc_bot_prod
+    image: duc/rtc_bot_prod
     ports:
       - 5005:5005
     expose:
@@ -55,8 +54,8 @@ services:
   nginx:
     build:
       context: ./nginx
-    container_name: rtc_nginx
-    image: duc/rtc_nginx
+    container_name: rtc_nginx_prod
+    image: duc/rtc_nginx_prod
     ports:
       - 3080:80
     depends_on:

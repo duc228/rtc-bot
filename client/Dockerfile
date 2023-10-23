@@ -1,10 +1,12 @@
-FROM node
+FROM node as builder
 
 WORKDIR /app
 
-COPY entrypoint.sh .
+COPY package.json ./
 
-RUN chmod +x entrypoint.sh
-RUN ./entrypoint.sh
+RUN yarn
+COPY . .
+RUN yarn build
 
-CMD [ "tail", "-f", "/dev/null" ]
+FROM nginx
+COPY --from=builder /app/build /usr/share/nginx/html
