@@ -19,7 +19,7 @@ var server = gin.Default()
 
 func main() {
 
-	server.Use(cors.New(CORSConfig()))
+	// server.Use(cors.New(CORSConfig()))
 
 	loadEnv()
 

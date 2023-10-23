@@ -61,16 +61,3 @@ services:
     depends_on:
       - server
       - client
-      # - exter
-  # exter:
-  #   build:
-  #     context: ./exter
-  #   container_name: rtc_exter
-  #   image: duc/rtc_exter
-  #   ports:
-  #     - 5000:5000
-  #   expose:
-  #     - 5000
-  #   volumes:
-  #     - ./exter:/app
-  #     - ./exter/.env:/app/.env
