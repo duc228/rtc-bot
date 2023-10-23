@@ -1,9 +1,9 @@
 type SocketProviderProps = {};
 
 const SocketProvider = ({}: SocketProviderProps) => {
-  if (!window["WebSocket"]) {
-    alert("Error: Your browser does not support web sockets.");
-  }
+  // if (!window["WebSocket"]) {
+  //   alert("Error: Your browser does not support web sockets.");
+  // }
   // useEffect(() => {
   //   console.log("start ws");
   //   socket.onopen = (evt) => {

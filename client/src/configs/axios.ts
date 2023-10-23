@@ -4,7 +4,10 @@ import toast from "react-hot-toast";
 import { ENV } from "../constants/env";
 import useAuthStore from "../stores/useAuthStore";
 
-const baseURL = ENV.APP_API_URL;
+// const baseURL = ENV.APP_API_URL;
+
+// const baseURL = "http://localhost:81/api/v1";
+const baseURL = "/api/v1";
 
 const axiosClient = axios.create({
   baseURL,

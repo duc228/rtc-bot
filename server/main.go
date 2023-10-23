@@ -29,14 +29,14 @@ func main() {
 
 	// Websocket
 	// server.GET("/ws", socket.ConnectWS)
-	hub := socket.NewHub()
-	wsHandler := socket.NewHandler(hub)
-	go hub.Run()
+	// hub := socket.NewHub()
+	// wsHandler := socket.NewHandler(hub)
+	// go hub.Run()
 
 	getRoutes()
-	WsRoutes(server, wsHandler)
+	// WsRoutes(server, wsHandler)
 	server.GET("/exter", controllers.GetExternal)
-	server.POST("/exter", controllers.PostExternal)
+	server.POST("/api/exter", controllers.PostExternal)
 
 	server.Run()
 }
@@ -52,12 +52,12 @@ func WsRoutes(rg *gin.Engine, wsHandler *socket.Handler) {
 func getRoutes() {
 
 	apiRoute := server.Group("/api")
-	v1 := apiRoute.Group("/v1")
+	// v1 := apiRoute.Group("/v1")
 
-	routes.UserRoutes(v1.Group("/user"))
-	routes.AuthRoutes(v1.Group("/auth"))
-	routes.ConversationRoutes(v1.Group("/conversation"))
-	routes.MessageRoutes(v1.Group("/message"))
+	routes.UserRoutes(apiRoute.Group("/user"))
+	routes.AuthRoutes(apiRoute.Group("/auth"))
+	routes.ConversationRoutes(apiRoute.Group("/conversation"))
+	routes.MessageRoutes(apiRoute.Group("/message"))
 }
 
 func CORSConfig() cors.Config {

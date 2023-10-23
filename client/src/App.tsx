@@ -2,7 +2,6 @@ import { PropsWithChildren } from "react";
 import useAuthStore from "./stores/useAuthStore";
 import { useQuery } from "@tanstack/react-query";
 import { getProfile } from "./services/auth-service";
-import SocketProvider from "./providers/socket";
 
 type AppProps = PropsWithChildren;
 
@@ -23,7 +22,7 @@ function App({ children }: AppProps) {
   return (
     <>
       {children}
-      <SocketProvider />
+      {/* <SocketProvider /> */}
     </>
   );
 }
