@@ -1,7 +1,6 @@
 import axios from "axios";
 // import jwt_decode from "jwt-decode";
 import toast from "react-hot-toast";
-import { ENV } from "../constants/env";
 import useAuthStore from "../stores/useAuthStore";
 
 // const baseURL = ENV.APP_API_URL;

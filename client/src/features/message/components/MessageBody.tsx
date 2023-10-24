@@ -112,7 +112,7 @@ export const MessageTemp = () => {
       className={`w-full my-1 flex justify-end
   }`}
     >
-      <MessageItem message={tempMessage!} />
+      <MessageItem message={tempMessage!} isBot={false} />
     </div>
   );
 };

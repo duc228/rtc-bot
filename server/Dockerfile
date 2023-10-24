@@ -2,12 +2,18 @@ FROM golang
 
 WORKDIR /app
 
-# RUN go install github.com/cosmtrek/air@latest
+
+RUN go install github.com/cosmtrek/air@latest
+
+# RUN COPY go.mod go.sum ./
+# RUN go mod download
+COPY . .
+
+COPY .env.prod .env
+
+RUN air init
+
+CMD ["air", "-c", ".air.toml"]
+
 # RUN air init
 
-COPY entrypoint.sh .
-
-RUN chmod +x entrypoint.sh
-RUN ./entrypoint.sh
-
-CMD ["tail", "-f", "/dev/null"]

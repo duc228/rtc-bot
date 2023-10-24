@@ -1,5 +1,3 @@
-import { DefaultChat } from "../../features/chat/components";
-
 type HomePageProps = {};
 
 const HomePage = ({}: HomePageProps) => {

@@ -3,26 +3,26 @@ version: "3.8"
 services:
   client:
     build:
-      context: ./client
+      context: ../client
     image: duc/rtc_client_prod
     container_name: rtc_client_prod
-    ports:
-      - 5173:5173
-    volumes:
-      - ./client:/app
-      - ./client/.env:/app/.env
+    # ports:
+    #   - 5173:5173
+    # volumes:
+    #   - ./client:/app
+    #   - ./client/.env:/app/.env
   server:
     build:
-      context: ./server
+      context: ../server
     container_name: rtc_server_prod
     image: duc/rtc_server_prod
-    ports:
-      - 5000:5000
     expose:
       - 5000
-    volumes:
-      - ./server:/app
-      - ./server/.env:/app/.env
+    ports:
+      - 5000:5000
+    # volumes:
+    #   - ./server:/app
+    #   - ./server/.env:/app/.env
     depends_on:
       - db
   db:
@@ -38,26 +38,28 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=abc
       - MYSQL_DATABASE=rtc_db
-  bot:
-    build:
-      context: ./bot
-    container_name: rtc_bot_prod
-    image: duc/rtc_bot_prod
-    ports:
-      - 5005:5005
-    expose:
-      - 5005
-    volumes:
-      - ./bot:/app
-    depends_on:
-      - db
+  # bot:
+  #   build:
+  #     context: ./bot
+  #   container_name: rtc_bot_prod
+  #   image: duc/rtc_bot_prod
+  #   ports:
+  #     - 5005:5005
+  #   expose:
+  #     - 5005
+  #   volumes:
+  #     - ./bot:/app
+  #   depends_on:
+  #     - db
   nginx:
     build:
-      context: ./nginx
+      context: ../nginx
     container_name: rtc_nginx_prod
     image: duc/rtc_nginx_prod
     ports:
       - 3080:80
+    volumes:
+      - ../client/dist:/usr/share/nginx/html
     depends_on:
       - server
       - client
