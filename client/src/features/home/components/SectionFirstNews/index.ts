@@ -1,2 +1,2 @@
 export * from "./SectionFirstNews";
-export * from "./NewsItem";
+export * from "./NewsList";

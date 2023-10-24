@@ -20,7 +20,7 @@ const NavbarLanding = ({}: NavbarLandingProps) => {
           <li className="relative cursor-pointer group">
             <a className=" hover:menu-item-after">TUYỂN SINH</a>
 
-            <ul className="hidden group-hover:block absolute top-8 bg-slate-800 text-white text-[12px] normal-case font-normal py-2 w-[300px] e">
+            <ul className="z-10 hidden group-hover:block absolute top-8 bg-slate-800 text-white text-[12px] normal-case font-normal py-2 w-[300px] e">
               <li className="border-t-[0.5px] border-slate-700 py-2 px-2">
                 Đại học chính quy
               </li>
