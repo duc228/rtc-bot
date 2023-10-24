@@ -8,12 +8,18 @@ type PublicRoutesProps = {};
 const PublicRoutes = ({}: PublicRoutesProps) => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
-  return !isAuthenticated ? (
+  // return !isAuthenticated ? (
+  //   <Fragment>
+  //     <Outlet />
+  //   </Fragment>
+  // ) : (
+  //   <Navigate to={AppRoutes.HOME} />
+  // );
+
+  return (
     <Fragment>
       <Outlet />
     </Fragment>
-  ) : (
-    <Navigate to={AppRoutes.HOME} />
   );
 };
 

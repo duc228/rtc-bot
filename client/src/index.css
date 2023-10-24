@@ -11,7 +11,7 @@
   }
 
   .container {
-    @apply w-full xl:w-[1370px] lg:w-[940px];
+    @apply w-full xl:w-[1370px] lg:w-[940px] mx-auto;
   }
 
   ::-webkit-scrollbar {

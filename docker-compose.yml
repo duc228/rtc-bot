@@ -12,47 +12,47 @@ services:
     volumes:
       - ./client:/app
       - ./client/.env:/app/.env
-  server:
-    build:
-      context: ./server
-      dockerfile: ./Dockerfile.dev
-    container_name: rtc_server
-    image: duc/rtc_server
-    ports:
-      - 5000:5000
-    expose:
-      - 5000
-    volumes:
-      - ./server:/app
-      - ./server/.env:/app/.env
-    depends_on:
-      - db
-  db:
-    image: mysql
-    container_name: rtc_db
-    ports:
-      - 33065:3306
-    expose:
-      - 3306
-    volumes:
-      - ./db/data:/var/lib/mysql
-      # - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
-    environment:
-      - MYSQL_ROOT_PASSWORD=abc
-      - MYSQL_DATABASE=rtc_db
-  bot:
-    build:
-      context: ./bot
-    container_name: rtc_bot
-    image: duc/rtc_bot
-    ports:
-      - 5005:5005
-    expose:
-      - 5005
-    volumes:
-      - ./bot:/app
-    depends_on:
-      - db
+  # server:
+  #   build:
+  #     context: ./server
+  #     dockerfile: ./Dockerfile.dev
+  #   container_name: rtc_server
+  #   image: duc/rtc_server
+  #   ports:
+  #     - 5000:5000
+  #   expose:
+  #     - 5000
+  #   volumes:
+  #     - ./server:/app
+  #     - ./server/.env:/app/.env
+  #   depends_on:
+  #     - db
+  # db:
+  #   image: mysql
+  #   container_name: rtc_db
+  #   ports:
+  #     - 33065:3306
+  #   expose:
+  #     - 3306
+  #   volumes:
+  #     - ./db/data:/var/lib/mysql
+  #     # - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=abc
+  #     - MYSQL_DATABASE=rtc_db
+  # bot:
+  #   build:
+  #     context: ./bot
+  #   container_name: rtc_bot
+  #   image: duc/rtc_bot
+  #   ports:
+  #     - 5005:5005
+  #   expose:
+  #     - 5005
+  #   volumes:
+  #     - ./bot:/app
+  #   depends_on:
+  #     - db
   nginx:
     build:
       context: ./nginx
@@ -62,5 +62,5 @@ services:
     ports:
       - 3080:80
     depends_on:
-      - server
+      # - server
       - client
