@@ -57,19 +57,19 @@ export const LoginForm = ({}: LoginFormProps) => {
         {...register("email")}
       />
       <Input
-        placeholder="Password"
+        placeholder="Mật khẩu"
         className="hover:border-[#e5e7eb] bg-white h-12 px-3 py-2 border rounded-md border-input "
         type="password"
         {...register("password")}
         disableUnderline={true}
       />
-      <Button
+      <button
         type="submit"
-        variant="contained"
-        className="btn bg-sky-400 hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full "
+        // variant="contained"
+        className="btn bg-mainbg text-white hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full "
       >
-        <span className="text-[1rem] normal-case">Login</span>
-      </Button>
+        <span className="text-[1rem] normal-case">Đăng Nhập</span>
+      </button>
       <p className="italic text-red-600 text-sm">{message ? message : ""}</p>
     </form>
   );

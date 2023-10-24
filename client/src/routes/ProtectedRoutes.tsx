@@ -7,20 +7,20 @@ type ProtectedRoutesProps = {};
 
 const ProtectedRoutes = ({}: ProtectedRoutesProps) => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  // return isAuthenticated ? (
-  //   <Fragment>
-  //     <Outlet />
-  //   </Fragment>
-  // ) : (
-  //   <Navigate to={AppRoutes.LOGIN} />
-  // );
-  console.log("projtected routes", isAuthenticated);
-
-  return (
+  return isAuthenticated ? (
     <Fragment>
       <Outlet />
     </Fragment>
+  ) : (
+    <Navigate to={AppRoutes.LOGIN} />
   );
+  // console.log("projtected routes", isAuthenticated);
+
+  // return (
+  //   <Fragment>
+  //     <Outlet />
+  //   </Fragment>
+  // );
 };
 
 export default ProtectedRoutes;

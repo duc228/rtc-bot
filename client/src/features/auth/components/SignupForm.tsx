@@ -51,7 +51,7 @@ export const SignUpForm = ({}: SignUpProps) => {
     >
       <Input
         disableUnderline={true}
-        placeholder="Full Name"
+        placeholder="Họ tên"
         className="hover:border-[#e5e7eb] bg-white h-14 px-3 py-2 border rounded-md border-input "
         {...register("fullName")}
       />
@@ -62,7 +62,7 @@ export const SignUpForm = ({}: SignUpProps) => {
         {...register("email")}
       />
       <Input
-        placeholder="Password"
+        placeholder="Mật khẩu"
         className="hover:border-[#e5e7eb] bg-white h-14 px-3 py-2 border rounded-md border-input "
         type="password"
         {...register("password")}
@@ -75,7 +75,7 @@ export const SignUpForm = ({}: SignUpProps) => {
         className="btn bg-sky-500 hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full flex items-center gap-2"
       >
         {isLoading ? <CircularProgress color="inherit" size={20} /> : <></>}
-        <span className="text-[1rem] normal-case">Sign Up</span>
+        <span className="text-[1rem] normal-case">Dăng Ký</span>
       </Button>
       {message ? (
         <p className="italic text-red-500 text-sm">{message}</p>

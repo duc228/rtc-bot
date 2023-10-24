@@ -9,7 +9,7 @@ const LandingLayout = ({}: LandingLayoutProps) => {
   return (
     <App>
       <div className="h-min-screen w-full">
-        <div className="w-full">
+        <div className="w-full h-full">
           <HeaderLanding />
           <NavbarLanding />
           <Outlet />

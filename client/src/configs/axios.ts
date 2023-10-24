@@ -2,11 +2,11 @@ import axios from "axios";
 // import jwt_decode from "jwt-decode";
 import toast from "react-hot-toast";
 import useAuthStore from "../stores/useAuthStore";
+import { BASE_URL } from "../constants/env";
 
-// const baseURL = ENV.APP_API_URL;
+const baseURL = BASE_URL;
 
 // const baseURL = "http://localhost:81/api/v1";
-const baseURL = "/api/v1";
 
 const axiosClient = axios.create({
   baseURL,

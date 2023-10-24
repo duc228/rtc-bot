@@ -29,18 +29,26 @@ export const routes = [
   {
     protected: false,
     isLangding: false,
-    element: <AuthLayout />,
+    element: <LandingLayout />,
     children: [
       {
-        path: AppRoutes.LOGIN,
-        element: <LoginPage />,
-      },
-      {
-        path: AppRoutes.SIGNUP,
-        element: <SignUpPage />,
+        protected: false,
+        isLangding: false,
+        element: <AuthLayout />,
+        children: [
+          {
+            path: AppRoutes.LOGIN,
+            element: <LoginPage />,
+          },
+          {
+            path: AppRoutes.SIGNUP,
+            element: <SignUpPage />,
+          },
+        ],
       },
     ],
   },
+
   {
     isLangding: true,
     protected: false,

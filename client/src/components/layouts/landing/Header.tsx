@@ -1,10 +1,13 @@
 import { FaFacebook } from "react-icons/fa6";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import Logo from "../../../assets/imgs/logoptithcm.png";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../../routes/router";
 
 type HeaderLandingProps = {};
 
 const HeaderLanding = ({}: HeaderLandingProps) => {
+  const navigate = useNavigate();
   return (
     <div className="w-full">
       <SubHeaderLanding />
@@ -23,7 +26,10 @@ const HeaderLanding = ({}: HeaderLandingProps) => {
               <EnvelopeIcon className="h-4 w-4 text-white" />
               <span className="">TƯ VẤN TUYỂN SINH ONLINE</span>
             </button>
-            <button className="bg-slate-50 text-mainbg font-medium px-4 py-2 hover:bg-sky-700 hover:text-white">
+            <button
+              onClick={() => navigate(AppRoutes.LOGIN)}
+              className="bg-slate-50 text-mainbg font-medium px-4 py-2 hover:bg-sky-700 hover:text-white"
+            >
               Đăng Nhập
             </button>
           </div>
