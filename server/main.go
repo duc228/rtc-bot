@@ -8,7 +8,6 @@ import (
 	"rct_server/controllers"
 	"rct_server/migrations"
 	"rct_server/routes"
-	"rct_server/socket"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -27,37 +26,26 @@ func main() {
 
 	migrations.Migrate()
 
-	// Websocket
-	// server.GET("/ws", socket.ConnectWS)
-	// hub := socket.NewHub()
-	// wsHandler := socket.NewHandler(hub)
-	// go hub.Run()
-
 	getRoutes()
-	// WsRoutes(server, wsHandler)
 	server.GET("/exter", controllers.GetExternal)
 	server.POST("/api/exter", controllers.PostExternal)
 
+	server.GET("/api", func(c *gin.Context) {
+		c.JSON(200, gin.H{"message": "rtc_sever"})
+	})
+
 	server.Run()
-}
-
-func WsRoutes(rg *gin.Engine, wsHandler *socket.Handler) {
-
-	rg.POST("/ws/createRoom", wsHandler.CreateRoom)
-	rg.GET("/ws/joinRoom/:roomId", wsHandler.JoinRoom)
-	rg.GET("/ws/getRooms", wsHandler.GetRooms)
-	rg.GET("/ws/getClients/:roomId", wsHandler.GetClients)
 }
 
 func getRoutes() {
 
 	apiRoute := server.Group("/api")
-	// v1 := apiRoute.Group("/v1")
+	v1 := apiRoute.Group("/v1")
 
-	routes.UserRoutes(apiRoute.Group("/user"))
-	routes.AuthRoutes(apiRoute.Group("/auth"))
-	routes.ConversationRoutes(apiRoute.Group("/conversation"))
-	routes.MessageRoutes(apiRoute.Group("/message"))
+	routes.UserRoutes(v1.Group("/user"))
+	routes.AuthRoutes(v1.Group("/auth"))
+	routes.ConversationRoutes(v1.Group("/conversation"))
+	routes.MessageRoutes(v1.Group("/message"))
 }
 
 func CORSConfig() cors.Config {

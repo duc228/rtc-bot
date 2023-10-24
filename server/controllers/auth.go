@@ -16,8 +16,6 @@ func SignUp(c *gin.Context) {
 	var signUpInfo models.User
 
 	c.BindJSON(&signUpInfo)
-	// c.JSON(http.StatusCreated, gin.H{"token": &signUpInfo, "fullName": signUpInfo.FullName})
-	// return
 
 	hash, err := bcrypt.GenerateFromPassword([]byte(signUpInfo.Password), 10)
 

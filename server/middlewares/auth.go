@@ -11,11 +11,6 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 )
 
-func TestMid(c *gin.Context) {
-	fmt.Println("middle")
-	c.Next()
-}
-
 func IsAuthenticated(c *gin.Context) {
 	// tokenString, err := c.Cookie("auth")
 	authHeader := c.Request.Header["Authorization"]
