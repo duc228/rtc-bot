@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
+import HeaderLanding from "./Header";
 
 type LandingLayoutProps = {};
 
 const LandingLayout = ({}: LandingLayoutProps) => {
   return (
-    <div>
-      <Outlet />
-      <div className="h-24 w-24 bg-mainbg"></div>
+    <div className="h-min-screen w-full">
+      <div className="w-full">
+        <HeaderLanding />
+        <Outlet />
+      </div>
     </div>
   );
 };

@@ -10,6 +10,10 @@
   body {
   }
 
+  .container {
+    @apply w-full xl:w-[1370px] lg:w-[940px];
+  }
+
   ::-webkit-scrollbar {
     @apply w-[0.7rem];
   }
