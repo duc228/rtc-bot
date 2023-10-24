@@ -8,7 +8,7 @@ const HeaderLanding = ({}: HeaderLandingProps) => {
   return (
     <div className="w-full">
       <SubHeaderLanding />
-      <div className="h-[122px] bg-green-200 container ">
+      <div className="h-[122px] container ">
         <div className="h-full flex items-center justify-between">
           <div>
             <a
@@ -18,12 +18,14 @@ const HeaderLanding = ({}: HeaderLandingProps) => {
               <img src={Logo} alt="logo ptit" />
             </a>
           </div>
-          <div>
+          <div className="flex items-center gap-2">
             <button className="uppercase bg-mainbg px-4 py-2 text-white flex items-center gap-1 hover:bg-sky-700">
               <EnvelopeIcon className="h-4 w-4 text-white" />
               <span className="">TƯ VẤN TUYỂN SINH ONLINE</span>
             </button>
-            <button> Đăng Nhập</button>
+            <button className="bg-slate-50 text-mainbg font-medium px-4 py-2 hover:bg-sky-700 hover:text-white">
+              Đăng Nhập
+            </button>
           </div>
         </div>
       </div>

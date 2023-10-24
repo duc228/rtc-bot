@@ -7,10 +7,10 @@ export default {
         sans: ["Open Sans", "sans-serif"],
       },
       colors: {
-        mainbg: "#bd381b"
-      }
+        mainbg: "#bd381b",
+      },
+      // display: ["group-hover"],
     },
-    
   },
   plugins: [],
 };
