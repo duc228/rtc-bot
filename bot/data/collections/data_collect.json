@@ -1,0 +1,307 @@
+{
+    "chung": {
+     "nganh_dao_tao": "Học viện Công nghệ Bưu chính Viễn thông hiện đang đào tạo các ngành như:\n - Kỹ thuật Điện tử viễn thông\n - Công nghệ Kỹ thuật Điện, điện tử\n - Công nghệ thông tin\n - An toàn thông tin\n - Công nghệ đa phương tiện\n - Quản trị kinh doanh\n - Marketing\n - Kế toán"
+    },
+    "nam": {
+        "tong_quan": {
+            "ma_truong": "BVS",
+            "dia_chi": "Cơ sở Quận 1: 11 Nguyễn Đình Chiểu, Phường Đa Kao, Quận 1, TP. Hồ Chí Minh \nCơ sở Quận 9: Đường Man Thiện, Phường Hiệp Phú, Quận 9, TP. Hồ Chí Minh"
+        },
+        "nganh_dao_tao": {
+            "cntt": {
+                "ten_nganh": "Công nghệ thông tin",
+                "diem_chuan": {
+                    "2023": {
+                        "diem": 25.10,
+                        "dieu_kien": "TTNV <= 10"
+                    },
+                    "2022": {
+                        "diem": 25.85,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2021": {
+                        "diem": 24.85,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2020": {
+                        "diem": 23.45,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2019": {
+                        "diem": 22.1,
+                        "dieu_kien": "TTNV <= 7"
+                    }
+                },
+                "ma_nganh": 7480201,
+                "chuong_trinh_dao_tao": {
+                    "khoi_luong_chuong_trinh": "152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm)",
+                    "chuyen_nganh": "\nNgành Công nghệ thông tin có 5 chuyên ngành: \n– Máy tính và truyền thông \n– Khoa học máy tính \n– Kỹ thuật máy tính \n– Hệ thống thông tin \n– Công nghệ phần mềm \nKhông xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành",
+                    "chuan_dau_ra": "Chuẩn đầu ra Chương trình đào tạo ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuanDauRa_DHCQ-CNTT_685_QD-HV.pdf",
+                    "du_lieu": "\nChương trình khung ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf"
+                }
+            },
+            "ktdtvt": {
+                "ten_nganh": "Kỹ thuật điện tử viễn thông",
+                "diem_chuan": {
+                    "2023": {
+                        "diem": 25.10,
+                        "dieu_kien": "TTNV <= 10"
+                    },
+                    "2022": {
+                        "diem": 21.00,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2021": {
+                        "diem": 20.85,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2020": {
+                        "diem": 20.45,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2019": {
+                        "diem": 19.1,
+                        "dieu_kien": "TTNV <= 7"
+                    }
+                },
+                "ma_nganh": 7480201,
+                "chuong_trinh_dao_tao": {
+                    "khoi_luong_chuong_trinh": "152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm)",
+                    "chuyen_nganh": "\nNgành Công nghệ thông tin có 5 chuyên ngành: \n– Máy tính và truyền thông \n– Khoa học máy tính \n– Kỹ thuật máy tính \n– Hệ thống thông tin \n– Công nghệ phần mềm \nKhông xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành",
+                    "chuan_dau_ra": "Chuẩn đầu ra Chương trình đào tạo ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuanDauRa_DHCQ-CNTT_685_QD-HV.pdf",
+                    "du_lieu": "\nChương trình khung ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf"
+                }
+            },
+            "cnktddt": {
+                "ten_nganh": "Kỹ thuật điện, điện tử",
+                "diem_chuan": {
+                    "2023": {
+                        "diem": 20.10,
+                        "dieu_kien": "TTNV <= 10"
+                    },
+                    "2022": {
+                        "diem": 19.05,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2021": {
+                        "diem": 18.85,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2020": {
+                        "diem": 18.45,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2019": {
+                        "diem": 18.1,
+                        "dieu_kien": "TTNV <= 7"
+                    }
+                },
+                "ma_nganh": 7480201,
+                "chuong_trinh_dao_tao": {
+                    "khoi_luong_chuong_trinh": "152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm)",
+                    "chuyen_nganh": "\nNgành Công nghệ thông tin có 5 chuyên ngành: \n– Máy tính và truyền thông \n– Khoa học máy tính \n– Kỹ thuật máy tính \n– Hệ thống thông tin \n– Công nghệ phần mềm \nKhông xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành",
+                    "chuan_dau_ra": "Chuẩn đầu ra Chương trình đào tạo ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuanDauRa_DHCQ-CNTT_685_QD-HV.pdf",
+                    "du_lieu": "\nChương trình khung ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf"
+                }
+            },
+            "ktdkvtdh": {
+                "ten_nganh": "Kỹ thuật điều khiển và tự động hoá",
+                "diem_chuan": {
+                    "2023": {
+                        "diem": 20.10,
+                        "dieu_kien": "TTNV <= 10"
+                    },
+                    "2022": {
+                        "diem": 19.05,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2021": {
+                        "diem": 18.85,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2020": {
+                        "diem": 18.45,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2019": {
+                        "diem": 18.1,
+                        "dieu_kien": "TTNV <= 7"
+                    }
+                },
+                "ma_nganh": 7480201,
+                "chuong_trinh_dao_tao": {
+                    "khoi_luong_chuong_trinh": "152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm)",
+                    "chuyen_nganh": "\nNgành Công nghệ thông tin có 5 chuyên ngành: \n– Máy tính và truyền thông \n– Khoa học máy tính \n– Kỹ thuật máy tính \n– Hệ thống thông tin \n– Công nghệ phần mềm \nKhông xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành",
+                    "chuan_dau_ra": "Chuẩn đầu ra Chương trình đào tạo ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuanDauRa_DHCQ-CNTT_685_QD-HV.pdf",
+                    "du_lieu": "\nChương trình khung ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf"
+                }
+            },
+            "cntvv": {
+                "ten_nganh": "Công nghệ Internet vạn vật (IoT)",
+                "diem_chuan": {
+                    "2023": {
+                        "diem": 20.70,
+                        "dieu_kien": "TTNV <= 10"
+                    },
+                    "2022": {
+                        "diem": 20.10,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2021": {
+                        "diem": 19.85,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2020": {
+                        "diem": 19.45,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2019": {
+                        "diem": 18.1,
+                        "dieu_kien": "TTNV <= 7"
+                    }
+                },
+                "ma_nganh": 7480201,
+                "chuong_trinh_dao_tao": {
+                    "khoi_luong_chuong_trinh": "152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm)",
+                    "chuyen_nganh": "\nNgành Công nghệ thông tin có 5 chuyên ngành: \n– Máy tính và truyền thông \n– Khoa học máy tính \n– Kỹ thuật máy tính \n– Hệ thống thông tin \n– Công nghệ phần mềm \nKhông xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành",
+                    "chuan_dau_ra": "Chuẩn đầu ra Chương trình đào tạo ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuanDauRa_DHCQ-CNTT_685_QD-HV.pdf",
+                    "du_lieu": "\nChương trình khung ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf"
+                }
+            },
+            "attt": {
+                "ten_nganh": "An toàn thông tin",
+                "diem_chuan": {
+                    "2023": {
+                        "diem": 25.05,
+                        "dieu_kien": "TTNV <= 10"
+                    },
+                    "2022": {
+                        "diem": 25.10,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2021": {
+                        "diem": 24.85,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2020": {
+                        "diem": 23.45,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2019": {
+                        "diem": 21.1,
+                        "dieu_kien": "TTNV <= 7"
+                    }
+                },
+                "ma_nganh": 7480201,
+                "chuong_trinh_dao_tao": {
+                    "khoi_luong_chuong_trinh": "152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm)",
+                    "chuyen_nganh": "\nNgành Công nghệ thông tin có 5 chuyên ngành: \n– Máy tính và truyền thông \n– Khoa học máy tính \n– Kỹ thuật máy tính \n– Hệ thống thông tin \n– Công nghệ phần mềm \nKhông xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành",
+                    "chuan_dau_ra": "Chuẩn đầu ra Chương trình đào tạo ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuanDauRa_DHCQ-CNTT_685_QD-HV.pdf",
+                    "du_lieu": "\nChương trình khung ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf"
+                }
+            },
+            "cndpt": {
+                "ten_nganh": "Công nghệ đa phương tiện",
+                "diem_chuan": {
+                    "2023": {
+                        "diem": 25.0,
+                        "dieu_kien": "TTNV <= 10"
+                    },
+                    "2022": {
+                        "diem": 24.25,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2021": {
+                        "diem": 24.05,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2020": {
+                        "diem": 23.45,
+                        "dieu_kien": "TTNV <= 7"
+                    },
+                    "2019": {
+                        "diem": 21.1,
+                        "dieu_kien": "TTNV <= 7"
+                    }
+                },
+                "ma_nganh": 7480201,
+                "chuong_trinh_dao_tao": {
+                    "khoi_luong_chuong_trinh": "152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm)",
+                    "chuyen_nganh": "\nNgành Công nghệ thông tin có 5 chuyên ngành: \n– Máy tính và truyền thông \n– Khoa học máy tính \n– Kỹ thuật máy tính \n– Hệ thống thông tin \n– Công nghệ phần mềm \nKhông xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành",
+                    "chuan_dau_ra": "Chuẩn đầu ra Chương trình đào tạo ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuanDauRa_DHCQ-CNTT_685_QD-HV.pdf",
+                    "du_lieu": "\nChương trình khung ngành Công nghệ thông tin \nhttps://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf"
+                }
+            },
+            "qtkd": {},
+            "mkt": {},
+            "kt": {}
+        },
+        "tuyen_sinh": {
+            "phuong_thuc_tuyen_sinh": {
+                "noi_dung": "- Tuyển thẳng và ưu tiên xét tuyển: Học viên xét tuyển thẳng và ưu tiên xét tuyển theo Quy chế hiện hành của Bộ Giáo dục và Đào tạo và của Học viện (Có thông báo riêng)\n - Xét tuyển dựa vào kết quả điểm thi tốt nghiệp THPT năm 2023\n - Xét tuyển kết hợp giữa kết quả học tập ở bậc THPT với một trong các loại Chứng chủ quốc tế hoặc Thành tích cá nhân trong các kỳ tuyển chọn học sinh giỏi hoặc Thành tích học tập tại các trường THPT chuyên\n - Xét tuyển dựa vào kết quả các kỳ thi đánh giá năng lực, đánh giá tư duy ",
+                 "so": 4
+            },
+            "nganh": {
+                "cntt": {
+                    "ma_nganh": 7480201,
+                    "to_hop_xet_tuyen": "Toán, Lý, Hoá (mã A00), Toán, Lý, Anh (mã A01)",
+                    "tên ngành": "Công nghệ thông tin",
+                    "chi_tieu": {
+                        "2023": {
+                            "tn_thpt": "50",
+                            "xt_kh": 25,
+                            "dgnl": 15
+                        }
+                    }
+                },
+                "ktdtvt": {},
+                "cnktddt": {},
+                "ktdkvtdh": {},
+                "cntvv": {},
+                "attt": {},
+                "cndpt": {},
+                "qtkd": {},
+                "mkt": {},
+                "kt": {}
+            }
+        },
+        "khoa_quan_ly": {
+            "cntt": {
+            },
+            "ktdtvt": {},
+            "cnktddt": {},
+            "ktdkvtdh": {},
+            "cntvv": {},
+            "attt": {},
+            "cndpt": {},
+            "qtkd": {},
+            "mkt": {},
+            "kt": {}
+        },
+        "hoc_phi": {},
+        "giang_vien": {
+            "cntt": [
+                {
+                    "ho_ten": "Tân Hạnh",
+                    "hoc_vi": "Tiến sĩ",
+                    "chuc_vu": "Phó Giám đốc Học viện",
+                    "email": "tanhanh@ptithcm.edu.vn"
+                }
+            ],
+            "ktdtvt": [],
+            "cnktddt": [],
+            "ktdkvtdh": [],
+            "cntvv": [],
+            "attt": [],
+            "cndpt": [],
+            "qtkd":[],
+            "mkt": [],
+            "kt":[]
+        },
+        "dieu_kien_tot_nghiep": {}
+    },
+    "bac": {
+       
+    }
+   
+}

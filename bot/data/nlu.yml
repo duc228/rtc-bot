@@ -10,6 +10,8 @@ nlu:
     - ê
     - có ai ở đây không
     - chào ad
+    - bắt đầu
+    - bat dau
 
 - intent: goodbye
   examples: |
@@ -36,12 +38,18 @@ nlu:
 - intent: deny
   examples: |
     - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - ko
+    - không
+    - ko bao giờ
+    - không bao giờ 
+    - ko ham
+    - không ham
+    - không ưa
+    - ko thích
+    - ko chắc
+    - không biết nữa
+    - chưa chốt được
+    - đang suy nghĩ
 
 - intent: mood_great
   examples: |
