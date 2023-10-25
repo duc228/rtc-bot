@@ -1,6 +1,6 @@
 type Props = {};
 
-export const NewsItem = (props: Props) => {
+export const NewsItem = ({}: Props) => {
   return (
     <div className="w-full h-48  flex gap-6">
       <div className="w-64">
