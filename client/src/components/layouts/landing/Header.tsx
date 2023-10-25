@@ -3,21 +3,21 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import Logo from "../../../assets/imgs/logoptithcm.png";
 import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../../routes/router";
+import useAuthStore from "../../../stores/useAuthStore";
 
 type HeaderLandingProps = {};
 
 const HeaderLanding = ({}: HeaderLandingProps) => {
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuthStore();
+
   return (
     <div className="w-full">
       <SubHeaderLanding />
       <div className="h-[122px] container ">
         <div className="h-full flex items-center justify-between">
           <div>
-            <a
-              href="https://ptithcm.edu.vn/lien-ket-dao-tao-quoc-te"
-              target="_blank"
-            >
+            <a href="/">
               <img src={Logo} alt="logo ptit" />
             </a>
           </div>
@@ -26,12 +26,16 @@ const HeaderLanding = ({}: HeaderLandingProps) => {
               <EnvelopeIcon className="h-4 w-4 text-white" />
               <span className="">TƯ VẤN TUYỂN SINH ONLINE</span>
             </button>
-            <button
-              onClick={() => navigate(AppRoutes.LOGIN)}
-              className="bg-slate-50 text-mainbg font-medium px-4 py-2 hover:bg-sky-700 hover:text-white"
-            >
-              Đăng Nhập
-            </button>
+            {isAuthenticated ? (
+              "logged"
+            ) : (
+              <button
+                onClick={() => navigate(AppRoutes.LOGIN)}
+                className="bg-slate-50 text-mainbg font-medium px-4 py-2 hover:bg-sky-700 hover:text-white"
+              >
+                Đăng Nhập
+              </button>
+            )}
           </div>
         </div>
       </div>

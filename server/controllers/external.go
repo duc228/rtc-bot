@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"rct_server/dto"
 
 	"github.com/gin-gonic/gin"
 )
@@ -53,20 +54,25 @@ func GetExternal(c *gin.Context) {
 
 func PostExternal(c *gin.Context) {
 	fmt.Printf("UserId:\n")
-	posturl := "http://exter:6001/"
+	// posturl := "http://exter:6001/"
+	posturl := "http://rtc_bot:5005/webhooks/rest/webhook"
 
-	body := []byte(`{
-		"title": "Post 1231",
-		"body": "Post description",
-		"userId": 1
-	}`)
+	botRequest := dto.BotRequest{
+		Sender:  "sender",
+		Message: "hi",
+	}
+
+	body, err := json.Marshal(botRequest)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
 
 	r, err := http.NewRequest("POST", posturl, bytes.NewBuffer(body))
 	if err != nil {
+		fmt.Println(err.Error())
 		panic(err)
 	}
-
-	r.Header.Set("Content-Type", "application/json")
 
 	client := &http.Client{}
 	res, err := client.Do(r)
@@ -77,21 +83,27 @@ func PostExternal(c *gin.Context) {
 
 	defer res.Body.Close()
 
-	var jons interface{}
+	var jsons interface{} = dto.BotResponse{}
+	// var jsons dto.BotResponse
 	resBody, err := io.ReadAll(res.Body)
 	if err != nil {
+		fmt.Println(err.Error())
+
 		fmt.Println("Error reading response body:", err)
 		return
 	}
 	fmt.Println("Response:", resBody)
 
-	errr := json.Unmarshal(resBody, &jons)
+	errr := json.Unmarshal(resBody, &jsons)
 	if errr != nil {
+		fmt.Println(err.Error())
+
 		panic(err.Error())
 	}
+
 	c.JSON(200, gin.H{
-		"data": string(resBody),
-		"daa":  jons,
+		"data_string": string(resBody),
+		"data":        jsons,
 		// "data1": string(responseBody),
 	})
 }
