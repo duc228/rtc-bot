@@ -51,7 +51,7 @@ export const ChatList = ({}: ChatListProps) => {
         loader={<h4>Loading...</h4>}
         endMessage={
           <p style={{ textAlign: "center" }}>
-            <b>Yay! You have seen it all</b>
+            <b></b>
           </p>
         }
         scrollableTarget="scrollableDiv"

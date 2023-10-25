@@ -32,12 +32,12 @@ export const SideBarHeader = () => {
     <div className="flex gap-2 ">
       <Button
         variant="outlined"
-        className="rounded-md flex-1 border-sky-500"
+        className="rounded-md flex-1 border-mainbg text-mainbg"
         onClick={() => navigate(AppRoutes.CHAT)}
       >
-        <PlusIcon className="h-4 w-4" />
+        <PlusIcon className="h-4 w-4 text-mainbg" />
 
-        <span className="normal-case ml-3 ">New Chat</span>
+        <span className="normal-case ml-3 text-mainbg">New Chat</span>
       </Button>
       {/* <Button variant="text" className="h-full pr-3 min-w-fit">
           <AdjustmentsHorizontalIcon className="h-5 w-5 " />

@@ -79,7 +79,7 @@ export const MessageBody = ({}: MessageBodyProps) => {
       next={fetchNextPage}
       hasMore={hasNextPage || false}
       loader={<h4>Loading...</h4>}
-      endMessage={<>end message</>}
+      endMessage={<></>}
       scrollableTarget="scrollMessage"
       inverse={true}
       className="flex flex-col-reverse gap-2 sm:w-[800px] mx-auto"
