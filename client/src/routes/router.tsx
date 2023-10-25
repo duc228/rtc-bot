@@ -6,12 +6,16 @@ const DefaultLayout = lazy(
 );
 const AuthLayout = lazy(() => import("../components/layouts/auth/AuthLayout"));
 const HomeLayout = lazy(() => import("../components/layouts/home/HomeLayout"));
+const LandingLayout = lazy(
+  () => import("../components/layouts/landing/LandingLayout")
+);
 
 // DEFAULT PAGES
 const LoginPage = lazy(() => import("../pages/default/Login"));
 const SignUpPage = lazy(() => import("../pages/default/SignUp"));
-const HomePage = lazy(() => import("../pages/default/Home"));
+// const HomePage = lazy(() => import("../pages/default/Home"));
 const ChatPage = lazy(() => import("../pages/default/Chat"));
+const LandingPage = lazy(() => import("../pages/default/Landing"));
 
 export const CHAT_PATH = "/chat";
 
@@ -47,11 +51,17 @@ export const routes = [
     ],
   },
 
+  // {
+  //   isLangding: true,
+  //   protected: false,
+  //   element: <HomeLayout />,
+  //   children: [{ path: AppRoutes.HOME, element: <HomePage /> }],
+  // },
   {
     isLangding: true,
     protected: false,
-    element: <HomeLayout />,
-    children: [{ path: AppRoutes.HOME, element: <HomePage /> }],
+    element: <LandingLayout />,
+    children: [{ path: AppRoutes.HOME, element: <LandingPage /> }],
   },
   {
     isLangding: false,
