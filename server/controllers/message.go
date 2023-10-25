@@ -7,6 +7,7 @@ import (
 	"rct_server/configs"
 	"rct_server/dto"
 	"rct_server/models"
+	"rct_server/services"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -72,19 +73,20 @@ func CreateMessage(c *gin.Context) {
 	}
 
 	// send request to bot
-	// var botResponse dto.BotResponse
-	// botResponse = controllers.CallBot(userId, data.Content)
+	var botResponse []dto.BotResponse
+	botResponse = services.CallBot("userId", data.Content)
+	var messageResponse dto.BotResponse = botResponse[0]
 
 	// store response from bot to server
 	messageBot := models.Message{
-		Content: "Toi la bot1",
+		Content: messageResponse.Text,
 		// Content:        botResponse.Text,
 		ConversationId: conversationId,
 	}
 
 	resultBot := configs.DB.Create(&messageBot)
 
-	fmt.Println("bot response %v", messageBot.Content)
+	// fmt.Printf("\nbot response: %v\n", botResponse.Text)
 
 	// return data contains both message user and response bot
 
@@ -99,7 +101,8 @@ func CreateMessage(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{
 		"message":    message,
 		"messageBot": messageBot,
-		"test":       1,
+		// "botResponse": botResponse,
+		// "tmp":         messageResponse,
 	})
 }
 
