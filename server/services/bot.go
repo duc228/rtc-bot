@@ -5,12 +5,17 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"rct_server/dto"
 )
 
 var botURL = "http://rtc_bot:5005/webhooks/rest/webhook"
 
 func CallBot(sender string, message string) []dto.BotResponse {
+	botURL = os.Getenv("BOT_URI")
+	if botURL == "" {
+		botURL = "http://rtc_bot:5005/webhooks/rest/webhook"
+	}
 
 	botRequest := dto.BotRequest{
 		Sender:  sender,
