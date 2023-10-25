@@ -18,8 +18,8 @@ services:
     image: duc/rtc_server_prod
     expose:
       - 5000
-    ports:
-      - 5000:5000
+    # ports:
+    #   - 5000:5000
     # volumes:
     #   - ./server:/app
     #   - ./server/.env:/app/.env
@@ -28,8 +28,8 @@ services:
   db:
     image: mysql
     container_name: rtc_db_prod
-    ports:
-      - 33065:3306
+    # ports:
+    #   - 33065:3306
     expose:
       - 3306
     volumes:
@@ -40,9 +40,10 @@ services:
       - MYSQL_DATABASE=rtc_db
   # bot:
   #   build:
-  #     context: ./bot
-  #   container_name: rtc_bot_prod
+  #     context: ../bot
+  #     dockerfile: ./Dockerfile
   #   image: duc/rtc_bot_prod
+  #   container_name: rtc_bot_prod
   #   ports:
   #     - 5005:5005
   #   expose:

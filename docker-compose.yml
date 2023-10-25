@@ -43,6 +43,7 @@ services:
   bot:
     build:
       context: ./bot
+      dockerfile: ./Dockerfile.dev
     container_name: rtc_bot
     image: duc/rtc_bot
     ports:

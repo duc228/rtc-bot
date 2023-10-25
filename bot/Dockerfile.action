@@ -8,8 +8,6 @@ RUN pip install rasa
 
 COPY . .
 
-RUN rasa train nlu
-
 USER 1001
 
-CMD rasa run --enable-api --cors="*"
+CMD  rasa run actions
