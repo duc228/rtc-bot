@@ -5,9 +5,7 @@ const DefaultLayout = lazy(
   () => import("../components/layouts/default/DefaultLayout")
 );
 const AuthLayout = lazy(() => import("../components/layouts/auth/AuthLayout"));
-const LandingLayout = lazy(
-  () => import("../components/layouts/landing/LandingLayout")
-);
+const HomeLayout = lazy(() => import("../components/layouts/home/HomeLayout"));
 
 // DEFAULT PAGES
 const LoginPage = lazy(() => import("../pages/default/Login"));
@@ -29,7 +27,7 @@ export const routes = [
   {
     protected: false,
     isLangding: false,
-    element: <LandingLayout />,
+    element: <HomeLayout />,
     children: [
       {
         protected: false,
@@ -52,7 +50,7 @@ export const routes = [
   {
     isLangding: true,
     protected: false,
-    element: <LandingLayout />,
+    element: <HomeLayout />,
     children: [{ path: AppRoutes.HOME, element: <HomePage /> }],
   },
   {

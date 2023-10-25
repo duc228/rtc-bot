@@ -3,9 +3,9 @@ import HeaderLanding from "./Header";
 import NavbarLanding from "./Navbar";
 import App from "../../../App";
 
-type LandingLayoutProps = {};
+type HomeLayoutProps = {};
 
-const LandingLayout = ({}: LandingLayoutProps) => {
+const HomeLayout = ({}: HomeLayoutProps) => {
   return (
     <App>
       <div className="h-min-screen w-full">
@@ -19,4 +19,4 @@ const LandingLayout = ({}: LandingLayoutProps) => {
   );
 };
 
-export default LandingLayout;
+export default HomeLayout;
