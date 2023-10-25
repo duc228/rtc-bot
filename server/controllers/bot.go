@@ -44,7 +44,7 @@ func CallBot(sender string, message string) dto.BotResponse {
 	defer res.Body.Close()
 
 	// var response interface{}
-	var response interface{} = dto.BotResponse{}
+	var response dto.BotResponse
 	resBody, err := io.ReadAll(res.Body)
 	if err != nil {
 		fmt.Println("Error reading response body:", err)

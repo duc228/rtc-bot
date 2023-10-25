@@ -67,7 +67,8 @@ func CreateMessage(c *gin.Context) {
 	result := configs.DB.Create(&message)
 	// update lastest message to conversation
 	if isNewConversation {
-		configs.DB.Model(&models.Conversation{}).Where("id = ? ", conversationId).Update("last_message_id", message.Id)
+		// configs.DB.Model(&models.Conversation{}).Where("id = ? ", conversationId).Update("last_message_id", message.Id)
+		configs.DB.Model(&models.Conversation{}).Where("id = ? ", conversationId).Update("last_message", message.Content)
 	}
 
 	// send request to bot

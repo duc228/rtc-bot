@@ -14,7 +14,7 @@ const ChatItem = ({ conversation }: ChatItemProps) => {
     >
       <ChatBubbleLeftIcon className="h-5 w-5" />
       <p className="truncate flex-1 mr-5 text-sm">
-        {conversation?.lastMessage?.content || "Null last message"}
+        {conversation?.lastMessage || "Null last message"}
       </p>
     </Link>
   );
