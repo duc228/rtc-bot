@@ -6,8 +6,8 @@ services:
       context: ../client
     image: duc/rtc_client_prod
     container_name: rtc_client_prod
-    # ports:
-    #   - 5173:5173
+    ports:
+      - 4200:4200
     volumes:
       - ../client:/app
       - ../client/.env:/app/.env
@@ -18,8 +18,8 @@ services:
     image: duc/rtc_server_prod
     expose:
       - 5000
-    # ports:
-    #   - 5000:5000
+    ports:
+      - 5000:5000
     # volumes:
     #   - ./server:/app
     #   - ./server/.env:/app/.env
