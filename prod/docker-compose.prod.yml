@@ -58,9 +58,9 @@ services:
     container_name: rtc_nginx_prod
     image: duc/rtc_nginx_prod
     ports:
-      - 3080:80
-    volumes:
-      - ../client/dist:/usr/share/nginx/html
+      - 80:80
+    # volumes:
+    #   - ../client/dist:/usr/share/nginx/html
     depends_on:
       - server
       - client

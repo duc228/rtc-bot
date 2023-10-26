@@ -9,6 +9,7 @@ services:
     container_name: rtc_client
     ports:
       - 5173:5173
+      - 4200:4200
     volumes:
       - ./client:/app
       - ./client/.env:/app/.env
@@ -61,7 +62,7 @@ services:
     container_name: rtc_nginx
     image: duc/rtc_nginx
     ports:
-      - 3080:80
+      - 80:80
     depends_on:
       # - server
       - client

@@ -10,7 +10,7 @@ export default defineConfig({
     },
     host: true, // needed for the Docker Container port mapping to work
     strictPort: true,
-    // port: 5173, // replace this port with any number you want
+    port: 4200, // replace this port with any number you want
     // hmr: {
     //   path: "ws",
     // },
