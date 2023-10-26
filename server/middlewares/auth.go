@@ -12,7 +12,6 @@ import (
 )
 
 func IsAuthenticated(c *gin.Context) {
-	// tokenString, err := c.Cookie("auth")
 	authHeader := c.Request.Header["Authorization"]
 	if authHeader == nil {
 		c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})

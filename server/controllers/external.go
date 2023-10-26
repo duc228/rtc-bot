@@ -83,7 +83,7 @@ func PostExternal(c *gin.Context) {
 
 	defer res.Body.Close()
 
-	var jsons interface{} = dto.BotResponse{}
+	var response []dto.BotResponse
 	// var jsons dto.BotResponse
 	resBody, err := io.ReadAll(res.Body)
 	if err != nil {
@@ -94,7 +94,7 @@ func PostExternal(c *gin.Context) {
 	}
 	fmt.Println("Response:", resBody)
 
-	errr := json.Unmarshal(resBody, &jsons)
+	errr := json.Unmarshal(resBody, &response)
 	if errr != nil {
 		fmt.Println(err.Error())
 
@@ -103,7 +103,7 @@ func PostExternal(c *gin.Context) {
 
 	c.JSON(200, gin.H{
 		"data_string": string(resBody),
-		"data":        jsons,
+		"data":        response,
 		// "data1": string(responseBody),
 	})
 }

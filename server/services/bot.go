@@ -9,7 +9,7 @@ import (
 	"rct_server/dto"
 )
 
-var botURL = "http://rtc_bot:5005/webhooks/rest/webhook"
+var botURL = ""
 
 func CallBot(sender string, message string) []dto.BotResponse {
 	botURL = os.Getenv("BOT_URI")
@@ -25,21 +25,25 @@ func CallBot(sender string, message string) []dto.BotResponse {
 	body, err := json.Marshal(botRequest)
 	if err != nil {
 		fmt.Println("Error:", err)
-		panic(err.Error())
+		// panic(err.Error())
+		return make([]dto.BotResponse, 0)
 
 	}
 
 	r, err := http.NewRequest("POST", botURL, bytes.NewBuffer(body))
 	if err != nil {
 		fmt.Println(err.Error())
-		panic(err)
+		// panic(err)
+		return make([]dto.BotResponse, 0)
+
 	}
 
 	client := &http.Client{}
 	res, err := client.Do(r)
 	if err != nil {
 		fmt.Println("Error sending request:", err)
-		panic(err.Error())
+		// panic(err.Error())
+		return make([]dto.BotResponse, 0)
 
 	}
 
@@ -49,30 +53,11 @@ func CallBot(sender string, message string) []dto.BotResponse {
 
 	if err := json.NewDecoder(res.Body).Decode(&response); err != nil {
 		fmt.Println("Error decoding JSON:", err)
+		return make([]dto.BotResponse, 0)
+
 	}
 
-	// fmt.Printf("\nhiii %v\n", response[0].Text)
+	fmt.Printf("\nhiii %v\n", response[0].Text)
 
 	return response
-
-	// var response interface{}
-	// // var jsons dto.BotResponse
-	// resBody, err := io.ReadAll(res.Body)
-	// if err != nil {
-	// 	fmt.Println(err.Error())
-
-	// 	fmt.Println("Error reading response body:", err)
-	// 	panic(err.Error())
-
-	// }
-	// fmt.Println("Response:", resBody)
-
-	// errr := json.Unmarshal(resBody, &response)
-	// if errr != nil {
-	// 	fmt.Println(err.Error())
-
-	// 	panic(err.Error())
-	// }
-
-	// return response
 }
