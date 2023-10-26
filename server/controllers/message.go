@@ -8,6 +8,7 @@ import (
 	"rct_server/configs"
 	"rct_server/dto"
 	"rct_server/models"
+	"rct_server/services"
 	"strconv"
 	"time"
 
@@ -73,33 +74,58 @@ func CreateMessage(c *gin.Context) {
 		configs.DB.Model(&models.Conversation{}).Where("id = ? ", conversationId).Update("last_message", message.Content)
 	}
 
-	rand.Seed(time.Now().UnixNano())
-	//random temp response
-	response := []string{
-		"Xin chào, bot vẫn đang trong quá trình phát triển. Vui lòng quay lại sau",
-		"Tôi là bot, tôi vẫn đang học",
-		"Bot đang bận",
-		"Vui lòng quay lại sau",
-		"Hiện tại tôi chưa thể trả lời",
-		"Bot đang ngủ",
-		"Bot chưa thể trả lời bạn",
-	}
-	randomIndex := rand.Intn(len(response))
+	// rand.Seed(time.Now().UnixNano())
+	// //random temp response
+	// response := []string{
+	// 	"Xin chào, bot vẫn đang trong quá trình phát triển. Vui lòng quay lại sau",
+	// 	"Tôi là bot, tôi vẫn đang học",
+	// 	"Bot đang bận",
+	// 	"Vui lòng quay lại sau",
+	// 	"Hiện tại tôi chưa thể trả lời",
+	// 	"Bot đang ngủ",
+	// 	"Bot chưa thể trả lời bạn",
+	// }
+	// randomIndex := rand.Intn(len(response))
 
-	// Get the random string from the array.
-	randomString := response[randomIndex]
+	// // Get the random string from the array.
+	// randomString := response[randomIndex]
 
 	// send request to bot
-	// var botResponse []dto.BotResponse
-	// botResponse = services.CallBot("userId", data.Content)
-	// var messageResponse dto.BotResponse = botResponse[0]
+	var botResponse []dto.BotResponse
+	botResponse = services.CallBot("userId", data.Content)
+	var messageBot models.Message
+	if len(botResponse) != 0 {
+		var messageResponse dto.BotResponse = botResponse[0]
+		messageBot = models.Message{
+			Content: messageResponse.Text,
+			// Content:        randomString,
+			ConversationId: conversationId,
+		}
+	} else {
+		rand.Seed(time.Now().UnixNano())
+		// random temp response
+		response := []string{
+			"Xin chào, bot vẫn đang trong quá trình phát triển. Vui lòng quay lại sau",
+			"Tôi là bot, tôi vẫn đang học",
+			"Bot đang bận",
+			"Vui lòng quay lại sau",
+			"Hiện tại tôi chưa thể trả lời",
+			"Bot đang ngủ",
+			"Bot chưa thể trả lời bạn",
+		}
+		randomIndex := rand.Intn(len(response))
+
+		// Get the random string from the array.
+		randomString := response[randomIndex]
+
+		messageBot = models.Message{
+			// Content: messageResponse.Text,
+			Content:        randomString,
+			ConversationId: conversationId,
+		}
+	}
 
 	// store response from bot to server
-	messageBot := models.Message{
-		// Content: messageResponse.Text,
-		Content:        randomString,
-		ConversationId: conversationId,
-	}
 
 	resultBot := configs.DB.Create(&messageBot)
 

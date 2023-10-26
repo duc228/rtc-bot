@@ -7,7 +7,7 @@ import useAuthStore from "../../../stores/useAuthStore";
 type NavbarLandingProps = {};
 
 export const NavbarLanding = ({}: NavbarLandingProps) => {
-  const { isAuthenticated } = useAuthStore();
+  const { isAuthenticated, logout } = useAuthStore();
   return (
     <nav className="w-full h-[70px] sticky border-b-2 border-slate-100">
       <div className="container flex justify-between h-full py-2">
@@ -32,12 +32,21 @@ export const NavbarLanding = ({}: NavbarLandingProps) => {
         </div>
         <div className="h-full flex items-center">
           {isAuthenticated ? (
-            <Link
-              to={AppRoutes.CHAT}
-              className="bg-mainbg hover:bg-[#dd3333] text-white px-4 py-2 text-sm font-bold rounded-lg"
-            >
-              Chat với bot
-            </Link>
+            <div className="flex gap-2">
+              <Link
+                to={AppRoutes.CHAT}
+                className="bg-mainbg hover:bg-[#dd3333] text-white px-4 py-2 text-sm font-bold rounded-lg"
+              >
+                Chat với bot
+              </Link>
+
+              <button
+                onClick={() => logout()}
+                className="bg-slate-100 border-none px-4 py-2 rounded-lg hover:bg-slate-200"
+              >
+                Đăng xuất
+              </button>
+            </div>
           ) : (
             <Link
               to={AppRoutes.LOGIN}

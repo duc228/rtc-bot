@@ -37,7 +37,7 @@ export const SideBarHeader = () => {
       >
         <PlusIcon className="h-4 w-4 text-mainbg" />
 
-        <span className="normal-case ml-3 text-mainbg">New Chat</span>
+        <span className="normal-case ml-3 text-mainbg">Tạo mới</span>
       </Button>
       {/* <Button variant="text" className="h-full pr-3 min-w-fit">
           <AdjustmentsHorizontalIcon className="h-5 w-5 " />
@@ -78,14 +78,14 @@ const SideBarFooter = () => {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
         <MenuItem
           onClick={() => {
             handleClose();
             logout();
           }}
         >
-          Logout
+          Đăng Xuất
         </MenuItem>
       </Menu>
     </div>

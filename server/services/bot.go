@@ -51,7 +51,7 @@ func CallBot(sender string, message string) []dto.BotResponse {
 		fmt.Println("Error decoding JSON:", err)
 	}
 
-	fmt.Printf("\nhiii %v\n", response[0].Text)
+	// fmt.Printf("\nhiii %v\n", response[0].Text)
 
 	return response
 

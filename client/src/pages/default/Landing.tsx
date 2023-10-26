@@ -3,10 +3,12 @@ import ImgSec2 from "../../assets/imgs/chatbot-faq-example-browser.png";
 import { SectionFirstNews } from "../../features/home/components";
 import { AppRoutes } from "../../routes/router";
 import { Link } from "react-router-dom";
+import useAuthStore from "../../stores/useAuthStore";
 
 type LandingPageProps = {};
 
 const LandingPage = ({}: LandingPageProps) => {
+  const { isAuthenticated } = useAuthStore();
   return (
     <div>
       <section className="flex">
@@ -18,7 +20,7 @@ const LandingPage = ({}: LandingPageProps) => {
             Chatbot hỗ trợ tư vấn tuyển sinh{" "}
           </p>
           <Link
-            to={AppRoutes.LOGIN}
+            to={isAuthenticated ? AppRoutes.CHAT : AppRoutes.LOGIN}
             className="bg-mainbg hover:bg-[#dd3333] text-white px-6 py-2 text-md font-bold rounded-lg"
           >
             Hỗ trợ tư vấn tại đây

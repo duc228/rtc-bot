@@ -12,4 +12,4 @@ RUN rasa train nlu
 
 USER 1001
 
-CMD rasa run --enable-api --cors="*"
+CMD rasa run --enable-api --cors="*" & rasa run actions
