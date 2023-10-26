@@ -68,15 +68,16 @@ export const SignUpForm = ({}: SignUpProps) => {
         {...register("password")}
         disableUnderline={true}
       />
-      <Button
+      <button
         type="submit"
-        variant="contained"
         disabled={isLoading}
-        className="btn bg-mainbg  hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full flex items-center gap-2"
+        className="btn bg-mainbg hover:bg-sky-600 rounded-lg hover:shadow-none shadow-none px-4 py-2 w-full gap-2"
       >
         {isLoading ? <CircularProgress color="inherit" size={20} /> : <></>}
-        <span className="text-[1rem] normal-case text-white">Dăng Ký</span>
-      </Button>
+        <span className="text-[1rem] normal-case text-white text-center">
+          Đăng Ký
+        </span>
+      </button>
       {message ? (
         <p className="italic text-red-500 text-sm">{message}</p>
       ) : (

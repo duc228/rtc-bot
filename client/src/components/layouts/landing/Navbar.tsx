@@ -17,17 +17,36 @@ export const NavbarLanding = ({}: NavbarLandingProps) => {
         <div className="h-full flex gap-8">
           <ul className="uppercase h-full text-gray-500 text-[13px] font-semibold flex gap-8 items-center">
             <li>
-              <Link to={AppRoutes.HOME} className="hover:text-blue-500">
+              <Link
+                to={AppRoutes.HOME}
+                className="text-blue-500 hover:text-blue-500"
+              >
                 TRANG CHỦ
               </Link>
             </li>
-            <li>TUYỂN SINH </li>
-            <li>Giới thiệu</li>
-            <li>Giảng viên</li>
-            <li>Liên hệ</li>
+            <li>
+              <Link to={AppRoutes.HOME} className="hover:text-blue-500">
+                TUYỂN SINH
+              </Link>
+            </li>
+            <li>
+              <Link to={AppRoutes.HOME} className="hover:text-blue-500">
+                Giới thiệu
+              </Link>
+            </li>
+            <li>
+              <Link to={AppRoutes.HOME} className="hover:text-blue-500">
+                Giảng viên
+              </Link>
+            </li>
+            <li>
+              <Link to={AppRoutes.HOME} className="hover:text-blue-500">
+                Liên hệ
+              </Link>
+            </li>
           </ul>
           <div className=" h-full flex items-center">
-            <MagnifyingGlassIcon className="h-5 w-5 font-bold cursor-pointer" />
+            <MagnifyingGlassIcon className="h-5 w-5 font-bold cursor-pointer hover:text-blue-500" />
           </div>
         </div>
         <div className="h-full flex items-center">

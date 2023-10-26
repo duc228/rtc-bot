@@ -66,7 +66,7 @@ export const LoginForm = ({}: LoginFormProps) => {
       <button
         type="submit"
         // variant="contained"
-        className="btn bg-mainbg text-white hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full "
+        className="btn bg-mainbg rounded-md text-white hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full "
       >
         <span className="text-[1rem] normal-case">Đăng Nhập</span>
       </button>
