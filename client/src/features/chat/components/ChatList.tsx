@@ -43,7 +43,10 @@ export const ChatList = ({}: ChatListProps) => {
   }, [data]);
 
   return (
-    <div className="h-full overflow-y-auto px-2" id="scrollableDiv">
+    <div
+      className="h-full flex flex-col-reverse overflow-y-auto px-2"
+      id="scrollableDiv"
+    >
       <InfiniteScroll
         dataLength={conversations.length}
         next={fetchNextPage}
@@ -55,6 +58,7 @@ export const ChatList = ({}: ChatListProps) => {
           </p>
         }
         scrollableTarget="scrollableDiv"
+        // className="flex flex-col-reverse"
       >
         {conversations.map((conversation, index) => (
           <ChatItem key={index} conversation={conversation} />

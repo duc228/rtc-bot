@@ -82,7 +82,7 @@ export const MessageBody = ({}: MessageBodyProps) => {
       endMessage={<></>}
       scrollableTarget="scrollMessage"
       inverse={true}
-      className="flex flex-col-reverse gap-2 sm:w-[800px] mx-auto"
+      className="flex flex-col-reverse gap-2 sm:w-[800px] mx-auto w-full !overflow-x-hidden"
     >
       <div ref={messagesEndRef} />
 
