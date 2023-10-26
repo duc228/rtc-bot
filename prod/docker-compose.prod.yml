@@ -38,20 +38,20 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=abc
       - MYSQL_DATABASE=rtc_db
-  bot:
-    build:
-      context: ../bot
-      dockerfile: ./Dockerfile
-    image: duc/rtc_bot_prod
-    container_name: rtc_bot_prod
-    ports:
-      - 5005:5005
-    expose:
-      - 5005
-    volumes:
-      - ./bot:/app
-    depends_on:
-      - db
+  # bot:
+  #   build:
+  #     context: ../bot
+  #     dockerfile: ./Dockerfile
+  #   image: duc/rtc_bot_prod
+  #   container_name: rtc_bot_prod
+  #   ports:
+  #     - 5005:5005
+  #   expose:
+  #     - 5005
+  #   volumes:
+  #     - ./bot:/app
+  #   depends_on:
+  #     - db
   nginx:
     build:
       context: ../nginx
