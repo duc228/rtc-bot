@@ -47,7 +47,7 @@ export const LoginForm = ({}: LoginFormProps) => {
 
   return (
     <form
-      className="w-full flex flex-col gap-4"
+      className="w-full flex flex-col gap-4 "
       onSubmit={handleSubmit(onSubmit)}
     >
       <Input

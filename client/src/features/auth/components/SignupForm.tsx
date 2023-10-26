@@ -72,10 +72,10 @@ export const SignUpForm = ({}: SignUpProps) => {
         type="submit"
         variant="contained"
         disabled={isLoading}
-        className="btn bg-sky-500 hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full flex items-center gap-2"
+        className="btn bg-mainbg  hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full flex items-center gap-2"
       >
         {isLoading ? <CircularProgress color="inherit" size={20} /> : <></>}
-        <span className="text-[1rem] normal-case">Dăng Ký</span>
+        <span className="text-[1rem] normal-case text-white">Dăng Ký</span>
       </Button>
       {message ? (
         <p className="italic text-red-500 text-sm">{message}</p>

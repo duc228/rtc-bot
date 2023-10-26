@@ -1,6 +1,8 @@
 import BotImg from "../../assets/imgs/chatbot.png";
 import ImgSec2 from "../../assets/imgs/chatbot-faq-example-browser.png";
 import { SectionFirstNews } from "../../features/home/components";
+import { AppRoutes } from "../../routes/router";
+import { Link } from "react-router-dom";
 
 type LandingPageProps = {};
 
@@ -15,9 +17,12 @@ const LandingPage = ({}: LandingPageProps) => {
           <p className="text-[#dd3333] font-bold text-3xl my-10">
             Chatbot hỗ trợ tư vấn tuyển sinh{" "}
           </p>
-          <button className="bg-mainbg hover:bg-[#dd3333] text-white px-6 py-2 text-md font-bold rounded-lg">
+          <Link
+            to={AppRoutes.LOGIN}
+            className="bg-mainbg hover:bg-[#dd3333] text-white px-6 py-2 text-md font-bold rounded-lg"
+          >
             Hỗ trợ tư vấn tại đây
-          </button>
+          </Link>
         </div>
       </section>
       <section className="flex container justify-between">

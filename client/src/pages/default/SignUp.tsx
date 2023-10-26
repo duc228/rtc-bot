@@ -6,7 +6,7 @@ type SignUpPageProps = {};
 
 const SignUpPage = ({}: SignUpPageProps) => {
   return (
-    <div className="w-full sm:w-[350px] md:w-[440px]">
+    <div className="w-full sm:w-[350px] md:w-[440px] mt-20">
       <h3 className="font-bold text-black text-3xl text-center">
         Tạo tài khoản mới
       </h3>

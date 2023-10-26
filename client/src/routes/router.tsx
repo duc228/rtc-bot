@@ -5,7 +5,7 @@ const DefaultLayout = lazy(
   () => import("../components/layouts/default/DefaultLayout")
 );
 const AuthLayout = lazy(() => import("../components/layouts/auth/AuthLayout"));
-const HomeLayout = lazy(() => import("../components/layouts/home/HomeLayout"));
+// const HomeLayout = lazy(() => import("../components/layouts/home/HomeLayout"));
 const LandingLayout = lazy(
   () => import("../components/layouts/landing/LandingLayout")
 );
@@ -31,7 +31,7 @@ export const routes = [
   {
     protected: false,
     isLangding: false,
-    element: <HomeLayout />,
+    element: <LandingLayout />,
     children: [
       {
         protected: false,

@@ -2,10 +2,12 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import PtitLogo from "../../../assets/imgs/ptit-logo.png";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../../../routes/router";
+import useAuthStore from "../../../stores/useAuthStore";
 
 type NavbarLandingProps = {};
 
 export const NavbarLanding = ({}: NavbarLandingProps) => {
+  const { isAuthenticated } = useAuthStore();
   return (
     <nav className="w-full h-[70px] sticky border-b-2 border-slate-100">
       <div className="container flex justify-between h-full py-2">
@@ -29,12 +31,21 @@ export const NavbarLanding = ({}: NavbarLandingProps) => {
           </div>
         </div>
         <div className="h-full flex items-center">
-          <Link
-            to={AppRoutes.LOGIN}
-            className="bg-mainbg hover:bg-[#dd3333] text-white px-4 py-2 text-sm font-bold rounded-lg"
-          >
-            Đăng Nhập
-          </Link>
+          {isAuthenticated ? (
+            <Link
+              to={AppRoutes.CHAT}
+              className="bg-mainbg hover:bg-[#dd3333] text-white px-4 py-2 text-sm font-bold rounded-lg"
+            >
+              Chat với bot
+            </Link>
+          ) : (
+            <Link
+              to={AppRoutes.LOGIN}
+              className="bg-mainbg hover:bg-[#dd3333] text-white px-4 py-2 text-sm font-bold rounded-lg"
+            >
+              Đăng Nhập
+            </Link>
+          )}
         </div>
       </div>
     </nav>
