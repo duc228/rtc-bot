@@ -1,7 +1,7 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: chao_hoi
   examples: |
     - hey
     - hello
@@ -12,30 +12,105 @@ nlu:
     - chào ad
     - bắt đầu
     - bat dau
+    - chào bạn
+    - Chào bạn
+    - chào cậu
+    - chào đồng chí
+    - chào em
+    - chào anh
+    - chào mày
+    - hello mày
+    - alo mày
+    - alo bạn eiii
+    - này bạn eii
+    - ê thằng kia
+    - ê mày
+    - ê mài
+    - ê bạn eii
+    - ee banj eeii
+    - ê bạn êii
+    - này thằng kia
+    - bạn ei
+    - hú
+    - bot ơi dậy đi
 
-- intent: goodbye
+- intent: tam_biet
   examples: |
     - bye
     - bai
     - hẹn gặp lại
     - tạm biệt
 
-- intent: affirm
+- intent: xac_nhan
   examples: |
     - đúng vậy
     - đúng thế
     - chính xác
     - đúng rồi
     - chuẩn luôn
+     - indeed
+    - of course
+    - that sounds good
+    - correct
+    - okela :v
+    - Okela
+    - oke la 
+    - chính xác
+    - dĩ nhiên
+    - chứ còn gì nữa
+    - đương nhiên
+    - rõ ràng
+    - quá đúng
+    - chuẩn xác luôn
+    - không thể chính xác hơn được nữa
+    - hoàn toàn đúng
+    - đúng
+    - ok
+    - chuẩn quá ta
+    - oke
+    - đúng ời
+    - đúng ròi
+    - chuẩn nha
+    - chuẩn
+    - ok đúng
+    - ok good
+    - Ok
+    - Ô khê
+    - Ô kê
+    - Ô sờ kê
+    - ô khê
+    - okei
+    - Ok chờ xí 
+    - Ok đợi chút để suy nghĩ đã 
+    - Ok nè đợi tí 
+    - okay đợi t suy nghĩ chút 
+    - Okei
+    - OK
+    - QUÁ CHUẨN
+    - QUÁ CHÍNH XÁC
+    - DCM CHUẨN THẾ
+    - GOOD VÃI LZZ
+    - ĐỈNH VÃI
+    - QUÁ ĐÚNG LUÔN NGƯỜI ANH EM
+    - Ok bot 
+    - OK Bot 
+    - okay bot nha 
+    - rùi ok 
+    - Rùi ok nè 
+    - Ok nha 
+    - Ok đợi t nghĩ cái nha 
+    - ok để suy nghĩ xem 
+    - Có
 
-- intent: thanks
+- intent: cam_on
   examples: |
     - cảm ơn
     - thankyou
     - thanks
     - cảm ơn nhiều
+    - cam on
 
-- intent: deny
+- intent: tu_choi
   examples: |
     - no
     - ko
@@ -51,39 +126,39 @@ nlu:
     - chưa chốt được
     - đang suy nghĩ
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+# - intent: mood_great
+#   examples: |
+#     - perfect
+#     - great
+#     - amazing
+#     - feeling like a king
+#     - wonderful
+#     - I am feeling very good
+#     - I am great
+#     - I am amazing
+#     - I am going to save the world
+#     - super stoked
+#     - extremely good
+#     - so so perfect
+#     - so good
+#     - so perfect
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+# - intent: mood_unhappy
+#   examples: |
+#     - my day was horrible
+#     - I am sad
+#     - I don't feel very well
+#     - I am disappointed
+#     - super sad
+#     - I'm so sad
+#     - sad
+#     - very sad
+#     - unhappy
+#     - not good
+#     - not very good
+#     - extremly sad
+#     - so saad
+#     - so sad
 
 - intent: bot_challenge
   examples: |
@@ -92,69 +167,69 @@ nlu:
     - bạn là ai
     - có phải bot ko?
     - bạn là bot hay người
-    - bạn giúp được gì
-    - nhiệm vụ của bạn là gì
-
-- intent: detail_helper
+- intent: hoi_chuc_nang
   examples: |
     - cụ thể là bạn giúp được gì?
     - nói rõ hơn được không
     - mình chưa hiểu lắm
     - vẫn mông lung quá
     - cụ là những vấn đề gì
+    - bạn giúp được gì
+    - nhiệm vụ của bạn là gì
 
-- intent: ask_school_id
-  examples: |
-    - Cho mình hỏi mã trường được không
-    - Mã trường
-    - Mã trường là gì
-- intent: require_branch
-  examples: |
-    - Cho mình hỏi ở [bắc](branch)
-    - Cho mình hỏi ở [nam](branch)
-    - mình muốn hỏi ở [bac](branch)
-    - mình muốn biết ở [nam](branch)
-    - ở [nam](branch) ạ
-    - [nam](branch)
-    - [bac](branch)
-- intent: ask_majors_school
-  examples: |
-    - các ngành đào tạo
-    - trường đào tạo những ngành nào
-- intent: ask_num_joins
-  examples: |
-    - trường có mấy phương thức tuyển sinh
-    - có mấy hình thức tuyển sinh
-    - có bao nhiêu phương thức tuyển sinh
-    - số hình thức tuyển sinh
-- intent: ask_how_joins
-  examples: |
-    - Các phương thức tuyển sinh là gì
-    - nêu các hình thức tuyển sinh
-    - các phương thức tuyển sinh của trường
-- intent: ask_time_learning
-  examples: |
-    - Thời gian học
-    - thời gian đào tạo bao lâu
-    - Học mấy năm
-- intent: ask_time_learning_detail
-  examples: |
-    - thời gian học ngành [cntt](major)
-    - học ngành [cntt](major) trong bao lâu
-    - học mấy năm thì tốt nghiệp
-- lookup: major
-  examples: |
-    - cntt
-    - công nghệ thông tin
-    - cong nghe thong tin
-    - điện tử viễn thông
-    - điện, điện tử
-    - iot
-    - marketing
-    - kế toán
-    - an toàn thông tin
-- intent: ask_point
-  examples: |
-    - điểm chuẩn năm nay
-    - điểm chuẩn
-    - có điểm chuẩn chưa
+
+# - intent: ask_school_id
+#   examples: |
+#     - Cho mình hỏi mã trường được không
+#     - Mã trường
+#     - Mã trường là gì
+# - intent: require_branch
+#   examples: |
+#     - Cho mình hỏi ở [bắc](branch)
+#     - Cho mình hỏi ở [nam](branch)
+#     - mình muốn hỏi ở [bac](branch)
+#     - mình muốn biết ở [nam](branch)
+#     - ở [nam](branch) ạ
+#     - [nam](branch)
+#     - [bac](branch)
+# - intent: ask_majors_school
+#   examples: |
+#     - các ngành đào tạo
+#     - trường đào tạo những ngành nào
+# - intent: ask_num_joins
+#   examples: |
+#     - trường có mấy phương thức tuyển sinh
+#     - có mấy hình thức tuyển sinh
+#     - có bao nhiêu phương thức tuyển sinh
+#     - số hình thức tuyển sinh
+# - intent: ask_how_joins
+#   examples: |
+#     - Các phương thức tuyển sinh là gì
+#     - nêu các hình thức tuyển sinh
+#     - các phương thức tuyển sinh của trường
+# - intent: ask_time_learning
+#   examples: |
+#     - Thời gian học
+#     - thời gian đào tạo bao lâu
+#     - Học mấy năm
+# - intent: ask_time_learning_detail
+#   examples: |
+#     - thời gian học ngành [cntt](major)
+#     - học ngành [cntt](major) trong bao lâu
+#     - học mấy năm thì tốt nghiệp
+# - lookup: major
+#   examples: |
+#     - cntt
+#     - công nghệ thông tin
+#     - cong nghe thong tin
+#     - điện tử viễn thông
+#     - điện, điện tử
+#     - iot
+#     - marketing
+#     - kế toán
+#     - an toàn thông tin
+# - intent: ask_point
+#   examples: |
+#     - điểm chuẩn năm nay
+#     - điểm chuẩn
+#     - có điểm chuẩn chưa

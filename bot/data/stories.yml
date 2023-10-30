@@ -4,34 +4,34 @@ stories:
 
 - story: happy path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: chao_hoi
+  - action: utter_chao_hoi
+  # - intent: mood_great
+  # - action: utter_happy
 
-- story: happy ask joins
-  steps:
-  - intent: ask_num_joins
-  - action: utter_ask_num_joins
-  - intent: ask_how_joins
-  - action: action_get_all_joins
+# - story: happy ask joins
+#   steps:
+#   - intent: ask_num_joins
+#   - action: utter_ask_num_joins
+#   - intent: ask_how_joins
+#   - action: action_get_all_joins
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+# - story: sad path 1
+#   steps:
+#   - intent: chao_hoi
+#   - action: utter_chao_hoi
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: xac_nhan
+#   - action: utter_happy
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+# - story: sad path 2
+#   steps:
+#   - intent: chao_hoi
+#   - action: utter_chao_hoi
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: tu_choi
+#   - action: utter_tam_biet

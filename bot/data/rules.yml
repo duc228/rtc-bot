@@ -2,80 +2,82 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: noi tam biet voi nguoi dung
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: tam_biet
+  - action: utter_tam_biet
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: tra loi co phai bot khong
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Ask detail helper
+- rule: cam on
   steps:
-  - intent: detail_helper
-  - action: utter_detail_helper
+  - intent: cam_on
+  - action: utter_cam_on
 
-- rule: thank support
+- rule: hoi chuc nang
   steps:
-  - intent: thanks
-  - action: utter_thanks
+  - intent: hoi_chuc_nang
+  - action: utter_hoi_chuc_nang
 
-- rule: ask school id
-  steps:
-  - intent: ask_school_id
-  - action: request_school_id_form
-  - active_loop: request_school_id_form
 
-- rule: submit branch
-  condition:
-    - active_loop: request_school_id_form
-  steps:
-    - action: request_school_id_form
-    - active_loop: null
-    - slot_was_set:
-      - requested_slot: null
-    - action: action_school_id
-    - action: action_reset_all_slots
 
-- rule: submit major to request time learning
-  condition:
-    - active_loop: request_time_learning_major_form
-  steps:
-    - action: request_time_learning_major_form
-    - active_loop: null
-    - slot_was_set:
-        - requested_slot: null
-    - action: action_get_time_learning_major
-    - action: action_reset_all_slots
+# - rule: ask school id
+#   steps:
+#   - intent: ask_school_id
+#   - action: request_school_id_form
+#   - active_loop: request_school_id_form
 
-- rule: ask all majors
-  steps:
-    - intent: ask_majors_school
-    - action: action_get_all_majors
-- rule: ask num of joins
-  steps:
-    - intent: ask_num_joins
-    - action: utter_ask_num_joins
+# - rule: submit branch
+#   condition:
+#     - active_loop: request_school_id_form
+#   steps:
+#     - action: request_school_id_form
+#     - active_loop: null
+#     - slot_was_set:
+#       - requested_slot: null
+#     - action: action_school_id
+#     - action: action_reset_all_slots
 
-- rule: ask how to joins
-  steps:
-    - intent: ask_how_joins
-    - action: action_get_all_joins
+# - rule: submit major to request time learning
+#   condition:
+#     - active_loop: request_time_learning_major_form
+#   steps:
+#     - action: request_time_learning_major_form
+#     - active_loop: null
+#     - slot_was_set:
+#         - requested_slot: null
+#     - action: action_get_time_learning_major
+#     - action: action_reset_all_slots
 
-- rule: ask time learning
-  steps:
-    - intent: ask_time_learning
-    - action: utter_ask_time_learning
+# - rule: ask all majors
+#   steps:
+#     - intent: ask_majors_school
+#     - action: action_get_all_majors
+# - rule: ask num of joins
+#   steps:
+#     - intent: ask_num_joins
+#     - action: utter_ask_num_joins
 
-- rule: ask_point
-  steps:
-    - intent: ask_point
-    - action: action_get_all_points
+# - rule: ask how to joins
+#   steps:
+#     - intent: ask_how_joins
+#     - action: action_get_all_joins
 
-- rule: ask time learning detail
-  steps:
-    - intent: ask_time_learning_detail
-    - action: action_get_time_learning_major
-    - action: action_reset_all_slots
+# - rule: ask time learning
+#   steps:
+#     - intent: ask_time_learning
+#     - action: utter_ask_time_learning
+
+# - rule: ask_point
+#   steps:
+#     - intent: ask_point
+#     - action: action_get_all_points
+
+# - rule: ask time learning detail
+#   steps:
+#     - intent: ask_time_learning_detail
+#     - action: action_get_time_learning_major
+#     - action: action_reset_all_slots

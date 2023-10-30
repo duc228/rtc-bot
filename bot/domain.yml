@@ -1,69 +1,69 @@
 version: "3.1"
 
 intents:
-  - greet
+  - chao_hoi
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
+  - xac_nhan
+  - tu_choi
+  # - mood_unhappy
   - bot_challenge
-  - thanks
-  - detail_helper
-  - ask_school_id
-  - require_branch
-  - request_school_id_form
-  - ask_majors_school
-  - ask_num_joins
-  - ask_how_joins
-  - ask_time_learning
-  - ask_time_learning_detail
-  - ask_point
+  - cam_on
+  - hoi_chuc_nang
+  # - ask_school_id
+  # - require_branch
+  # - request_school_id_form
+  # - ask_majors_school
+  # - ask_num_joins
+  # - ask_how_joins
+  # - ask_time_learning
+  # - ask_time_learning_detail
+  # - ask_point
 
-entities:
-  - branch
-  - major
+# entities:
+#   - branch
+#   - major
 
-slots:
-  branch:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: branch
-  major:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: major
+# slots:
+#   branch:
+#     type: text
+#     influence_conversation: true
+#     mappings:
+#     - type: from_entity
+#       entity: branch
+#   major:
+#     type: text
+#     influence_conversation: true
+#     mappings:
+#       - type: from_entity
+#         entity: major
 
-forms:
-  request_school_id_form:
-    required_slots:
-      - branch
-  request_time_learning_major_form:
-    required_slots:
-      - major
+# forms:
+#   request_school_id_form:
+#     required_slots:
+#       - branch
+#   request_time_learning_major_form:
+#     required_slots:
+#       - major
 
-actions:
-  - action_school_id
-  - validate_request_school_id_form
-  - action_reset_all_slots
-  - action_get_all_majors
-  - action_get_all_joins
-  - action_get_time_learning_major
-  - action_get_all_points
-  - validate_request_time_learning_major_form
+# actions:
+#   - action_school_id
+#   - validate_request_school_id_form
+#   - action_reset_all_slots
+#   - action_get_all_majors
+#   - action_get_all_joins
+#   - action_get_time_learning_major
+#   - action_get_all_points
+#   - validate_request_time_learning_major_form
 
 responses:
-  utter_greet:
+  utter_chao_hoi:
   - text: "Xin chào! Bạn khỏe không?"
   - text: "Chào bạn, hôm nay bạn thế nào?"
 
-  utter_thanks:
+  utter_cam_on:
   - text: "Không có gì"
   - text: "Rất vui khi hỗ trợ bạn"
+  - text: "Rất vui khi giúp được bạn. Nếu có thắc mắc gì, bạn có thể hỏi tiếp"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -73,9 +73,11 @@ responses:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: Tuyệt vời, cố gắng phát huy nhé!
+  - text: Bạn giỏi thật đó!
+  - text: Hoàn hảo luôn
 
-  utter_goodbye:
+  utter_tam_biet:
   - text: "Bye"
   - text: "Tạm biệt, hẹn gặp lại bạn sau"
   - text: "Chào bạn nha"
@@ -85,20 +87,29 @@ responses:
   - text: "Tôi là chatbot hỗ trợ tư vấn tuyển sinh của Học viện Công nghệ Bưu chính Viễn thông"
   - text: "Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về tuyển sinh của Học viện Công nghệ Bưu chính Viễn thông"
 
-  utter_detail_helper:
-  - text: "Các vấn đề cụ thể trong việc tuyển sinh tôi có thể hỗ trợ như:\n - Mã trường\n - Chỉ tiêu dự kiến\n - Điểm chuẩn\n - Phương thức tuyển sinh\n - Chính sách học bổng\n - Thủ tục nhập học"
+  utter_hoi_chuc_nang:
+  - text:  |-
+      Tôi có thể hỗ trợ trả lời các thông tin liên quan tới quản lý đào tạo của Học viện như:
+      - Các ngành đào tạo
+      - Phương thức tuyển sinh
+      - Chương trình đào tạo
+      - Khoa quản lý
+      - Đội ngũ giảng viên
+      - Điều kiện tốt nghiệp
+      - Học phí (5 năm gần nhất)
+ 
 
-  utter_ask_branch:
-  - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"
-  - text: "Mỗi cơ sở sẽ có mã trường khác nhau, bạn muốn biết ở nam hay bắc"
-  - text: "Có hai cơ sở chính ở nam và bắc, bạn muốn biết ở đâu"
+  # utter_ask_branch:
+  # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"
+  # - text: "Mỗi cơ sở sẽ có mã trường khác nhau, bạn muốn biết ở nam hay bắc"
+  # - text: "Có hai cơ sở chính ở nam và bắc, bạn muốn biết ở đâu"
 
-  utter_ask_num_joins:
-  - text: "Trường có 4 phương thức tuyển sinh"
-  - text: "Hiện tại có tất cả 4 phương thức tuyển sinh khác nhau"
+  # utter_ask_num_joins:
+  # - text: "Trường có 4 phương thức tuyển sinh"
+  # - text: "Hiện tại có tất cả 4 phương thức tuyển sinh khác nhau"
 
-  utter_ask_time_learning:
-  - text: "Đối với các ngành kinh tế như Marketing, kế toán, quản trị kinh doanh,... sẽ được đào tạo trong 4 năm. Các ngành kĩ thuật như Công nghệ thông tin, an toàn thông tin, điện tử đào tạo trong 4.5 nâm"
+  # utter_ask_time_learning:
+  # - text: "Đối với các ngành kinh tế như Marketing, kế toán, quản trị kinh doanh,... sẽ được đào tạo trong 4 năm. Các ngành kĩ thuật như Công nghệ thông tin, an toàn thông tin, điện tử đào tạo trong 4.5 nâm"
 
 session_config:
   session_expiration_time: 60
