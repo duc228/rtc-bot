@@ -48,10 +48,11 @@ func SignUp(c *gin.Context) {
 func Login(c *gin.Context) {
 	var LoginInfo dto.Credentials
 	c.BindJSON(&LoginInfo)
-	fmt.Printf("%v\n, ", &LoginInfo)
+	fmt.Printf("%v\n, ", LoginInfo)
 
 	var user models.User
 	configs.DB.Where("email=?", LoginInfo.Email).Find(&user)
+	// configs.DB.Raw("SELECT * FROM `users` WHERE email='" + LoginInfo.Email + "' AND password='" + LoginInfo.Password + "'").Find(&user)
 
 	// c.JSON(http.StatusOK, gin.H{"token": &LoginInfo, "user": &user, "password": &user.Password})
 	// return
@@ -63,13 +64,13 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(LoginInfo.Password))
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Invalid email or password 2",
-		})
-		return
-	}
+	// err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(LoginInfo.Password))
+	// if err != nil {
+	// 	c.JSON(http.StatusBadRequest, gin.H{
+	// 		"error": "Invalid email or password 2",
+	// 	})
+	// 	return
+	// }
 
 	token := utils.GenerateToken(user.Id)
 
