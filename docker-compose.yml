@@ -64,5 +64,5 @@ services:
     ports:
       - 80:80
     depends_on:
-      # - server
+      - server
       - client

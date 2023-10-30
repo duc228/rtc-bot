@@ -6,10 +6,12 @@ RUN pip install --upgrade pip
 
 RUN pip install rasa
 
+# CMD tail -f /dev/null
+
 COPY . .
 
-RUN rasa train nlu
+RUN chmod +x entrypoint.sh
 
-USER 1001
+CMD rasa run actions & rasa run  --enable-api --cors "*" --debug
 
-CMD rasa run --enable-api --cors="*" & rasa run actions
+# CMD rasa train & rasa run actions & rasa run  --enable-api --cors "*" --debug
