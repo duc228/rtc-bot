@@ -176,7 +176,14 @@ nlu:
     - cụ là những vấn đề gì
     - bạn giúp được gì
     - nhiệm vụ của bạn là gì
-
+- intent: hoi_nganh_dao_tao
+  examples: |
+    - Thế trường đào tạo ngành nào
+    - Các ngành đào tạo của trường là gì
+    - các ngành đào tạo
+    - cac nganh dao tao
+    - truong dao tao nganh nao
+    - cac nganh dao tao cua truong
 
 # - intent: ask_school_id
 #   examples: |

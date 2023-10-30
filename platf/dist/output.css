@@ -439,7 +439,30 @@ html {
 }
 
 body {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 1024px) {
+    .container {
+      width: 940px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container {
+      width: 1024px;
+    }
+  }
+  @media (min-width: 1536px) {
+    .container {
+      width: 1370px;
+    }
+  }
 }
+
+/* .container {
+    @apply xl:w-[1024px] lg:w-[940px] mx-auto;
+  } */
 
 ::-webkit-scrollbar {
   width: 0.7rem;
@@ -470,7 +493,7 @@ body {
 @font-face {
   font-family: "Open Sans";
 
-  src: url("./assets/fonts/OpenSans-Light.ttf");
+  src: url("../fonts/OpenSans-Light.ttf");
 
   font-weight: 300;
 }
@@ -478,7 +501,7 @@ body {
 @font-face {
   font-family: "Open Sans";
 
-  src: url("./assets/fonts/OpenSans-Regular.ttf");
+  src: url("../fonts/OpenSans-Regular.ttf");
 
   font-weight: 400;
 }
@@ -486,7 +509,7 @@ body {
 @font-face {
   font-family: "Open Sans";
 
-  src: url("./assets/fonts/OpenSans-Medium.ttf");
+  src: url("../fonts/OpenSans-Medium.ttf");
 
   font-weight: 500;
 }
@@ -494,7 +517,7 @@ body {
 @font-face {
   font-family: "Open Sans";
 
-  src: url("./assets/fonts/OpenSans-Bold.ttf");
+  src: url("../fonts/OpenSans-Bold.ttf");
 
   font-weight: 700;
 }
@@ -502,7 +525,7 @@ body {
 @font-face {
   font-family: "Open Sans";
 
-  src: url("./assets/fonts/OpenSans-ExtraBold.ttf");
+  src: url("../fonts/OpenSans-ExtraBold.ttf");
 
   font-weight: 800;
 }
