@@ -162,10 +162,6 @@ nlu:
 - intent: hoi_chuc_nang
   examples: |
     - cụ thể là bạn giúp được gì?
-    - nói rõ hơn được không
-    - mình chưa hiểu lắm
-    - vẫn mông lung quá
-    - cụ là những vấn đề gì
     - bạn giúp được gì
     - nhiệm vụ của bạn là gì
 
@@ -248,7 +244,54 @@ nlu:
     - học cntt có thể làm những công việc nào
     - học cntt có thể làm những công việc gì
 
+- intent: cntt_ma_nganh
+  examples: |
+    - ma nganh [cntt](nganh)
+    - mã ngành [IT](nganh)
+    - ma nganh [CNTT](nganh)
+    - ma nganh [cong nghe thong tin](nganh)
+    - ma nganh [công nghệ thông tin](nganh)
+    - ma nganh [CÔNG NGHỆ THÔNG TIN](nganh)
+    - ma nganh [it](nganh)
+
+- intent: cntt_chuong_trinh_dao_tao
+  examples: |
+    - chuong trinh dao tao [cntt](nganh)
+    - Cho em hỏi về chương trình đào tạo ngành [công nghệ thông tin](nganh) ạ
+    - cho em hoi chuong trinh dao tao nganh [cong nghe thông tin](nganh)
+    - ctdt [cntt](nganh)
+
+- intent: cntt_hoc_phi
+  examples: |
+    - hoc phi [cntt](nganh)
+    - Cho em hỏi về học phí ngành [công nghệ thông tin](nganh) ạ
+    - cho em hoi hoc phi [cong nghe thông tin](nganh)
+    - học phí ngành [it](nganh)
+    - học phí ngành [công nghệ thông tin](nganh)
+
+- intent: cntt_diem_chuan
+  examples: |
+    - điểm chuẩn ngành [công nghệ thông tin](nganh)
+    - diem chuan nganh [cntt](nganh)
+    - điểm chuẩn ngành [cntt](nganh)
+    - diem chuan nganh [cong nghe thong tin](nganh)
+
+- intent: cntt_khoi
+  examples: |
+    - khối thi ngành [công nghệ thông tin](nganh)
+    - khoi thi nganh [cntt](nganh)
+    - khoi thi nganh [cong nghe thong tin](nganh)
+    - khối thi ngành [cntt](nganh)
+
 ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+- intent: ktdtvt_ktdtvt
+  examples: |
+    - [ktdtvt](nganh)
+    - [Kỹ thuật điện tử viễn thôn](nganh)
+    - [ky thuat dien tu vien thong](nganh)
+    - [dien tu vien thong](nganh)
+    - [Điện tử viễn thông](nganh)
+    - [viễn thông](nganh)
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
 ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
@@ -258,7 +301,17 @@ nlu:
 ######## intent cac cau hoi nganh Kế toán
 ######## intent cac cau hoi hoc bong
 ######## intent cac cau hoi lien quan ve nganh
+# - intent: lq_ma_nganh
+#   examples: |
+#     - ma nganh
+#     - mã ngành
 
+# - intent: lq_chuong_trinh_dao_tao
+#   examples: |
+#     - chuong trinh dao tao
+#     - ctdt
+
+# - intent: 
 
 
 ######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap

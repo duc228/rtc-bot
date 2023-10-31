@@ -36,6 +36,7 @@ rules:
   steps:
   - intent: nganh_dao_tao
   - action: action_nganh_dao_tao
+  - action: utter_chon_nganh
 
 - rule: hoi chuong trinh dao tao 2 mien
   steps:
@@ -67,6 +68,43 @@ rules:
   steps:
   - intent: cntt_tot_nghiep_lam_gi
   - action: utter_cntt_tot_nghiep_lam_gi
+
+- rule: cntt - ma nganh
+  steps:
+  - intent: cntt_ma_nganh
+  - action: utter_cntt_ma_nganh
+
+- rule: cntt - chuong trinh dao tao
+  steps:
+  - intent: cntt_chuong_trinh_dao_tao
+  - action: utter_cntt_chuong_trinh_dao_tao
+
+- rule: cntt - cntt_hoc_phi
+  steps:
+  - intent: cntt_hoc_phi
+  - action: utter_cntt_hoc_phi
+
+- rule: cntt - cntt_diem_chuan
+  steps:
+  - intent: cntt_diem_chuan
+  - action: utter_cntt_diem_chuan
+
+- rule: cntt - cntt_diem_chuan
+  steps:
+  - intent: cntt_diem_chuan
+  - action: utter_cntt_diem_chuan
+
+- rule: cntt - cntt_khoi
+  steps:
+  - intent: cntt_khoi
+  - action: utter_cntt_khoi
+
+
+- rule: ktdtvt - hoi ve ktdtvt
+  steps:
+  - intent: ktdtvt_ktdtvt
+  - action: utter_ktdtvt_ktdtvt
+
 
 # - rule: ask school id
 #   steps:

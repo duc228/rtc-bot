@@ -34,7 +34,13 @@ intents:
 ######## intent cac cau hoi nganh Công nghệ thông tin
   - cntt_cntt
   - cntt_tot_nghiep_lam_gi
+  - cntt_ma_nganh
+  - cntt_chuong_trinh_dao_tao
+  - cntt_hoc_phi
+  - cntt_diem_chuan
+  - cntt_khoi
 ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+  - ktdtvt_ktdtvt
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
 ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
@@ -172,7 +178,18 @@ responses:
 ######## utter cac cau hoi thu tuc nhap hoc
 ######## utter cac cau hoi nganh Công nghệ thông tin
   utter_cntt_cntt:
-  - text:  nganh cntt {nganh}
+  - text: |-
+      Bạn muốn hỏi gì về ngành công nghệ thông tin ở Học viện
+      Dưới đây là một số gợi ý mà mình có thể hỗ trợ
+    buttons:
+      - title: "Mã ngành"
+        payload: /cntt_ma_nganh{"nganh":"cntt"}
+      - title: "Chương trình đào tạo"
+        payload: /cntt_chuong_trinh_dao_tao{"nganh":"cntt"}
+      - title: "Học phí"
+        payload: /cntt_hoc_phi{"nganh":"cntt"}
+      - title: "Điểm chuẩn"
+        payload: /cntt_diem_chuan{"nganh":"cntt"}
    
 
   utter_cntt_tot_nghiep_lam_gi:
@@ -182,7 +199,26 @@ responses:
       - Có thể làm việc trong các dự án với vai trò là người quản trị dự án về công nghệ thông tin;
       - Có thể trở thành cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các Viện, Trung tâm nghiên cứu và các Cơ sở đào tạo;
       - Có thể tiếp tục học tiếp lên trình độ Sau đại học ở trong nước và nước ngoài. 
+
+  utter_cntt_ma_nganh:
+  - text: |-
+      mã ngành công nghệ thông tin là 7480201
+  utter_cntt_chuong_trinh_dao_tao:
+  - text: |-
+      Ngành công nghệ thông tin bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
+  utter_cntt_hoc_phi:
+  - text: |-
+      Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
+  utter_cntt_diem_chuan:
+  - text: |-
+      Điểm chuẩn ngành công nghệ thông tin
+  utter_cntt_khoi:
+  - text: |-
+      utter_cntt_khoi
 ######## utter cac cau hoi nganh Kỹ thuật điện tử viễn thông
+  utter_ktdtvt_ktdtvt:
+  - text: nganh utter_ktdtvt_ktdtvt {nganh}
+   
 ######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
 ######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
 ######## utter cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
@@ -191,6 +227,16 @@ responses:
 ######## utter cac cau hoi nganh Marketing
 ######## utter cac cau hoi nganh Kế toán
 ######## utter cac cau hoi hoc bong
+
+  utter_chon_nganh:
+  - text: |-
+      Chọn ngành bạn muốn tư vấn
+    buttons:
+      - title: "Công nghệ thông tin"
+        payload: /cntt_cntt{"nganh":"cntt"}
+      - title: "Kỹ thuật điện tử viễn thông"
+        payload: /ktdtvt_ktdtvt{"nganh":"ktdtvt"}
+   
 
 ######## utter cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
   utter_tg_dieu_kien_doi_nganh:
