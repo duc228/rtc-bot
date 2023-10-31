@@ -180,17 +180,31 @@ responses:
   utter_cntt_cntt:
   - text: |-
       Bạn muốn hỏi gì về ngành công nghệ thông tin ở Học viện
+    
+    #  Dưới đây là một số gợi ý mà mình có thể hỗ trợ
+    # buttons:
+    #   - title: "Mã ngành"
+    #     payload: /cntt_ma_nganh{{"nganh":"cntt"}}
+    #   - title: "Chương trình đào tạo"
+    #     payload: /cntt_chuong_trinh_dao_tao{{"nganh":"cntt"}}
+    #   - title: "Học phí"
+    #     payload: /cntt_hoc_phi{{"nganh":"cntt"}}
+    #   - title: "Điểm chuẩn"
+    #     payload: /cntt_diem_chuan{{"nganh":"cntt"}}
+  utter_cntt_ho_tro:
+  - text: |-
       Dưới đây là một số gợi ý mà mình có thể hỗ trợ
+
     buttons:
       - title: "Mã ngành"
-        payload: /cntt_ma_nganh{"nganh":"cntt"}
+        payload: '/cntt_ma_nganh{{"nganh":"cntt"}}'
       - title: "Chương trình đào tạo"
-        payload: /cntt_chuong_trinh_dao_tao{"nganh":"cntt"}
+        payload: '/cntt_chuong_trinh_dao_tao{{"nganh":"cntt"}}'
       - title: "Học phí"
-        payload: /cntt_hoc_phi{"nganh":"cntt"}
+        payload: '/cntt_hoc_phi{{"nganh":"cntt"}}'
       - title: "Điểm chuẩn"
-        payload: /cntt_diem_chuan{"nganh":"cntt"}
-   
+        payload: '/cntt_diem_chuan{{"nganh":"cntt"}}'
+    
 
   utter_cntt_tot_nghiep_lam_gi:
   - text: |-

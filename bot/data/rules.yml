@@ -63,6 +63,7 @@ rules:
   steps:
   - intent: cntt_cntt
   - action: utter_cntt_cntt
+  - action: utter_cntt_ho_tro
 
 - rule: cntt - tot nghiep lam viec
   steps:
