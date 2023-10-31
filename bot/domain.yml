@@ -194,7 +194,10 @@ responses:
   utter_cntt_ho_tro:
   - text: |-
       Dưới đây là một số gợi ý mà mình có thể hỗ trợ
-
+      - Mã ngành
+      - Chương trình đào tạo
+      - Học phí
+      - Điểm chuẩn
     buttons:
       - title: "Mã ngành"
         payload: '/cntt_ma_nganh{{"nganh":"cntt"}}'

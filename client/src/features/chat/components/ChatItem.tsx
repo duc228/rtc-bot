@@ -12,8 +12,6 @@ const ChatItem = ({ conversation }: ChatItemProps) => {
   const isCurrentConversation =
     conversation?.id && params?.conversationId === conversation?.id.toString();
 
-  console.log("isCurrentConversation", params, isCurrentConversation);
-
   return (
     <Link
       to={`/chat/${conversation.id}`}

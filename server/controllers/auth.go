@@ -64,13 +64,13 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	// err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(LoginInfo.Password))
-	// if err != nil {
-	// 	c.JSON(http.StatusBadRequest, gin.H{
-	// 		"error": "Invalid email or password 2",
-	// 	})
-	// 	return
-	// }
+	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(LoginInfo.Password))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": "Invalid email or password 2",
+		})
+		return
+	}
 
 	token := utils.GenerateToken(user.Id)
 

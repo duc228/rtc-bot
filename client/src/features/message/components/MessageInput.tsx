@@ -5,28 +5,38 @@ import { AppRoutes } from "../../../routes/router";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createMessage } from "../../../services/message-service";
 import useConversationStore from "../../../stores/useConversationStore";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 type MessageInputProps = {};
 
-type MessageInput = {
+interface MessageInput {
   content: string;
-};
+}
+
+const MessageInputSchema = yup.object({
+  content: yup.string().required().trim(),
+});
 
 export const MessageInput = ({}: MessageInputProps) => {
-  // const { pathname } = useLocation();
-  // const { user } = useAuthStore();
   const { setTempMessage, conversationId, setConversationId } =
     useConversationStore();
 
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  const { register, handleSubmit, setValue } = useForm<MessageInput>();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { isValid },
+  } = useForm<MessageInput>({
+    resolver: yupResolver(MessageInputSchema),
+  });
 
-  const { mutate: createMessageMutation } = useMutation({
+  const { mutate: createMessageMutation, isLoading } = useMutation({
     mutationFn: createMessage,
     onSuccess: (data: any) => {
-      console.log("onSuccess", data, conversationId);
       setTempMessage("");
 
       if (conversationId == -1) {
@@ -42,6 +52,7 @@ export const MessageInput = ({}: MessageInputProps) => {
   });
 
   const onSubmit = (data: MessageInput) => {
+    console.log("data ", data.content);
     setTempMessage(data?.content);
     setValue("content", "");
     createMessageMutation({
@@ -58,13 +69,17 @@ export const MessageInput = ({}: MessageInputProps) => {
       <div className="flex h-12 items-center px-4">
         <input
           autoFocus={true}
-          // disabled={!!tempMessage}
+          disabled={!!isLoading}
           placeholder="Send a message..."
           className={`block flex-1 h-full focus:outline-none `}
           {...register("content")}
         />
-        <button type="submit">
-          <PaperAirplaneIcon className="h-4 w-4 text-slate-400" />
+        <button type="submit" disabled={!isValid}>
+          <PaperAirplaneIcon
+            className={`h-4 w-4  ${
+              isValid ? "text-red-700" : "text-slate-400"
+            }`}
+          />
         </button>
       </div>
     </form>

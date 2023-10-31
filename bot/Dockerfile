@@ -12,6 +12,6 @@ COPY . .
 
 RUN chmod +x entrypoint.sh
 
-CMD rasa run actions & rasa run  --enable-api --cors "*" --debug
+CMD rasa run actions && rasa run  --enable-api --cors "*" --debug
 
 # CMD rasa train & rasa run actions & rasa run  --enable-api --cors "*" --debug
