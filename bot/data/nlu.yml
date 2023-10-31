@@ -126,22 +126,14 @@ nlu:
     - chưa chốt được
     - đang suy nghĩ
 
-# - intent: mood_great
-#   examples: |
-#     - perfect
-#     - great
-#     - amazing
-#     - feeling like a king
-#     - wonderful
-#     - I am feeling very good
-#     - I am great
-#     - I am amazing
-#     - I am going to save the world
-#     - super stoked
-#     - extremely good
-#     - so so perfect
-#     - so good
-#     - so perfect
+- intent: khoe
+  examples: |
+    - toi khoe
+    - tôi khoẻ
+    - tôi ổn
+    - t ổn
+    - khoẻ
+    - tuyệt vời
 
 # - intent: mood_unhappy
 #   examples: |
@@ -204,10 +196,12 @@ nlu:
     - cac nganh dao tao cua truong
 
 
+
 ######## intent cac cau hoi chuong trinh dao tao
 - intent: chuong_trinh_dao_tao
   examples: |
     - chuong trinh dao tao cua trương
+    - cho em hoi ve chuong trinh dao tao 
 
 - intent: ctdt_2_mien
   examples: |
@@ -221,6 +215,7 @@ nlu:
 - intent: khoa_quan_ly
   examples: |
     - truong co cac khoa nao
+    - cho em hoi cac khoa quan ly cua hoc vien
 
 
 ######## intent cac cau hoi tot nghiep
@@ -231,6 +226,28 @@ nlu:
 ######## intent cac cau hoi hoc phi
 ######## intent cac cau hoi thu tuc nhap hoc
 ######## intent cac cau hoi nganh Công nghệ thông tin
+- intent: cntt_cntt
+  examples: |
+    - [it](nganh)
+    - [IT](nganh)
+    - [cong nghe thong tin](nganh)
+    - [cntt](nganh)
+    - [CNTT](nganh)
+    - [công nghệ thông tin](nganh)
+    - [CÔNG NGHỆ THÔNG TIN](nganh)
+    - [Cong nghe thong tin](nganh)
+
+- intent: cntt_tot_nghiep_lam_gi
+  examples: |
+    - Em có dự định muốn học ngành công nghệ thông tin, vậy cho em hỏi học ngành này xong thì ra ngoài có thể làm gì ạ
+    - Hoc xong cntt co the lam gi a
+    - cntt lam gi khi hoc xong
+    - hoc xong cong nghe thong tin thi lam duoc gi
+    - học công nghệ thông tin có thể làm những công việc gì
+    - học công nghệ thông tin có thể làm những công việc gì
+    - học cntt có thể làm những công việc nào
+    - học cntt có thể làm những công việc gì
+
 ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
@@ -240,10 +257,22 @@ nlu:
 ######## intent cac cau hoi nganh Marketing
 ######## intent cac cau hoi nganh Kế toán
 ######## intent cac cau hoi hoc bong
+######## intent cac cau hoi lien quan ve nganh
+
 
 
 ######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+- intent: tg_dieu_kien_doi_nganh
+  examples: |
+    - Nếu đỗ 1 ngành của trường năm sau em muốn đổi ngành thì có điều kiện ko? nếu mà đổi đăng ký cần có điều kiện gì ạ?
+    - cho em hỏi lúc học thấy không hợp em muốn đổi ngành thì có được không ạ
+    - trường có cho phép được đổi ngành học không ạ
 
+- intent: tg_ltv_hoc_nganh_nao
+  examples: |
+    - Cho em hỏi: Học viện dạy lập trình viên là ngành nào ạ?
+    - muon lam lap trinh vien hoc nghanh nao
+    - ngành nào sau này làm lập trình viên ạ
 
 # - intent: ask_school_id
 #   examples: |

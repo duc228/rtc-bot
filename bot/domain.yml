@@ -3,6 +3,7 @@ version: "3.1"
 intents:
   - chao_hoi
   - tam_biet
+  - khoe
   - xac_nhan
   - tu_choi
   - bot_challenge
@@ -13,6 +14,10 @@ intents:
 
 ######## intent cac cau hoi tot nghiep
   - tn_hoi_loai_bang
+
+######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+  - tg_dieu_kien_doi_nganh
+  - tg_ltv_hoc_nganh_nao
   # - ask_school_id
   # - require_branch
   # - request_school_id_form
@@ -24,8 +29,31 @@ intents:
   # - ask_point
   # - mood_unhappy
 
+######## intent cac cau hoi hoc phi
+######## intent cac cau hoi thu tuc nhap hoc
+######## intent cac cau hoi nganh Công nghệ thông tin
+  - cntt_cntt
+  - cntt_tot_nghiep_lam_gi
+######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
+######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+######## intent cac cau hoi nganh Công nghệ đa phương tiện
+######## intent cac cau hoi nganh Quản trị kinh doanh
+######## intent cac cau hoi nganh Marketing
+######## intent cac cau hoi nganh Kế toán
+######## intent cac cau hoi hoc bong
+
 entities:
   - nganh
+
+slots:
+  nganh: 
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: nganh
 
 # slots:
 #   branch:
@@ -63,8 +91,12 @@ actions:
 
 responses:
   utter_chao_hoi:
-  - text: "Xin chào! Bạn khỏe không?"
-  - text: "Chào bạn, hôm nay bạn thế nào?"
+  - text: "Xin chào!"
+  - text: "Chào bạn, hôm nay bạn muốn hỏi gì không?"
+
+  utter_khoe:
+  - text: "Bạn muốn hỏi gì không"
+  - text: "Bạn muốn tôi giúp gì không"
 
   utter_cam_on:
   - text: "Không có gì"
@@ -135,6 +167,39 @@ responses:
   utter_tn_hoi_loai_bang:
   - text: |-
       Sinh viên tốt nghiệp các ngành kỹ thuật thì sẽ được cấp bằng Kỹ sư. Còn sinh viên tốt nghiệp các ngành Kinh tế và Quản trị kinh doanh thì được cấp bằng Cử nhân (Đại học).
+
+######## utter cac cau hoi hoc phi
+######## utter cac cau hoi thu tuc nhap hoc
+######## utter cac cau hoi nganh Công nghệ thông tin
+  utter_cntt_cntt:
+  - text:  nganh cntt {nganh}
+   
+
+  utter_cntt_tot_nghiep_lam_gi:
+  - text: |-
+      - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
+      - Có thể trở thành các lập trình viên, các nhà quản trị hệ thống, quản trị bảo mật hệ thống công nghệ thông tin trong bất kỳ doanh nghiệp nào;
+      - Có thể làm việc trong các dự án với vai trò là người quản trị dự án về công nghệ thông tin;
+      - Có thể trở thành cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các Viện, Trung tâm nghiên cứu và các Cơ sở đào tạo;
+      - Có thể tiếp tục học tiếp lên trình độ Sau đại học ở trong nước và nước ngoài. 
+######## utter cac cau hoi nganh Kỹ thuật điện tử viễn thông
+######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
+######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+######## utter cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+######## utter cac cau hoi nganh Công nghệ đa phương tiện
+######## utter cac cau hoi nganh Quản trị kinh doanh
+######## utter cac cau hoi nganh Marketing
+######## utter cac cau hoi nganh Kế toán
+######## utter cac cau hoi hoc bong
+
+######## utter cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+  utter_tg_dieu_kien_doi_nganh:
+  - text: |-
+      Em đã đăng ký và trúng tuyển vào ngành học nào thì sẽ phải học tập theo ngành học đó (không được chuyển ngành). Nếu em muốn học thêm 1 ngành học nữa thì sẽ theo học chương trình đào tạo song bằng nếu đủ tiêu chuẩn và điều kiện theo quy chế.
+
+  utter_tg_ltv_hoc_nganh_nao:
+  - text: |-
+      Em có thể học ngành Công nghệ thông tin, An toàn thông tin, Công nghệ đa phương tiện. Em cần tham khảo kỹ các chương trình đào tạo của 3 ngành này để có sự lựa chọn phù hợp với đam mê, mục tiêu của mình..
 
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"

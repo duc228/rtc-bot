@@ -12,6 +12,11 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- rule: khoe
+  steps:
+  - intent: khoe
+  - action: utter_khoe
+
 - rule: cam on
   steps:
   - intent: cam_on
@@ -41,6 +46,27 @@ rules:
   steps:
   - intent: tn_hoi_loai_bang
   - action: utter_tn_hoi_loai_bang
+
+
+- rule: thuong gap - hoi dieu kien doi nganh
+  steps:
+  - intent: tg_dieu_kien_doi_nganh
+  - action: utter_tg_dieu_kien_doi_nganh
+
+- rule: thuong gap - lam lap trinh vien hoc nganh nao
+  steps:
+  - intent: tg_ltv_hoc_nganh_nao
+  - action: utter_tg_ltv_hoc_nganh_nao
+
+- rule: cntt - hoi ve cntt
+  steps:
+  - intent: cntt_cntt
+  - action: utter_cntt_cntt
+
+- rule: cntt - tot nghiep lam viec
+  steps:
+  - intent: cntt_tot_nghiep_lam_gi
+  - action: utter_cntt_tot_nghiep_lam_gi
 
 # - rule: ask school id
 #   steps:
