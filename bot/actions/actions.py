@@ -15,6 +15,31 @@ from rasa_sdk.types import DomainDict
 from rasa_sdk.events import SlotSet, AllSlotsReset
 import json
 
+
+class ActionResetAllSlots(Action):
+    def name(self):
+        return "action_reset_all_slots"
+
+    def run(self, dispatcher, tracker, domain):
+        return [AllSlotsReset()]
+    
+class ActionNganhDaoTao(Action):
+    def name(self):
+        return "action_nganh_dao_tao"
+
+    def run(self, dispatcher, tracker, domain):
+        f = open('./data/collections/data_collect.json', encoding="utf8")
+        data = json.load(f)
+        if data["chung"]["nganh_dao_tao"]:
+            dispatcher.utter_message(text=f"{data['chung']['nganh_dao_tao']}")
+        else:
+            dispatcher.utter_message(text=f"Bot chưa có thông tin gì về vấn đề này")
+
+        return []
+    
+
+
+########################################################################
 class ActionValidateMajorName(FormValidationAction):
     def name(self) -> Text:
         return "validate_request_time_learning_major_form"
@@ -88,12 +113,7 @@ class ActionGetAllMajors(Action):
         f.close()
         return []
 
-class ActionResetAllSlots(Action):
-    def name(self):
-        return "action_reset_all_slots"
 
-    def run(self, dispatcher, tracker, domain):
-        return [AllSlotsReset()]
 
 class ActionValidateSchoolId(FormValidationAction):
     def name(self) -> Text:

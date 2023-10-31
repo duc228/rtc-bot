@@ -176,14 +176,74 @@ nlu:
     - cụ là những vấn đề gì
     - bạn giúp được gì
     - nhiệm vụ của bạn là gì
-- intent: hoi_nganh_dao_tao
+
+
+######## intent cac cau hoi phuong thuc tuyen sinh
+- intent: phuong_thuc_tuyen_sinh
   examples: |
+    - Cho em hoi truong co nhung phuong thuc xet tuyen nao
+    - Phuong thuc xet tuyen
+    - Phương thức xét tuyển
+    - Trường có các phương thức xét tuyển nào
+    - Cac hinh thuc tuyen sinh
+    - Các hình thức tuyển sinh của trường
+    - Dạ cho em hỏi về các phương thức tuyển sinh của trường
+    - Trường mình có các phương thức tuyển sinh nào ạ
+
+
+######## intent cac cau hoi cac nganh dao tao
+- intent: nganh_dao_tao
+  examples: |
+    - Cho em hỏi các ngành đào tạo của trường
+    - trường đào tạo ngành nào ạ
     - Thế trường đào tạo ngành nào
     - Các ngành đào tạo của trường là gì
     - các ngành đào tạo
     - cac nganh dao tao
     - truong dao tao nganh nao
     - cac nganh dao tao cua truong
+
+
+######## intent cac cau hoi chuong trinh dao tao
+- intent: chuong_trinh_dao_tao
+  examples: |
+    - chuong trinh dao tao cua trương
+
+- intent: ctdt_2_mien
+  examples: |
+    - Chương trình đào tạo tại miền Nam có khác với miền Bắc không?
+    - chuong trinh dao tao tai mien Nam co khac voi mien bac khong
+    - chuong trinh dao tao 2 mien khac nhau khong
+    - chuong trinh dao tao 2 mien giong nhau khong
+
+
+######## intent cac cau hoi khoa quan ly
+- intent: khoa_quan_ly
+  examples: |
+    - truong co cac khoa nao
+
+
+######## intent cac cau hoi tot nghiep
+- intent: tn_hoi_loai_bang
+  examples: |
+    - Sinh viên học trường mình sau khi ra trường sẽ nhận được bằng kỹ sư hay là cử nhân vậy?
+    - cho em hoi ra truong nhan bang ky su hay cu nhan
+######## intent cac cau hoi hoc phi
+######## intent cac cau hoi thu tuc nhap hoc
+######## intent cac cau hoi nganh Công nghệ thông tin
+######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
+######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+######## intent cac cau hoi nganh Công nghệ đa phương tiện
+######## intent cac cau hoi nganh Quản trị kinh doanh
+######## intent cac cau hoi nganh Marketing
+######## intent cac cau hoi nganh Kế toán
+######## intent cac cau hoi hoc bong
+
+
+######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+
 
 # - intent: ask_school_id
 #   examples: |

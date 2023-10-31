@@ -22,7 +22,25 @@ rules:
   - intent: hoi_chuc_nang
   - action: utter_hoi_chuc_nang
 
+- rule: hoi phuong_thuc_tuyen_sinh
+  steps:
+  - intent: phuong_thuc_tuyen_sinh
+  - action: utter_phuong_thuc_tuyen_sinh
 
+- rule: hoi nganh dao tao
+  steps:
+  - intent: nganh_dao_tao
+  - action: action_nganh_dao_tao
+
+- rule: hoi chuong trinh dao tao 2 mien
+  steps:
+  - intent: ctdt_2_mien
+  - action: utter_ctdt_2_mien
+
+- rule: hoi tot nghiep nhan loai bang nao
+  steps:
+  - intent: tn_hoi_loai_bang
+  - action: utter_tn_hoi_loai_bang
 
 # - rule: ask school id
 #   steps:

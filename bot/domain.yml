@@ -2,13 +2,17 @@ version: "3.1"
 
 intents:
   - chao_hoi
-  - goodbye
+  - tam_biet
   - xac_nhan
   - tu_choi
-  # - mood_unhappy
   - bot_challenge
   - cam_on
   - hoi_chuc_nang
+  - phuong_thuc_tuyen_sinh
+  - ctdt_2_mien
+
+######## intent cac cau hoi tot nghiep
+  - tn_hoi_loai_bang
   # - ask_school_id
   # - require_branch
   # - request_school_id_form
@@ -18,10 +22,10 @@ intents:
   # - ask_time_learning
   # - ask_time_learning_detail
   # - ask_point
+  # - mood_unhappy
 
-# entities:
-#   - branch
-#   - major
+entities:
+  - nganh
 
 # slots:
 #   branch:
@@ -45,10 +49,12 @@ intents:
 #     required_slots:
 #       - major
 
-# actions:
+actions:
+  - action_reset_all_slots
+  - action_nganh_dao_tao
+
 #   - action_school_id
 #   - validate_request_school_id_form
-#   - action_reset_all_slots
 #   - action_get_all_majors
 #   - action_get_all_joins
 #   - action_get_time_learning_major
@@ -84,8 +90,8 @@ responses:
   - text: "Vâng, hẹn hôm khác nói chuyện tiếp nha"
 
   utter_iamabot:
-  - text: "Tôi là chatbot hỗ trợ tư vấn tuyển sinh của Học viện Công nghệ Bưu chính Viễn thông"
-  - text: "Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về tuyển sinh của Học viện Công nghệ Bưu chính Viễn thông"
+  - text: "Tôi là chatbot hỗ trợ tư vấn các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông"
+  - text: "Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông"
 
   utter_hoi_chuc_nang:
   - text:  |-
@@ -97,7 +103,38 @@ responses:
       - Đội ngũ giảng viên
       - Điều kiện tốt nghiệp
       - Học phí (5 năm gần nhất)
+    buttons:
+      - title: "Phương thức tuyển sinh"
+        payload: "/phuong_thuc_tuyen_sinh"
+      - title: "Các ngành đào tạo"
+        payload: "/nganh_dao_tao"
+      - title: "Chương trình đào tạo"
+        payload: "/chuong_trinh_dao_tao"
  
+  utter_phuong_thuc_tuyen_sinh:
+  - text: |-
+      utter_phuong_thuc_tuyen_sinh
+  
+  utter_nganh_dao_tao:
+  - text: |-
+      utter_nganh_dao_tao
+  
+
+  utter_chuong_trinh_dao_tao:
+  - text: |-
+      utter_chuong_trinh_dao_tao
+
+  utter_ctdt_2_mien:
+  - text: |-
+      Chương trình đào tạo của Học viện được áp dụng thống nhất ở cả 2 Cơ sở đào tạo Hà Nội và Tp. Hồ Chí Minh
+
+  utter_khoa_quan_ly:
+  - text: |-
+      utter_khoa_quan_ly
+
+  utter_tn_hoi_loai_bang:
+  - text: |-
+      Sinh viên tốt nghiệp các ngành kỹ thuật thì sẽ được cấp bằng Kỹ sư. Còn sinh viên tốt nghiệp các ngành Kinh tế và Quản trị kinh doanh thì được cấp bằng Cử nhân (Đại học).
 
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"
