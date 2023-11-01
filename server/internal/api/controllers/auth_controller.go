@@ -1,17 +1,15 @@
 package controllers
 
 import (
-	"errors"
 	"net/http"
 	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
 	"rct_server/internal/services"
 
 	"github.com/gin-gonic/gin"
-	"gorm.io/gorm"
 )
 
-var userService services.UserService
+var authService services.AuthService
 
 func Login(c *gin.Context) {
 	var request request.LoginRequest
@@ -21,9 +19,14 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	res, err := userService.FindUserByEmail(c, request.Email)
-	if errors.Is(err, gorm.ErrRecordNotFound) {
-		response.Error(c, http.StatusBadRequest, "Sai tai khoan hoac mat khau")
+	res, err := authService.Login(c, request)
+	// if errors.Is(err, gorm.ErrRecordNotFound) {
+	// 	response.Error(c, http.StatusBadRequest, "Sai tài khoản hoặc mật khẩu")
+	// 	return
+	// }
+
+	if err != nil {
+		response.Error(c, http.StatusBadRequest, err.Error())
 		return
 	}
 
