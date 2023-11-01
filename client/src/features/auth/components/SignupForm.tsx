@@ -127,7 +127,7 @@ export const SignUpForm = ({}: SignUpProps) => {
         type="submit"
         disabled={isLoading}
         className={`${
-          isDirty && !isValid ? "opacity-80" : ""
+          isDirty && !isValid ? "opacity-80 cursor-not-allowed" : ""
         } btn bg-mainbg hover:bg-sky-600 rounded-lg hover:shadow-none shadow-none px-4 py-2 w-full gap-2 mt-4`}
       >
         {isLoading ? <CircularProgress color="inherit" size={20} /> : <></>}

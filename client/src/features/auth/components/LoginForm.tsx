@@ -86,7 +86,7 @@ export const LoginForm = ({}: LoginFormProps) => {
       <button
         type="submit"
         className={`${
-          isDirty && !isValid ? "opacity-80" : ""
+          isDirty && !isValid ? "opacity-80 cursor-not-allowed" : ""
         } btn bg-mainbg rounded-md text-white hover:bg-sky-600 hover:shadow-none shadow-none px-4 py-2 w-full mt-4`}
       >
         <span className="text-[1rem] normal-case">Đăng Nhập</span>
