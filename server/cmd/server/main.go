@@ -2,24 +2,25 @@ package main
 
 import (
 	"log"
+	"rct_server/configs"
 	v1 "rct_server/internal/api/routes/v1"
-	"rct_server/routes"
+	"rct_server/migrations"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
 
-var server = gin.Default()
-
 func main() {
+
+	server := gin.Default()
 
 	loadEnv()
 
+	configs.DBConnect()
+
+	migrations.Migrate()
+
 	v1.InitRoutes(server)
-
-	// configs.DBConnect()
-
-	// migrations.Migrate()
 
 	// getRoutes()
 	// server.GET("/exter", controllers.GetExternal)
@@ -32,16 +33,16 @@ func main() {
 	server.Run()
 }
 
-func getRoutes() {
+// func getRoutes() {
 
-	apiRoute := server.Group("/api")
-	v1 := apiRoute.Group("/v1")
+// 	apiRoute := server.Group("/api")
+// 	v1 := apiRoute.Group("/v1")
 
-	routes.UserRoutes(v1.Group("/user"))
-	routes.AuthRoutes(v1.Group("/auth"))
-	routes.ConversationRoutes(v1.Group("/conversation"))
-	routes.MessageRoutes(v1.Group("/message"))
-}
+// 	routes.UserRoutes(v1.Group("/user"))
+// 	routes.AuthRoutes(v1.Group("/auth"))
+// 	routes.ConversationRoutes(v1.Group("/conversation"))
+// 	routes.MessageRoutes(v1.Group("/message"))
+// }
 
 func loadEnv() {
 	err := godotenv.Load()

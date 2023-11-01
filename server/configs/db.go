@@ -1,7 +1,6 @@
 package configs
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -12,11 +11,16 @@ import (
 
 var DB *gorm.DB
 
+type Database struct {
+	DB *gorm.DB
+}
+
+var Conn Database
+
 func DBConnect() *gorm.DB {
 
 	// dbUri := "root:abc@tcp(rct_db:3306)/rct_db?parseTime=true"
 	dbUri := os.Getenv("DB_URI")
-	fmt.Printf("db uri: %v\n", dbUri)
 	db, err := gorm.Open(mysql.Open(dbUri), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})
@@ -26,5 +30,7 @@ func DBConnect() *gorm.DB {
 
 	log.Println("Connect DB success")
 	DB = db
+	Conn.DB = db
+
 	return db
 }

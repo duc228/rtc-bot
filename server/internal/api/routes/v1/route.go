@@ -19,6 +19,7 @@ func InitRoutes(server *gin.Engine) {
 		// Protected routes
 		protectedRoutes := v1.Group("", middlewares.IsAuthenticated())
 		ConversationRoutes(protectedRoutes.Group("/conversations"))
+		MessageRoutes(protectedRoutes.Group("/messages"))
 	}
 
 }
