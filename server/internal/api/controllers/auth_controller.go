@@ -30,7 +30,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	response.Response(c, http.StatusOK, res)
+	response.Response(c, http.StatusOK, response.LoginResponse{Token: res})
 }
 
 func SignUp(c *gin.Context) {

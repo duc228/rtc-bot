@@ -1,34 +1,34 @@
 package utils
 
-import (
-	"time"
+// import (
+// 	"time"
 
-	"github.com/dgrijalva/jwt-go"
-)
+// 	"github.com/dgrijalva/jwt-go"
+// )
 
-var SecretKey = "secretkey"
+// var SecretKey = "secretkey"
 
-// jwtCustomClaims are custom claims extending default ones.
-type jwtCustomClaims struct {
-	UserId uint `json:"user_id"`
-	jwt.StandardClaims
-}
+// // jwtCustomClaims are custom claims extending default ones.
+// type jwtCustomClaims struct {
+// 	UserId uint `json:"user_id"`
+// 	jwt.StandardClaims
+// }
 
-func GenerateToken(UserId uint) string {
+// func GenerateToken(UserId uint) string {
 
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"sub": UserId,
-		"exp": time.Now().Local().Add(time.Hour * time.Duration(10)).Unix(),
-	})
+// 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
+// 		"sub": UserId,
+// 		"exp": time.Now().Local().Add(time.Hour * time.Duration(10)).Unix(),
+// 	})
 
-	tokenString, err := token.SignedString([]byte(SecretKey))
+// 	tokenString, err := token.SignedString([]byte(SecretKey))
 
-	if err != nil {
-		panic(err)
-	}
-	return tokenString
-}
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// 	return tokenString
+// }
 
-func VerifyToken() {
+// func VerifyToken() {
 
-}
+// }

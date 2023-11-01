@@ -1,98 +1,98 @@
 package controllers
 
-import (
-	"fmt"
-	"net/http"
-	"rct_server/configs"
-	"rct_server/dto"
-	"rct_server/models"
-	"rct_server/utils"
+// import (
+// 	"fmt"
+// 	"net/http"
+// 	"rct_server/configs"
+// 	"rct_server/dto"
+// 	"rct_server/models"
+// 	"rct_server/utils"
 
-	"github.com/gin-gonic/gin"
-	"golang.org/x/crypto/bcrypt"
-)
+// 	"github.com/gin-gonic/gin"
+// 	"golang.org/x/crypto/bcrypt"
+// )
 
-func SignUp(c *gin.Context) {
-	var signUpInfo models.User
+// func SignUp(c *gin.Context) {
+// 	var signUpInfo models.User
 
-	c.BindJSON(&signUpInfo)
+// 	c.BindJSON(&signUpInfo)
 
-	hash, err := bcrypt.GenerateFromPassword([]byte(signUpInfo.Password), 10)
+// 	hash, err := bcrypt.GenerateFromPassword([]byte(signUpInfo.Password), 10)
 
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Failed to hash password",
-		})
-	}
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{
+// 			"error": "Failed to hash password",
+// 		})
+// 	}
 
-	newUser := models.User{
-		Email:    signUpInfo.Email,
-		FullName: signUpInfo.FullName,
-		Password: string(hash),
-	}
+// 	newUser := models.User{
+// 		Email:    signUpInfo.Email,
+// 		FullName: signUpInfo.FullName,
+// 		Password: string(hash),
+// 	}
 
-	result := configs.DB.Create(&newUser)
+// 	result := configs.DB.Create(&newUser)
 
-	token := utils.GenerateToken(newUser.Id)
+// 	token := utils.GenerateToken(newUser.Id)
 
-	if result.Error != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Failed to create user",
-		})
-	}
+// 	if result.Error != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{
+// 			"error": "Failed to create user",
+// 		})
+// 	}
 
-	c.JSON(http.StatusCreated, gin.H{"token": token, "user": &newUser, "signup": signUpInfo.FullName})
+// 	c.JSON(http.StatusCreated, gin.H{"token": token, "user": &newUser, "signup": signUpInfo.FullName})
 
-}
+// }
 
-func Login(c *gin.Context) {
-	var LoginInfo dto.Credentials
-	c.BindJSON(&LoginInfo)
-	fmt.Printf("%v\n, ", LoginInfo)
+// func Login(c *gin.Context) {
+// 	var LoginInfo dto.Credentials
+// 	c.BindJSON(&LoginInfo)
+// 	fmt.Printf("%v\n, ", LoginInfo)
 
-	var user models.User
-	configs.DB.Where("email=?", LoginInfo.Email).Find(&user)
-	// configs.DB.Raw("SELECT * FROM `users` WHERE email='" + LoginInfo.Email + "' AND password='" + LoginInfo.Password + "'").Find(&user)
+// 	var user models.User
+// 	configs.DB.Where("email=?", LoginInfo.Email).Find(&user)
+// 	// configs.DB.Raw("SELECT * FROM `users` WHERE email='" + LoginInfo.Email + "' AND password='" + LoginInfo.Password + "'").Find(&user)
 
-	// c.JSON(http.StatusOK, gin.H{"token": &LoginInfo, "user": &user, "password": &user.Password})
-	// return
+// 	// c.JSON(http.StatusOK, gin.H{"token": &LoginInfo, "user": &user, "password": &user.Password})
+// 	// return
 
-	if user.Id == 0 {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Invalid email or password 1",
-		})
-		return
-	}
+// 	if user.Id == 0 {
+// 		c.JSON(http.StatusBadRequest, gin.H{
+// 			"error": "Invalid email or password 1",
+// 		})
+// 		return
+// 	}
 
-	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(LoginInfo.Password))
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Invalid email or password 2",
-		})
-		return
-	}
+// 	err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(LoginInfo.Password))
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{
+// 			"error": "Invalid email or password 2",
+// 		})
+// 		return
+// 	}
 
-	token := utils.GenerateToken(user.Id)
+// 	token := utils.GenerateToken(user.Id)
 
-	c.SetSameSite(http.SameSiteLaxMode)
-	c.SetCookie("auth", token, 3600*24, "", "", false, true)
+// 	c.SetSameSite(http.SameSiteLaxMode)
+// 	c.SetCookie("auth", token, 3600*24, "", "", false, true)
 
-	c.JSON(http.StatusOK, gin.H{"token": token, "id": user.Id})
-}
+// 	c.JSON(http.StatusOK, gin.H{"token": token, "id": user.Id})
+// }
 
-func GetProfile(c *gin.Context) {
+// func GetProfile(c *gin.Context) {
 
-	// user, _ := c.Get("user")
-	userId, _ := c.Get("userId")
-	if userId == nil {
-		c.JSON(http.StatusOK, gin.H{"error": "has error",
-			"user": userId})
-	}
+// 	// user, _ := c.Get("user")
+// 	userId, _ := c.Get("userId")
+// 	if userId == nil {
+// 		c.JSON(http.StatusOK, gin.H{"error": "has error",
+// 			"user": userId})
+// 	}
 
-	var userInfo models.User
-	configs.DB.Select("id", "Email", "FullName").Where("id =  ?", userId.(uint)).Find(&userInfo)
+// 	var userInfo models.User
+// 	configs.DB.Select("id", "Email", "FullName").Where("id =  ?", userId.(uint)).Find(&userInfo)
 
-	c.JSON(http.StatusOK, gin.H{"success": true,
-		"data": userInfo, "id": userId.(uint)})
+// 	c.JSON(http.StatusOK, gin.H{"success": true,
+// 		"data": userInfo, "id": userId.(uint)})
 
-}
+// }
