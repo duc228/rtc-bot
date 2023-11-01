@@ -2,10 +2,9 @@ package migrations
 
 import (
 	"rct_server/configs"
-	"rct_server/models"
+	"rct_server/internal/entities"
 )
 
 func Migrate() {
-	configs.DB.AutoMigrate(&models.User{}, &models.Conversation{}, &models.Message{})
-	// configs.DB.Migrator().CreateConstraint(&models.Conversation{}, "fk_conversation_last_message")
+	configs.DB.AutoMigrate(&entities.User{}, &entities.Conversation{}, &entities.Message{})
 }

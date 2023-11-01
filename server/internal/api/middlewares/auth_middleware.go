@@ -26,8 +26,6 @@ func IsAuthenticated() gin.HandlerFunc {
 			c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})
 		}
 
-		fmt.Printf("tuq awds")
-
 		c.Set("userId", data)
 		c.Next()
 	}

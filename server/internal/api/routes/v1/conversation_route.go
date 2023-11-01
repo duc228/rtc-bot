@@ -8,7 +8,7 @@ import (
 
 func ConversationRoutes(rg *gin.RouterGroup) {
 
-	rg.GET("/", controllers.GetConverastionByUserId)
-	rg.GET("/all", controllers.GetAllConversationsByUserId)
+	rg.GET("/", controllers.GetConversationByUserId)
+	// rg.GET("/all", controllers.GetAllConversationsByUserId)
 	rg.POST("/", controllers.CreateConversation)
 }
