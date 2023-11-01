@@ -38,4 +38,22 @@ func SignUp(c *gin.Context) {
 
 }
 
-func GetProfile(c *gin.Context) {}
+func GetProfile(c *gin.Context) {
+	userId, _ := c.Get("userId")
+	if userId == nil {
+		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
+		return
+	}
+	var id = uint(userId.(float64))
+	user, err := authService.GetProfile(c, id)
+	if err != nil {
+		response.Error(c, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	response.Response(c, http.StatusOK, response.UserResponse{
+		Id:       user.Id,
+		FullName: user.FullName,
+		Email:    user.Email,
+	})
+}

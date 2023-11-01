@@ -5,6 +5,7 @@ import (
 	"fmt"
 	internal "rct_server/internal/const"
 	"rct_server/internal/dto/request"
+	"rct_server/internal/entities"
 	"rct_server/internal/repositories"
 	"rct_server/internal/utils"
 
@@ -48,4 +49,9 @@ func (s *AuthService) Login(c *gin.Context, request request.LoginRequest) (strin
 	}
 
 	return accessToken, err
+}
+
+func (s AuthService) GetProfile(c *gin.Context, id uint) (entities.User, error) {
+
+	return s.repo.FindUserById(id)
 }
