@@ -1,4 +1,4 @@
-import { useForm, Resolver } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Input } from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../../../services/auth-service";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../../routes/router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginSchema } from "../../../validations";
+import toast from "react-hot-toast";
 
 type LoginFormProps = {};
 
@@ -33,11 +34,11 @@ export const LoginForm = ({}: LoginFormProps) => {
   const { mutate: loginMutation } = useMutation({
     mutationFn: login,
     onSuccess: (data: any) => {
+      toast.success("Đăng nhập thành công");
       setAccessToken(data?.token);
       navigate(AppRoutes.HOME);
     },
     onError: (error: any) => {
-      console.log("error ", error);
       setMessage(error?.error);
     },
   });

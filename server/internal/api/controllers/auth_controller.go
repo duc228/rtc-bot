@@ -2,17 +2,13 @@ package controllers
 
 import (
 	"net/http"
-	"rct_server/configs"
 	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
-	"rct_server/internal/entities"
 	"rct_server/internal/services"
-	"rct_server/internal/utils"
 	"rct_server/internal/validations"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"golang.org/x/crypto/bcrypt"
 )
 
 var authService services.AuthService
@@ -58,32 +54,14 @@ func SignUp(c *gin.Context) {
 		return
 	}
 
-	hash, err := bcrypt.GenerateFromPassword([]byte(request.Password), 10)
-
+	res, err := authService.SignUp(c, request)
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Failed to hash password",
-		})
+		response.Error(c, http.StatusBadRequest, err.Error())
+		return
 	}
 
-	newUser := entities.User{
-		Email:    request.Email,
-		FullName: request.FullName,
-		Password: string(hash),
-	}
+	response.Response(c, http.StatusOK, response.LoginResponse{Token: res})
 
-	result := configs.DB.Create(&newUser)
-
-	var jwtUtil utils.JwtUtils
-	token, err := jwtUtil.GenerateToken(newUser.Id)
-
-	if result.Error != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": "Failed to create user",
-		})
-	}
-
-	c.JSON(http.StatusCreated, gin.H{"token": token})
 }
 
 func GetProfile(c *gin.Context) {

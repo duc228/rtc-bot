@@ -7,6 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import useAuthStore from "../../../stores/useAuthStore";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SignUpSchema } from "../../../validations";
+import toast from "react-hot-toast";
 
 type SignUpProps = {};
 
@@ -30,12 +31,11 @@ export const SignUpForm = ({}: SignUpProps) => {
     resolver: yupResolver(SignUpSchema),
   });
 
-  console.log("errors", errors);
-
   const { mutate: signUpMutation, isLoading } = useMutation({
     mutationFn: signUp,
     onSuccess: (data: any) => {
-      console.log("data sign up ", data);
+      toast.success("Đăng ký thành công");
+
       if (data?.token) {
         setAccessToken(data?.token);
       }
@@ -48,9 +48,10 @@ export const SignUpForm = ({}: SignUpProps) => {
 
   const onSubmit = (data: SignUpInputs) => {
     signUpMutation({
-      full_name: data.fullName,
+      fullName: data.fullName,
       email: data.email,
       password: data.password,
+      confirmPassword: data.confirmPassword,
     });
   };
   return (

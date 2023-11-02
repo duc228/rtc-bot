@@ -19,3 +19,9 @@ func (r *UserRepository) FindUserById(id uint) (entities.User, error) {
 	err := configs.DB.Select("id", "Email", "FullName").Where("id =  ?", id).Find(&user).Error
 	return user, err
 }
+
+func (r *UserRepository) CreateUser(user entities.User) (entities.User, error) {
+	result := configs.DB.Create(&user)
+	return user, result.Error
+
+}

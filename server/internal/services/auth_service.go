@@ -51,7 +51,38 @@ func (s *AuthService) Login(c *gin.Context, request request.LoginRequest) (strin
 	return accessToken, err
 }
 
-func (s AuthService) GetProfile(c *gin.Context, id uint) (entities.User, error) {
+func (s *AuthService) SignUp(c *gin.Context, request request.SignUpRequest) (string, error) {
+	// Check email is existing
+	user, err := s.repo.FindUserByEmail(request.Email)
+	if !errors.Is(err, gorm.ErrRecordNotFound) || user.Id != 0 {
+		return "", errors.New("Email đã tồn tại")
+	}
+
+	// Hash password
+	hash, err := bcrypt.GenerateFromPassword([]byte(request.Password), hash_cost)
+
+	// Save user
+
+	newUser := entities.User{
+		Email:    request.Email,
+		FullName: request.FullName,
+		Password: string(hash),
+	}
+
+	useSave, err := s.repo.CreateUser(newUser)
+
+	// Generate token
+	var jwtUtils utils.JwtUtils
+	accessToken, err := jwtUtils.GenerateToken(useSave.Id)
+	if err != nil {
+		fmt.Println("Err: ", err)
+		return "", errors.New("Đã có lỗi xảy ra ở server")
+	}
+
+	return accessToken, err
+}
+
+func (s *AuthService) GetProfile(c *gin.Context, id uint) (entities.User, error) {
 
 	return s.repo.FindUserById(id)
 }
