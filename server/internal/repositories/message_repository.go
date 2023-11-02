@@ -12,7 +12,7 @@ var BotId = internal.BotId
 type MessageRepository struct {
 }
 
-func (r *MessageRepository) GetMessagesByConversationId(conversationId int, page int, limit int) ([]entities.Message, error) {
+func (r *MessageRepository) GetPaginationMessagesByConversationId(conversationId int, page int, limit int) ([]entities.Message, error) {
 	var messages []entities.Message = make([]entities.Message, 0)
 	err := configs.DB.Limit(limit).Offset(page*limit).Order("created_at desc").Where("conversation_id = ?", conversationId).Find(&messages).Error
 	return messages, err

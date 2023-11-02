@@ -8,7 +8,7 @@ import (
 type ConversationRepository struct {
 }
 
-func (r *ConversationRepository) GetConverastionByUserId(userId uint, page int, limit int) ([]entities.Conversation, error) {
+func (r *ConversationRepository) GetPaginationConversation(userId uint, page int, limit int) ([]entities.Conversation, error) {
 	var conversations []entities.Conversation = make([]entities.Conversation, 0)
 	err := configs.DB.Limit(limit).Offset(page*limit).Order("updated_at desc").Where("user_id = ?", userId).Find(&conversations).Error
 	return conversations, err
