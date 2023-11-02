@@ -48,13 +48,12 @@ export const MessageInput = ({}: MessageInputProps) => {
   });
 
   const onSubmit = (data: MessageInput) => {
-    console.log("data ", data.content);
     setTempMessage(data?.content);
-    setValue("content", "");
     createMessageMutation({
       content: data.content,
       conversationId: conversationId,
     });
+    setValue("content", "");
   };
 
   return (
