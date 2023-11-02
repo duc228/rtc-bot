@@ -6,17 +6,13 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createMessage } from "../../../services/message-service";
 import useConversationStore from "../../../stores/useConversationStore";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { MessageInputSchema } from "../../../validations";
 
 type MessageInputProps = {};
 
 interface MessageInput {
   content: string;
 }
-
-const MessageInputSchema = yup.object({
-  content: yup.string().required().trim(),
-});
 
 export const MessageInput = ({}: MessageInputProps) => {
   const { setTempMessage, conversationId, setConversationId } =

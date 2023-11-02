@@ -6,7 +6,7 @@ import { useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import useAuthStore from "../../../stores/useAuthStore";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { SignUpSchema } from "../../../validations";
 
 type SignUpProps = {};
 
@@ -16,34 +16,6 @@ interface SignUpInputs {
   password: string;
   confirmPassword: string;
 }
-
-const SignUpSchema = yup.object({
-  email: yup
-    .string()
-    .email("Vui lòng nhập email hợp lệ")
-    .trim()
-    .required("Vui lòng nhập email"),
-  fullName: yup
-    .string()
-    .required("Vui lòng nhập họ tên")
-    .min(3, "Họ tên ít nhất 3 kí tự")
-    .trim()
-    .matches(
-      /^[\sa-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹếẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$/,
-      "Họ tên không được có số và kí tự đặc biệt"
-    ),
-  password: yup
-    .string()
-    .min(6, "Mật khẩu ít nhất 6 kí tự")
-    .required("Vui lòng nhập mật khẩu")
-    .trim(),
-  confirmPassword: yup
-    .string()
-    .required("Vui lòng xác nhận mật khẩu")
-    .test("passwords-match", "Mật khẩu không trùng khớp", function (value) {
-      return this.parent.password === value;
-    }),
-});
 
 export const SignUpForm = ({}: SignUpProps) => {
   const [message, setMessage] = useState("");

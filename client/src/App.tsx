@@ -13,7 +13,7 @@ function App({ children }: AppProps) {
     queryFn: getProfile,
     enabled: isAuthenticated,
     onSuccess: (data: any) => {
-      setUser(data?.data);
+      setUser(data);
     },
     onError: () => {
       logout();

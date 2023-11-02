@@ -47,7 +47,7 @@ axiosClientPrivate.interceptors.request.use(
 
 axiosClientPrivate.interceptors.response.use(
   function (response) {
-    return response.data;
+    return response.data?.data;
   },
   function (error) {
     // console.log('error', error);
@@ -73,7 +73,7 @@ axiosClient.interceptors.request.use(
 
 axiosClient.interceptors.response.use(
   function (response) {
-    return response.data;
+    return response.data?.data;
   },
   function (error) {
     if (error?.code === "ERR_NETWORK") {

@@ -7,7 +7,7 @@ import useAuthStore from "../../../stores/useAuthStore";
 import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../../routes/router";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { LoginSchema } from "../../../validations";
 
 type LoginFormProps = {};
 
@@ -15,15 +15,6 @@ interface LoginInputs {
   email: string;
   password: string;
 }
-
-const LoginSchema = yup.object({
-  email: yup
-    .string()
-    .email("Vui lòng nhập email hợp lệ")
-    .trim()
-    .required("Vui lòng nhập email"),
-  password: yup.string().required("Vui lòng nhập mật khẩu").trim(),
-});
 
 export const LoginForm = ({}: LoginFormProps) => {
   const [message, setMessage] = useState("");
@@ -39,12 +30,9 @@ export const LoginForm = ({}: LoginFormProps) => {
     resolver: yupResolver(LoginSchema),
   });
 
-  console.log("errors", errors);
-
   const { mutate: loginMutation } = useMutation({
     mutationFn: login,
     onSuccess: (data: any) => {
-      console.log("data return ", data);
       setAccessToken(data?.token);
       navigate(AppRoutes.HOME);
     },
@@ -55,7 +43,6 @@ export const LoginForm = ({}: LoginFormProps) => {
   });
 
   const onSubmit = (data: LoginInputs) => {
-    console.log("onSubmit", data);
     loginMutation(data);
   };
 
