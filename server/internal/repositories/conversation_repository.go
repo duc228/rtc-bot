@@ -30,3 +30,11 @@ func (r *ConversationRepository) CreateConversation(userId uint) (entities.Conve
 	return conversation, result.Error
 
 }
+
+func (r *ConversationRepository) UpdateLastMessageByConversation(conversationId int, content string) (entities.Conversation, error) {
+	var conversation entities.Conversation
+	query := configs.DB.Where("id = ? ", conversationId)
+	err := query.Model(&entities.Conversation{}).Update("last_message", content).Error
+	query.Find(&conversation)
+	return conversation, err
+}

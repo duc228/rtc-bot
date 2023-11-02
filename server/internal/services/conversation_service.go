@@ -20,3 +20,7 @@ func (s *ConversationService) GetTotalRows(userId uint, page int, limit int) (in
 func (s *ConversationService) CreateConversation(userId uint) (entities.Conversation, error) {
 	return s.repo.CreateConversation(userId)
 }
+
+func (s *ConversationService) UpdateLastMessageByConversation(conversationId int, content string) (entities.Conversation, error) {
+	return s.repo.UpdateLastMessageByConversation(conversationId, content)
+}
