@@ -9,7 +9,6 @@ import (
 	"rct_server/internal/services"
 	"rct_server/internal/utils"
 	"rct_server/internal/validations"
-	"rct_server/models"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
@@ -49,11 +48,17 @@ func Login(c *gin.Context) {
 }
 
 func SignUp(c *gin.Context) {
-	var signUpInfo models.User
+	var request request.SignUpRequest
 
-	c.BindJSON(&signUpInfo)
+	c.BindJSON(&request)
 
-	hash, err := bcrypt.GenerateFromPassword([]byte(signUpInfo.Password), 10)
+	errorsValidate := validations.SignUpValidation(request)
+	if len(errorsValidate) > 0 {
+		response.Error(c, http.StatusBadRequest, errorsValidate)
+		return
+	}
+
+	hash, err := bcrypt.GenerateFromPassword([]byte(request.Password), 10)
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -62,8 +67,8 @@ func SignUp(c *gin.Context) {
 	}
 
 	newUser := entities.User{
-		Email:    signUpInfo.Email,
-		FullName: signUpInfo.FullName,
+		Email:    request.Email,
+		FullName: request.FullName,
 		Password: string(hash),
 	}
 

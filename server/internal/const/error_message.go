@@ -6,6 +6,8 @@ func MsgForTag(tag string, name string) string {
 		return "Vui lòng nhập " + name
 	case "email":
 		return "Vui lòng nhập đúng email"
+	case "eqfield":
+		return name + " không trùng"
 	}
-	return ""
+	return "Default error message"
 }

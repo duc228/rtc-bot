@@ -1,0 +1,5 @@
+package validations
+
+func SendMesageValidation() {
+
+}

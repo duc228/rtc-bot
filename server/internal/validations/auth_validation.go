@@ -14,7 +14,7 @@ func LoginValidation(requestLogin request.LoginRequest) []response.ErrorMessageR
 
 	errors := []response.ErrorMessageResponse{}
 
-	loginRequestFieldName := request.LoginRequest{
+	RequestFieldName := request.LoginRequest{
 		Email:    "Email",
 		Password: "Mật khẩu",
 	}
@@ -22,7 +22,28 @@ func LoginValidation(requestLogin request.LoginRequest) []response.ErrorMessageR
 	err := validate.Struct(requestLogin)
 	if err != nil {
 
-		errors = ErrorCustomValidation(err, loginRequestFieldName)
+		errors = ErrorCustomValidation(err, RequestFieldName)
+
+	}
+	return errors
+}
+
+func SignUpValidation(requestSignUp request.SignUpRequest) []response.ErrorMessageResponse {
+	validate = validator.New()
+	// validate.RegisterValidation("Password", validators.NotBlank)
+
+	errors := []response.ErrorMessageResponse{}
+
+	RequestFieldName := request.SignUpRequest{
+		Email:           "Email",
+		Password:        "Mật khẩu",
+		FullName:        "Họ tên",
+		ConfirmPassword: "Xác nhận mật khẩu",
+	}
+
+	err := validate.Struct(requestSignUp)
+	if err != nil {
+		errors = ErrorCustomValidation(err, RequestFieldName)
 
 	}
 	return errors
