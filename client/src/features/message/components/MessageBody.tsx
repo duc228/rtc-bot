@@ -53,7 +53,6 @@ export const MessageBody = ({}: MessageBodyProps) => {
       });
     },
     getNextPageParam: (lastPage: any) => {
-      // console.log("lastPAge", lastPage);
       if (lastPage?.hasNextPage) {
         return lastPage?.nextPage;
       }
@@ -88,7 +87,6 @@ export const MessageBody = ({}: MessageBodyProps) => {
 
       {tempMessage ? <MessageTyping /> : <></>}
       {tempMessage ? <MessageTemp /> : <></>}
-      {/* <div className="sm:w-[800px]"></div> */}
       {messages.map((message: Message, index: number) => (
         <div
           key={index}

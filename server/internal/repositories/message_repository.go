@@ -2,9 +2,12 @@ package repositories
 
 import (
 	"rct_server/configs"
+	internal "rct_server/internal/const"
 	"rct_server/internal/dto/request"
 	"rct_server/internal/entities"
 )
+
+var BotId = internal.BotId
 
 type MessageRepository struct {
 }
@@ -21,11 +24,21 @@ func (r *MessageRepository) GetTotalRows(conversationId int, page int, limit int
 	return total, err
 }
 
-func (r *MessageRepository) CreateMessage(userId uint, request request.MessageRequest) (entities.Message, error) {
-	message := entities.Message{
-		UserId:         (userId),
-		Content:        request.Content,
-		ConversationId: uint(request.ConversationId),
+func (r *MessageRepository) CreateMessage(userId int, request request.MessageRequest) (entities.Message, error) {
+
+	var message entities.Message
+
+	if userId == BotId {
+		message = entities.Message{
+			Content:        request.Content,
+			ConversationId: uint(request.ConversationId),
+		}
+	} else {
+		message = entities.Message{
+			UserId:         uint(userId),
+			Content:        request.Content,
+			ConversationId: uint(request.ConversationId),
+		}
 	}
 
 	result := configs.DB.Create(&message)

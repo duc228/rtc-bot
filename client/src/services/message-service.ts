@@ -1,7 +1,7 @@
 import { axiosClientPrivate } from "../configs/axios";
 import { OffsetPagination } from "../types/pagination";
 
-const url = "/message";
+const url = "/messages";
 
 const messageService = {
   getMessagesByConversationId: async (

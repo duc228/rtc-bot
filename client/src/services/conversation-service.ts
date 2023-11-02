@@ -2,7 +2,7 @@ import { axiosClientPrivate } from "../configs/axios";
 import { OffsetPagination } from "../types/pagination";
 // import queryString from "query-string";
 
-const url = "/conversation";
+const url = "/conversations";
 
 const conversationService = {
   getConverastionByUserId: async (params: Partial<OffsetPagination>) => {

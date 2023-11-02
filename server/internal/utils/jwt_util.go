@@ -12,7 +12,7 @@ type JwtUtils struct {
 }
 
 var SecretKey = "secretkey"
-var timeAccessToken = 10 * 60 // Seconds
+var timeAccessToken = 10 * 60 * 60 // Seconds
 
 type jwtCustomClaims struct {
 	UserId uint `json:"user_id"`

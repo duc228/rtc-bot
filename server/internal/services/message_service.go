@@ -3,11 +3,14 @@ package services
 import (
 	"fmt"
 	"math/rand"
+	internal "rct_server/internal/const"
 	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
 	"rct_server/internal/entities"
 	"rct_server/internal/repositories"
 )
+
+var BotId = internal.BotId
 
 type MessageService struct {
 	repo repositories.MessageRepository
@@ -21,8 +24,12 @@ func (s *MessageService) GetTotalRows(conversationId int, page int, limit int) (
 	return s.repo.GetTotalRows(conversationId, page, limit)
 }
 
-func (s *MessageService) CreateMessage(userId uint, request request.MessageRequest) (entities.Message, error) {
-	return s.repo.CreateMessage(userId, request)
+func (s *MessageService) CreateMessage(userId int, request request.MessageRequest) (entities.Message, error) {
+	var id int = userId
+	if userId == BotId {
+		id = userId
+	}
+	return s.repo.CreateMessage(id, request)
 }
 
 func (s *MessageService) SendMessageToBot(userId uint, requestMessage request.MessageRequest) response.MessageBotResponse {
@@ -47,7 +54,7 @@ func (s *MessageService) SendMessageToBot(userId uint, requestMessage request.Me
 
 	}
 
-	newMessage, errMessage := s.CreateMessage(userId, requestMessage)
+	newMessage, errMessage := s.CreateMessage(int(userId), requestMessage)
 	if errMessage != nil {
 		fmt.Println("Error creating message: ", errMessage)
 	}
@@ -61,7 +68,7 @@ func (s *MessageService) SendMessageToBot(userId uint, requestMessage request.Me
 		Content:        botResponse,
 		ConversationId: int(conversationId),
 	}
-	messageBot, errMessageBot := s.CreateMessage(userId, requestMessageBot)
+	messageBot, errMessageBot := s.CreateMessage(BotId, requestMessageBot)
 	if errMessageBot != nil {
 		fmt.Println("Error creating message: ", errMessage)
 	}

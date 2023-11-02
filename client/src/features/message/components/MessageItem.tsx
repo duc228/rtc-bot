@@ -15,9 +15,7 @@ const MessageItem = ({ message, isBot }: MessageItemProps) => {
       >
         {message}
       </span>
-      {/* <span className="text-xs text-gray-500 block absolute right-0 bottom-0">
-    11:20
-  </span> */}
+      {/* <span className="text-xs text-gray-500 block absolute right-0 bottom-0">  11:20 </span> */}
     </div>
   );
 };
