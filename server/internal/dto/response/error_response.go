@@ -3,9 +3,9 @@ package response
 import "github.com/gin-gonic/gin"
 
 type NewError struct {
-	Error string `json:"error" `
+	Error interface{} `json:"error" `
 }
 
-func Error(c *gin.Context, errCode int, data string) {
+func Error(c *gin.Context, errCode int, data interface{}) {
 	c.AbortWithStatusJSON(errCode, NewError{data})
 }

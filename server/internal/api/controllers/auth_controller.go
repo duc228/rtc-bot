@@ -8,19 +8,29 @@ import (
 	"rct_server/internal/entities"
 	"rct_server/internal/services"
 	"rct_server/internal/utils"
+	"rct_server/internal/validations"
 	"rct_server/models"
 
 	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
 	"golang.org/x/crypto/bcrypt"
 )
 
 var authService services.AuthService
+
+var validate *validator.Validate
 
 func Login(c *gin.Context) {
 	var request request.LoginRequest
 
 	if err := c.ShouldBind(&request); err != nil {
 		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đủ thông tin")
+		return
+	}
+
+	errorsValidate := validations.LoginValidation(request)
+	if len(errorsValidate) > 0 {
+		response.Error(c, http.StatusBadRequest, errorsValidate)
 		return
 	}
 
