@@ -12,10 +12,10 @@ intents:
   - phuong_thuc_tuyen_sinh
   - ctdt_2_mien
 
-######## intent cac cau hoi tot nghiep
+  ######## intent cac cau hoi tot nghiep
   - tn_hoi_loai_bang
 
-######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+  ######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
   - tg_dieu_kien_doi_nganh
   - tg_ltv_hoc_nganh_nao
   # - ask_school_id
@@ -29,9 +29,9 @@ intents:
   # - ask_point
   # - mood_unhappy
 
-######## intent cac cau hoi hoc phi
-######## intent cac cau hoi thu tuc nhap hoc
-######## intent cac cau hoi nganh Công nghệ thông tin
+  ######## intent cac cau hoi hoc phi
+  ######## intent cac cau hoi thu tuc nhap hoc
+  ######## intent cac cau hoi nganh Công nghệ thông tin
   - cntt_cntt
   - cntt_tot_nghiep_lam_gi
   - cntt_ma_nganh
@@ -39,7 +39,7 @@ intents:
   - cntt_hoc_phi
   - cntt_diem_chuan
   - cntt_khoi
-######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+  ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
   - ktdtvt_ktdtvt
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
@@ -52,14 +52,28 @@ intents:
 
 entities:
   - nganh
+  - thongtinchinh
+  - coso
 
 slots:
-  nganh: 
+  thongtinchinh:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: nganh
+      - type: from_entity
+        entity: thongtinchinh
+  nganh:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: nganh
+  coso:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: coso
 
 # slots:
 #   branch:
@@ -97,172 +111,163 @@ actions:
 
 responses:
   utter_chao_hoi:
-  - text: "Xin chào!"
-  - text: "Chào bạn, hôm nay bạn muốn hỏi gì không?"
+    - text: |-
+        Xin chào!
+        Tôi là chatbot hỗ trợ tư vấn các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông
+    - text: |-
+        Chào bạn, hôm nay bạn muốn hỏi gì không?
+        Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông
 
   utter_khoe:
-  - text: "Bạn muốn hỏi gì không"
-  - text: "Bạn muốn tôi giúp gì không"
+    - text: "Bạn muốn hỏi gì không"
+    - text: "Bạn muốn tôi giúp gì không"
 
   utter_cam_on:
-  - text: "Không có gì"
-  - text: "Rất vui khi hỗ trợ bạn"
-  - text: "Rất vui khi giúp được bạn. Nếu có thắc mắc gì, bạn có thể hỏi tiếp"
+    - text: "Không có gì"
+    - text: "Rất vui khi hỗ trợ bạn"
+    - text: "Rất vui khi giúp được bạn. Nếu có thắc mắc gì, bạn có thể hỏi tiếp"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: Tuyệt vời, cố gắng phát huy nhé!
-  - text: Bạn giỏi thật đó!
-  - text: Hoàn hảo luôn
+    - text: Tuyệt vời, cố gắng phát huy nhé!
+    - text: Bạn giỏi thật đó!
+    - text: Hoàn hảo luôn
 
   utter_tam_biet:
-  - text: "Bye"
-  - text: "Tạm biệt, hẹn gặp lại bạn sau"
-  - text: "Chào bạn nha"
-  - text: "Vâng, hẹn hôm khác nói chuyện tiếp nha"
+    - text: "Bye"
+    - text: "Tạm biệt, hẹn gặp lại bạn sau"
+    - text: "Chào bạn nha"
+    - text: "Vâng, hẹn hôm khác nói chuyện tiếp nha"
 
   utter_iamabot:
-  - text: "Tôi là chatbot hỗ trợ tư vấn các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông"
-  - text: "Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông"
+    - text: "Tôi là chatbot hỗ trợ tư vấn các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông"
+    - text: "Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông"
 
   utter_hoi_chuc_nang:
-  - text:  |-
-      Tôi có thể hỗ trợ trả lời các thông tin liên quan tới quản lý đào tạo của Học viện như:
-      - Các ngành đào tạo
-      - Phương thức tuyển sinh
-      - Chương trình đào tạo
-      - Khoa quản lý
-      - Đội ngũ giảng viên
-      - Điều kiện tốt nghiệp
-      - Học phí (5 năm gần nhất)
-    buttons:
-      - title: "Phương thức tuyển sinh"
-        payload: "/phuong_thuc_tuyen_sinh"
-      - title: "Các ngành đào tạo"
-        payload: "/nganh_dao_tao"
-      - title: "Chương trình đào tạo"
-        payload: "/chuong_trinh_dao_tao"
- 
+    - text: |-
+        Tôi có thể hỗ trợ trả lời các thông tin liên quan tới quản lý đào tạo của Học viện như:
+        - Các ngành đào tạo
+        - Điểm chuẩn
+        - Phương thức tuyển sinh
+        - Chương trình đào tạo
+        - Học bổng
+        - Khoa quản lý
+        - Đội ngũ giảng viên
+        - Điều kiện tốt nghiệp
+        - Học phí
+      buttons:
+        - title: "Phương thức tuyển sinh"
+          payload: '/phuong_thuc_tuyen_sinh{{"thongtinchinh":"phuong_thuc_tuyen_sinh"}}'
+        - title: "Các ngành đào tạo"
+          payload: '/nganh_dao_tao{{"thongtinchinh":"nganh_dao_tao"}}'
+        - title: "Chương trình đào tạo"
+          payload: "/chuong_trinh_dao_tao"
+
   utter_phuong_thuc_tuyen_sinh:
-  - text: |-
-      utter_phuong_thuc_tuyen_sinh
-  
+    - text: |-
+        utter_phuong_thuc_tuyen_sinh {thongtinchinh}
+
   utter_nganh_dao_tao:
-  - text: |-
-      utter_nganh_dao_tao
-  
+    - text: "utter_nganh_dao_tao {thongtinchinh}"
 
   utter_chuong_trinh_dao_tao:
-  - text: |-
-      utter_chuong_trinh_dao_tao
+    - text: |-
+        utter_chuong_trinh_dao_tao
 
   utter_ctdt_2_mien:
-  - text: |-
-      Chương trình đào tạo của Học viện được áp dụng thống nhất ở cả 2 Cơ sở đào tạo Hà Nội và Tp. Hồ Chí Minh
+    - text: |-
+        Chương trình đào tạo của Học viện được áp dụng thống nhất ở cả 2 Cơ sở đào tạo Hà Nội và Tp. Hồ Chí Minh
 
   utter_khoa_quan_ly:
-  - text: |-
-      utter_khoa_quan_ly
+    - text: |-
+        utter_khoa_quan_ly
 
   utter_tn_hoi_loai_bang:
-  - text: |-
-      Sinh viên tốt nghiệp các ngành kỹ thuật thì sẽ được cấp bằng Kỹ sư. Còn sinh viên tốt nghiệp các ngành Kinh tế và Quản trị kinh doanh thì được cấp bằng Cử nhân (Đại học).
+    - text: |-
+        Sinh viên tốt nghiệp các ngành kỹ thuật thì sẽ được cấp bằng Kỹ sư. Còn sinh viên tốt nghiệp các ngành Kinh tế và Quản trị kinh doanh thì được cấp bằng Cử nhân (Đại học).
 
-######## utter cac cau hoi hoc phi
-######## utter cac cau hoi thu tuc nhap hoc
-######## utter cac cau hoi nganh Công nghệ thông tin
+  ######## utter cac cau hoi hoc phi
+  ######## utter cac cau hoi thu tuc nhap hoc
+  ######## utter cac cau hoi nganh Công nghệ thông tin
   utter_cntt_cntt:
-  - text: |-
-      Bạn muốn hỏi gì về ngành công nghệ thông tin ở Học viện
-    
-    #  Dưới đây là một số gợi ý mà mình có thể hỗ trợ
-    # buttons:
-    #   - title: "Mã ngành"
-    #     payload: /cntt_ma_nganh{{"nganh":"cntt"}}
-    #   - title: "Chương trình đào tạo"
-    #     payload: /cntt_chuong_trinh_dao_tao{{"nganh":"cntt"}}
-    #   - title: "Học phí"
-    #     payload: /cntt_hoc_phi{{"nganh":"cntt"}}
-    #   - title: "Điểm chuẩn"
-    #     payload: /cntt_diem_chuan{{"nganh":"cntt"}}
+    - text: |-
+        Bạn muốn hỏi gì về ngành công nghệ thông tin ở Học viện
   utter_cntt_ho_tro:
-  - text: |-
-      Dưới đây là một số gợi ý mà mình có thể hỗ trợ
-      - Mã ngành
-      - Chương trình đào tạo
-      - Học phí
-      - Điểm chuẩn
-    buttons:
-      - title: "Mã ngành"
-        payload: '/cntt_ma_nganh{{"nganh":"cntt"}}'
-      - title: "Chương trình đào tạo"
-        payload: '/cntt_chuong_trinh_dao_tao{{"nganh":"cntt"}}'
-      - title: "Học phí"
-        payload: '/cntt_hoc_phi{{"nganh":"cntt"}}'
-      - title: "Điểm chuẩn"
-        payload: '/cntt_diem_chuan{{"nganh":"cntt"}}'
-    
+    - text: |-
+        Dưới đây là một số gợi ý mà mình có thể hỗ trợ
+        - Mã ngành
+        - Chương trình đào tạo
+        - Học phí
+        - Điểm chuẩn
+      buttons:
+        - title: "Mã ngành"
+          payload: '/cntt_ma_nganh{{"nganh":"cntt"}}'
+        - title: "Chương trình đào tạo"
+          payload: '/cntt_chuong_trinh_dao_tao{{"nganh":"cntt"}}'
+        - title: "Học phí"
+          payload: '/cntt_hoc_phi{{"nganh":"cntt"}}'
+        - title: "Điểm chuẩn"
+          payload: '/cntt_diem_chuan{{"nganh":"cntt"}}'
 
   utter_cntt_tot_nghiep_lam_gi:
-  - text: |-
-      - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
-      - Có thể trở thành các lập trình viên, các nhà quản trị hệ thống, quản trị bảo mật hệ thống công nghệ thông tin trong bất kỳ doanh nghiệp nào;
-      - Có thể làm việc trong các dự án với vai trò là người quản trị dự án về công nghệ thông tin;
-      - Có thể trở thành cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các Viện, Trung tâm nghiên cứu và các Cơ sở đào tạo;
-      - Có thể tiếp tục học tiếp lên trình độ Sau đại học ở trong nước và nước ngoài. 
+    - text: |-
+        - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
+        - Có thể trở thành các lập trình viên, các nhà quản trị hệ thống, quản trị bảo mật hệ thống công nghệ thông tin trong bất kỳ doanh nghiệp nào;
+        - Có thể làm việc trong các dự án với vai trò là người quản trị dự án về công nghệ thông tin;
+        - Có thể trở thành cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các Viện, Trung tâm nghiên cứu và các Cơ sở đào tạo;
+        - Có thể tiếp tục học tiếp lên trình độ Sau đại học ở trong nước và nước ngoài.
 
   utter_cntt_ma_nganh:
-  - text: |-
-      mã ngành công nghệ thông tin là 7480201
+    - text: |-
+        mã ngành công nghệ thông tin là 7480201
   utter_cntt_chuong_trinh_dao_tao:
-  - text: |-
-      Ngành công nghệ thông tin bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
+    - text: |-
+        Ngành công nghệ thông tin bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
   utter_cntt_hoc_phi:
-  - text: |-
-      Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
+    - text: |-
+        Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
   utter_cntt_diem_chuan:
-  - text: |-
-      Điểm chuẩn ngành công nghệ thông tin
+    - text: |-
+        Điểm chuẩn ngành công nghệ thông tin
   utter_cntt_khoi:
-  - text: |-
-      utter_cntt_khoi
-######## utter cac cau hoi nganh Kỹ thuật điện tử viễn thông
+    - text: |-
+        utter_cntt_khoi
+  ######## utter cac cau hoi nganh Kỹ thuật điện tử viễn thông
   utter_ktdtvt_ktdtvt:
-  - text: nganh utter_ktdtvt_ktdtvt {nganh}
-   
-######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
-######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
-######## utter cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
-######## utter cac cau hoi nganh Công nghệ đa phương tiện
-######## utter cac cau hoi nganh Quản trị kinh doanh
-######## utter cac cau hoi nganh Marketing
-######## utter cac cau hoi nganh Kế toán
-######## utter cac cau hoi hoc bong
+    - text: nganh utter_ktdtvt_ktdtvt {nganh}
+
+  ######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
+  ######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+  ######## utter cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+  ######## utter cac cau hoi nganh Công nghệ đa phương tiện
+  ######## utter cac cau hoi nganh Quản trị kinh doanh
+  ######## utter cac cau hoi nganh Marketing
+  ######## utter cac cau hoi nganh Kế toán
+  ######## utter cac cau hoi hoc bong
 
   utter_chon_nganh:
-  - text: |-
-      Chọn ngành bạn muốn tư vấn
-    buttons:
-      - title: "Công nghệ thông tin"
-        payload: /cntt_cntt{"nganh":"cntt"}
-      - title: "Kỹ thuật điện tử viễn thông"
-        payload: /ktdtvt_ktdtvt{"nganh":"ktdtvt"}
-   
+    - text: |-
+        Chọn ngành bạn muốn tư vấn
+      buttons:
+        - title: "Công nghệ thông tin"
+          payload: /cntt_cntt{"nganh":"cntt"}
+        - title: "Kỹ thuật điện tử viễn thông"
+          payload: /ktdtvt_ktdtvt{"nganh":"ktdtvt"}
 
-######## utter cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+  ######## utter cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
   utter_tg_dieu_kien_doi_nganh:
-  - text: |-
-      Em đã đăng ký và trúng tuyển vào ngành học nào thì sẽ phải học tập theo ngành học đó (không được chuyển ngành). Nếu em muốn học thêm 1 ngành học nữa thì sẽ theo học chương trình đào tạo song bằng nếu đủ tiêu chuẩn và điều kiện theo quy chế.
+    - text: |-
+        Em đã đăng ký và trúng tuyển vào ngành học nào thì sẽ phải học tập theo ngành học đó (không được chuyển ngành). Nếu em muốn học thêm 1 ngành học nữa thì sẽ theo học chương trình đào tạo song bằng nếu đủ tiêu chuẩn và điều kiện theo quy chế.
 
   utter_tg_ltv_hoc_nganh_nao:
-  - text: |-
-      Em có thể học ngành Công nghệ thông tin, An toàn thông tin, Công nghệ đa phương tiện. Em cần tham khảo kỹ các chương trình đào tạo của 3 ngành này để có sự lựa chọn phù hợp với đam mê, mục tiêu của mình..
+    - text: |-
+        Em có thể học ngành Công nghệ thông tin, An toàn thông tin, Công nghệ đa phương tiện. Em cần tham khảo kỹ các chương trình đào tạo của 3 ngành này để có sự lựa chọn phù hợp với đam mê, mục tiêu của mình..
 
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"

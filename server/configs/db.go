@@ -15,8 +15,6 @@ type Database struct {
 	DB *gorm.DB
 }
 
-var Conn Database
-
 func DBConnect() *gorm.DB {
 
 	// dbUri := "root:abc@tcp(rct_db:3306)/rct_db?parseTime=true"
@@ -30,7 +28,6 @@ func DBConnect() *gorm.DB {
 
 	log.Println("Connect DB success")
 	DB = db
-	Conn.DB = db
 
 	return db
 }
