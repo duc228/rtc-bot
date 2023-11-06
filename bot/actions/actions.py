@@ -16,6 +16,14 @@ from rasa_sdk.events import SlotSet, AllSlotsReset
 import json
 
 
+class ActionDefaultFallback(Action):
+
+   def name(self):
+      return "action_default_fallback"
+
+   def run(self, dispatcher, tracker, domain):
+      dispatcher.utter_message("Sorry, I couldn't understand.")
+
 class ActionResetAllSlots(Action):
     def name(self):
         return "action_reset_all_slots"

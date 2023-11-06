@@ -100,6 +100,7 @@ slots:
 actions:
   - action_reset_all_slots
   - action_nganh_dao_tao
+  - action_default_fallback
 
 #   - action_school_id
 #   - validate_request_school_id_form
@@ -110,13 +111,21 @@ actions:
 #   - validate_request_time_learning_major_form
 
 responses:
+  utter_default:
+    - text: "Yo what the heck bro just said"
   utter_chao_hoi:
     - text: |-
         Xin chào!
         Tôi là chatbot hỗ trợ tư vấn các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông
+      buttons:
+        - title: "Menu"
+          payload: '/hoi_chuc_nang'
     - text: |-
         Chào bạn, hôm nay bạn muốn hỏi gì không?
         Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông
+      buttons:
+        - title: "Menu"
+          payload: '/hoi_chuc_nang'
 
   utter_khoe:
     - text: "Bạn muốn hỏi gì không"
@@ -167,7 +176,7 @@ responses:
         - title: "Các ngành đào tạo"
           payload: '/nganh_dao_tao{{"thongtinchinh":"nganh_dao_tao"}}'
         - title: "Chương trình đào tạo"
-          payload: "/chuong_trinh_dao_tao"
+          payload: '/chuong_trinh_dao_tao{{"thongtinchinh":"chuong_trinh_dao_tao"}}'
 
   utter_phuong_thuc_tuyen_sinh:
     - text: |-

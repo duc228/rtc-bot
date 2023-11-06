@@ -147,6 +147,15 @@ nlu:
       - cụ thể là bạn giúp được gì?
       - bạn giúp được gì
       - nhiệm vụ của bạn là gì
+      - menu
+      - cho toi xem chuc nang
+      - bạn có chức năng gì
+      - cho tôi xem menu
+      - tôi muốn xem chức năng
+      - tôi muốn xem menu
+      - tôi xem menu được không
+      - chuc nang
+      - chức năng
 
   ######## intent cac cau hoi phuong thuc tuyen sinh
   - intent: phuong_thuc_tuyen_sinh
@@ -163,14 +172,14 @@ nlu:
   ######## intent cac cau hoi cac nganh dao tao
   - intent: nganh_dao_tao
     examples: |
-      - Cho em hỏi các ngành đào tạo của trường
-      - trường đào tạo ngành nào ạ
-      - Thế trường đào tạo ngành nào
-      - Các ngành đào tạo của trường là gì
-      - các ngành đào tạo
-      - cac nganh dao tao
-      - truong dao tao nganh nao
-      - cac nganh dao tao cua truong
+      - Cho em hỏi các [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"} của trường
+      - trường đào tạo [ngành]{"entity":"thongtinchinh","value":"nganh_dao_tao"} nào ạ
+      - Thế trường [đào tạo ngành]{"entity":"thongtinchinh","value":"nganh_dao_tao"} nào
+      - Các [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"} của trường là gì
+      - các [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - cac [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - truong [dao tao nganh]{"entity":"thongtinchinh","value":"nganh_dao_tao"} nao
+      - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"} cua truong
 
   ######## intent cac cau hoi chuong trinh dao tao
   - intent: chuong_trinh_dao_tao
@@ -212,6 +221,8 @@ nlu:
       - [công nghệ thông tin](nganh)
       - [CÔNG NGHỆ THÔNG TIN](nganh)
       - [Cong nghe thong tin](nganh)
+      - [information technologies](nganh)
+      - [information technology](nganh)
 
   - intent: cntt_tot_nghiep_lam_gi
     examples: |
@@ -305,6 +316,7 @@ nlu:
       - Cho em hỏi: Học viện dạy lập trình viên là ngành nào ạ?
       - muon lam lap trinh vien hoc nghanh nao
       - ngành nào sau này làm lập trình viên ạ
+
 
 # - intent: ask_school_id
 #   examples: |
