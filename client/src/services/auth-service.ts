@@ -1,11 +1,28 @@
 import axiosClient, { axiosClientPrivate } from "../configs/axios";
+import { Response } from "../types/api";
+import { SignUpRequest, LoginRequest } from "../features/auth/components";
 
 const url = "/auth";
-// import axios from "axios";
+
+export type LoginResponse = {
+  token: string;
+};
 
 const authService = {
-  login: (data: any) => axiosClient.post(`${url}/login`, data),
-  signUp: (data: any) => axiosClient.post(`${url}/signup`, data),
+  login: async (data: LoginRequest) => {
+    const res: Response<LoginResponse> = await axiosClient.post(
+      `${url}/login`,
+      data
+    );
+    return res.data;
+  },
+  signUp: async (data: SignUpRequest) => {
+    const res: Response<LoginResponse> = await axiosClient.post(
+      `${url}/signup`,
+      data
+    );
+    return res.data;
+  },
   getProfile: () => axiosClientPrivate.get(`${url}/me`),
 };
 

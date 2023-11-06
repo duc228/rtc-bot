@@ -1,20 +1,17 @@
 import { axiosClientPrivate } from "../configs/axios";
-import { OffsetPagination } from "../types/pagination";
+import { Conversation } from "../types/conversation";
+import { OffsetPagination, PaginationResponse } from "../types/pagination";
 // import queryString from "query-string";
 
 const url = "/conversations";
 
 const conversationService = {
   getConverastionByUserId: async (params: Partial<OffsetPagination>) => {
-    // const path = queryString.stringifyUrl({
-    //   url: url,
-    //   query: params,
-    // });
-    // console.log("path", path);
-    // return axiosClientPrivate.get(path);
-    return axiosClientPrivate.get(
-      `${url}/?limit=${params.limit}&page=${params.page}`
-    );
+    const res: PaginationResponse<Conversation[]> =
+      await axiosClientPrivate.get(
+        `${url}/?limit=${params.limit}&page=${params.page}`
+      );
+    return res;
   },
 };
 

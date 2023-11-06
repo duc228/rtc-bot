@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Input } from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
-import { login } from "../../../services/auth-service";
+import { LoginResponse, login } from "../../../services/auth-service";
 import { useState } from "react";
 import useAuthStore from "../../../stores/useAuthStore";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 
 type LoginFormProps = {};
 
-interface LoginInputs {
+export interface LoginRequest {
   email: string;
   password: string;
 }
@@ -27,13 +27,13 @@ export const LoginForm = ({}: LoginFormProps) => {
     register,
     handleSubmit,
     formState: { errors, isDirty, isValid },
-  } = useForm<LoginInputs>({
+  } = useForm<LoginRequest>({
     resolver: yupResolver(LoginSchema),
   });
 
   const { mutate: loginMutation } = useMutation({
     mutationFn: login,
-    onSuccess: (data: any) => {
+    onSuccess: (data: LoginResponse) => {
       toast.success("Đăng nhập thành công");
       setAccessToken(data?.token);
       navigate(AppRoutes.HOME);
@@ -43,7 +43,7 @@ export const LoginForm = ({}: LoginFormProps) => {
     },
   });
 
-  const onSubmit = (data: LoginInputs) => {
+  const onSubmit = (data: LoginRequest) => {
     loginMutation(data);
   };
 

@@ -7,6 +7,7 @@ import { createMessage } from "../../../services/message-service";
 import useConversationStore from "../../../stores/useConversationStore";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { MessageInputSchema } from "../../../validations";
+import { MessageResponse } from "../../../types/message";
 
 type MessageInputProps = {};
 
@@ -32,7 +33,7 @@ export const MessageInput = ({}: MessageInputProps) => {
 
   const { mutate: createMessageMutation, isLoading } = useMutation({
     mutationFn: createMessage,
-    onSuccess: (data: any) => {
+    onSuccess: (data: MessageResponse) => {
       setTempMessage("");
 
       if (conversationId == -1) {

@@ -1,17 +1,18 @@
 import { useForm } from "react-hook-form";
 import { Input } from "@mui/material";
 import { useMutation } from "@tanstack/react-query";
-import { signUp } from "../../../services/auth-service";
+import { LoginResponse, signUp } from "../../../services/auth-service";
 import { useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import useAuthStore from "../../../stores/useAuthStore";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SignUpSchema } from "../../../validations";
 import toast from "react-hot-toast";
+import { Response } from "../../../types/api";
 
 type SignUpProps = {};
 
-interface SignUpInputs {
+export interface SignUpRequest {
   fullName: string;
   email: string;
   password: string;
@@ -27,13 +28,13 @@ export const SignUpForm = ({}: SignUpProps) => {
     register,
     handleSubmit,
     formState: { errors, isValid, isDirty },
-  } = useForm<SignUpInputs>({
+  } = useForm<SignUpRequest>({
     resolver: yupResolver(SignUpSchema),
   });
 
   const { mutate: signUpMutation, isLoading } = useMutation({
     mutationFn: signUp,
-    onSuccess: (data: any) => {
+    onSuccess: (data: LoginResponse) => {
       toast.success("Đăng ký thành công");
 
       if (data?.token) {
@@ -46,7 +47,7 @@ export const SignUpForm = ({}: SignUpProps) => {
     },
   });
 
-  const onSubmit = (data: SignUpInputs) => {
+  const onSubmit = (data: SignUpRequest) => {
     signUpMutation({
       fullName: data.fullName,
       email: data.email,

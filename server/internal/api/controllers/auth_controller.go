@@ -34,13 +34,6 @@ func Login(c *gin.Context) {
 
 	response.Response(c, http.StatusOK, res)
 
-	// old validation params
-	// errorsValidate := validations.LoginValidation(request)
-	// if len(errorsValidate) > 0 {
-	// 	response.Error(c, http.StatusBadRequest, errorsValidate)
-	// 	return
-	// }
-
 }
 
 func SignUp(c *gin.Context) {
@@ -71,3 +64,10 @@ func GetProfile(c *gin.Context) {
 
 	response.Response(c, http.StatusOK, user)
 }
+
+// old validation params
+// errorsValidate := validations.LoginValidation(request)
+// if len(errorsValidate) > 0 {
+// 	response.Error(c, http.StatusBadRequest, errorsValidate)
+// 	return
+// }

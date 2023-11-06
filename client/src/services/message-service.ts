@@ -1,5 +1,7 @@
+import { MessageResponse } from "./../types/message";
 import { axiosClientPrivate } from "../configs/axios";
-import { OffsetPagination } from "../types/pagination";
+import { Message, MessageRequest } from "../types/message";
+import { OffsetPagination, PaginationResponse } from "../types/pagination";
 
 const url = "/messages";
 
@@ -8,12 +10,14 @@ const messageService = {
     conversationId: number,
     params: Partial<OffsetPagination>
   ) => {
-    return axiosClientPrivate.get(
+    const res: PaginationResponse<Message[]> = await axiosClientPrivate.get(
       `${url}/${conversationId}?limit=${params.limit}&page=${params.page}`
     );
+    return res;
   },
-  createMessage: (data: any) => {
-    return axiosClientPrivate.post(`${url}/`, data);
+  createMessage: async (data: MessageRequest) => {
+    const res: MessageResponse = await axiosClientPrivate.post(`${url}/`, data);
+    return res;
   },
 };
 
