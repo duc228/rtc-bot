@@ -115,6 +115,7 @@ actions:
   - action_nganh_dao_tao
   - action_default_fallback
   - action_cntt_tongquan
+  - action_truyvan_data
 
 #   - action_school_id
 #   - validate_request_school_id_form

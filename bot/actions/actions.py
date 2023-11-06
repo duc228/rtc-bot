@@ -12,8 +12,48 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, FormValidationAction, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
-from rasa_sdk.events import SlotSet, AllSlotsReset
+from rasa_sdk.events import SlotSet, AllSlotsReset,UserUttered
 import json
+
+
+
+#### truy van can thongtinchinh
+
+#### truy van can nganh
+
+#### truy van can thongtinphu
+
+#### truy van can thongtinchinh,nganh
+
+#### truy van can nganh,thongtinphu
+
+#### truy van can thongtinchinh,nganh,thongtinphu
+
+class ActionTruyVanData(Action):
+   def name(self):
+      return "action_truyvan_data"
+
+   def run(self, dispatcher, tracker, domain):
+        thongtinchinh = tracker.get("thongtinchinh")
+        if thongtinchinh is None:
+            dispatcher.utter_message(text=f"Chua ro thong tin chinh")
+            # return [UserUttered(text="/my_intent", parse_data=data)]
+            return [UserUttered(text="/utter_hoi_chuc_nang")]
+        else:    
+            nganh = tracker.get_slot("nganh")
+            thongtinphu = tracker.get_slot("thongtinphu")
+
+            if nganh and thongtinphu is None:
+                return [UserUttered(text="/utter_cntt_cntt")]
+            else:  
+            
+
+            # f = open('./data/collections/data_collect.json', encoding="utf8")
+            # data = json.load(f)
+            # if data["chung"]["nganh_dao_tao"]:
+                # dispatcher.utter_message(text=f"{data['chung']['nganh_dao_tao']}")
+            # else:
+                dispatcher.utter_message(text=f"Xin loi, truy van data {nganh} - {thongtinphu}")
 
 
 class ActionDefaultFallback(Action):
@@ -24,7 +64,7 @@ class ActionDefaultFallback(Action):
    def run(self, dispatcher, tracker, domain):
         nganh = tracker.get_slot("nganh")
         thongtinphu = tracker.get_slot("thongtinphu")
-        dispatcher.utter_message(text=f"Sorry, I couldn't understand. {nganh} - {thongtinphu}")
+        dispatcher.utter_message(text=f"Xin loi, toi chua hieu y cua ban {nganh} - {thongtinphu}")
 
 class ActionResetAllSlots(Action):
     def name(self):

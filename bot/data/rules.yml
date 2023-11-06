@@ -62,7 +62,8 @@ rules:
 - rule: cntt - hoi ve cntt
   steps:
   - intent: cntt_cntt
-  - action: utter_cntt_cntt
+  # - action: utter_cntt_cntt
+  - action: action_truyvan_data
   - action: utter_cntt_ho_tro
 
 - rule: cntt - hoi tong quan
@@ -94,6 +95,10 @@ rules:
   steps:
   - intent: cntt_diem_chuan
   - action: utter_cntt_diem_chuan
+- rule: cntt - hoi so tin chi
+  steps:
+  - intent: cntt_sotc
+  - action: action_default_fallback
 
 - rule: cntt - cntt_diem_chuan
   steps:

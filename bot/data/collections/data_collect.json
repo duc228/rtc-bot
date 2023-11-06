@@ -1,6 +1,11 @@
 {
     "chung": {
-     "nganh_dao_tao": "Học viện Công nghệ Bưu chính Viễn thông hiện đang đào tạo các ngành như:\n - Kỹ thuật Điện tử viễn thông\n - Công nghệ Kỹ thuật Điện, điện tử\n - Công nghệ thông tin\n - An toàn thông tin\n - Công nghệ đa phương tiện\n - Quản trị kinh doanh\n - Marketing\n - Kế toán\n",
+     "nganh_dao_tao": {
+        "tong_quan": "Học viện Công nghệ Bưu chính Viễn thông hiện đang đào tạo các ngành như:\n - Kỹ thuật Điện tử viễn thông\n - Công nghệ Kỹ thuật Điện, điện tử\n - Công nghệ thông tin\n - An toàn thông tin\n - Công nghệ đa phương tiện\n - Quản trị kinh doanh\n - Marketing\n - Kế toán\n",
+        "cntt": {
+            
+        }
+     },
      "tuyen_sinh": {
         "phuong_thuc_tuyen_sinh": {
             "noi_dung": "Học viện Công nghệ Bưu chính Viễn thông áp dụng 04 phương thức tuyển sinh (xét tuyển):\n - Xét tuyển thẳng theo quy chế tuyển sinh của Bộ GD&ĐT và theo Đề án tuyển sinh của Học viện\n - Xét tuyển dựa vào kết quả thi tốt nghiệp THPT\n - Xét tuyển kết hợp theo Đề án tuyển sinh của Học viện\n - Xét tuyển dựa vào kết quả các kỳ thi đánh giá năng lực, đánh giá tư duy\n ",
