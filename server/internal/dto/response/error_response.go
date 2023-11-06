@@ -1,6 +1,8 @@
 package response
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 type IError struct {
 	Field   string `json:"field"`
@@ -13,4 +15,6 @@ type NewError struct {
 
 func Error(c *gin.Context, errCode int, data interface{}) {
 	c.AbortWithStatusJSON(errCode, NewError{data})
+	return
+
 }

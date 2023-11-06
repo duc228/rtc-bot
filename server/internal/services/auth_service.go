@@ -20,7 +20,7 @@ type AuthService struct {
 
 var hash_cost = internal.HASH_COST
 
-func (s *AuthService) Login(c *gin.Context, request request.LoginRequest) (string, error) {
+func (s *AuthService) Login(request request.LoginRequest) (string, error) {
 
 	// Find user
 	user, err := s.repo.FindUserByEmail(request.Email)

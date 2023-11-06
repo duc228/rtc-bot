@@ -8,28 +8,23 @@ import (
 	"rct_server/internal/validations"
 
 	"github.com/gin-gonic/gin"
-	"github.com/go-playground/validator/v10"
 )
 
 var authService services.AuthService
-
-var validate *validator.Validate
 
 func Login(c *gin.Context) {
 	var request request.LoginRequest
 
 	if err := c.ShouldBind(&request); err != nil {
-		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đủ thông tin")
+		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đúng thông tin")
 		return
 	}
 
-	errorsValidate := validations.LoginValidation(request)
-	if len(errorsValidate) > 0 {
-		response.Error(c, http.StatusBadRequest, errorsValidate)
+	if !validations.ValidationParams(c, request) {
 		return
 	}
 
-	res, err := authService.Login(c, request)
+	res, err := authService.Login(request)
 
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
@@ -37,16 +32,21 @@ func Login(c *gin.Context) {
 	}
 
 	response.Response(c, http.StatusOK, response.LoginResponse{Token: res})
+
+	// old validation params
+	// errorsValidate := validations.LoginValidation(request)
+	// if len(errorsValidate) > 0 {
+	// 	response.Error(c, http.StatusBadRequest, errorsValidate)
+	// 	return
+	// }
+
 }
 
 func SignUp(c *gin.Context) {
 	var request request.SignUpRequest
-
 	c.BindJSON(&request)
 
-	errorsValidate := validations.SignUpValidation(request)
-	if len(errorsValidate) > 0 {
-		response.Error(c, http.StatusBadRequest, errorsValidate)
+	if !validations.ValidationParams(c, request) {
 		return
 	}
 

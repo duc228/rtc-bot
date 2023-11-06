@@ -23,7 +23,7 @@ func CreateMessage(c *gin.Context) {
 
 	var request request.MessageRequest
 	if err := c.ShouldBind(&request); err != nil {
-		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đủ thông tin")
+		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đúng thông tin")
 		return
 	}
 

@@ -1,5 +1,0 @@
-package validations
-
-func SendMesageValidation() {
-
-}
