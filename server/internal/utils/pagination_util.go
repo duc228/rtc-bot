@@ -1,11 +1,23 @@
 package utils
 
-import "rct_server/internal/dto/response"
+type PaginationResponse struct {
+	Data            interface{} `json:"data"`
+	Page            int         `json:"page"`
+	Limit           int         `json:"limit"`
+	Total           int64       `json:"total"`
+	TotalPages      int         `json:"totalPages"`
+	First           bool        `json:"first"`
+	Last            bool        `json:"last"`
+	HasNextPage     bool        `json:"hasNextPage"`
+	HasPreviousPage bool        `json:"hasPreviousPage"`
+	NextPage        int         `json:"nextPage"`
+	PrevPage        int         `json:"prevPage"`
+}
 
 type PaginationUtil struct {
 }
 
-func (u *PaginationUtil) BuildPaginationData(data interface{}, page int, limit int, total int64, totalPages int) response.PaginationResponse {
+func (u *PaginationUtil) BuildPaginationData(data interface{}, page int, limit int, total int64, totalPages int) PaginationResponse {
 
 	var nextPage int
 	if page+1 <= totalPages {
@@ -21,7 +33,7 @@ func (u *PaginationUtil) BuildPaginationData(data interface{}, page int, limit i
 		prevPage = 0
 	}
 
-	return response.PaginationResponse{
+	return PaginationResponse{
 		Data:            &data,
 		Page:            page,
 		Limit:           limit,

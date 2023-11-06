@@ -5,6 +5,7 @@ import (
 	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
 	"rct_server/internal/services"
+	"rct_server/internal/utils"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -14,12 +15,7 @@ var messageService services.MessageService
 
 func CreateMessage(c *gin.Context) {
 
-	userId, _ := c.Get("userId")
-	if userId == nil {
-		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return
-	}
-	var id = uint(userId.(float64))
+	userId := utils.GetUserId(c)
 
 	var request request.MessageRequest
 	if err := c.ShouldBind(&request); err != nil {
@@ -27,18 +23,13 @@ func CreateMessage(c *gin.Context) {
 		return
 	}
 
-	messageResponse := messageService.SendMessageToBot(id, request)
+	messageResponse := messageService.SendMessageToBot(userId, request)
 
 	response.Response(c, http.StatusOK, messageResponse)
 }
 
 func GetMessagesByConversationId(c *gin.Context) {
-	userId, _ := c.Get("userId")
-	if userId == nil {
-		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return
-	}
-	var id = uint(userId.(float64))
+	userId := utils.GetUserId(c)
 
 	if c.Param("conversationId") == "" {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -48,7 +39,7 @@ func GetMessagesByConversationId(c *gin.Context) {
 
 	var conversationId, _ = strconv.Atoi(c.Param("conversationId"))
 
-	res, err := messageService.GetMessagesByConversationId(id, conversationId, c)
+	res, err := messageService.GetMessagesByConversationId(userId, conversationId, c)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
 		return

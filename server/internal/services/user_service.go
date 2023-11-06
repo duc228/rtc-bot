@@ -7,6 +7,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type UserResponse struct {
+	Id       uint   `json:"id"`
+	FullName string `json:"fullName"`
+	Email    string `json:"email"`
+}
+
 type UserService struct {
 	repo repositories.UserRepository
 }

@@ -13,14 +13,9 @@ var paginationUtil utils.PaginationUtil
 var conversationService services.ConversationService
 
 func GetConversationByUserId(c *gin.Context) {
-	userId, _ := c.Get("userId")
-	if userId == nil {
-		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return
-	}
-	var id = uint(userId.(float64))
+	userId := utils.GetUserId(c)
 
-	res, err := conversationService.GetConverastionByUserId(id, c)
+	res, err := conversationService.GetConverastionByUserId(userId, c)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
 		return
@@ -31,14 +26,9 @@ func GetConversationByUserId(c *gin.Context) {
 }
 
 func CreateConversation(c *gin.Context) {
-	userId, _ := c.Get("userId")
-	if userId == nil {
-		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return
-	}
-	var id = uint(userId.(float64))
+	userId := utils.GetUserId(c)
 
-	conversation, err := conversationService.CreateConversation(id)
+	conversation, err := conversationService.CreateConversation(userId)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
 		return

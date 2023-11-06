@@ -10,10 +10,16 @@ import (
 	"rct_server/internal/dto/response"
 	"rct_server/internal/entities"
 	"rct_server/internal/repositories"
+	"rct_server/internal/utils"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
+
+type MessageBotResponse struct {
+	Message    entities.Message `json:"message"`
+	MessageBot entities.Message `json:"messageBot"`
+}
 
 var BotId = internal.BotId
 
@@ -25,7 +31,7 @@ func (s *MessageService) GetPaginationMessagesByConversationId(conversationId in
 	return s.repo.GetPaginationMessagesByConversationId(conversationId, page, limit)
 }
 
-func (s *MessageService) GetMessagesByConversationId(userId uint, conversationId int, c *gin.Context) (response.PaginationResponse, error) {
+func (s *MessageService) GetMessagesByConversationId(userId uint, conversationId int, c *gin.Context) (utils.PaginationResponse, error) {
 
 	var page int = internal.PAGE
 	var limit int = internal.LIMIT
@@ -41,7 +47,7 @@ func (s *MessageService) GetMessagesByConversationId(userId uint, conversationId
 	total, err := s.GetTotalRows(conversationId, page, limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return response.PaginationResponse{}, err
+		return utils.PaginationResponse{}, err
 	}
 
 	totalPages := int(math.Ceil(float64(total) / float64(limit)))
@@ -49,7 +55,7 @@ func (s *MessageService) GetMessagesByConversationId(userId uint, conversationId
 	data, err := s.GetPaginationMessagesByConversationId(conversationId, page, limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return response.PaginationResponse{}, err
+		return utils.PaginationResponse{}, err
 	}
 
 	return paginationUtil.BuildPaginationData(data, page, limit, total, totalPages), err
@@ -67,7 +73,7 @@ func (s *MessageService) CreateMessage(userId int, request request.MessageReques
 	return s.repo.CreateMessage(id, request)
 }
 
-func (s *MessageService) SendMessageToBot(userId uint, requestMessage request.MessageRequest) response.MessageBotResponse {
+func (s *MessageService) SendMessageToBot(userId uint, requestMessage request.MessageRequest) MessageBotResponse {
 	var conversationService ConversationService
 	var isNewConversation bool = false
 	var conversation entities.Conversation
@@ -108,7 +114,7 @@ func (s *MessageService) SendMessageToBot(userId uint, requestMessage request.Me
 		fmt.Println("Error creating message: ", errMessage)
 	}
 
-	return response.MessageBotResponse{
+	return MessageBotResponse{
 		Message:    newMessage,
 		MessageBot: messageBot,
 	}

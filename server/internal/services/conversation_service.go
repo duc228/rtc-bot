@@ -23,7 +23,7 @@ func (s *ConversationService) GetPaginationConversation(userId uint, page int, l
 	return s.repo.GetPaginationConversation(userId, page, limit)
 }
 
-func (s *ConversationService) GetConverastionByUserId(userId uint, c *gin.Context) (response.PaginationResponse, error) {
+func (s *ConversationService) GetConverastionByUserId(userId uint, c *gin.Context) (utils.PaginationResponse, error) {
 
 	var page int = internal.PAGE
 	var limit int = internal.LIMIT
@@ -39,7 +39,7 @@ func (s *ConversationService) GetConverastionByUserId(userId uint, c *gin.Contex
 	total, err := s.GetTotalRows(userId, page, limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return response.PaginationResponse{}, err
+		return utils.PaginationResponse{}, err
 	}
 
 	totalPages := int(math.Ceil(float64(total) / float64(limit)))
@@ -47,7 +47,7 @@ func (s *ConversationService) GetConverastionByUserId(userId uint, c *gin.Contex
 	data, err := s.GetPaginationConversation(userId, page, limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return response.PaginationResponse{}, err
+		return utils.PaginationResponse{}, err
 
 	}
 

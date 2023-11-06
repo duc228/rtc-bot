@@ -5,6 +5,7 @@ import (
 	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
 	"rct_server/internal/services"
+	"rct_server/internal/utils"
 	"rct_server/internal/validations"
 
 	"github.com/gin-gonic/gin"
@@ -31,7 +32,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	response.Response(c, http.StatusOK, response.LoginResponse{Token: res})
+	response.Response(c, http.StatusOK, res)
 
 	// old validation params
 	// errorsValidate := validations.LoginValidation(request)
@@ -56,26 +57,17 @@ func SignUp(c *gin.Context) {
 		return
 	}
 
-	response.Response(c, http.StatusOK, response.LoginResponse{Token: res})
+	response.Response(c, http.StatusOK, res)
 
 }
 
 func GetProfile(c *gin.Context) {
-	userId, _ := c.Get("userId")
-	if userId == nil {
-		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return
-	}
-	var id = uint(userId.(float64))
-	user, err := authService.GetProfile(c, id)
+	userId := utils.GetUserId(c)
+	user, err := authService.GetProfile(c, userId)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
 		return
 	}
 
-	response.Response(c, http.StatusOK, response.UserResponse{
-		Id:       user.Id,
-		FullName: user.FullName,
-		Email:    user.Email,
-	})
+	response.Response(c, http.StatusOK, user)
 }
