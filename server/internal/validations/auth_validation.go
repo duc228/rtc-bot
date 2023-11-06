@@ -9,10 +9,10 @@ import (
 
 var validate *validator.Validate
 
-func LoginValidation(requestLogin request.LoginRequest) []response.ErrorMessageResponse {
+func LoginValidation(requestLogin request.LoginRequest) []response.IError {
 	validate = validator.New()
 
-	errors := []response.ErrorMessageResponse{}
+	errors := []response.IError{}
 
 	RequestFieldName := request.LoginRequest{
 		Email:    "Email",
@@ -20,6 +20,7 @@ func LoginValidation(requestLogin request.LoginRequest) []response.ErrorMessageR
 	}
 
 	err := validate.Struct(requestLogin)
+
 	if err != nil {
 
 		errors = ErrorCustomValidation(err, RequestFieldName)
@@ -28,11 +29,11 @@ func LoginValidation(requestLogin request.LoginRequest) []response.ErrorMessageR
 	return errors
 }
 
-func SignUpValidation(requestSignUp request.SignUpRequest) []response.ErrorMessageResponse {
+func SignUpValidation(requestSignUp request.SignUpRequest) []response.IError {
 	validate = validator.New()
 	// validate.RegisterValidation("Password", validators.NotBlank)
 
-	errors := []response.ErrorMessageResponse{}
+	errors := []response.IError{}
 
 	RequestFieldName := request.SignUpRequest{
 		Email:           "Email",

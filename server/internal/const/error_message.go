@@ -1,5 +1,7 @@
 package internal
 
+var MsgErr = map[string]string{"abc": "error"}
+
 func MsgForTag(tag string, name string) string {
 	switch tag {
 	case "required":

@@ -9,8 +9,8 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func ErrorCustomValidation(err error, data interface{}) []response.ErrorMessageResponse {
-	errors := []response.ErrorMessageResponse{}
+func ErrorCustomValidation(err error, data interface{}) []response.IError {
+	errors := []response.IError{}
 	if _, ok := err.(*validator.InvalidValidationError); ok {
 		fmt.Println(err)
 		// return errors
@@ -24,10 +24,11 @@ func ErrorCustomValidation(err error, data interface{}) []response.ErrorMessageR
 		fmt.Println("StructField: ", err.StructField())
 		fmt.Println("Tag: ", err.Tag())
 		fmt.Println("ActualTag: ", err.ActualTag())
-		fmt.Println("ActualTag: ", err.Kind())
+		fmt.Println("Kind: ", err.Kind())
 		fmt.Println("Type: ", err.Type())
 		fmt.Println("Value: ", err.Value())
 		fmt.Println("Param: ", err.Param())
+		fmt.Println("Error: ", err.Error())
 		fmt.Println()
 
 		nameFields := reflect.ValueOf(data)
@@ -36,7 +37,7 @@ func ErrorCustomValidation(err error, data interface{}) []response.ErrorMessageR
 			// fmt.Println("\t", nameFields.Field(i))
 
 			if err.Field() == nameFields.Type().Field(i).Name {
-				errors = append(errors, response.ErrorMessageResponse{
+				errors = append(errors, response.IError{
 					Field:   err.Field(),
 					Message: internal.MsgForTag(err.Tag(), nameFields.Field(i).Interface().(string)),
 				})

@@ -30,10 +30,6 @@ func Login(c *gin.Context) {
 	}
 
 	res, err := authService.Login(c, request)
-	// if errors.Is(err, gorm.ErrRecordNotFound) {
-	// 	response.Error(c, http.StatusBadRequest, "Sai tài khoản hoặc mật khẩu")
-	// 	return
-	// }
 
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
