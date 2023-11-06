@@ -22,7 +22,9 @@ class ActionDefaultFallback(Action):
       return "action_default_fallback"
 
    def run(self, dispatcher, tracker, domain):
-      dispatcher.utter_message("Sorry, I couldn't understand.")
+        nganh = tracker.get_slot("nganh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+        dispatcher.utter_message(text=f"Sorry, I couldn't understand. {nganh} - {thongtinphu}")
 
 class ActionResetAllSlots(Action):
     def name(self):
@@ -41,7 +43,7 @@ class ActionNganhDaoTao(Action):
         if data["chung"]["nganh_dao_tao"]:
             dispatcher.utter_message(text=f"{data['chung']['nganh_dao_tao']}")
         else:
-            dispatcher.utter_message(text=f"Bot chưa có thông tin gì về vấn đề này")
+            dispatcher.utter_message(text=f"Học viện Công nghệ Bưu chính Viễn thông hiện đang đào tạo các ngành như:\n - Kỹ thuật Điện tử viễn thông\n - Công nghệ Kỹ thuật Điện, điện tử\n - Công nghệ thông tin\n - An toàn thông tin\n - Công nghệ đa phương tiện\n - Quản trị kinh doanh\n - Marketing\n - Kế toán")
 
         return []
     

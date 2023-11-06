@@ -65,6 +65,11 @@ rules:
   - action: utter_cntt_cntt
   - action: utter_cntt_ho_tro
 
+- rule: cntt - hoi tong quan
+  steps:
+  - intent: cntt_tongquan
+  - action: action_cntt_tongquan
+
 - rule: cntt - tot nghiep lam viec
   steps:
   - intent: cntt_tot_nghiep_lam_gi

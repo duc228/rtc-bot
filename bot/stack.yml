@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  wordpress:
+    image: wordpress
+    container_name: wp-bot
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: abc
+      WORDPRESS_DB_NAME: bot
+    volumes:
+      - ./wordpress:/var/www/html
+
+  db:
+    image: mysql
+    container_name: db-bot
+    expose:
+      - 3306
+    environment:
+      MYSQL_DATABASE: bot
+      # MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: abc
+      # MYSQL_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - ./db:/var/lib/mysql

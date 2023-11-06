@@ -1,0 +1,20 @@
+
+
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, FormValidationAction, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.types import DomainDict
+from rasa_sdk.events import SlotSet, AllSlotsReset
+import json
+
+class ActionCnttTongQuan(Action):
+
+   def name(self):
+      return "action_cntt_tongquan"
+
+   def run(self, dispatcher, tracker, domain):
+        nganh = tracker.get_slot("nganh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+      
+        dispatcher.utter_message(text=f"cntt tong quan cústom action. {nganh}  - {thongtinphu}")

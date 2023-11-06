@@ -33,15 +33,20 @@ intents:
   ######## intent cac cau hoi thu tuc nhap hoc
   ######## intent cac cau hoi nganh Công nghệ thông tin
   - cntt_cntt
+  - cntt_tongquan
   - cntt_tot_nghiep_lam_gi
+  - cntt_thoi_gian_dao_tao
   - cntt_ma_nganh
   - cntt_chuong_trinh_dao_tao
   - cntt_hoc_phi
+  - cntt_sotc
+  - cntt_cntt_chuyen_nganh
   - cntt_diem_chuan
   - cntt_khoi
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
   - ktdtvt_ktdtvt
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
+######## intent cac cau hoi nganh An toàn thông tin
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
 ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
 ######## intent cac cau hoi nganh Công nghệ đa phương tiện
@@ -54,6 +59,7 @@ entities:
   - nganh
   - thongtinchinh
   - coso
+  - thongtinphu
 
 slots:
   thongtinchinh:
@@ -74,6 +80,13 @@ slots:
     mappings:
       - type: from_entity
         entity: coso
+
+  thongtinphu:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: thongtinphu
 
 # slots:
 #   branch:
@@ -101,6 +114,7 @@ actions:
   - action_reset_all_slots
   - action_nganh_dao_tao
   - action_default_fallback
+  - action_cntt_tongquan
 
 #   - action_school_id
 #   - validate_request_school_id_form
@@ -112,7 +126,7 @@ actions:
 
 responses:
   utter_default:
-    - text: "Yo what the heck bro just said"
+    - text: "Yo what mean bro just said"
   utter_chao_hoi:
     - text: |-
         Xin chào!
@@ -224,6 +238,9 @@ responses:
         - title: "Điểm chuẩn"
           payload: '/cntt_diem_chuan{{"nganh":"cntt"}}'
 
+  utter_cntt_tongquan:
+    - text: |-
+        utter cnnt tong quan {thongtinphu} - {nganh}
   utter_cntt_tot_nghiep_lam_gi:
     - text: |-
         - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
@@ -278,6 +295,28 @@ responses:
     - text: |-
         Em có thể học ngành Công nghệ thông tin, An toàn thông tin, Công nghệ đa phương tiện. Em cần tham khảo kỹ các chương trình đào tạo của 3 ngành này để có sự lựa chọn phù hợp với đam mê, mục tiêu của mình..
 
+
+  ######## các utter cần slot thongtinchinh (nếu chưa có thì cần lấy thông tin trước)
+  ######## các utter cần slot nganh (nếu chưa có thì cần lấy thông tin trước)
+
+  ######## utter các câu hỏi tổng quan
+  ######## utter các câu hỏi thời gian đào tạo
+  ######## utter các câu hỏi mã ngành
+  ######## utter các câu hỏi học phí
+  ######## utter các câu hỏi điểm chuẩn
+  ######## utter các câu hỏi chuyên ngành
+  ######## utter các câu hỏi số tín chỉ
+
+
+  ######## các utter cần slot chinhanh (nếu chưa có thì cần lấy thông tin trước)
+
+  ######## Các utter cần thông tin từ 2 slot trở lên
+  ######## utter slot thongtinchinh - nganh
+  ######## utter slot thongtinchinh - chinhanh
+  ######## utter slot nganh - chinhanh
+  ######## utter slot thongtinchinh - nganh - chinhanh
+
+  
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"
   # - text: "Mỗi cơ sở sẽ có mã trường khác nhau, bạn muốn biết ở nam hay bắc"
