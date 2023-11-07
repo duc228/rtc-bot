@@ -4,3 +4,5 @@ export const ENV = {
 };
 
 export const BASE_URL = "/api/v1";
+
+export const CONVERSATION_ID_DEFAULT = -1;

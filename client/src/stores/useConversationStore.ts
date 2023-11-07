@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { CONVERSATION_ID_DEFAULT } from "../constants/env";
 
 interface ConversationState {
   conversationId: number;
@@ -8,7 +9,7 @@ interface ConversationState {
 }
 
 const useConversationStore = create<ConversationState>()((set) => ({
-  conversationId: -1,
+  conversationId: CONVERSATION_ID_DEFAULT,
   tempMessage: "",
   setConversationId(id: number) {
     set((state) => ({

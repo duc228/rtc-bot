@@ -1,12 +1,13 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
 	"rct_server/internal/services"
 	"rct_server/internal/utils"
-	"strconv"
+	"rct_server/internal/validations"
 
 	"github.com/gin-gonic/gin"
 )
@@ -23,6 +24,10 @@ func CreateMessage(c *gin.Context) {
 		return
 	}
 
+	if !validations.ValidationParams(c, request) {
+		return
+	}
+
 	messageResponse := messageService.SendMessageToBot(userId, request)
 
 	response.Response(c, http.StatusOK, messageResponse)
@@ -31,15 +36,19 @@ func CreateMessage(c *gin.Context) {
 func GetMessagesByConversationId(c *gin.Context) {
 	userId := utils.GetUserId(c)
 
-	if c.Param("conversationId") == "" {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"message": "Missing conversationId",
-		})
+	fmt.Println("params: ", c.Param("conversationId"))
+
+	var request request.GetMessagesRequest
+	if err := c.ShouldBindUri(&request); err != nil {
+		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đúng thông tin")
+		return
 	}
 
-	var conversationId, _ = strconv.Atoi(c.Param("conversationId"))
+	if !validations.ValidationParams(c, request) {
+		return
+	}
 
-	res, err := messageService.GetMessagesByConversationId(userId, conversationId, c)
+	res, err := messageService.GetMessagesByConversationId(userId, request.ConversationId, c)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
 		return
