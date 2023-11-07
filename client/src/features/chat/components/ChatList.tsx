@@ -29,7 +29,8 @@ export const ChatList = ({}: ChatListProps) => {
   } = useInfiniteQuery({
     queryKey: ["conversations"],
     queryFn: ({ pageParam }) => {
-      return getConverastionByUserId({ page: pageParam, limit: 20 });
+      const page = pageParam || 0;
+      return getConverastionByUserId({ page: page, limit: 20 });
     },
     getNextPageParam: (lastPage: any) => {
       if (lastPage?.hasNextPage) {

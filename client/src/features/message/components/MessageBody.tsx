@@ -47,8 +47,9 @@ export const MessageBody = ({}: MessageBodyProps) => {
     queryKey: ["messages", conversationId],
     enabled: conversationId !== -1,
     queryFn: ({ pageParam }) => {
+      const page = pageParam || 0;
       return getMessagesByConversationId(conversationId, {
-        page: pageParam,
+        page: page,
         limit: 20,
       });
     },
