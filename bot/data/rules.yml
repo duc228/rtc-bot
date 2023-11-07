@@ -30,7 +30,8 @@ rules:
 - rule: hoi phuong_thuc_tuyen_sinh
   steps:
   - intent: phuong_thuc_tuyen_sinh
-  - action: utter_phuong_thuc_tuyen_sinh
+  - action: action_truyvan_thongtinchinh
+  # - action: utter_phuong_thuc_tuyen_sinh
 
 - rule: hoi nganh dao tao
   steps:
@@ -63,13 +64,14 @@ rules:
   steps:
   - intent: cntt_cntt
   # - action: utter_cntt_cntt
-  - action: action_truyvan_data
+  - action: action_truyvan_nganh
   - action: utter_cntt_ho_tro
 
 - rule: cntt - hoi tong quan
   steps:
-  - intent: cntt_tongquan
+  # - intent: cntt_tongquan
   - action: action_cntt_tongquan
+  - action: action_truyvan_nganh
 
 - rule: cntt - tot nghiep lam viec
   steps:
@@ -114,6 +116,7 @@ rules:
 - rule: ktdtvt - hoi ve ktdtvt
   steps:
   - intent: ktdtvt_ktdtvt
+  # - intent: action_truyvan_nganh
   - action: utter_ktdtvt_ktdtvt
 
 

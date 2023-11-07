@@ -2,9 +2,11 @@ package controllers
 
 import (
 	"net/http"
+	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
 	"rct_server/internal/services"
 	"rct_server/internal/utils"
+	"rct_server/internal/validations"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,7 +17,17 @@ var conversationService services.ConversationService
 func GetConversationByUserId(c *gin.Context) {
 	userId := utils.GetUserId(c)
 
-	res, err := conversationService.GetConverastionByUserId(userId, c)
+	var request request.PaginationRequest
+	if err := c.ShouldBind(&request); err != nil {
+		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đúng thông tin")
+		return
+	}
+
+	if !validations.ValidationParams(c, request) {
+		return
+	}
+
+	res, err := conversationService.GetConverastionByUserId(userId, request, c)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
 		return

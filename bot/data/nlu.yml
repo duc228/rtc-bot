@@ -172,6 +172,8 @@ nlu:
       - Các [hình thức tuyển sinh]{"entity":"thongtinchinh","value":"phuong_thuc_tuyen_sinh"} của trường
       - Dạ cho em hỏi về các [phương thức tuyển sinh]{"entity":"thongtinchinh","value":"phuong_thuc_tuyen_sinh"} của trường
       - Trường mình có các [phương thức tuyển sinh]{"entity":"thongtinchinh","value":"phuong_thuc_tuyen_sinh"} nào ạ
+      - [phuong thuc tuyen sinh]{"entity":"thongtinchinh","value":"phuong_thuc_tuyen_sinh"}
+      - [hinh thuc tuyen sinh]{"entity":"thongtinchinh","value":"phuong_thuc_tuyen_sinh"}
 
   ######## intent cac cau hoi cac nganh dao tao
   - intent: nganh_dao_tao
@@ -333,12 +335,12 @@ nlu:
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
   - intent: ktdtvt_ktdtvt
     examples: |
-      - [ktdtvt]{"entity":"nganh","value":"ktdtvt"}
-      - [Kỹ thuật điện tử viễn thôn]{"entity":"nganh","value":"ktdtvt"}
-      - [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktdtvt"}
-      - [dien tu vien thong]{"entity":"nganh","value":"ktdtvt"}
-      - [Điện tử viễn thông]{"entity":"nganh","value":"ktdtvt"}
-      - [viễn thông]{"entity":"nganh","value":"ktdtvt"}
+      - [ktdtvt]{"entity":"nganh","value":"ktdtvt","entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - [Kỹ thuật điện tử viễn thôn]{"entity":"nganh","value":"ktdtvt","entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktdtvt","entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - [dien tu vien thong]{"entity":"nganh","value":"ktdtvt","entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - [Điện tử viễn thông]{"entity":"nganh","value":"ktdtvt","entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - [viễn thông]{"entity":"nganh","value":"ktdtvt","entity":"thongtinchinh","value":"nganh_dao_tao"}
   ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
   ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
   ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)

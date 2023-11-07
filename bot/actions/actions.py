@@ -18,8 +18,53 @@ import json
 
 
 #### truy van can thongtinchinh
+class ActionTruyVanThongtinchinh(Action):
+    def name(self):
+        return "action_truyvan_thongtinchinh"
+    def run(self, dispatcher, tracker, domain):
+        thongtinchinh = tracker.get_slot("thongtinchinh")
+        if thongtinchinh is None:
+            dispatcher.utter_message(text=f"Bot chưa hiểu ý bạn")
+            # return [UserUttered(text="/my_intent", parse_data=data)]
+            print(thongtinchinh + "\n")
+            return [UserUttered(text="/utter_hoi_chuc_nang")]
+        else:    
+            print("chua lay duoc thong tin chinh\n")
+
+            f = open('./data/collections/data_collect.json', encoding="utf8")
+            data = json.load(f)
+            if data["chung"][thongtinchinh]:
+                dispatcher.utter_message(text=f'{data["chung"][thongtinchinh]}')
+            else:
+                return [UserUttered(text="Xin lỗi, hiện tại bot chưa hiểu ý bạn hoặc chưa có dữ liệu bạn mong muốn")]
 
 #### truy van can nganh
+class ActionTruyvanNganh(Action):
+    def name(self):
+        return "action_truyvan_nganh"
+    def run(self, dispatcher, tracker, domain):
+            # return [UserUttered(text="/my_intent", parse_data=data)]
+        nganh = tracker.get_slot("nganh")
+        
+        if nganh is None:
+            dispatcher.utter_message(text=f"Bot chưa hiểu ý bạn")
+            f = open('./data/collections/data_collect.json', encoding="utf8")
+            data = json.load(f)
+            if data["chung"]["nganh_dao_tao"]["tong_quan"]:
+                dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"]["tong_quan"]}')
+                return [UserUttered(text="/nganh_dao_tao")]
+        else:    
+            thongtinphu = tracker.get_slot("thongtinphu")
+            f = open('./data/collections/data_collect.json', encoding="utf8")
+            data = json.load(f)
+            if thongtinphu is None:
+                if data["chung"]["nganh_dao_tao"][nganh]["tong_quan"]:
+                    dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"][nganh]["tong_quan"]}')
+            else:
+                 if data["chung"]["nganh_dao_tao"][nganh][thongtinphu]:
+                    dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"][nganh][thongtinphu]}')
+                 else:
+                    return [UserUttered(text="Xin lỗi, hiện tại bot chưa hiểu ý bạn hoặc chưa có dữ liệu bạn mong muốn")]
 
 #### truy van can thongtinphu
 
@@ -34,7 +79,7 @@ class ActionTruyVanData(Action):
       return "action_truyvan_data"
 
    def run(self, dispatcher, tracker, domain):
-        thongtinchinh = tracker.get("thongtinchinh")
+        thongtinchinh = tracker.get_slot("thongtinchinh")
         if thongtinchinh is None:
             dispatcher.utter_message(text=f"Chua ro thong tin chinh")
             # return [UserUttered(text="/my_intent", parse_data=data)]
@@ -91,112 +136,112 @@ class ActionNganhDaoTao(Action):
 
 
 ########################################################################
-class ActionValidateMajorName(FormValidationAction):
-    def name(self) -> Text:
-        return "validate_request_time_learning_major_form"
+# class ActionValidateMajorName(FormValidationAction):
+#     def name(self) -> Text:
+#         return "validate_request_time_learning_major_form"
 
-    def validate_request_time_learning_major_form(
-            self,
-            slot_value: Any,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: DomainDict,
-    ) -> Dict[Text, Any]:
-        # dispatcher.utter_message(text=f"OK! You want to have a {slot_value} pizza.")
-        return {"major": slot_value}
+#     def validate_request_time_learning_major_form(
+#             self,
+#             slot_value: Any,
+#             dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: DomainDict,
+#     ) -> Dict[Text, Any]:
+#         # dispatcher.utter_message(text=f"OK! You want to have a {slot_value} pizza.")
+#         return {"major": slot_value}
 
-class ActionGetTimeLearningMajor(Action):
-    def name(self):
-        return "action_get_time_learning_major"
+# class ActionGetTimeLearningMajor(Action):
+#     def name(self):
+#         return "action_get_time_learning_major"
 
-    def run(self, dispatcher, tracker, domain):
-        f = open('./data/data_db.json', encoding="utf8")
-        data = json.load(f)
-        major = tracker.get_slot("major")
-        if major:
-            major = major.lower()
-            print(f"major {major}")
-            for item in data["tuyen_sinh"]["bac"]["2023"]["nganh"]:
-                for key in item["key_word"]:
-                    if key.lower().find(major) != -1:
-                        dispatcher.utter_message(text=f"Thời gian đào tạo của ngành {item['ten_nganh']} là {item['tgian']} ")
-                        break
-        else:
-            dispatcher.utter_message(text=f"Vui lòng cung cấp các ngành mà Học viện đào tạo")
-        f.close()
-        return []
+#     def run(self, dispatcher, tracker, domain):
+#         f = open('./data/data_db.json', encoding="utf8")
+#         data = json.load(f)
+#         major = tracker.get_slot("major")
+#         if major:
+#             major = major.lower()
+#             print(f"major {major}")
+#             for item in data["tuyen_sinh"]["bac"]["2023"]["nganh"]:
+#                 for key in item["key_word"]:
+#                     if key.lower().find(major) != -1:
+#                         dispatcher.utter_message(text=f"Thời gian đào tạo của ngành {item['ten_nganh']} là {item['tgian']} ")
+#                         break
+#         else:
+#             dispatcher.utter_message(text=f"Vui lòng cung cấp các ngành mà Học viện đào tạo")
+#         f.close()
+#         return []
 
-class ActionGetPoints(Action):
-    def name(self):
-        return "action_get_all_points"
+# class ActionGetPoints(Action):
+#     def name(self):
+#         return "action_get_all_points"
 
-    def run(self, dispatcher, tracker, domain):
-        f = open('./data/data_db.json', encoding="utf8")
-        data = json.load(f)
-        result = ""
-        for item in data["tuyen_sinh"]["bac"]["2023"]["nganh"]:
-            result += f"{item['ten_nganh']}: {item['diem_chuan']['diem']}\n"
+#     def run(self, dispatcher, tracker, domain):
+#         f = open('./data/data_db.json', encoding="utf8")
+#         data = json.load(f)
+#         result = ""
+#         for item in data["tuyen_sinh"]["bac"]["2023"]["nganh"]:
+#             result += f"{item['ten_nganh']}: {item['diem_chuan']['diem']}\n"
 
-        dispatcher.utter_message(text=f"{result}")
-        f.close()
-        return []
+#         dispatcher.utter_message(text=f"{result}")
+#         f.close()
+#         return []
 
-class ActionGetAllJoins(Action):
-    def name(self):
-        return "action_get_all_joins"
+# class ActionGetAllJoins(Action):
+#     def name(self):
+#         return "action_get_all_joins"
 
-    def run(self, dispatcher, tracker, domain):
-        f = open('./data/data_db.json', encoding="utf8")
-        data = json.load(f)
-        dispatcher.utter_message(text=f"{data['tuyen_sinh']['bac']['2023']['phuong_thuc_tuyen_sinh']['noi_dung']}")
-        f.close()
-        return []
-
-
-class ActionGetAllMajors(Action):
-    def name(self):
-        return "action_get_all_majors"
-
-    def run(self, dispatcher, tracker, domain):
-        f = open('./data/data_db.json', encoding="utf8")
-        data = json.load(f)
-        dispatcher.utter_message(text=f"{data['tuyen_sinh']['nganh_dao_tao']}")
-        f.close()
-        return []
+#     def run(self, dispatcher, tracker, domain):
+#         f = open('./data/data_db.json', encoding="utf8")
+#         data = json.load(f)
+#         dispatcher.utter_message(text=f"{data['tuyen_sinh']['bac']['2023']['phuong_thuc_tuyen_sinh']['noi_dung']}")
+#         f.close()
+#         return []
 
 
+# class ActionGetAllMajors(Action):
+#     def name(self):
+#         return "action_get_all_majors"
 
-class ActionValidateSchoolId(FormValidationAction):
-    def name(self) -> Text:
-        return "validate_request_school_id_form"
-
-    def validate_pizza_size(
-            self,
-            slot_value: Any,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: DomainDict,
-    ) -> Dict[Text, Any]:
-        # dispatcher.utter_message(text=f"OK! You want to have a {slot_value} pizza.")
-        return {"branch": slot_value}
+#     def run(self, dispatcher, tracker, domain):
+#         f = open('./data/data_db.json', encoding="utf8")
+#         data = json.load(f)
+#         dispatcher.utter_message(text=f"{data['tuyen_sinh']['nganh_dao_tao']}")
+#         f.close()
+#         return []
 
 
-class ActionSchoolId(Action):
-    def name(self) -> Text:
-        return "action_school_id"
 
-    def run(self, dispatcher: CollectingDispatcher,
-                        tracker: Tracker,
-                        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        f = open('./data/data_db.json', encoding="utf8")
-        data = json.load(f)
-        # branch = tracker.get_latest_entity_values("branch", None)
-        branch= tracker.get_slot("branch")
-        print(f"slottt  {branch}")
-        dispatcher.utter_message(text=f"run action {branch} - {data['tuyen_sinh']['bac']['ma_truong']}")
-        f.close()
+# class ActionValidateSchoolId(FormValidationAction):
+#     def name(self) -> Text:
+#         return "validate_request_school_id_form"
 
-        return [SlotSet("branch", "")]
+#     def validate_pizza_size(
+#             self,
+#             slot_value: Any,
+#             dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: DomainDict,
+#     ) -> Dict[Text, Any]:
+#         # dispatcher.utter_message(text=f"OK! You want to have a {slot_value} pizza.")
+#         return {"branch": slot_value}
+
+
+# class ActionSchoolId(Action):
+#     def name(self) -> Text:
+#         return "action_school_id"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#                         tracker: Tracker,
+#                         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         f = open('./data/data_db.json', encoding="utf8")
+#         data = json.load(f)
+#         # branch = tracker.get_latest_entity_values("branch", None)
+#         branch= tracker.get_slot("branch")
+#         print(f"slottt  {branch}")
+#         dispatcher.utter_message(text=f"run action {branch} - {data['tuyen_sinh']['bac']['ma_truong']}")
+#         f.close()
+
+#         return [SlotSet("branch", "")]
 
 #
 #

@@ -3,12 +3,11 @@ package services
 import (
 	"math"
 	"net/http"
-	internal "rct_server/internal/const"
+	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
 	"rct_server/internal/entities"
 	"rct_server/internal/repositories"
 	"rct_server/internal/utils"
-	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -23,35 +22,35 @@ func (s *ConversationService) GetPaginationConversation(userId uint, page int, l
 	return s.repo.GetPaginationConversation(userId, page, limit)
 }
 
-func (s *ConversationService) GetConverastionByUserId(userId uint, c *gin.Context) (utils.PaginationResponse, error) {
+func (s *ConversationService) GetConverastionByUserId(userId uint, request request.PaginationRequest, c *gin.Context) (utils.PaginationResponse, error) {
 
-	var page int = internal.PAGE
-	var limit int = internal.LIMIT
+	// var page int = internal.PAGE
+	// var limit int = internal.LIMIT
 
-	if c.Query("page") != "" {
-		page, _ = strconv.Atoi(c.Query("page"))
-	}
+	// if c.Query("page") != "" {
+	// 	page, _ = strconv.Atoi(c.Query("page"))
+	// }
 
-	if c.Query("limit") != "" {
-		limit, _ = strconv.Atoi(c.Query("limit"))
-	}
+	// if c.Query("limit") != "" {
+	// 	limit, _ = strconv.Atoi(c.Query("limit"))
+	// }
 
-	total, err := s.GetTotalRows(userId, page, limit)
+	total, err := s.GetTotalRows(userId, request.Page, request.Limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
 		return utils.PaginationResponse{}, err
 	}
 
-	totalPages := int(math.Ceil(float64(total) / float64(limit)))
+	totalPages := int(math.Ceil(float64(total) / float64(request.Limit)))
 
-	data, err := s.GetPaginationConversation(userId, page, limit)
+	data, err := s.GetPaginationConversation(userId, request.Page, request.Limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
 		return utils.PaginationResponse{}, err
 
 	}
 
-	return paginationUtil.BuildPaginationData(data, page, limit, total, totalPages), err
+	return paginationUtil.BuildPaginationData(data, request.Page, request.Limit, total, totalPages), err
 }
 
 func (s *ConversationService) GetTotalRows(userId uint, page int, limit int) (int64, error) {

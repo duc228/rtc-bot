@@ -36,19 +36,30 @@ func CreateMessage(c *gin.Context) {
 func GetMessagesByConversationId(c *gin.Context) {
 	userId := utils.GetUserId(c)
 
-	fmt.Println("params: ", c.Param("conversationId"))
-
-	var request request.GetMessagesRequest
-	if err := c.ShouldBindUri(&request); err != nil {
+	var requestConversation request.GetMessagesRequest
+	if err := c.ShouldBindUri(&requestConversation); err != nil {
 		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đúng thông tin")
 		return
 	}
 
-	if !validations.ValidationParams(c, request) {
+	if !validations.ValidationParams(c, requestConversation) {
 		return
 	}
 
-	res, err := messageService.GetMessagesByConversationId(userId, request.ConversationId, c)
+	var requestPagination request.PaginationRequest
+	if err := c.ShouldBind(&requestPagination); err != nil {
+		response.Error(c, http.StatusBadRequest, "Vui lòng cung cấp đúng thông tin")
+		return
+	}
+
+	if !validations.ValidationParams(c, requestPagination) {
+		return
+	}
+
+	fmt.Println("page ", requestPagination.Page)
+	fmt.Println("limit ", requestPagination.Limit)
+
+	res, err := messageService.GetMessagesByConversationId(userId, requestPagination, requestConversation.ConversationId, c)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
 		return

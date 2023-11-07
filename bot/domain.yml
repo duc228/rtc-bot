@@ -116,6 +116,8 @@ actions:
   - action_default_fallback
   - action_cntt_tongquan
   - action_truyvan_data
+  - action_truyvan_thongtinchinh
+  - action_truyvan_nganh
 
 #   - action_school_id
 #   - validate_request_school_id_form
@@ -198,7 +200,16 @@ responses:
         utter_phuong_thuc_tuyen_sinh {thongtinchinh}
 
   utter_nganh_dao_tao:
-    - text: "utter_nganh_dao_tao {thongtinchinh}"
+    - text: |-
+        Dưới đây là một số gợi ý mà mình có thể hỗ trợ
+        - Tổng quan về ngành
+        - Mã ngành
+        - Chương trình đào tạo
+        - Học phí
+        - Điểm chuẩn
+        - Thời gian đào tạo
+        - Số tin chỉ
+        - Học phí
 
   utter_chuong_trinh_dao_tao:
     - text: |-
@@ -222,6 +233,7 @@ responses:
   utter_cntt_cntt:
     - text: |-
         Bạn muốn hỏi gì về ngành công nghệ thông tin ở Học viện
+
   utter_cntt_ho_tro:
     - text: |-
         Dưới đây là một số gợi ý mà mình có thể hỗ trợ
@@ -242,6 +254,7 @@ responses:
   utter_cntt_tongquan:
     - text: |-
         utter cnnt tong quan {thongtinphu} - {nganh}
+        
   utter_cntt_tot_nghiep_lam_gi:
     - text: |-
         - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
@@ -249,6 +262,18 @@ responses:
         - Có thể làm việc trong các dự án với vai trò là người quản trị dự án về công nghệ thông tin;
         - Có thể trở thành cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các Viện, Trung tâm nghiên cứu và các Cơ sở đào tạo;
         - Có thể tiếp tục học tiếp lên trình độ Sau đại học ở trong nước và nước ngoài.
+
+  utter_cntt_thoi_gian_dao_tao:
+    - text: |-
+        - thoi gian dao tao nganh cntt
+
+  utter_cntt_sotc:
+    - text: |-
+        - so tin chi nganh cntt
+
+  utter_cntt_chuyen_nganh:
+    - text: |-
+        - cac chuyen nganh cntt
 
   utter_cntt_ma_nganh:
     - text: |-
@@ -268,6 +293,7 @@ responses:
   ######## utter cac cau hoi nganh Kỹ thuật điện tử viễn thông
   utter_ktdtvt_ktdtvt:
     - text: nganh utter_ktdtvt_ktdtvt {nganh}
+
 
   ######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
   ######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
