@@ -1,6 +1,7 @@
 import axiosClient, { axiosClientPrivate } from "../configs/axios";
 import { Response } from "../types/api";
 import { SignUpRequest, LoginRequest } from "../features/auth/components";
+import { User } from "../types/user";
 
 const url = "/auth";
 
@@ -23,7 +24,10 @@ const authService = {
     );
     return res.data;
   },
-  getProfile: () => axiosClientPrivate.get(`${url}/me`),
+  getProfile: async () => {
+    const res: Response<User> = await axiosClientPrivate.get(`${url}/me`);
+    return res.data;
+  },
 };
 
 export const { login, signUp, getProfile } = authService;

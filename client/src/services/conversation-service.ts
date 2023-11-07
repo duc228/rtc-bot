@@ -11,7 +11,8 @@ const conversationService = {
       await axiosClientPrivate.get(
         `${url}/?limit=${params.limit}&page=${params.page}`
       );
-    return res;
+
+    return res.data;
   },
 };
 
