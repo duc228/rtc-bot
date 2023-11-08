@@ -45,14 +45,112 @@ intents:
   - cntt_khoi
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
   - ktdtvt_ktdtvt
+  - ktdtvt_tongquan
+  - ktdtvt_tot_nghiep_lam_gi
+  - ktdtvt_ma_nganh
+  - ktdtvt_chuong_trinh_dao_tao
+  - ktdtvt_thoi_gian_dao_tao
+  - ktdtvt_hoc_phi
+  - ktdtvt_sotc
+  - ktdtvt_chuyen_nganh
+  - ktdtvt_diem_chuan
+  - ktdtvt_khoi
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
+  # - ktddtt_ktddtt
+  # - ktddtt_tongquan
+  # - ktddtt_tot_nghiep_lam_gi
+  # - ktddtt_ma_nganh
+  # - ktddtt_chuong_trinh_dao_tao
+  # - ktddtt_thoi_gian_dao_tao
+  # - ktddtt_hoc_phi
+  # - ktddtt_sotc
+  # - ktddtt_chuyen_nganh
+  # - ktddtt_diem_chuan
+  # - ktddtt_khoi
 ######## intent cac cau hoi nganh An toàn thông tin
+  # - attt_attt
+  # - attt_tongquan
+  # - attt_tot_nghiep_lam_gi
+  # - attt_ma_nganh
+  # - attt_chuong_trinh_dao_tao
+  # - attt_thoi_gian_dao_tao
+  # - attt_hoc_phi
+  # - attt_sotc
+  # - attt_chuyen_nganh
+  # - attt_diem_chuan
+  # - attt_khoi
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+  # - ktdktdh_ktdktdh
+  # - ktdktdh_tongquan
+  # - ktdktdh_tot_nghiep_lam_gi
+  # - ktdktdh_ma_nganh
+  # - ktdktdh_chuong_trinh_dao_tao
+  # - ktdktdh_thoi_gian_dao_tao
+  # - ktdktdh_hoc_phi
+  # - ktdktdh_sotc
+  # - ktdktdh_chuyen_nganh
+  # - ktdktdh_diem_chuan
+  # - ktdktdh_khoi
 ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+  # - cniot_cniot
+  # - cniot_tongquan
+  # - cniot_tot_nghiep_lam_gi
+  # - cniot_ma_nganh
+  # - cniot_chuong_trinh_dao_tao
+  # - cniot_thoi_gian_dao_tao
+  # - cniot_hoc_phi
+  # - cniot_sotc
+  # - cniot_chuyen_nganh
+  # - cniot_diem_chuan
+  # - cniot_khoi
 ######## intent cac cau hoi nganh Công nghệ đa phương tiện
+  # - cndpt_cndpt
+  # - cndpt_tongquan
+  # - cndpt_tot_nghiep_lam_gi
+  # - cndpt_ma_nganh
+  # - cndpt_chuong_trinh_dao_tao
+  # - cndpt_thoi_gian_dao_tao
+  # - cndpt_hoc_phi
+  # - cndpt_sotc
+  # - cndpt_chuyen_nganh
+  # - cndpt_diem_chuan
+  # - cndpt_khoi
 ######## intent cac cau hoi nganh Quản trị kinh doanh
+  # - qtkd_qtkd
+  # - qtkd_tongquan
+  # - qtkd_tot_nghiep_lam_gi
+  # - qtkd_ma_nganh
+  # - qtkd_chuong_trinh_dao_tao
+  # - qtkd_thoi_gian_dao_tao
+  # - qtkd_hoc_phi
+  # - qtkd_sotc
+  # - qtkd_chuyen_nganh
+  # - qtkd_diem_chuan
+  # - qtkd_khoi
 ######## intent cac cau hoi nganh Marketing
+  # - mkt_mkt
+  # - mkt_tongquan
+  # - mkt_tot_nghiep_lam_gi
+  # - mkt_ma_nganh
+  # - mkt_chuong_trinh_dao_tao
+  # - mkt_thoi_gian_dao_tao
+  # - mkt_hoc_phi
+  # - mkt_sotc
+  # - mkt_chuyen_nganh
+  # - mkt_diem_chuan
+  # - mkt_khoi
 ######## intent cac cau hoi nganh Kế toán
+  # - kt_kt
+  # - kt_tongquan
+  # - kt_tot_nghiep_lam_gi
+  # - kt_ma_nganh
+  # - kt_chuong_trinh_dao_tao
+  # - kt_thoi_gian_dao_tao
+  # - kt_hoc_phi
+  # - kt_sotc
+  # - kt_chuyen_nganh
+  # - kt_diem_chuan
+  # - kt_khoi
 ######## intent cac cau hoi hoc bong
 
 entities:
@@ -294,8 +392,81 @@ responses:
   utter_ktdtvt_ktdtvt:
     - text: nganh utter_ktdtvt_ktdtvt {nganh}
 
+  utter_ktdtvt_tongquan:
+    - text: |-
+        utter cnnt tong quan {thongtinphu} - {nganh}
+
+  utter_ktdtvt_tot_nghiep_lam_gi:
+    - text: |-
+        utter_ktdtvt_tot_nghiep_lam_gi:
+
+  utter_ktdtvt_thoi_gian_dao_tao:
+    - text: |-
+        - thoi gian dao tao nganh ktdtvt
+
+  utter_ktdtvt_sotc:
+    - text: |-
+        - so tin chi nganh ktdtvt
+
+  utter_ktdtvt_chuyen_nganh:
+    - text: |-
+        - cac chuyen nganh ktdtvt
+
+  utter_ktdtvt_ma_nganh:
+    - text: |-
+        mã ngành ktdtvt là 7480201
+  utter_ktdtvt_chuong_trinh_dao_tao:
+    - text: |-
+        Ngành ktdtvt bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
+  utter_ktdtvt_hoc_phi:
+    - text: |-
+        Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
+  utter_ktdtvt_diem_chuan:
+    - text: |-
+        Điểm chuẩn ngành công nghệ thông tin
+  utter_ktdtvt_khoi:
+    - text: |-
+        utter_ktdtvt_khoi
 
   ######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
+  utter_ktdtdt_ktddtt:
+    - text: nganh utter_ktddtt_ktddtt {nganh}
+
+  utter_ktddtt_tongquan:
+    - text: |-
+        utter cnnt tong quan {thongtinphu} - {nganh}
+
+  utter_ktddtt_tot_nghiep_lam_gi:
+    - text: |-
+        utter_ktddtt_tot_nghiep_lam_gi:
+
+  utter_ktddtt_thoi_gian_dao_tao:
+    - text: |-
+        - thoi gian dao tao nganh ktddtt
+
+  utter_ktddtt_sotc:
+    - text: |-
+        - so tin chi nganh ktddtt
+
+  utter_ktddtt_chuyen_nganh:
+    - text: |-
+        - cac chuyen nganh ktddtt
+
+  utter_ktddtt_ma_nganh:
+    - text: |-
+        mã ngành ktddtt là 7480201
+  utter_ktddtt_chuong_trinh_dao_tao:
+    - text: |-
+        Ngành ktddtt bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
+  utter_ktddtt_hoc_phi:
+    - text: |-
+        Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
+  utter_ktddtt_diem_chuan:
+    - text: |-
+        Điểm chuẩn ngành công nghệ thông tin
+  utter_ktddtt_khoi:
+    - text: |-
+        utter_ktddtt_khoi
   ######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
   ######## utter cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
   ######## utter cac cau hoi nganh Công nghệ đa phương tiện
