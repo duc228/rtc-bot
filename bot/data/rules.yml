@@ -113,110 +113,110 @@ rules:
   - action: utter_cntt_khoi
 
 
-- rule: ktdtvt - hoi ve ktdtvt
-  steps:
-  - intent: ktdtvt_ktdtvt
-  # - intent: action_truyvan_nganh
-  - action: utter_ktdtvt_ktdtvt
+# - rule: ktdtvt - hoi ve ktdtvt
+#   steps:
+#   - intent: ktdtvt_ktdtvt
+#   # - intent: action_truyvan_nganh
+#   - action: utter_ktdtvt_ktdtvt
 
-- rule: ktdtvt - hoi tong quan
-  steps:
-  - intent: ktdtvt_tongquan
-  - action: utter_ktdtvt_tongquan
-  # - action: action_cntt_tongquan
-  # - action: action_truyvan_nganh
+# - rule: ktdtvt - hoi tong quan
+#   steps:
+#   - intent: ktdtvt_tongquan
+#   - action: utter_ktdtvt_tongquan
+#   # - action: action_cntt_tongquan
+#   # - action: action_truyvan_nganh
 
-- rule: ktdtvt - tot nghiep lam viec
-  steps:
-  - intent: ktdtvt_tot_nghiep_lam_gi
-  - action: utter_ktdtvt_tot_nghiep_lam_gi
+# - rule: ktdtvt - tot nghiep lam viec
+#   steps:
+#   - intent: ktdtvt_tot_nghiep_lam_gi
+#   - action: utter_ktdtvt_tot_nghiep_lam_gi
 
-- rule: ktdtvt - ma nganh
-  steps:
-  - intent: ktdtvt_ma_nganh
-  - action: utter_ktdtvt_ma_nganh
+# - rule: ktdtvt - ma nganh
+#   steps:
+#   - intent: ktdtvt_ma_nganh
+#   - action: utter_ktdtvt_ma_nganh
 
-- rule: ktdtvt - chuong trinh dao tao
-  steps:
-  - intent: ktdtvt_chuong_trinh_dao_tao
-  - action: utter_ktdtvt_chuong_trinh_dao_tao
+# - rule: ktdtvt - chuong trinh dao tao
+#   steps:
+#   - intent: ktdtvt_chuong_trinh_dao_tao
+#   - action: utter_ktdtvt_chuong_trinh_dao_tao
 
-- rule: ktdtvt - ktdtvt_hoc_phi
-  steps:
-  - intent: ktdtvt_hoc_phi
-  - action: utter_ktdtvt_hoc_phi
+# - rule: ktdtvt - ktdtvt_hoc_phi
+#   steps:
+#   - intent: ktdtvt_hoc_phi
+#   - action: utter_ktdtvt_hoc_phi
 
-- rule: ktdtvt - ktdtvt_diem_chuan
-  steps:
-  - intent: ktdtvt_diem_chuan
-  - action: utter_ktdtvt_diem_chuan
-- rule: ktdtvt - hoi so tin chi
-  steps:
-  - intent: ktdtvt_sotc
-  - action: action_default_fallback
+# - rule: ktdtvt - ktdtvt_diem_chuan
+#   steps:
+#   - intent: ktdtvt_diem_chuan
+#   - action: utter_ktdtvt_diem_chuan
+# - rule: ktdtvt - hoi so tin chi
+#   steps:
+#   - intent: ktdtvt_sotc
+#   - action: action_default_fallback
 
-- rule: ktdtvt - ktdtvt_diem_chuan
-  steps:
-  - intent: ktdtvt_diem_chuan
-  - action: utter_ktdtvt_diem_chuan
+# - rule: ktdtvt - ktdtvt_diem_chuan
+#   steps:
+#   - intent: ktdtvt_diem_chuan
+#   - action: utter_ktdtvt_diem_chuan
 
-- rule: ktdtvt - ktdtvt_khoi
-  steps:
-  - intent: ktdtvt_khoi
-  - action: utter_ktdtvt_khoi
+# - rule: ktdtvt - ktdtvt_khoi
+#   steps:
+#   - intent: ktdtvt_khoi
+#   - action: utter_ktdtvt_khoi
 
 
-- rule: ktdtdt - hoi ve ktdtdt
-  steps:
-  - intent: ktdtdt_ktdtdt
-  # - intent: action_truyvan_nganh
-  - action: utter_ktdtdt_ktdtdt
+# - rule: ktdtdt - hoi ve ktdtdt
+#   steps:
+#   - intent: ktdtdt_ktdtdt
+#   # - intent: action_truyvan_nganh
+#   - action: utter_ktdtdt_ktdtdt
 
-- rule: ktdtdt - hoi tong quan
-  steps:
-  - intent: ktdtdt_tongquan
-  - action: utter_ktdtdt_tongquan
-  # - action: action_cntt_tongquan
-  # - action: action_truyvan_nganh
+# - rule: ktdtdt - hoi tong quan
+#   steps:
+#   - intent: ktdtdt_tongquan
+#   # - action: utter_ktdtdt_tongquan
+#   # - action: action_cntt_tongquan
+#   - action: action_truyvan_nganh
 
-- rule: ktdtdt - tot nghiep lam viec
-  steps:
-  - intent: ktdtdt_tot_nghiep_lam_gi
-  - action: utter_ktdtdt_tot_nghiep_lam_gi
+# - rule: ktdtdt - tot nghiep lam viec
+#   steps:
+#   - intent: ktdtdt_tot_nghiep_lam_gi
+#   - action: utter_ktdtdt_tot_nghiep_lam_gi
 
-- rule: ktdtdt - ma nganh
-  steps:
-  - intent: ktdtdt_ma_nganh
-  - action: utter_ktdtdt_ma_nganh
+# - rule: ktdtdt - ma nganh
+#   steps:
+#   - intent: ktdtdt_ma_nganh
+#   - action: utter_ktdtdt_ma_nganh
 
-- rule: ktdtdt - chuong trinh dao tao
-  steps:
-  - intent: ktdtdt_chuong_trinh_dao_tao
-  - action: utter_ktdtdt_chuong_trinh_dao_tao
+# - rule: ktdtdt - chuong trinh dao tao
+#   steps:
+#   - intent: ktdtdt_chuong_trinh_dao_tao
+#   - action: utter_ktdtdt_chuong_trinh_dao_tao
 
-- rule: ktdtdt - ktdtdt_hoc_phi
-  steps:
-  - intent: ktdtdt_hoc_phi
-  - action: utter_ktdtdt_hoc_phi
+# - rule: ktdtdt - ktdtdt_hoc_phi
+#   steps:
+#   - intent: ktdtdt_hoc_phi
+#   - action: utter_ktdtdt_hoc_phi
 
-- rule: ktdtdt - ktdtdt_diem_chuan
-  steps:
-  - intent: ktdtdt_diem_chuan
-  - action: utter_ktdtdt_diem_chuan
-- rule: ktdtdt - hoi so tin chi
-  steps:
-  - intent: ktdtdt_sotc
-  - action: action_default_fallback
+# - rule: ktdtdt - ktdtdt_diem_chuan
+#   steps:
+#   - intent: ktdtdt_diem_chuan
+#   - action: utter_ktdtdt_diem_chuan
+# - rule: ktdtdt - hoi so tin chi
+#   steps:
+#   - intent: ktdtdt_sotc
+#   - action: action_default_fallback
 
-- rule: ktdtdt - ktdtdt_diem_chuan
-  steps:
-  - intent: ktdtdt_diem_chuan
-  - action: utter_ktdtdt_diem_chuan
+# - rule: ktdtdt - ktdtdt_diem_chuan
+#   steps:
+#   - intent: ktdtdt_diem_chuan
+#   - action: utter_ktdtdt_diem_chuan
 
-- rule: ktdtdt - ktdtdt_khoi
-  steps:
-  - intent: ktdtdt_khoi
-  - action: utter_ktdtdt_khoi
+# - rule: ktdtdt - ktdtdt_khoi
+#   steps:
+#   - intent: ktdtdt_khoi
+#   - action: utter_ktdtdt_khoi
 
 # - rule: ask school id
 #   steps:

@@ -48,8 +48,3 @@ func CreateConversation(c *gin.Context) {
 	response.Response(c, http.StatusOK, conversation)
 
 }
-
-// func GetAllConversationsByUserId(c *gin.Context) {
-// 	c.JSON(200, gin.H{"message": "GetAllConversationsByUserId"})
-
-// }

@@ -10,7 +10,6 @@ import (
 	"rct_server/internal/dto/response"
 	"rct_server/internal/entities"
 	"rct_server/internal/repositories"
-	"rct_server/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )
@@ -30,12 +29,12 @@ func (s *MessageService) GetPaginationMessagesByConversationId(conversationId in
 	return s.repo.GetPaginationMessagesByConversationId(conversationId, page, limit)
 }
 
-func (s *MessageService) GetMessagesByConversationId(userId uint, requestPagination request.PaginationRequest, conversationId int, c *gin.Context) (utils.PaginationResponse, error) {
+func (s *MessageService) GetMessagesByConversationId(userId uint, requestPagination request.PaginationRequest, conversationId int, c *gin.Context) (response.PaginationResponse, error) {
 
 	total, err := s.GetTotalRows(conversationId, requestPagination.Page, requestPagination.Limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return utils.PaginationResponse{}, err
+		return response.PaginationResponse{}, err
 	}
 
 	totalPages := int(math.Ceil(float64(total) / float64(requestPagination.Limit)))
@@ -43,7 +42,7 @@ func (s *MessageService) GetMessagesByConversationId(userId uint, requestPaginat
 	data, err := s.GetPaginationMessagesByConversationId(conversationId, requestPagination.Page, requestPagination.Limit)
 	if err != nil {
 		response.Error(c, http.StatusInternalServerError, "Đã có lỗi xảy ra ở server")
-		return utils.PaginationResponse{}, err
+		return response.PaginationResponse{}, err
 	}
 
 	return paginationUtil.BuildPaginationData(data, requestPagination.Page, requestPagination.Limit, total, totalPages), err

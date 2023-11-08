@@ -25,7 +25,7 @@ func ValidationParams(c *gin.Context, data interface{}) bool {
 	if err != nil {
 
 		errors = ErrorCustomValidation(err, data)
-		response.Error(c, http.StatusBadRequest, errors)
+		response.Error(c, http.StatusBadRequest, errors[0].Message)
 		return false
 	}
 	return true
@@ -35,7 +35,6 @@ func ErrorCustomValidation(err error, data interface{}) []response.IError {
 	errors := []response.IError{}
 	if _, ok := err.(*validator.InvalidValidationError); ok {
 		fmt.Println(err)
-		// return errors
 	}
 
 	for _, err := range err.(validator.ValidationErrors) {
@@ -55,16 +54,8 @@ func ErrorCustomValidation(err error, data interface{}) []response.IError {
 
 		nameFields := reflect.ValueOf(data)
 		for i := 0; i < nameFields.NumField(); i++ {
-			// fmt.Print(nameFields.Type().Field(i).Name)
-			// fmt.Println(" \t", nameFields.Field(i))
 
 			if err.Field() == nameFields.Type().Field(i).Name {
-				// var msg string = ""
-				// if nameFields.Type().Field(i).Tag.Get(tagCustom) != "" {
-				// 	msg = nameFields.Type().Field(i).Tag.Get(tagCustom)
-				// } else {
-				// 	msg = internal.MsgForTag(err.Tag(), nameFields.Field(i).Interface().(string))
-				// }
 
 				var nameField string = ""
 				if nameFields.Type().Field(i).Tag.Get(tagCustom) != "" {
@@ -83,3 +74,13 @@ func ErrorCustomValidation(err error, data interface{}) []response.IError {
 	}
 	return errors
 }
+
+// fmt.Print(nameFields.Type().Field(i).Name)
+// fmt.Println(" \t", nameFields.Field(i))
+
+// var msg string = ""
+// if nameFields.Type().Field(i).Tag.Get(tagCustom) != "" {
+// 	msg = nameFields.Type().Field(i).Tag.Get(tagCustom)
+// } else {
+// 	msg = internal.MsgForTag(err.Tag(), nameFields.Field(i).Interface().(string))
+// }

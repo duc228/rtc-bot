@@ -5,6 +5,10 @@ export type OffsetPagination = {
 
 export type PaginationResponse<T> = {
   data: T;
+  pagination: Pagination;
+};
+
+export type Pagination = {
   page: number;
   limit: number;
   total: number;

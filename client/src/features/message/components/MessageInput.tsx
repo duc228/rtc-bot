@@ -8,6 +8,7 @@ import useConversationStore from "../../../stores/useConversationStore";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { MessageInputSchema } from "../../../validations";
 import { MessageResponse } from "../../../types/message";
+import { useEffect, useRef } from "react";
 
 type MessageInputProps = {};
 
@@ -16,6 +17,8 @@ interface MessageInput {
 }
 
 export const MessageInput = ({}: MessageInputProps) => {
+  // const messageInputRef = useRef<HTMLInputElement | null>(null);
+
   const { setTempMessage, conversationId, setConversationId } =
     useConversationStore();
 
@@ -26,6 +29,7 @@ export const MessageInput = ({}: MessageInputProps) => {
     register,
     handleSubmit,
     setValue,
+    setFocus,
     formState: { isValid },
   } = useForm<MessageInput>({
     resolver: yupResolver(MessageInputSchema),
@@ -42,11 +46,15 @@ export const MessageInput = ({}: MessageInputProps) => {
       } else {
         queryClient.invalidateQueries(["messages", conversationId]);
       }
+      setFocus("content");
     },
     onError: () => {
       setTempMessage("");
     },
   });
+  useEffect(() => {
+    setFocus("content");
+  }, [setFocus]);
 
   const onSubmit = (data: MessageInput) => {
     setTempMessage(data?.content);
@@ -66,7 +74,7 @@ export const MessageInput = ({}: MessageInputProps) => {
         <input
           autoFocus={true}
           disabled={!!isLoading}
-          placeholder="Send a message..."
+          placeholder="Nhập nội dung..."
           className={`block flex-1 h-full focus:outline-none `}
           {...register("content")}
         />

@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
 	"rct_server/internal/dto/request"
 	"rct_server/internal/dto/response"
@@ -56,9 +55,6 @@ func GetMessagesByConversationId(c *gin.Context) {
 		return
 	}
 
-	fmt.Println("page ", requestPagination.Page)
-	fmt.Println("limit ", requestPagination.Limit)
-
 	res, err := messageService.GetMessagesByConversationId(userId, requestPagination, requestConversation.ConversationId, c)
 	if err != nil {
 		response.Error(c, http.StatusBadRequest, err.Error())
@@ -67,7 +63,3 @@ func GetMessagesByConversationId(c *gin.Context) {
 
 	response.Response(c, http.StatusOK, res)
 }
-
-// func GetAllMessagesByConversationId(c *gin.Context) {
-// 	c.JSON(200, gin.H{"message": "GetAllMessagesByConversationId"})
-// }

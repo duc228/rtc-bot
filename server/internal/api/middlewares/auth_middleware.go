@@ -1,7 +1,6 @@
 package middlewares
 
 import (
-	"fmt"
 	"net/http"
 	"rct_server/internal/utils"
 	"strings"
@@ -18,7 +17,7 @@ func IsAuthenticated() gin.HandlerFunc {
 			c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})
 		}
 		tokenString := strings.Split(c.Request.Header["Authorization"][0], " ")[1]
-		fmt.Printf("token string %s\n", tokenString)
+		// fmt.Printf("token string %s\n", tokenString)
 
 		data, err := JwtUtils.VerifyToken(tokenString)
 
