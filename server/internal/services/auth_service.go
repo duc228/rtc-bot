@@ -3,11 +3,11 @@ package services
 import (
 	"errors"
 	"fmt"
-	internal "rct_server/internal/const"
-	"rct_server/internal/dto/request"
+	internal "rct_server/internal/common/const"
 	"rct_server/internal/entities"
 	"rct_server/internal/repositories"
 	"rct_server/internal/utils"
+	"rct_server/internal/validations/request"
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"

@@ -3,8 +3,8 @@ package validations
 import (
 	"fmt"
 	"net/http"
-	internal "rct_server/internal/const"
-	"rct_server/internal/dto/response"
+	internal "rct_server/internal/common/const"
+	"rct_server/internal/common/response"
 	"reflect"
 
 	"github.com/gin-gonic/gin"

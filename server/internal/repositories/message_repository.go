@@ -2,9 +2,9 @@ package repositories
 
 import (
 	"rct_server/configs"
-	internal "rct_server/internal/const"
-	"rct_server/internal/dto/request"
+	internal "rct_server/internal/common/const"
 	"rct_server/internal/entities"
+	"rct_server/internal/validations/request"
 )
 
 var BotId = internal.BotId

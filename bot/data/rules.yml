@@ -69,7 +69,7 @@ rules:
 
 - rule: cntt - hoi tong quan
   steps:
-  - intent: cntt_tongquan
+  - intent: cntt_tongquan{"thongtinchinh":"nganh_dao_tao"}
   - action: action_cntt_tongquan
   # - action: action_truyvan_nganh
 

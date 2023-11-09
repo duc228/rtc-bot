@@ -1,6 +1,6 @@
 package utils
 
-import "rct_server/internal/dto/response"
+import "rct_server/internal/common/response"
 
 type PaginationUtil struct {
 }

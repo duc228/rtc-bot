@@ -2,7 +2,7 @@ package utils
 
 import (
 	"net/http"
-	"rct_server/internal/dto/response"
+	"rct_server/internal/common/response"
 
 	"github.com/gin-gonic/gin"
 )

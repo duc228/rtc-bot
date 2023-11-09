@@ -3,11 +3,11 @@ package services
 import (
 	"math"
 	"net/http"
-	"rct_server/internal/dto/request"
-	"rct_server/internal/dto/response"
+	"rct_server/internal/common/response"
 	"rct_server/internal/entities"
 	"rct_server/internal/repositories"
 	"rct_server/internal/utils"
+	"rct_server/internal/validations/request"
 
 	"github.com/gin-gonic/gin"
 )
