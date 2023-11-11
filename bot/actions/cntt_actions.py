@@ -17,5 +17,6 @@ class ActionCnttTongQuan(Action):
         nganh = tracker.get_slot("nganh")
         thongtinphu = tracker.get_slot("thongtinphu")
         thongtinchinh = tracker.get_slot("thongtinchinh")
+        coso = tracker.get_slot("coso")
 
-        dispatcher.utter_message(text=f"cntt tong quan cústom action.{thongtinchinh} -  {nganh}  - {thongtinphu}")
+        dispatcher.utter_message(text=f"cntt tong quan cústom action.{thongtinchinh} -  {nganh}  - {thongtinphu} - {coso}")

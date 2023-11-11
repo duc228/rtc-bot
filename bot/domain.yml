@@ -11,6 +11,7 @@ intents:
   - hoi_chuc_nang
   - phuong_thuc_tuyen_sinh
   - ctdt_2_mien
+  - nganh_dao_tao
 
   ######## intent cac cau hoi tot nghiep
   - tn_hoi_loai_bang
@@ -56,101 +57,101 @@ intents:
   - ktdtvt_diem_chuan
   - ktdtvt_khoi
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
-  # - ktddtt_ktddtt
-  # - ktddtt_tongquan
-  # - ktddtt_tot_nghiep_lam_gi
-  # - ktddtt_ma_nganh
-  # - ktddtt_chuong_trinh_dao_tao
-  # - ktddtt_thoi_gian_dao_tao
-  # - ktddtt_hoc_phi
-  # - ktddtt_sotc
-  # - ktddtt_chuyen_nganh
-  # - ktddtt_diem_chuan
-  # - ktddtt_khoi
+# - ktddtt_ktddtt
+# - ktddtt_tongquan
+# - ktddtt_tot_nghiep_lam_gi
+# - ktddtt_ma_nganh
+# - ktddtt_chuong_trinh_dao_tao
+# - ktddtt_thoi_gian_dao_tao
+# - ktddtt_hoc_phi
+# - ktddtt_sotc
+# - ktddtt_chuyen_nganh
+# - ktddtt_diem_chuan
+# - ktddtt_khoi
 ######## intent cac cau hoi nganh An toàn thông tin
-  # - attt_attt
-  # - attt_tongquan
-  # - attt_tot_nghiep_lam_gi
-  # - attt_ma_nganh
-  # - attt_chuong_trinh_dao_tao
-  # - attt_thoi_gian_dao_tao
-  # - attt_hoc_phi
-  # - attt_sotc
-  # - attt_chuyen_nganh
-  # - attt_diem_chuan
-  # - attt_khoi
+# - attt_attt
+# - attt_tongquan
+# - attt_tot_nghiep_lam_gi
+# - attt_ma_nganh
+# - attt_chuong_trinh_dao_tao
+# - attt_thoi_gian_dao_tao
+# - attt_hoc_phi
+# - attt_sotc
+# - attt_chuyen_nganh
+# - attt_diem_chuan
+# - attt_khoi
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
-  # - ktdktdh_ktdktdh
-  # - ktdktdh_tongquan
-  # - ktdktdh_tot_nghiep_lam_gi
-  # - ktdktdh_ma_nganh
-  # - ktdktdh_chuong_trinh_dao_tao
-  # - ktdktdh_thoi_gian_dao_tao
-  # - ktdktdh_hoc_phi
-  # - ktdktdh_sotc
-  # - ktdktdh_chuyen_nganh
-  # - ktdktdh_diem_chuan
-  # - ktdktdh_khoi
+# - ktdktdh_ktdktdh
+# - ktdktdh_tongquan
+# - ktdktdh_tot_nghiep_lam_gi
+# - ktdktdh_ma_nganh
+# - ktdktdh_chuong_trinh_dao_tao
+# - ktdktdh_thoi_gian_dao_tao
+# - ktdktdh_hoc_phi
+# - ktdktdh_sotc
+# - ktdktdh_chuyen_nganh
+# - ktdktdh_diem_chuan
+# - ktdktdh_khoi
 ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
-  # - cniot_cniot
-  # - cniot_tongquan
-  # - cniot_tot_nghiep_lam_gi
-  # - cniot_ma_nganh
-  # - cniot_chuong_trinh_dao_tao
-  # - cniot_thoi_gian_dao_tao
-  # - cniot_hoc_phi
-  # - cniot_sotc
-  # - cniot_chuyen_nganh
-  # - cniot_diem_chuan
-  # - cniot_khoi
+# - cniot_cniot
+# - cniot_tongquan
+# - cniot_tot_nghiep_lam_gi
+# - cniot_ma_nganh
+# - cniot_chuong_trinh_dao_tao
+# - cniot_thoi_gian_dao_tao
+# - cniot_hoc_phi
+# - cniot_sotc
+# - cniot_chuyen_nganh
+# - cniot_diem_chuan
+# - cniot_khoi
 ######## intent cac cau hoi nganh Công nghệ đa phương tiện
-  # - cndpt_cndpt
-  # - cndpt_tongquan
-  # - cndpt_tot_nghiep_lam_gi
-  # - cndpt_ma_nganh
-  # - cndpt_chuong_trinh_dao_tao
-  # - cndpt_thoi_gian_dao_tao
-  # - cndpt_hoc_phi
-  # - cndpt_sotc
-  # - cndpt_chuyen_nganh
-  # - cndpt_diem_chuan
-  # - cndpt_khoi
+# - cndpt_cndpt
+# - cndpt_tongquan
+# - cndpt_tot_nghiep_lam_gi
+# - cndpt_ma_nganh
+# - cndpt_chuong_trinh_dao_tao
+# - cndpt_thoi_gian_dao_tao
+# - cndpt_hoc_phi
+# - cndpt_sotc
+# - cndpt_chuyen_nganh
+# - cndpt_diem_chuan
+# - cndpt_khoi
 ######## intent cac cau hoi nganh Quản trị kinh doanh
-  # - qtkd_qtkd
-  # - qtkd_tongquan
-  # - qtkd_tot_nghiep_lam_gi
-  # - qtkd_ma_nganh
-  # - qtkd_chuong_trinh_dao_tao
-  # - qtkd_thoi_gian_dao_tao
-  # - qtkd_hoc_phi
-  # - qtkd_sotc
-  # - qtkd_chuyen_nganh
-  # - qtkd_diem_chuan
-  # - qtkd_khoi
+# - qtkd_qtkd
+# - qtkd_tongquan
+# - qtkd_tot_nghiep_lam_gi
+# - qtkd_ma_nganh
+# - qtkd_chuong_trinh_dao_tao
+# - qtkd_thoi_gian_dao_tao
+# - qtkd_hoc_phi
+# - qtkd_sotc
+# - qtkd_chuyen_nganh
+# - qtkd_diem_chuan
+# - qtkd_khoi
 ######## intent cac cau hoi nganh Marketing
-  # - mkt_mkt
-  # - mkt_tongquan
-  # - mkt_tot_nghiep_lam_gi
-  # - mkt_ma_nganh
-  # - mkt_chuong_trinh_dao_tao
-  # - mkt_thoi_gian_dao_tao
-  # - mkt_hoc_phi
-  # - mkt_sotc
-  # - mkt_chuyen_nganh
-  # - mkt_diem_chuan
-  # - mkt_khoi
+# - mkt_mkt
+# - mkt_tongquan
+# - mkt_tot_nghiep_lam_gi
+# - mkt_ma_nganh
+# - mkt_chuong_trinh_dao_tao
+# - mkt_thoi_gian_dao_tao
+# - mkt_hoc_phi
+# - mkt_sotc
+# - mkt_chuyen_nganh
+# - mkt_diem_chuan
+# - mkt_khoi
 ######## intent cac cau hoi nganh Kế toán
-  # - kt_kt
-  # - kt_tongquan
-  # - kt_tot_nghiep_lam_gi
-  # - kt_ma_nganh
-  # - kt_chuong_trinh_dao_tao
-  # - kt_thoi_gian_dao_tao
-  # - kt_hoc_phi
-  # - kt_sotc
-  # - kt_chuyen_nganh
-  # - kt_diem_chuan
-  # - kt_khoi
+# - kt_kt
+# - kt_tongquan
+# - kt_tot_nghiep_lam_gi
+# - kt_ma_nganh
+# - kt_chuong_trinh_dao_tao
+# - kt_thoi_gian_dao_tao
+# - kt_hoc_phi
+# - kt_sotc
+# - kt_chuyen_nganh
+# - kt_diem_chuan
+# - kt_khoi
 ######## intent cac cau hoi hoc bong
 
 entities:
@@ -234,13 +235,13 @@ responses:
         Tôi là chatbot hỗ trợ tư vấn các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông
       buttons:
         - title: "Menu"
-          payload: '/hoi_chuc_nang'
+          payload: "/hoi_chuc_nang"
     - text: |-
         Chào bạn, hôm nay bạn muốn hỏi gì không?
         Tôi là một trợ lý ảo, tôi sẽ hỗ trợ bạn giải đáp thắc mắc về các vấn đề liên quan đến quản lý đào tạo của Học viện Công nghệ Bưu chính Viễn thông
       buttons:
         - title: "Menu"
-          payload: '/hoi_chuc_nang'
+          payload: "/hoi_chuc_nang"
 
   utter_khoe:
     - text: "Bạn muốn hỏi gì không"
@@ -352,7 +353,7 @@ responses:
   utter_cntt_tongquan:
     - text: |-
         utter cnnt tong quan {thongtinphu} - {nganh}
-        
+
   utter_cntt_tot_nghiep_lam_gi:
     - text: |-
         - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
@@ -493,7 +494,6 @@ responses:
     - text: |-
         Em có thể học ngành Công nghệ thông tin, An toàn thông tin, Công nghệ đa phương tiện. Em cần tham khảo kỹ các chương trình đào tạo của 3 ngành này để có sự lựa chọn phù hợp với đam mê, mục tiêu của mình..
 
-
   ######## các utter cần slot thongtinchinh (nếu chưa có thì cần lấy thông tin trước)
   ######## các utter cần slot nganh (nếu chưa có thì cần lấy thông tin trước)
 
@@ -505,7 +505,6 @@ responses:
   ######## utter các câu hỏi chuyên ngành
   ######## utter các câu hỏi số tín chỉ
 
-
   ######## các utter cần slot chinhanh (nếu chưa có thì cần lấy thông tin trước)
 
   ######## Các utter cần thông tin từ 2 slot trở lên
@@ -514,7 +513,6 @@ responses:
   ######## utter slot nganh - chinhanh
   ######## utter slot thongtinchinh - nganh - chinhanh
 
-  
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"
   # - text: "Mỗi cơ sở sẽ có mã trường khác nhau, bạn muốn biết ở nam hay bắc"

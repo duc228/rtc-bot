@@ -1,118 +1,120 @@
 version: "3.1"
 
 rules:
+  - rule: noi tam biet voi nguoi dung
+    steps:
+      - intent: tam_biet
+      - action: utter_tam_biet
 
-- rule: noi tam biet voi nguoi dung
-  steps:
-  - intent: tam_biet
-  - action: utter_tam_biet
+  - rule: tra loi co phai bot khong
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
 
-- rule: tra loi co phai bot khong
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: khoe
+    steps:
+      - intent: khoe
+      - action: utter_khoe
 
-- rule: khoe
-  steps:
-  - intent: khoe
-  - action: utter_khoe
+  - rule: cam on
+    steps:
+      - intent: cam_on
+      - action: utter_cam_on
 
-- rule: cam on
-  steps:
-  - intent: cam_on
-  - action: utter_cam_on
+  - rule: hoi chuc nang
+    steps:
+      - intent: hoi_chuc_nang
+      - action: utter_hoi_chuc_nang
 
-- rule: hoi chuc nang
-  steps:
-  - intent: hoi_chuc_nang
-  - action: utter_hoi_chuc_nang
+  - rule: hoi phuong_thuc_tuyen_sinh
+    steps:
+      - intent: phuong_thuc_tuyen_sinh
+      - action: action_truyvan_thongtinchinh
+    # - action: utter_phuong_thuc_tuyen_sinh
 
-- rule: hoi phuong_thuc_tuyen_sinh
-  steps:
-  - intent: phuong_thuc_tuyen_sinh
-  - action: action_truyvan_thongtinchinh
-  # - action: utter_phuong_thuc_tuyen_sinh
+  - rule: hoi nganh dao tao
+    steps:
+      - intent: nganh_dao_tao
+      - action: action_nganh_dao_tao
+      - action: utter_chon_nganh
 
-- rule: hoi nganh dao tao
-  steps:
-  - intent: nganh_dao_tao
-  - action: action_nganh_dao_tao
-  - action: utter_chon_nganh
+  - rule: hoi chuong trinh dao tao 2 mien
+    steps:
+      - intent: ctdt_2_mien
+      - action: utter_ctdt_2_mien
 
-- rule: hoi chuong trinh dao tao 2 mien
-  steps:
-  - intent: ctdt_2_mien
-  - action: utter_ctdt_2_mien
+  - rule: hoi tot nghiep nhan loai bang nao
+    steps:
+      - intent: tn_hoi_loai_bang
+      - action: utter_tn_hoi_loai_bang
 
-- rule: hoi tot nghiep nhan loai bang nao
-  steps:
-  - intent: tn_hoi_loai_bang
-  - action: utter_tn_hoi_loai_bang
+  - rule: thuong gap - hoi dieu kien doi nganh
+    steps:
+      - intent: tg_dieu_kien_doi_nganh
+      - action: utter_tg_dieu_kien_doi_nganh
 
+  - rule: thuong gap - lam lap trinh vien hoc nganh nao
+    steps:
+      - intent: tg_ltv_hoc_nganh_nao
+      - action: utter_tg_ltv_hoc_nganh_nao
 
-- rule: thuong gap - hoi dieu kien doi nganh
-  steps:
-  - intent: tg_dieu_kien_doi_nganh
-  - action: utter_tg_dieu_kien_doi_nganh
+  # - rule: cntt - hoi ve cntt
+  #   steps:
+  #     - intent: cntt_cntt
+  #     - action: utter_cntt_cntt
+  #     # - action: action_truyvan_nganh
+  #     - action: utter_cntt_ho_tro
 
-- rule: thuong gap - lam lap trinh vien hoc nganh nao
-  steps:
-  - intent: tg_ltv_hoc_nganh_nao
-  - action: utter_tg_ltv_hoc_nganh_nao
+  - rule: cntt - hoi tong quan
+    steps:
+      - intent: cntt_tongquan
+      # - action: action_cntt_tongquan
+      - action: action_truyvan_data
 
-- rule: cntt - hoi ve cntt
-  steps:
-  - intent: cntt_cntt
-  - action: utter_cntt_cntt
+  # - rule: cntt - hoi tong quan
+  #   steps:
+  #     - intent: cntt_tongquan
+  #     - action: action_cntt_tongquan
   # - action: action_truyvan_nganh
-  - action: utter_cntt_ho_tro
 
-- rule: cntt - hoi tong quan
-  steps:
-  - intent: cntt_tongquan{"thongtinchinh":"nganh_dao_tao"}
-  - action: action_cntt_tongquan
-  # - action: action_truyvan_nganh
+  # - rule: cntt - tot nghiep lam viec
+  #   steps:
+  #     - intent: cntt_tot_nghiep_lam_gi
+  #     - action: utter_cntt_tot_nghiep_lam_gi
 
-- rule: cntt - tot nghiep lam viec
-  steps:
-  - intent: cntt_tot_nghiep_lam_gi
-  - action: utter_cntt_tot_nghiep_lam_gi
+  - rule: cntt - ma nganh
+    steps:
+      - intent: cntt_ma_nganh
+      - action: action_truyvan_data
 
-- rule: cntt - ma nganh
-  steps:
-  - intent: cntt_ma_nganh
-  - action: utter_cntt_ma_nganh
+  # - rule: cntt - chuong trinh dao tao
+  #   steps:
+  #     - intent: cntt_chuong_trinh_dao_tao
+  #     - action: utter_cntt_chuong_trinh_dao_tao
 
-- rule: cntt - chuong trinh dao tao
-  steps:
-  - intent: cntt_chuong_trinh_dao_tao
-  - action: utter_cntt_chuong_trinh_dao_tao
+  # - rule: cntt - cntt_hoc_phi
+  #   steps:
+  #     - intent: cntt_hoc_phi
+  #     - action: utter_cntt_hoc_phi
 
-- rule: cntt - cntt_hoc_phi
-  steps:
-  - intent: cntt_hoc_phi
-  - action: utter_cntt_hoc_phi
+  # - rule: cntt - cntt_diem_chuan
+  #   steps:
+  #     - intent: cntt_diem_chuan
+  #     - action: utter_cntt_diem_chuan
+  # - rule: cntt - hoi so tin chi
+  #   steps:
+  #     - intent: cntt_sotc
+  #     - action: action_default_fallback
 
-- rule: cntt - cntt_diem_chuan
-  steps:
-  - intent: cntt_diem_chuan
-  - action: utter_cntt_diem_chuan
-- rule: cntt - hoi so tin chi
-  steps:
-  - intent: cntt_sotc
-  - action: action_default_fallback
+  # - rule: cntt - cntt_diem_chuan
+  #   steps:
+  #     - intent: cntt_diem_chuan
+  #     - action: utter_cntt_diem_chuan
 
-- rule: cntt - cntt_diem_chuan
-  steps:
-  - intent: cntt_diem_chuan
-  - action: utter_cntt_diem_chuan
-
-- rule: cntt - cntt_khoi
-  steps:
-  - intent: cntt_khoi
-  - action: utter_cntt_khoi
-
-
+  # - rule: cntt - cntt_khoi
+  #   steps:
+  #     - intent: cntt_khoi
+  #     - action: utter_cntt_khoi
 # - rule: ktdtvt - hoi ve ktdtvt
 #   steps:
 #   - intent: ktdtvt_ktdtvt
@@ -164,7 +166,6 @@ rules:
 #   steps:
 #   - intent: ktdtvt_khoi
 #   - action: utter_ktdtvt_khoi
-
 
 # - rule: ktdtdt - hoi ve ktdtdt
 #   steps:

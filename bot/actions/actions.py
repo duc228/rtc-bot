@@ -73,6 +73,36 @@ class ActionTruyvanNganh(Action):
 #### truy van can nganh,thongtinphu
 
 #### truy van can thongtinchinh,nganh,thongtinphu
+thongtinchinh_data  = [""]
+thongtinphu_data = [""]
+coso_data = ["chung","bac","nam"]
+nganh_data = ["cntt", "ktdtvt"]
+coso_default = "chung"
+
+
+def get_thong_tin_chinh(thongtinchinh, thongtinphu, coso):
+    f = open('./data/collections/data_collect.json', encoding="utf8")
+    data = json.load(f)
+    data_return = f"Khong tim thay data {thongtinchinh}"
+
+    return data_return
+
+    
+def get_thong_tin_nganh(nganh, thongtinphu, coso):
+    f = open('./data/collections/data_collect.json', encoding="utf8")
+    data = json.load(f)
+    data_return = f"Khong tim thay data {thongtinphu}"
+    if coso is None:
+        coso = coso_default
+    if data["nganh"][nganh][thongtinphu]:
+        if data["nganh"][nganh][thongtinphu][coso]:
+            data_return = data["nganh"][nganh][thongtinphu][coso]
+        else:
+            data_return = data["nganh"][nganh][thongtinphu][coso_default]
+
+    
+    return data_return
+
 
 class ActionTruyVanData(Action):
    def name(self):
@@ -80,25 +110,34 @@ class ActionTruyVanData(Action):
 
    def run(self, dispatcher, tracker, domain):
         thongtinchinh = tracker.get_slot("thongtinchinh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+        coso = tracker.get_slot("coso")
+
         if thongtinchinh is None:
             dispatcher.utter_message(text=f"Chua ro thong tin chinh")
             # return [UserUttered(text="/my_intent", parse_data=data)]
             return [UserUttered(text="/utter_hoi_chuc_nang")]
         else:    
-            nganh = tracker.get_slot("nganh")
-            thongtinphu = tracker.get_slot("thongtinphu")
 
-            if nganh and thongtinphu is None:
-                return [UserUttered(text="/utter_cntt_cntt")]
-            else:  
-            
+            f = open('./data/collections/data_collect.json', encoding="utf8")
+            data = json.load(f)
+            is_nganh = False
+            data_return = ""
+            if thongtinchinh in nganh_data:
+                is_nganh = True
 
-            # f = open('./data/collections/data_collect.json', encoding="utf8")
-            # data = json.load(f)
-            # if data["chung"]["nganh_dao_tao"]:
-                # dispatcher.utter_message(text=f"{data['chung']['nganh_dao_tao']}")
+            if is_nganh:
+                data_return=get_thong_tin_nganh(thongtinchinh, thongtinphu, coso)
+                dispatcher.utter_message(text=f"{data_return} - {thongtinchinh} - {thongtinphu} - {coso}")
+            # if thongtinphu:
+            #     dispatcher.utter_message(text=f"{data['chung']['nganh_dao_tao']}")
             # else:
-                dispatcher.utter_message(text=f"Xin loi, truy van data {nganh} - {thongtinphu}")
+            #     dispatcher.utter_message(text=f"{data['chung']['nganh_dao_tao']}")
+
+                # dispatcher.utter_message(text=f"{data['chung']['nganh_dao_tao']}")
+            
+              
+        return []
 
 
 class ActionDefaultFallback(Action):
