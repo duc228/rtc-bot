@@ -53,15 +53,11 @@ rules:
       - intent: tn_hoi_loai_bang
       - action: utter_tn_hoi_loai_bang
 
-  - rule: thuong gap - hoi dieu kien doi nganh
-    steps:
-      - intent: tg_dieu_kien_doi_nganh
-      - action: utter_tg_dieu_kien_doi_nganh
 
-  - rule: thuong gap - lam lap trinh vien hoc nganh nao
-    steps:
-      - intent: tg_ltv_hoc_nganh_nao
-      - action: utter_tg_ltv_hoc_nganh_nao
+
+ 
+ 
+  ######## intent cac cau hoi nganh Công nghệ thông tin
 
   # - rule: cntt - hoi ve cntt
   #   steps:
@@ -69,21 +65,12 @@ rules:
   #     - action: utter_cntt_cntt
   #     # - action: action_truyvan_nganh
   #     - action: utter_cntt_ho_tro
- 
-  ######## intent cac cau hoi nganh Công nghệ thông tin
-
 
   - rule: cntt - hoi tong quan
     steps:
       - intent: cntt_tongquan
       # - action: action_cntt_tongquan
       - action: action_truyvan_nganh_thongtinphu_coso
-
-  # - rule: cntt - hoi tong quan
-  #   steps:
-  #     - intent: cntt_tongquan
-  #     - action: action_cntt_tongquan
-  # - action: action_truyvan_nganh
 
   - rule: cntt - tot nghiep lam gi
     steps:
@@ -98,7 +85,7 @@ rules:
   - rule: cntt - chuong trinh dao tao
     steps:
       - intent: cntt_chuong_trinh_dao_tao
-      - action: action_truyvan_nganh_thongtinpthohu
+      - action: action_truyvan_nganh_thongtinphu
   
   - rule: cntt - thoi gian dao tao
     steps:
@@ -236,6 +223,140 @@ rules:
 #   steps:
 #   - intent: ktdtdt_khoi
 #   - action: utter_ktdtdt_khoi
+
+  ######## intent cac cau hoi nganh An toàn thông tin
+
+  - rule: attt - hoi tong quan
+    steps:
+      - intent: attt_tongquan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: attt - tot nghiep lam gi
+    steps:
+      - intent: attt_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: attt - ma nganh
+    steps:
+      - intent: attt_ma_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: attt - chuong trinh dao tao
+    steps:
+      - intent: attt_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: attt - thoi gian dao tao
+    steps:
+      - intent: attt_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: attt - attt_hoc_phi
+    steps:
+      - intent: attt_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: attt - sotc
+    steps:
+      - intent: attt_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: attt - attt_chuyen_nganh
+    steps:
+      - intent: attt_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: attt - attt_diem_chuan
+    steps:
+      - intent: attt_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: attt - attt_khoi_thi
+    steps:
+      - intent: attt_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
+
+
+  ######## intent cac cau hoi thuong gap
+  - rule: thuong gap - hoi dieu kien doi nganh
+    steps:
+      - intent: tg_dieu_kien_doi_nganh
+      - action: utter_tg_dieu_kien_doi_nganh
+
+  - rule: thuong gap - lam lap trinh vien hoc nganh nao
+    steps:
+      - intent: tg_ltv_hoc_nganh_nao
+      - action: utter_tg_ltv_hoc_nganh_nao
+
+  - rule: thuong gap - diem nhan hoc bong co tinh ca diem uu tien khong
+    steps:
+      - intent: tg_hoc_bong_co_tinh_diem_uu_tien
+      - action: utter_tg_hoc_bong_co_tinh_diem_uu_tien
+
+  - rule: thuong gap - utter_tg_thu_tu_nguyen_vong
+    steps:
+      - intent: tg_thu_tu_nguyen_vong
+      - action: utter_tg_thu_tu_nguyen_vong
+
+  - rule: thuong gap - utter_tg_hoi_chuyen_nganh
+    steps:
+      - intent: tg_hoi_chuyen_nganh
+      - action: utter_tg_hoi_chuyen_nganh
+
+  - rule: thuong gap - utter_tg_ut_xet_tuyen
+    steps:
+      - intent: tg_ut_xet_tuyen
+      - action: utter_tg_ut_xet_tuyen
+
+  - rule: thuong gap - utter_tg_dki_nhieu_nganh
+    steps:
+      - intent: tg_dki_nhieu_nganh
+      - action: utter_tg_dki_nhieu_nganh
+
+  - rule: thuong gap - utter_tg_cntt_nam_cuoi_phan_chuyen_nganh
+    steps:
+      - intent: tg_cntt_nam_cuoi_phan_chuyen_nganh
+      - action: utter_tg_cntt_nam_cuoi_phan_chuyen_nganh
+
+  - rule: thuong gap - utter_tg_song_song_av
+    steps:
+      - intent: tg_song_song_av
+      - action: utter_tg_song_song_av
+
+  - rule: thuong gap - utter_tg_cap_hoc_bong
+    steps:
+      - intent: tg_cap_hoc_bong
+      - action: utter_tg_cap_hoc_bong
+
+
+  - rule: thuong gap - utter_tg_cntt_hoc_sau_ve_lt
+    steps:
+      - intent: tg_cntt_hoc_sau_ve_lt
+      - action: utter_tg_cntt_hoc_sau_ve_lt
+
+  - rule: thuong gap - utter_tg_thisinh_tudo_diem_kv
+    steps:
+      - intent: tg_thisinh_tudo_diem_kv
+      - action: utter_tg_thisinh_tudo_diem_kv
+  
+  - rule: thuong gap - utter_tg_bang_ra_truong
+    steps:
+      - intent: tg_bang_ra_truong
+      - action: utter_tg_bang_ra_truong
+
+
+  - rule: thuong gap - utter_tg_phiabac_xinviec
+    steps:
+      - intent: tg_phiabac_xinviec
+      - action: utter_tg_phiabac_xinviec
+
+  - rule: thuong gap - utter_tg_cntt_tg_dao_tao
+    steps:
+      - intent: tg_cntt_tg_dao_tao
+      - action: utter_tg_cntt_tg_dao_tao
+  
+
+
 
 # - rule: ask school id
 #   steps:

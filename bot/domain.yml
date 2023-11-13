@@ -16,9 +16,6 @@ intents:
   ######## intent cac cau hoi tot nghiep
   - tn_hoi_loai_bang
 
-  ######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
-  - tg_dieu_kien_doi_nganh
-  - tg_ltv_hoc_nganh_nao
   # - ask_school_id
   # - require_branch
   # - request_school_id_form
@@ -70,16 +67,16 @@ intents:
 # - ktddtt_khoi
 ######## intent cac cau hoi nganh An toàn thông tin
 # - attt_attt
-# - attt_tongquan
-# - attt_tot_nghiep_lam_gi
-# - attt_ma_nganh
-# - attt_chuong_trinh_dao_tao
-# - attt_thoi_gian_dao_tao
-# - attt_hoc_phi
-# - attt_sotc
-# - attt_chuyen_nganh
-# - attt_diem_chuan
-# - attt_khoi
+  - attt_tongquan
+  - attt_tot_nghiep_lam_gi
+  - attt_ma_nganh
+  - attt_chuong_trinh_dao_tao
+  - attt_thoi_gian_dao_tao  
+  - attt_hoc_phi
+  - attt_sotc
+  - attt_chuyen_nganh
+  - attt_diem_chuan
+  - attt_khoi_thi
 ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
 # - ktdktdh_ktdktdh
 # - ktdktdh_tongquan
@@ -153,6 +150,24 @@ intents:
 # - kt_diem_chuan
 # - kt_khoi
 ######## intent cac cau hoi hoc bong
+
+
+######## intent cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+  - tg_dieu_kien_doi_nganh
+  - tg_ltv_hoc_nganh_nao
+  - tg_hoc_bong_co_tinh_diem_uu_tien
+  - tg_thu_tu_nguyen_vong
+  - tg_hoi_chuyen_nganh
+  - tg_ut_xet_tuyen
+  - tg_dki_nhieu_nganh
+  - tg_cntt_nam_cuoi_phan_chuyen_nganh
+  - tg_song_song_av
+  - tg_cap_hoc_bong
+  - tg_cntt_hoc_sau_ve_lt
+  - tg_thisinh_tudo_diem_kv
+  - tg_bang_ra_truong
+  - tg_phiabac_xinviec
+  - tg_cntt_tg_dao_tao
 
 entities:
   - nganh
@@ -487,14 +502,7 @@ responses:
         - title: "Kỹ thuật điện tử viễn thông"
           payload: /ktdtvt_ktdtvt{"nganh":"ktdtvt"}
 
-  ######## utter cac cau hoi thuong gap -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
-  utter_tg_dieu_kien_doi_nganh:
-    - text: |-
-        Em đã đăng ký và trúng tuyển vào ngành học nào thì sẽ phải học tập theo ngành học đó (không được chuyển ngành). Nếu em muốn học thêm 1 ngành học nữa thì sẽ theo học chương trình đào tạo song bằng nếu đủ tiêu chuẩn và điều kiện theo quy chế.
-
-  utter_tg_ltv_hoc_nganh_nao:
-    - text: |-
-        Em có thể học ngành Công nghệ thông tin, An toàn thông tin, Công nghệ đa phương tiện. Em cần tham khảo kỹ các chương trình đào tạo của 3 ngành này để có sự lựa chọn phù hợp với đam mê, mục tiêu của mình..
+  
 
   ######## các utter cần slot thongtinchinh (nếu chưa có thì cần lấy thông tin trước)
   ######## các utter cần slot nganh (nếu chưa có thì cần lấy thông tin trước)
@@ -507,14 +515,69 @@ responses:
   ######## utter các câu hỏi chuyên ngành
   ######## utter các câu hỏi số tín chỉ
 
-  ######## các utter cần slot chinhanh (nếu chưa có thì cần lấy thông tin trước)
+  ######## intent cac cau hoi thuong gap
+  ########  -> https://ptithcm.edu.vn/tin-tuc/nhung-cau-hoi-thuong-gap.html
+  ########  -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
+  utter_tg_dieu_kien_doi_nganh:
+    - text: |-
+        Em đã đăng ký và trúng tuyển vào ngành học nào thì sẽ phải học tập theo ngành học đó (không được chuyển ngành). Nếu em muốn học thêm 1 ngành học nữa thì sẽ theo học chương trình đào tạo song bằng nếu đủ tiêu chuẩn và điều kiện theo quy chế.
 
-  ######## Các utter cần thông tin từ 2 slot trở lên
-  ######## utter slot thongtinchinh - nganh
-  ######## utter slot thongtinchinh - chinhanh
-  ######## utter slot nganh - chinhanh
-  ######## utter slot thongtinchinh - nganh - chinhanh
+  utter_tg_ltv_hoc_nganh_nao:
+    - text: |-
+        Em có thể học ngành Công nghệ thông tin, An toàn thông tin, Công nghệ đa phương tiện. Em cần tham khảo kỹ các chương trình đào tạo của 3 ngành này để có sự lựa chọn phù hợp với đam mê, mục tiêu của mình..
 
+  utter_tg_hoc_bong_co_tinh_diem_uu_tien:
+    - text: |-
+        Học bổng toàn phần (miễn 100% học phí trong năm học thứ nhất) được trao cho thí sinh có tổng điểm bài thi 3 môn xét tuyển đạt từ 27 điểm trở lên, không tính điểm ưu tiên.
+  
+  utter_tg_thu_tu_nguyen_vong:
+    - text: |-
+        Thí sinh được ĐKXT không giới hạn số nguyện vọng, số trường và phải sắp xếp nguyện vọng theo thứ tự ưu tiên từ cao xuống thấp (nguyện vọng 1 là nguyện vọng cao nhất). Thí sinh được xét tuyển bình đẳng theo kết quả thi, không phân biệt thứ tự ưu tiên của nguyện vọng đăng ký. Chỉ khi các thí sinh bằng điểm ở cuối danh sách nếu phải chọn thì ưu tiên cho thí sinh có nguyện vọng cao hơn.
+  
+  utter_tg_hoi_chuyen_nganh:
+    - text: |-
+        Em phải học ngành mà em đã trúng tuyển trong toàn bộ quá trình đào tạo.
+
+  utter_tg_ut_xet_tuyen:
+    - text: |-
+        Thí sinh được xét tuyển bình đẳng theo kết quả thi, không phân biệt thứ tự ưu tiên của nguyện vọng đăng ký. Chỉ khi các thí sinh bằng điểm ở cuối danh sách nếu phải chọn thì ưu tiên cho thí sinh có nguyện vọng cao hơn.
+  
+  utter_tg_dki_nhieu_nganh:
+    - text: |-
+        Thí sinh được ĐKXT không giới hạn số nguyện vọng, số trường và phải sắp xếp nguyện vọng theo thứ tự ưu tiên từ cao xuống thấp (nguyện vọng 1 là nguyện vọng cao nhất). Do đó em có thể đăng ký nhiều ngành trong Học viện.
+  
+  utter_tg_cntt_nam_cuoi_phan_chuyen_nganh:
+    - text: |-
+         Các em sẽ học xong phần kiến thức đại cương, cơ sở rồi sau đó mới đăng ký vào chuyên ngành để tiếp tục học tập nghiên cứu phần chuyên ngành.
+   
+  utter_tg_song_song_av:
+    - text: |- 
+        Trong chương trình đào tạo của Học viện được có các môn học tiếng Anh nhằm giúp sinh viên đạt tiêu chuẩn tiếng Anh đầu ra (tiếng Anh Bậc 3 trở lên theo khung năng lực ngoại ngữ Việt Nam, hoặc B1 trở lên theo khung năng lực ngoại ngữ Châu Âu, hoặc tương đương).
+
+  utter_tg_cap_hoc_bong:
+    - text: |- 
+        Ngoài học bổng hỗ trợ về học phí (từ 50% đến 100% học phí) thì trong thời gian học tập sinh viên vẫn được nhận học bổng khuyến khích học tập nếu như có kết quả học tập tốt.
+  
+  utter_tg_cntt_hoc_sau_ve_lt:
+    - text: |- 
+       Ngành Công nghệ thông tin của Học viện có nhiều chuyên ngành khác nhau như Khoa học máy tính, Hệ thống thông tin, Công nghệ phần mềm …, sau khi em học xong phần kiến thức đại cương, cơ sở sẽ được lựa chọn chuyên ngành học mà mình yêu thích. Kỹ thuật lập trình chỉ là một trong những nội dung kiến thức mà em được trang bị trong chương trình đào tạo của ngành Công nghệ thông tin. Do đó, em nên tham khảo kỹ nội dung chương trình đào tạo của ngành Công nghệ thông tin để sau này sẽ có lựa chọn chuyên ngành cho phù hợp.
+  
+  utter_tg_thisinh_tudo_diem_kv:
+    - text: |- 
+       Em sẽ được hưởng ưu tiên khu vực theo đúng Quy định của Bộ GD&ĐT
+   
+  utter_tg_bang_ra_truong:
+    - text: |- 
+        Sinh viên tốt nghiệp các ngành kỹ thuật thì sẽ được cấp bằng Kỹ sư. Còn sinh viên tốt nghiệp các ngành Kinh tế & Quản trị kinh doanh thì được cấp bằng Cử nhân.
+  
+  utter_tg_phiabac_xinviec:
+    - text: |-
+        Học viện xét tuyển trên toàn quốc, thí sinh ở phía Bắc có thể chọn xét tuyển vào BVS và thí sinh ở phía Nam có thể chọn xét tuyển vào BVH. Tất cả ngành học đều có thể dễ xin việc, với mức lương thuộc vào năng lực bản thân của mỗi sinh viên; em nên chọn ngành phù hợp với sở trường và ý thích của mình nhé.
+
+  utter_tg_cntt_tg_dao_tao:
+    - text: |-
+        Ngành Công nghệ đào tạo được đào tạo trong 9 Học kỳ (4,5 năm). Học kỳ 9 các em sẽ đi thực tập và làm luận văn tốt nghiệp.
+  
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"
   # - text: "Mỗi cơ sở sẽ có mã trường khác nhau, bạn muốn biết ở nam hay bắc"
