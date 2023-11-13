@@ -12,7 +12,7 @@ intents:
   - phuong_thuc_tuyen_sinh
   - ctdt_2_mien
   - nganh_dao_tao
-
+  - co_so
   ######## intent cac cau hoi tot nghiep
   - tn_hoi_loai_bang
 
@@ -41,9 +41,9 @@ intents:
   - cntt_chuong_trinh_dao_tao
   - cntt_hoc_phi
   - cntt_sotc
-  - cntt_cntt_chuyen_nganh
+  - cntt_chuyen_nganh
   - cntt_diem_chuan
-  - cntt_khoi
+  - cntt_khoi_thi
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
   - ktdtvt_ktdtvt
   - ktdtvt_tongquan
@@ -216,6 +216,8 @@ actions:
   - action_cntt_tongquan
   - action_truyvan_data
   - action_truyvan_thongtinchinh
+  - action_truyvan_nganh_thongtinphu
+  - action_truyvan_nganh_thongtinphu_coso
   - action_truyvan_nganh
 
 #   - action_school_id

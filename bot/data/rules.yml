@@ -26,6 +26,11 @@ rules:
       - intent: hoi_chuc_nang
       - action: utter_hoi_chuc_nang
 
+  - rule: cung cap co so
+    steps:
+      - intent: co_so
+      - action: action_truyvan_nganh_thongtinphu_coso
+
   - rule: hoi phuong_thuc_tuyen_sinh
     steps:
       - intent: phuong_thuc_tuyen_sinh
@@ -64,12 +69,15 @@ rules:
   #     - action: utter_cntt_cntt
   #     # - action: action_truyvan_nganh
   #     - action: utter_cntt_ho_tro
+ 
+  ######## intent cac cau hoi nganh Công nghệ thông tin
+
 
   - rule: cntt - hoi tong quan
     steps:
       - intent: cntt_tongquan
       # - action: action_cntt_tongquan
-      - action: action_truyvan_data
+      - action: action_truyvan_nganh_thongtinphu_coso
 
   # - rule: cntt - hoi tong quan
   #   steps:
@@ -77,44 +85,54 @@ rules:
   #     - action: action_cntt_tongquan
   # - action: action_truyvan_nganh
 
-  # - rule: cntt - tot nghiep lam viec
-  #   steps:
-  #     - intent: cntt_tot_nghiep_lam_gi
-  #     - action: utter_cntt_tot_nghiep_lam_gi
+  - rule: cntt - tot nghiep lam gi
+    steps:
+      - intent: cntt_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
 
   - rule: cntt - ma nganh
     steps:
       - intent: cntt_ma_nganh
-      - action: action_truyvan_data
+      - action: action_truyvan_nganh_thongtinphu_coso
 
-  # - rule: cntt - chuong trinh dao tao
-  #   steps:
-  #     - intent: cntt_chuong_trinh_dao_tao
-  #     - action: utter_cntt_chuong_trinh_dao_tao
+  - rule: cntt - chuong trinh dao tao
+    steps:
+      - intent: cntt_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinpthohu
+  
+  - rule: cntt - thoi gian dao tao
+    steps:
+      - intent: cntt_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
 
-  # - rule: cntt - cntt_hoc_phi
-  #   steps:
-  #     - intent: cntt_hoc_phi
-  #     - action: utter_cntt_hoc_phi
+  - rule: cntt - cntt_hoc_phi
+    steps:
+      - intent: cntt_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
 
-  # - rule: cntt - cntt_diem_chuan
-  #   steps:
-  #     - intent: cntt_diem_chuan
-  #     - action: utter_cntt_diem_chuan
-  # - rule: cntt - hoi so tin chi
-  #   steps:
-  #     - intent: cntt_sotc
-  #     - action: action_default_fallback
+  - rule: cntt - sotc
+    steps:
+      - intent: cntt_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: cntt - cntt_chuyen_nganh
+    steps:
+      - intent: cntt_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
 
-  # - rule: cntt - cntt_diem_chuan
-  #   steps:
-  #     - intent: cntt_diem_chuan
-  #     - action: utter_cntt_diem_chuan
+  - rule: cntt - cntt_diem_chuan
+    steps:
+      - intent: cntt_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
 
-  # - rule: cntt - cntt_khoi
-  #   steps:
-  #     - intent: cntt_khoi
-  #     - action: utter_cntt_khoi
+  - rule: cntt - cntt_khoi_thi
+    steps:
+      - intent: cntt_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
+
+  ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+  
+
 # - rule: ktdtvt - hoi ve ktdtvt
 #   steps:
 #   - intent: ktdtvt_ktdtvt

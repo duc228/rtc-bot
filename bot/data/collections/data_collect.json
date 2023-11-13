@@ -6,16 +6,50 @@
                 "bac":"tong_quan bac",
                 "nam":"tong_quan nam"
             },
-            "ma_nganh": {"chung":"343843"},
-            "diem_chuan":{"chung": "none",
-            "bac":"123",
-            "name":"123"
+            "ma_nganh": {
+                "chung":"",
+                "bac": "ma nganh bac",
+                "nam":"ma nganh nam"
+            },
+            "diem_chuan":{
+                "chung": "none",
+                "bac":"123",
+                "name":"123"
+            },
+            "sotc": {
+                "chung": "150 tin chi"
+            },
+            "thoi_gian_dao_tao": {
+                "chung": "4.5 nam"
+            },
+            "loai_bang": {
+                "chung": "ky su"
+            },
+            "tot_nghiep_lam_gi": {
+                "chung": "tot nghiep lam gi"
+            },
+            "hoc_phi": {
+                "chung": "hoc phi"
+            },
+            "chuyen_nganh": {
+                "chung":"",
+                "bac": "chuyen_nganh bac",
+                "nam":"chuyen_nganh nam"
+            },
+            "khoi_thi": {
+                "chung": "12123"
+            }
         }
-        }
-    },
-    "phuong_thuc_tuyen_sinh":{
         
     },
+    "phuong_thuc_tuyen_sinh":{
+        "chung": "Học viện Công nghệ Bưu chính Viễn thông áp dụng 04 phương thức tuyển sinh (xét tuyển):\n - Xét tuyển thẳng theo quy chế tuyển sinh của Bộ GD&ĐT và theo Đề án tuyển sinh của Học viện\n - Xét tuyển dựa vào kết quả thi tốt nghiệp THPT\n - Xét tuyển kết hợp theo Đề án tuyển sinh của Học viện\n - Xét tuyển dựa vào kết quả các kỳ thi đánh giá năng lực, đánh giá tư duy\n "
+    },
+    "nganh_dao_tao":{
+        "chung": "nganh dao tao"
+    },
+   
+
     "chung": {
     "phuong_thuc_tuyen_sinh":"Học viện Công nghệ Bưu chính Viễn thông áp dụng 04 phương thức tuyển sinh (xét tuyển):\n - Xét tuyển thẳng theo quy chế tuyển sinh của Bộ GD&ĐT và theo Đề án tuyển sinh của Học viện\n - Xét tuyển dựa vào kết quả thi tốt nghiệp THPT\n - Xét tuyển kết hợp theo Đề án tuyển sinh của Học viện\n - Xét tuyển dựa vào kết quả các kỳ thi đánh giá năng lực, đánh giá tư duy\n ",
      "nganh_dao_tao": {

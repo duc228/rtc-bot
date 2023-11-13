@@ -15,9 +15,56 @@ from rasa_sdk.types import DomainDict
 from rasa_sdk.events import SlotSet, AllSlotsReset,UserUttered
 import json
 
+'''
+    - [thongtinchinh][coso_default]
+    format:
+    "thongtinchinh": {
+        "coso_default" : "data"
+    }
 
+    - [“nganh"][thongtinchinh][thongtinphu][coso]
+    format: 
+    "nganh": {
+        "thongtinchinh": {
+            "thongtinphu": {
+                "coso": "data"
+            }
+        }
+    }
 
-#### truy van can thongtinchinh
+    - [“nganh”][thongtinchinh][thongtinphu][coso_default]
+    format: 
+    "nganh": {
+        "thongtinchinh": {
+           "thongtinphu": {
+                "coso_default": "data"
+            }
+        }
+    }
+
+'''
+thongtinchinh_data  = [""]
+thongtinphu_data = [""]
+coso_data = ["chung","bac","nam"]
+nganh_data = ["cntt", "ktdtvt"]
+coso_default = "chung"
+
+def get_thong_tin_nganh(nganh, thongtinphu, coso):
+    f = open('./data/collections/data_collect.json', encoding="utf8")
+    data = json.load(f)
+    data_return = f"Khong tim thay data {thongtinphu}"
+    if coso is None:
+        coso = coso_default
+    if data["nganh"][nganh][thongtinphu]:
+        if data["nganh"][nganh][thongtinphu][coso]:
+            data_return = data["nganh"][nganh][thongtinphu][coso]
+        else:
+            data_return = data["nganh"][nganh][thongtinphu][coso_default]
+
+    
+    return data_return
+
+#### [thongtinchinh][coso_default]
 class ActionTruyVanThongtinchinh(Action):
     def name(self):
         return "action_truyvan_thongtinchinh"
@@ -33,10 +80,34 @@ class ActionTruyVanThongtinchinh(Action):
 
             f = open('./data/collections/data_collect.json', encoding="utf8")
             data = json.load(f)
-            if data["chung"][thongtinchinh]:
-                dispatcher.utter_message(text=f'{data["chung"][thongtinchinh]}')
+            if data[thongtinchinh] and data[thongtinchinh][coso_default]:
+                dispatcher.utter_message(text=f'{data[thongtinchinh][coso_default]}')
             else:
                 return [UserUttered(text="Xin lỗi, hiện tại bot chưa hiểu ý bạn hoặc chưa có dữ liệu bạn mong muốn")]
+
+#### [“nganh"][thongtinchinh][thongtinphu][coso]
+class ActionTruyVanNganhThongTinPhuCoSo(Action):
+    def name(self):
+        return "action_truyvan_nganh_thongtinphu_coso"
+    def run(self, dispatcher, tracker, domain):
+        thongtinchinh = tracker.get_slot("thongtinchinh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+        coso = tracker.get_slot("coso")
+        dispatcher.utter_message(text=f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}')
+        return []
+        
+
+#### [“nganh”][thongtinchinh][coso_default]
+
+class ActionTruyVanNganhThongTinPhu(Action):
+    def name(self):
+        return "action_truyvan_nganh_thongtinphu"
+    def run(self, dispatcher, tracker, domain):
+        thongtinchinh = tracker.get_slot("thongtinchinh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+        coso = tracker.get_slot("coso")
+        dispatcher.utter_message(text=f'action_truyvan_nganh_thongtinphu: {thongtinchinh} - {thongtinphu} - {coso}')
+        return []
 
 #### truy van can nganh
 class ActionTruyvanNganh(Action):
@@ -73,11 +144,10 @@ class ActionTruyvanNganh(Action):
 #### truy van can nganh,thongtinphu
 
 #### truy van can thongtinchinh,nganh,thongtinphu
-thongtinchinh_data  = [""]
-thongtinphu_data = [""]
-coso_data = ["chung","bac","nam"]
-nganh_data = ["cntt", "ktdtvt"]
-coso_default = "chung"
+
+
+
+
 
 
 def get_thong_tin_chinh(thongtinchinh, thongtinphu, coso):
@@ -88,20 +158,7 @@ def get_thong_tin_chinh(thongtinchinh, thongtinphu, coso):
     return data_return
 
     
-def get_thong_tin_nganh(nganh, thongtinphu, coso):
-    f = open('./data/collections/data_collect.json', encoding="utf8")
-    data = json.load(f)
-    data_return = f"Khong tim thay data {thongtinphu}"
-    if coso is None:
-        coso = coso_default
-    if data["nganh"][nganh][thongtinphu]:
-        if data["nganh"][nganh][thongtinphu][coso]:
-            data_return = data["nganh"][nganh][thongtinphu][coso]
-        else:
-            data_return = data["nganh"][nganh][thongtinphu][coso_default]
 
-    
-    return data_return
 
 
 class ActionTruyVanData(Action):

@@ -160,7 +160,19 @@ nlu:
       - toi muon xem chuc nang cua bot
 
   ######## các intent cần slot thongtinchinh (nếu chưa có thì cần lấy thông tin trước)
-
+  - intent: co_so
+    examples: |
+      - [bac]{"entity":"coso","value":"bac"}
+      - [nam]{"entity":"coso","value":"nam"}
+      - co so phia [bac]{"entity":"coso","value":"bac"}
+      - co so phia [nam]{"entity":"coso","value":"nam"}
+      - cơ sở phía [bắc]{"entity":"coso","value":"bac"}
+      - cơ sở phía [nam]{"entity":"coso","value":"nam"}
+      - [bắc]{"entity":"coso","value":"bac"}
+      - em muốn biết ở cơ sở phía [bắc]{"entity":"coso","value":"bac"}
+      - em muốn biết ở cơ sở phía [nam]{"entity":"coso","value":"nam"}
+      - em muon biet o co so phia [bac]{"entity":"coso","value":"bac"}
+      - em muon biet o co so phia [nam]{"entity":"coso","value":"nam"}
   ######## intent cac cau hoi phuong thuc tuyen sinh
   - intent: phuong_thuc_tuyen_sinh
     examples: |
@@ -252,14 +264,14 @@ nlu:
 
   - intent: cntt_tot_nghiep_lam_gi
     examples: |
-      - Em có dự định muốn học ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"}, vậy cho em hỏi học ngành này xong thì ra ngoài [có thể làm gì]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} ạ
-      - Hoc xong [cntt]{"entity":"nganh","value":"cntt"} co the lam gi a
-      - [cntt]{"entity":"nganh","value":"cntt"} lam gi khi hoc xong
-      - hoc xong [cong nghe thong tin]{"entity":"nganh","value":"cntt"} thi [lam duoc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gi
-      - học [công nghệ thông tin]{"entity":"nganh","value":"cntt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
-      - học [công nghệ thông tin]{"entity":"nganh","value":"cntt"} có thể làm những công việc gì
-      - học [cntt]{"entity":"nganh","value":"cntt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} nào
-      - học [cntt]{"entity":"nganh","value":"cntt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
+      - Em có dự định muốn học ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}, vậy cho em hỏi học ngành này xong thì ra ngoài [có thể làm gì]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} ạ
+      - Hoc xong [cntt]{"entity":"thongtinchinh","value":"cntt"} co the lam gi a
+      - [cntt]{"entity":"thongtinchinh","value":"cntt"} lam gi khi hoc xong
+      - hoc xong [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"} thi [lam duoc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gi
+      - học [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
+      - học [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} có thể làm những công việc gì
+      - học [cntt]{"entity":"thongtinchinh","value":"cntt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} nào
+      - học [cntt]{"entity":"thongtinchinh","value":"cntt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
 
   - intent: cntt_ma_nganh
     examples: |
@@ -273,74 +285,74 @@ nlu:
 
   - intent: cntt_chuong_trinh_dao_tao
     examples: |
-      - [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [cntt]{"entity":"nganh","value":"cntt"}
-      - Cho em hỏi về [chương trình đào tạo]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"} ạ
-      - cho em hoi [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} nganh [cong nghe thông tin]{"entity":"nganh","value":"cntt"}
-      - [ctdt]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [cntt]{"entity":"nganh","value":"cntt"}
+      - [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - Cho em hỏi về [chương trình đào tạo]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} ạ
+      - cho em hoi [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} nganh [cong nghe thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [ctdt]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [cntt]{"entity":"thongtinchinh","value":"cntt"}
 
   - intent: cntt_thoi_gian_dao_tao
     examples: |
-      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [cntt]{"entity":"nganh","value":"cntt"}
-      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} nganh [cntt]{"entity":"nganh","value":"cntt"}
-      - [thời gian học]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"}
-      - [thoi gian hoc]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [cong nghe thong tin]{"entity":"nganh","value":"cntt"}
-      - hoc [công nghệ thông tin]{"entity":"nganh","value":"cntt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì ra trường
-      - học [cntt]{"entity":"nganh","value":"cntt"} mất [bao lâu]
-      - ngành [cong nghe thong tin]{"entity":"nganh","value":"cntt"} [học mấy năm]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
-      - hoc [it]{"entity":"nganh","value":"cntt"} trong [bao lau]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
-      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} của ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"}
-      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [cong nghe thong tin]{"entity":"nganh","value":"cntt"}
-      - học [it]{"entity":"nganh","value":"cntt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì xong
+      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [thời gian học]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [thoi gian hoc]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - hoc [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì ra trường
+      - học [cntt]{"entity":"thongtinchinh","value":"cntt"} mất [bao lâu]
+      - ngành [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"} [học mấy năm]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
+      - hoc [it]{"entity":"thongtinchinh","value":"cntt"} trong [bao lau]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
+      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} của ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - học [it]{"entity":"thongtinchinh","value":"cntt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì xong
 
   - intent: cntt_hoc_phi
     examples: |
-      - [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [cntt]{"entity":"nganh","value":"cntt"}
-      - Cho em hỏi về [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"} ạ
-      - cho em hoi [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [cong nghe thông tin]{"entity":"nganh","value":"cntt"}
-      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [it]{"entity":"nganh","value":"cntt"}
-      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"}
+      - [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - Cho em hỏi về [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} ạ
+      - cho em hoi [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [cong nghe thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
 
   - intent: cntt_sotc
     examples: |
-      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [cntt]{"entity":"nganh","value":"cntt"}
-      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"}
-      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [cong nghe thong tin]{"entity":"nganh","value":"cntt"}
-      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [it]{"entity":"nganh","value":"cntt"}
-      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [cntt]{"entity":"nganh","value":"cntt"}
-      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [CNTT]{"entity":"nganh","value":"cntt"}
-      - nganh [cntt]{"entity":"nganh","value":"cntt"} co bn [tin chi]{"entity":"thongtinphu","value":"sotc"}
-      - nganh [cong nghe thong tin]{"entity":"nganh","value":"cntt"} co bao nhieu [tin chi]{"entity":"thongtinphu","value":"sotc"}
-      - ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"} có bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"}
-      - ngành [cntt]{"entity":"nganh","value":"cntt"} có tổng cộng bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"} tất cả
-      - [cong nghe thong tin]{"entity":"nganh","value":"cntt"} co [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
-      - [cntt]{"entity":"nganh","value":"cntt"} hoc [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
-      - [công nghệ thông tin]{"entity":"nganh","value":"cntt"} tổng cộng [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
-      - [công nghệ thông tin]{"entity":"nganh","value":"cntt"} có [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
-      - [it]{"entity":"nganh","value":"cntt"} có tất cả [bao nhiêu tin chỉ]{"entity":"thongtinphu","value":"sotc"}
-      - [cong nghe thong tin]{"entity":"nganh","value":"cntt"} co tat ca [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [CNTT]{"entity":"thongtinchinh","value":"cntt"}
+      - nganh [cntt]{"entity":"thongtinchinh","value":"cntt"} co bn [tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"} co bao nhieu [tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} có bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - ngành [cntt]{"entity":"thongtinchinh","value":"cntt"} có tổng cộng bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"} tất cả
+      - [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"} co [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [cntt]{"entity":"thongtinchinh","value":"cntt"} hoc [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} tổng cộng [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} có [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [it]{"entity":"thongtinchinh","value":"cntt"} có tất cả [bao nhiêu tin chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"} co tat ca [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
 
   - intent: cntt_chuyen_nganh
     examples: |
-      - [cong nghe thong tin]{"entity":"nganh","value":"cntt"} co cac [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} nao
-      - [công nghệ thông tin]{"entity":"nganh","value":"cntt"} có các [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
-      - [cntt]{"entity":"nganh","value":"cntt"} được chia mấy [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
-      - ngành [it]{"entity":"nganh","value":"cntt"} có những [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
-      - [cntt]{"entity":"nganh","value":"cntt"} [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
-      - [CNTT]{"entity":"nganh","value":"cntt"} [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"} co cac [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} nao
+      - [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"} có các [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
+      - [cntt]{"entity":"thongtinchinh","value":"cntt"} được chia mấy [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - ngành [it]{"entity":"thongtinchinh","value":"cntt"} có những [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
+      - [cntt]{"entity":"thongtinchinh","value":"cntt"} [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - [CNTT]{"entity":"thongtinchinh","value":"cntt"} [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"}
 
   - intent: cntt_diem_chuan
     examples: |
-      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"}
-      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [cntt]{"entity":"nganh","value":"cntt"}
-      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [cntt]{"entity":"nganh","value":"cntt"}
-      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [cong nghe thong tin]{"entity":"nganh","value":"cntt"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
 
-  - intent: cntt_khoi
+  - intent: cntt_khoi_thi
     examples: |
-      - [khối thi]{"entity":"thongtinphu","value":"khoi"} ngành [công nghệ thông tin]{"entity":"nganh","value":"cntt"}
-      - [khoi]{"entity":"thongtinphu","value":"khoi"} thi nganh [cntt]{"entity":"nganh","value":"cntt"}
-      - [khoi thi]{"entity":"thongtinphu","value":"khoi"} nganh [cong nghe thong tin]{"entity":"nganh","value":"cntt"}
-      - [khối]{"entity":"thongtinphu","value":"khoi"} thi ngành [cntt]{"entity":"nganh","value":"cntt"}
+      - [khối thi]{"entity":"thongtinphu","value":"khoi_thi"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
   - intent: ktdtvt_ktdtvt
