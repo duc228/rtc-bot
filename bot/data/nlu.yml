@@ -173,6 +173,13 @@ nlu:
       - em muốn biết ở cơ sở phía [nam]{"entity":"coso","value":"nam"}
       - em muon biet o co so phia [bac]{"entity":"coso","value":"bac"}
       - em muon biet o co so phia [nam]{"entity":"coso","value":"nam"}
+      - Cho mình hỏi ở [bắc]{"entity":"coso","value":"bac"}
+      - Cho mình hỏi ở [nam]{"entity":"coso","value":"nam"}
+      - mình muốn hỏi ở [bac]{"entity":"coso","value":"bac"}
+      - mình muốn biết ở [nam]{"entity":"coso","value":"nam"}
+      - ở [nam]{"entity":"coso","value":"nam"} ạ
+      - ở [bắc]{"entity":"coso","value":"bắc"} ạ
+
   ######## intent cac cau hoi phuong thuc tuyen sinh
   - intent: phuong_thuc_tuyen_sinh
     examples: |
@@ -359,118 +366,222 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+  - intent: ktdtvt_tongquan
+    examples: |
+      - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [tóm tắt]{"entity":"thongtinphu","value":"tong_quan"} ngành [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} cua trường
+      - [khái quát]{"entity":"thongtinphu","value":"tong_quan"} ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} của học viện
+      - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [tom tat]{"entity":"thongtinphu","value":"tong_quan"} nganh [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} của học viện
+      - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} duoc khong
+      - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} o co so phia [bac]{"entity":"coso","value":"bac"}
+      - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} o co so phia [nam]{"entity":"coso","value":"nam"}
 
+  - intent: ktdtvt_tot_nghiep_lam_gi
+    examples: |
+      - Em có dự định muốn học ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} vậy cho em hỏi học ngành này xong thì ra ngoài [có thể làm gì]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} ạ
+      - Hoc xong [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} co the lam gi a
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} lam gi khi hoc xong
+      - hoc xong [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} thi [lam duoc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gi
+      - học [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
+      - học [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} có thể làm những công việc gì
+      - học [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} nào
+      - học [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
+
+  - intent: ktdtvt_ma_nganh
+    examples: |
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [mã ngành]{"entity":"thongtinphu","value":"ma_nganh"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+
+  - intent: ktdtvt_chuong_trinh_dao_tao
+    examples: |
+      - [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - Cho em hỏi về [chương trình đào tạo]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} ạ
+      - cho em hoi [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ctdt]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+
+  - intent: ktdtvt_thoi_gian_dao_tao
+    examples: |
+      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [thời gian học]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [thoi gian hoc]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - hoc [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} [bao lau]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì ra trường
+      - học [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} mất [bao lâu]
+      - ngành [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} [học mấy năm]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
+      - hoc [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} trong [bao lau]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
+      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} của ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - học [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì xong
+
+  - intent: ktdtvt_hoc_phi
+    examples: |
+      - [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - Cho em hỏi về [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} ạ
+      - cho em hoi [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+
+  - intent: ktdtvt_sotc
+    examples: |
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} co bn [tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} co bao nhieu [tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} có bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} có tổng cộng bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"} tất cả
+      - [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} co [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} hoc [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} tổng cộng [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} có [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} có tất cả [bao nhiêu tin chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} co tat ca [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+
+  - intent: ktdtvt_chuyen_nganh
+    examples: |
+      - [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} co cac [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} nao
+      - [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} có các [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} được chia mấy [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} có những [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"}
+
+  - intent: ktdtvt_diem_chuan
+    examples: |
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} cơ sở phía [bắc]{"entity":"coso","value":"bac"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"} cơ sở phía [nam]{"entity":"coso","value":"nam"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} co so phia [bac]{"entity":"coso","value":"bac"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} co so phia [nam]{"entity":"coso","value":"nam"}
+
+  - intent: ktdtvt_khoi_thi
+    examples: |
+      - [khối thi]{"entity":"thongtinphu","value":"khoi_thi"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
-  # - intent: ktddtt_ktddtt
-  #   examples: |
-  #     - [ktddtt]{"entity":"nganh","value":"ktddtt"}
-  #     - [Kỹ thuật điện, điện tử]{"entity":"nganh","value":"ktddtt"}
-  #     - [ky thuat dien dien tu]{"entity":"nganh","value":"ktddtt"}
-  #     - [dien, dien tu]{"entity":"nganh","value":"ktddtt"}
-  #     - [Điện tử]{"entity":"nganh","value":"ktddtt"}
-  #     - [ky thuat dien, dien tu]{"entity":"nganh","value":"ktddtt"}
+  - intent: ktddt_tongquan
+    examples: |
+      - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [tóm tắt]{"entity":"thongtinphu","value":"tong_quan"} ngành [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} cua trường
+      - [khái quát]{"entity":"thongtinphu","value":"tong_quan"} ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"} của học viện
+      - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [tom tat]{"entity":"thongtinphu","value":"tong_quan"} nganh [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} của học viện
+      - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"} duoc khong
+      - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"} o co so phia [bac]{"entity":"coso","value":"bac"}
+      - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"} o co so phia [nam]{"entity":"coso","value":"nam"}
 
-  # - intent: ktddtt_tongquan
-  #   examples: |
-  #     - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ky thuat dien dien tu]{"entity":"nganh","value":"ktddtt"}
-  #     - [tóm tắt]{"entity":"thongtinphu","value":"tong_quan"} ngành [ky thuat dien dien tu]{"entity":"nganh","value":"ktddtt"} cua trường
-  #     - [khái quát]{"entity":"thongtinphu","value":"tong_quan"} ngành [ky thuat dien dien tu]{"entity":"nganh","value":"ktddtt"} của học viện
-  #     - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ky thuat dien dien tu]{"entity":"nganh","value":"ktddtt"}
-  #     - [tom tat]{"entity":"thongtinphu","value":"tong_quan"} nganh [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} của học viện
-  #     - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"} duoc khong
+  - intent: ktddt_tot_nghiep_lam_gi
+    examples: |
+      - Em có dự định muốn học ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}, vậy cho em hỏi học ngành này xong thì ra ngoài [có thể làm gì]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} ạ
+      - Hoc xong [ktddt]{"entity":"thongtinchinh","value":"ktddt"} co the lam gi a
+      - [ktddt]{"entity":"thongtinchinh","value":"ktddt"} lam gi khi hoc xong
+      - hoc xong [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} thi [lam duoc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gi
+      - học [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
+      - học [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} có thể làm những công việc gì
+      - học [ktddt]{"entity":"thongtinchinh","value":"ktddt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} nào
+      - học [ktddt]{"entity":"thongtinchinh","value":"ktddt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
 
-  # - intent: ktddtt_tot_nghiep_lam_gi
-  #   examples: |
-  #     - Em có dự định muốn học ngành [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}, vậy cho em hỏi học ngành này xong thì ra ngoài [có thể làm gì]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} ạ
-  #     - Hoc xong [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} co the lam gi a
-  #     - [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} lam gi khi hoc xong
-  #     - hoc xong [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"} thi [lam duoc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gi
-  #     - học [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
-  #     - học [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} có thể làm những công việc gì
-  #     - học [dien tu vien thong]{"entity":"nganh","value":"ktddtt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} nào
-  #     - học [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"} [có thể làm những công việc]{"entity":"thongtinphu","value":"tot_nghiep_lam_gi"} gì
+  - intent: ktddt_ma_nganh
+    examples: |
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [mã ngành]{"entity":"thongtinphu","value":"ma_nganh"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
 
-  # - intent: ktddtt_ma_nganh
-  #   examples: |
-  #     - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [mã ngành]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #     - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ktddtt]{"entity":"nganh","value":"ktddtt"}
-  #     - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #     - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #     - [ma nganh]{"entity":"thongtinphu","value":"ma_nganh"} [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
+  - intent: ktddt_chuong_trinh_dao_tao
+    examples: |
+      - [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - Cho em hỏi về [chương trình đào tạo]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} ạ
+      - cho em hoi [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ctdt]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
 
-  # - intent: ktddtt_chuong_trinh_dao_tao
-  #   examples: |
-  #     - [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - Cho em hỏi về [chương trình đào tạo]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} ngành [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} ạ
-  #     - cho em hoi [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} nganh [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [ctdt]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"} [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
+  - intent: ktddt_thoi_gian_dao_tao
+    examples: |
+      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [thời gian học]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [thoi gian hoc]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - hoc [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì ra trường
+      - học [ktddt]{"entity":"thongtinchinh","value":"ktddt"} mất [bao lâu]
+      - ngành [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} [học mấy năm]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
+      - hoc [ktddt]{"entity":"thongtinchinh","value":"ktddt"} trong [bao lau]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
+      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} của ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - học [ktddt]{"entity":"thongtinchinh","value":"ktddt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì xong
 
-  # - intent: ktddtt_thoi_gian_dao_tao
-  #   examples: |
-  #     - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [thoi gian dao tao]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} nganh [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [thời gian học]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #     - [thoi gian hoc]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - hoc [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì ra trường
-  #     - học [ktddtt]{"entity":"nganh","value":"ktddtt"} mất [bao lâu]
-  #     - ngành [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"} [học mấy năm]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
-  #     - hoc [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"} trong [bao lau]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"}
-  #     - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} của ngành [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #     - [thời gian đào tạo]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} ngành [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - học [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} [bao lâu]{"entity":"thongtinphu","value":"thoi_gian_dao_tao"} thì xong
+  - intent: ktddt_hoc_phi
+    examples: |
+      - [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - Cho em hỏi về [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} ạ
+      - cho em hoi [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
 
-  # - intent: ktddtt_hoc_phi
-  #   examples: |
-  #     - [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - Cho em hỏi về [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} ạ
-  #     - cho em hoi [hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} [dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [học phí]{"entity":"thongtinphu","value":"hoc_phi"} ngành [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
+  - intent: ktddt_sotc
+    examples: |
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"} co bn [tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} co bao nhieu [tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} có bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"} có tổng cộng bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"} tất cả
+      - [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} co [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [ktddt]{"entity":"thongtinchinh","value":"ktddt"} hoc [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} tổng cộng [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} có [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [ktddt]{"entity":"thongtinchinh","value":"ktddt"} có tất cả [bao nhiêu tin chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} co tat ca [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
 
-  # - intent: ktddtt_sotc
-  #   examples: |
-  #     - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [ktddtt]{"entity":"nganh","value":"ktddtt"}
-  #     - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #     - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"} ngành [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [so tin chi]{"entity":"thongtinphu","value":"sotc"} nganh [dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - nganh [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} co bn [tin chi]{"entity":"thongtinphu","value":"sotc"}
-  #     - nganh [dien tu vien thong]{"entity":"nganh","value":"ktddtt"} co bao nhieu [tin chi]{"entity":"thongtinphu","value":"sotc"}
-  #     - ngành [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} có bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"}
-  #     - ngành [ktddtt]{"entity":"nganh","value":"ktddtt"} có tổng cộng bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"} tất cả
-  #     - [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} co [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
-  #     - [ktddtt]{"entity":"nganh","value":"ktddtt"} hoc [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
-  #     - [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} tổng cộng [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
-  #     - [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} có [bao nhiêu tín chỉ]{"entity":"thongtinphu","value":"sotc"}
-  #     - [dien tu vien thong]{"entity":"nganh","value":"ktddtt"} có tất cả [bao nhiêu tin chỉ]{"entity":"thongtinphu","value":"sotc"}
-  #     - [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} co tat ca [bao nhieu tin chi]{"entity":"thongtinphu","value":"sotc"}
+  - intent: ktddt_chuyen_nganh
+    examples: |
+      - [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} co cac [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} nao
+      - [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} có các [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
+      - [ktddt]{"entity":"thongtinchinh","value":"ktddt"} được chia mấy [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"} có những [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
+      - [ktddt]{"entity":"thongtinchinh","value":"ktddt"} [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - [ktddt]{"entity":"thongtinchinh","value":"ktddt"} [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"}
 
-  # - intent: ktddtt_chuyen_nganh
-  #   examples: |
-  #     - [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} co cac [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} nao
-  #     - [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"} có các [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
-  #     - [dien tu vien thong]{"entity":"nganh","value":"ktddtt"} được chia mấy [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
-  #     - ngành [dien tu vien thong]{"entity":"nganh","value":"ktddtt"} có những [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} nào
-  #     - [ktddtt]{"entity":"nganh","value":"ktddtt"} [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
-  #     - [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"} [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"}
+  - intent: ktddt_diem_chuan
+    examples: |
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} cơ sở phía [bắc]{"entity":"coso","value":"bac"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"} cơ sở phía [nam]{"entity":"coso","value":"nam"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} co so phia [bac]{"entity":"coso","value":"bac"}
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"} co so phia [nam]{"entity":"coso","value":"nam"}
 
-  # - intent: ktddtt_diem_chuan
-  #   examples: |
-  #     - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #     - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [ktddtt]{"entity":"nganh","value":"ktddtt"}
-  #     - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"} ngành [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #     - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"} nganh [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
+  - intent: ktddt_khoi_thi
+    examples: |
+      - [khối thi]{"entity":"thongtinphu","value":"khoi_thi"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}  
 
-  # - intent: ktddtt_khoi
-  # examples: |
-  #   - [khối thi]{"entity":"thongtinphu","value":"khoi"} ngành [kỹ thuật điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #   - [khoi]{"entity":"thongtinphu","value":"khoi"} thi nganh [điện tử viễn thông]{"entity":"nganh","value":"ktddtt"}
-  #   - [khoi thi]{"entity":"thongtinphu","value":"khoi"} nganh [ky thuat dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
-  #   - [khối]{"entity":"thongtinphu","value":"khoi"} thi ngành [dien tu vien thong]{"entity":"nganh","value":"ktddtt"}
+
 
   ######## intent cac cau hoi nganh An toàn thông tin
   - intent: attt_tongquan

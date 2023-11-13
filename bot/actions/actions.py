@@ -42,12 +42,26 @@ import json
         }
     }
 
+    - ["nganh"][thongtinchinh][thongtinphu][coso][namhoc]
+    format:
+    "nganh": {
+         "thongtinchinh": {
+           "thongtinphu": {
+                "coso": {
+                    "namhoc": "data"
+                }
+            }
+        }
+    }
+
 '''
-thongtinchinh_data  = [""]
-thongtinphu_data = [""]
+# thongtinchinh_data  = [""]
+# thongtinphu_data = [""]
 coso_data = ["chung","bac","nam"]
 nganh_data = ["cntt", "ktdtvt"]
 coso_default = "chung"
+namhoc_data = ["2023", "2022", "2021", "2020", "2019"]
+namhoc_default = "chung"
 
 def get_thong_tin_nganh(nganh, thongtinphu, coso):
     f = open('./data/collections/data_collect.json', encoding="utf8")

@@ -42,7 +42,7 @@ intents:
   - cntt_diem_chuan
   - cntt_khoi_thi
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
-  - ktdtvt_ktdtvt
+  # - ktdtvt_ktdtvt
   - ktdtvt_tongquan
   - ktdtvt_tot_nghiep_lam_gi
   - ktdtvt_ma_nganh
@@ -52,19 +52,19 @@ intents:
   - ktdtvt_sotc
   - ktdtvt_chuyen_nganh
   - ktdtvt_diem_chuan
-  - ktdtvt_khoi
+  - ktdtvt_khoi_thi
 ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
 # - ktddtt_ktddtt
-# - ktddtt_tongquan
-# - ktddtt_tot_nghiep_lam_gi
-# - ktddtt_ma_nganh
-# - ktddtt_chuong_trinh_dao_tao
-# - ktddtt_thoi_gian_dao_tao
-# - ktddtt_hoc_phi
-# - ktddtt_sotc
-# - ktddtt_chuyen_nganh
-# - ktddtt_diem_chuan
-# - ktddtt_khoi
+  - ktddt_tongquan
+  - ktddt_tot_nghiep_lam_gi
+  - ktddt_ma_nganh
+  - ktddt_chuong_trinh_dao_tao
+  - ktddt_thoi_gian_dao_tao
+  - ktddt_hoc_phi
+  - ktddt_sotc
+  - ktddt_chuyen_nganh
+  - ktddt_diem_chuan
+  - ktddt_khoi_thi
 ######## intent cac cau hoi nganh An toàn thông tin
 # - attt_attt
   - attt_tongquan
@@ -201,6 +201,13 @@ slots:
     mappings:
       - type: from_entity
         entity: thongtinphu
+  
+  namhoc:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: namhoc
 
 # slots:
 #   branch:
@@ -416,7 +423,7 @@ responses:
 
   utter_ktdtvt_tot_nghiep_lam_gi:
     - text: |-
-        utter_ktdtvt_tot_nghiep_lam_gi:
+        utter_ktdtvt_tot_nghiep_lam_gi
 
   utter_ktdtvt_thoi_gian_dao_tao:
     - text: |-
