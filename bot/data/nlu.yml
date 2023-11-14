@@ -205,6 +205,8 @@ nlu:
       - cac [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
       - truong [dao tao nganh]{"entity":"thongtinchinh","value":"nganh_dao_tao"} nao
       - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"} cua truong
+      - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
+      - các [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
 
   ######## intent cac cau hoi chuong trinh dao tao
   - intent: chuong_trinh_dao_tao
@@ -248,15 +250,6 @@ nlu:
       - [Cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
       - [information technologies]{"entity":"thongtinchinh","value":"cntt"}
       - [information technology]{"entity":"thongtinchinh","value":"cntt"}
-
-  # - intent: cntt_tongquan
-  #   examples: |
-  #     - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [it]{"entity":"nganh","value":"cntt"}
-  #     - [tóm tắt]{"entity":"thongtinphu","value":"tong_quan"} ngành [cong nghe thong tin]{"entity":"nganh","value":"cntt"} cua trường
-  #     - [khái quát]{"entity":"thongtinphu","value":"tong_quan"} ngành [cntt]{"entity":"nganh","value":"cntt"} của học viện
-  #     - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [CNTT]{"entity":"nganh","value":"cntt"}
-  #     - [tom tat]{"entity":"thongtinphu","value":"tong_quan"} nganh [công nghệ thông tin]{"entity":"nganh","value":"cntt"} của học viện
-  #     - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cntt]{"entity":"nganh","value":"cntt"} duoc khong
 
   - intent: cntt_tongquan
     examples: |

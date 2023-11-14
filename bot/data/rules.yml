@@ -40,13 +40,13 @@ rules:
   - rule: hoi nganh dao tao
     steps:
       - intent: nganh_dao_tao
-      - action: action_nganh_dao_tao
-      - action: utter_chon_nganh
+      - action: action_truyvan_thongtinchinh
+      # - action: utter_chon_nganh
 
   - rule: hoi chuong trinh dao tao 2 mien
     steps:
       - intent: ctdt_2_mien
-      - action: utter_ctdt_2_mien
+      - action: action_truyvan_thongtinchinh
 
   - rule: hoi tot nghiep nhan loai bang nao
     steps:

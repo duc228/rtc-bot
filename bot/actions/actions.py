@@ -12,7 +12,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, FormValidationAction, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
-from rasa_sdk.events import SlotSet, AllSlotsReset,UserUttered
+from rasa_sdk.events import SlotSet, AllSlotsReset,UserUttered,FollowupAction
 import json
 
 '''
@@ -58,7 +58,7 @@ import json
 # thongtinchinh_data  = [""]
 # thongtinphu_data = [""]
 coso_data = ["chung","bac","nam"]
-nganh_data = ["cntt", "ktdtvt"]
+nganh_data = ["cntt", "ktdtvt", "ktddt", "attt", "ktdkvtdh", "iot", "cndpt", "qtkd", "mkt", "kt"]
 coso_default = "chung"
 namhoc_data = ["2023", "2022", "2021", "2020", "2019"]
 namhoc_default = "chung"
@@ -84,20 +84,19 @@ class ActionTruyVanThongtinchinh(Action):
         return "action_truyvan_thongtinchinh"
     def run(self, dispatcher, tracker, domain):
         thongtinchinh = tracker.get_slot("thongtinchinh")
-        if thongtinchinh is None:
-            dispatcher.utter_message(text=f"Bot chưa hiểu ý bạn")
-            # return [UserUttered(text="/my_intent", parse_data=data)]
-            print(thongtinchinh + "\n")
-            return [UserUttered(text="/utter_hoi_chuc_nang")]
-        else:    
-            print("chua lay duoc thong tin chinh\n")
+        # [UserUttered(text="/utter_hoi_chuc_nang")]
 
+        if thongtinchinh is None:
+            return [FollowupAction("utter_hoi_chuc_nang")]
+        else:
             f = open('./data/collections/data_collect.json', encoding="utf8")
             data = json.load(f)
-            if data[thongtinchinh] and data[thongtinchinh][coso_default]:
+            if thongtinchinh in data:
                 dispatcher.utter_message(text=f'{data[thongtinchinh][coso_default]}')
             else:
-                return [UserUttered(text="Xin lỗi, hiện tại bot chưa hiểu ý bạn hoặc chưa có dữ liệu bạn mong muốn")]
+                dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+
+        return []
 
 #### [“nganh"][thongtinchinh][thongtinphu][coso]
 class ActionTruyVanNganhThongTinPhuCoSo(Action):
@@ -107,20 +106,77 @@ class ActionTruyVanNganhThongTinPhuCoSo(Action):
         thongtinchinh = tracker.get_slot("thongtinchinh")
         thongtinphu = tracker.get_slot("thongtinphu")
         coso = tracker.get_slot("coso")
-        dispatcher.utter_message(text=f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}')
+        print(f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}\n')
+
+        if thongtinchinh is None or thongtinphu is None:
+            dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
+            return []
+        if thongtinchinh not in nganh_data:
+            dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
+            return []
+
+        if coso is None:
+            coso = coso_default
+
+        f = open('./data/collections/data_collect.json', encoding="utf8")
+        data = json.load(f)
+
+        if thongtinchinh not in data["nganh"]:
+            dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+            return []
+            # return  [FollowupAction("utter_hoi_chuc_nang")]
+            # return []
+
+        if data["nganh"][thongtinchinh][thongtinphu]:
+            if data["nganh"][thongtinchinh][thongtinphu][coso]:
+                dispatcher.utter_message(text=f'{data["nganh"][thongtinchinh][thongtinphu][coso]}')
+                return []
+        else:
+            dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+            return []
+
+
+
+
+        # dispatcher.utter_message(text=f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}')
+        print(f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}\n')
         return []
         
 
-#### [“nganh”][thongtinchinh][coso_default]
-
+#### [“nganh”][thongtinchinh][thongtinphu][coso_default]
 class ActionTruyVanNganhThongTinPhu(Action):
     def name(self):
         return "action_truyvan_nganh_thongtinphu"
     def run(self, dispatcher, tracker, domain):
         thongtinchinh = tracker.get_slot("thongtinchinh")
         thongtinphu = tracker.get_slot("thongtinphu")
-        coso = tracker.get_slot("coso")
-        dispatcher.utter_message(text=f'action_truyvan_nganh_thongtinphu: {thongtinchinh} - {thongtinphu} - {coso}')
+        
+        print(f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}\n')
+
+        if thongtinchinh is None or thongtinphu is None:
+            dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
+            return []
+        if thongtinchinh not in nganh_data:
+            dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
+            return []
+
+        f = open('./data/collections/data_collect.json', encoding="utf8")
+        data = json.load(f)
+
+        if thongtinchinh not in data["nganh"]:
+            dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+            return []
+            # return  [FollowupAction("utter_hoi_chuc_nang")]
+            # return []
+
+        if data["nganh"][thongtinchinh][thongtinphu]:
+            if data["nganh"][thongtinchinh][thongtinphu][coso_default]:
+                dispatcher.utter_message(text=f'{data["nganh"][thongtinchinh][thongtinphu][coso_default]}')
+                return []
+        else:
+            dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+            return []
+
         return []
 
 #### truy van can nganh
@@ -219,7 +275,9 @@ class ActionDefaultFallback(Action):
    def run(self, dispatcher, tracker, domain):
         nganh = tracker.get_slot("nganh")
         thongtinphu = tracker.get_slot("thongtinphu")
-        dispatcher.utter_message(text=f"Xin loi, toi chua hieu y cua ban {nganh} - {thongtinphu}")
+        print("action default fallback toi chua hieu y ban")
+        # dispatcher.utter_message(text=f"Xin loi, toi chua hieu y cua ban {nganh} - {thongtinphu}")
+        return []
 
 class ActionResetAllSlots(Action):
     def name(self):
