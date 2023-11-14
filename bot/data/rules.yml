@@ -272,6 +272,310 @@ rules:
       - intent: attt_khoi_thi
       - action: action_truyvan_nganh_thongtinphu
 
+######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+  - rule: ktdkvtdh - hoi tong quan
+    steps:
+      - intent: ktdkvtdh_tongquan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: ktdkvtdh - tot nghiep lam gi
+    steps:
+      - intent: ktdkvtdh_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: ktdkvtdh - ma nganh
+    steps:
+      - intent: ktdkvtdh_ma_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: ktdkvtdh - chuong trinh dao tao
+    steps:
+      - intent: ktdkvtdh_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: ktdkvtdh - thoi gian dao tao
+    steps:
+      - intent: ktdkvtdh_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: ktdkvtdh - ktdkvtdh_hoc_phi
+    steps:
+      - intent: ktdkvtdh_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: ktdkvtdh - sotc
+    steps:
+      - intent: ktdkvtdh_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: ktdkvtdh - ktdkvtdh_chuyen_nganh
+    steps:
+      - intent: ktdkvtdh_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: ktdkvtdh - ktdkvtdh_diem_chuan
+    steps:
+      - intent: ktdkvtdh_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: ktdkvtdh - ktdkvtdh_khoi_thi
+    steps:
+      - intent: ktdkvtdh_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
+
+  ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+  - rule: iot - hoi tong quan
+    steps:
+      - intent: iot_tongquan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: iot - tot nghiep lam gi
+    steps:
+      - intent: iot_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: iot - ma nganh
+    steps:
+      - intent: iot_ma_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: iot - chuong trinh dao tao
+    steps:
+      - intent: iot_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: iot - thoi gian dao tao
+    steps:
+      - intent: iot_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: iot - iot_hoc_phi
+    steps:
+      - intent: iot_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: iot - sotc
+    steps:
+      - intent: iot_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: iot - iot_chuyen_nganh
+    steps:
+      - intent: iot_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: iot - iot_diem_chuan
+    steps:
+      - intent: iot_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: iot - iot_khoi_thi
+    steps:
+      - intent: iot_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
+
+######## intent cac cau hoi nganh Công nghệ đa phương tiện
+  - rule: cndpt - hoi tong quan
+    steps:
+      - intent: cndpt_tongquan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: cndpt - tot nghiep lam gi
+    steps:
+      - intent: cndpt_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: cndpt - ma nganh
+    steps:
+      - intent: cndpt_ma_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: cndpt - chuong trinh dao tao
+    steps:
+      - intent: cndpt_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: cndpt - thoi gian dao tao
+    steps:
+      - intent: cndpt_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: cndpt - cndpt_hoc_phi
+    steps:
+      - intent: cndpt_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: cndpt - sotc
+    steps:
+      - intent: cndpt_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: cndpt - cndpt_chuyen_nganh
+    steps:
+      - intent: cndpt_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: cndpt - cndpt_diem_chuan
+    steps:
+      - intent: cndpt_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: cndpt - cndpt_khoi_thi
+    steps:
+      - intent: cndpt_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
+
+######## intent cac cau hoi nganh Quản trị kinh doanh
+  - rule: qtkd - hoi tong quan
+    steps:
+      - intent: qtkd_tongquan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: qtkd - tot nghiep lam gi
+    steps:
+      - intent: qtkd_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: qtkd - ma nganh
+    steps:
+      - intent: qtkd_ma_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: qtkd - chuong trinh dao tao
+    steps:
+      - intent: qtkd_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: qtkd - thoi gian dao tao
+    steps:
+      - intent: qtkd_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: qtkd - qtkd_hoc_phi
+    steps:
+      - intent: qtkd_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: qtkd - sotc
+    steps:
+      - intent: qtkd_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: qtkd - qtkd_chuyen_nganh
+    steps:
+      - intent: qtkd_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: qtkd - qtkd_diem_chuan
+    steps:
+      - intent: qtkd_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: qtkd - qtkd_khoi_thi
+    steps:
+      - intent: qtkd_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
+
+######## intent cac cau hoi nganh Marketing
+  - rule: mkt - hoi tong quan
+    steps:
+      - intent: mkt_tongquan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: mkt - tot nghiep lam gi
+    steps:
+      - intent: mkt_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: mkt - ma nganh
+    steps:
+      - intent: mkt_ma_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: mkt - chuong trinh dao tao
+    steps:
+      - intent: mkt_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: mkt - thoi gian dao tao
+    steps:
+      - intent: mkt_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: mkt - mkt_hoc_phi
+    steps:
+      - intent: mkt_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: mkt - sotc
+    steps:
+      - intent: mkt_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: mkt - mkt_chuyen_nganh
+    steps:
+      - intent: mkt_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: mkt - mkt_diem_chuan
+    steps:
+      - intent: mkt_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: mkt - mkt_khoi_thi
+    steps:
+      - intent: mkt_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
+######## intent cac cau hoi nganh Kế toán
+  - rule: kt - hoi tong quan
+    steps:
+      - intent: kt_tongquan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: kt - tot nghiep lam gi
+    steps:
+      - intent: kt_tot_nghiep_lam_gi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: kt - ma nganh
+    steps:
+      - intent: kt_ma_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: kt - chuong trinh dao tao
+    steps:
+      - intent: kt_chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: kt - thoi gian dao tao
+    steps:
+      - intent: kt_thoi_gian_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: kt - kt_hoc_phi
+    steps:
+      - intent: kt_hoc_phi
+      - action: action_truyvan_nganh_thongtinphu
+
+  - rule: kt - sotc
+    steps:
+      - intent: kt_sotc
+      - action: action_truyvan_nganh_thongtinphu
+  
+  - rule: kt - kt_chuyen_nganh
+    steps:
+      - intent: kt_chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: kt - kt_diem_chuan
+    steps:
+      - intent: kt_diem_chuan
+      - action: action_truyvan_nganh_thongtinphu_coso
+
+  - rule: kt - kt_khoi_thi
+    steps:
+      - intent: kt_khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi thuong gap
   - rule: thuong gap - hoi dieu kien doi nganh
