@@ -180,6 +180,29 @@ nlu:
       - ở [nam]{"entity":"coso","value":"nam"} ạ
       - ở [bắc]{"entity":"coso","value":"bắc"} ạ
 
+  ######## thoi_gian_dao_tao
+  - intent: thoi_gian_dao_tao
+    examples: |
+      - truong dao tao may nam
+      - truong dao tao bao lau
+      - thoi gian dao tao
+      - thời gian đào tạo
+      - trường đào tạo bao lâu
+      - trường đào tạo mấy năm
+  ######## hoc_phi
+  - intent: hoc_phi
+    examples: |
+      - cho em hỏi học phí của trường bao nhiêu 1 năm
+      - học phí
+      - học phí của trường bao nhiêu ạ
+  ######## sotc
+  ######## chuyen_nganh
+  ######## diem_chuan
+  ######## khoi_thi
+  ######## he từ xa
+  ######## thạc si
+  
+
   ######## intent cac cau hoi phuong thuc tuyen sinh
   - intent: phuong_thuc_tuyen_sinh
     examples: |
@@ -207,6 +230,7 @@ nlu:
       - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"} cua truong
       - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
       - các [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
+
 
   ######## intent cac cau hoi chuong trinh dao tao
   - intent: chuong_trinh_dao_tao

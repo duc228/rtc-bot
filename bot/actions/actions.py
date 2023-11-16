@@ -127,8 +127,8 @@ class ActionTruyVanNganhThongTinPhuCoSo(Action):
             # return  [FollowupAction("utter_hoi_chuc_nang")]
             # return []
 
-        if data["nganh"][thongtinchinh][thongtinphu]:
-            if data["nganh"][thongtinchinh][thongtinphu][coso]:
+        if thongtinphu in data["nganh"][thongtinchinh]:
+            if coso in data["nganh"][thongtinchinh][thongtinphu]:
                 dispatcher.utter_message(text=f'{data["nganh"][thongtinchinh][thongtinphu][coso]}')
                 return []
         else:
@@ -169,8 +169,8 @@ class ActionTruyVanNganhThongTinPhu(Action):
             # return  [FollowupAction("utter_hoi_chuc_nang")]
             # return []
 
-        if data["nganh"][thongtinchinh][thongtinphu]:
-            if data["nganh"][thongtinchinh][thongtinphu][coso_default]:
+        if thongtinphu in data["nganh"][thongtinchinh]:
+            if coso_default in data["nganh"][thongtinchinh][thongtinphu]:
                 dispatcher.utter_message(text=f'{data["nganh"][thongtinchinh][thongtinphu][coso_default]}')
                 return []
         else:

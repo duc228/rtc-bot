@@ -2,9 +2,9 @@
     "nganh":{
         "cntt": {
             "tong_quan": {
-                "chung": "tong quan cntt data collection",
-                "bac":"tong_quan bac",
-                "nam":"tong_quan nam"
+                "chung": "Ngành Công nghệ thông tin (gồm có 4 chuyên ngành Máy tính và truyền thông, Khoa học máy tính, Kỹ thuật máy tính, Hệ thống thông tin, không xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành)\n1. Mã ngành: 7480201 \n2. Khối lượng chương trình: 150 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) \n3. Chi tiêu: \n- Năm 2023: 730 \n- Năm 2022: 840 \n- Năm 2021: 770 \n4. Điểm trúng tuyển: \n- Năm 2022: 27,25 \n- Năm 2021: 26,90 \n5. Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) ",
+                "bac": "Ngành Công nghệ thông tin (gồm có 4 chuyên ngành Máy tính và truyền thông, Khoa học máy tính, Kỹ thuật máy tính, Hệ thống thông tin, không xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành)\n1. Mã ngành: 7480201 \n2. Khối lượng chương trình: 150 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) \n3. Chi tiêu: \n- Năm 2023: 730 \n- Năm 2022: 840 \n- Năm 2021: 770 \n4. Điểm trúng tuyển: \n- Năm 2022: 27,25 \n- Năm 2021: 26,90 \n5. Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) ",
+                "nam": "Ngành Công nghệ thông tin (gồm có 4 chuyên ngành Máy tính và truyền thông, Khoa học máy tính, Kỹ thuật máy tính, Hệ thống thông tin, không xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành)\n1. Mã ngành: 7480201 \n2. Khối lượng chương trình: 150 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) \n3. Chi tiêu: \n- Năm 2023: 730 \n- Năm 2022: 840 \n- Năm 2021: 770 \n4. Điểm trúng tuyển: \n- Năm 2022: 27,25 \n- Năm 2021: 26,90 \n5. Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) ",
             },
             "ma_nganh": {
                 "chung":"",
@@ -47,6 +47,13 @@
                 "chung": "12123"
             }
         },
+        "ktdtvt": {},
+        "ktddt": {},
+        "attt": {},
+        "ktdkvtdh": {},
+        "cndpt": {},
+        "qtkd": {},
+        "mkt": {},
         "kt": {
             "tong_quan": {
                 "chung": "tong quan kt chung"

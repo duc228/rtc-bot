@@ -27,6 +27,16 @@ intents:
   # - ask_point
   # - mood_unhappy
 
+  ######## thoi_gian_dao_tao
+  - thoi_gian_dao_tao
+  ######## hoc_phi
+  - hoc_phi
+  ######## sotc
+  ######## chuyen_nganh
+  ######## diem_chuan
+  ######## khoi_thi
+  ######## he từ xa
+  ######## thạc si
   ######## intent cac cau hoi hoc phi
   ######## intent cac cau hoi thu tuc nhap hoc
   ######## intent cac cau hoi nganh Công nghệ thông tin
