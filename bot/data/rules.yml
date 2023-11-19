@@ -1,6 +1,24 @@
 version: "3.1"
 
 rules:
+  - rule: check account balance
+    steps:
+      - intent: check_balances
+      - action: utter_action_check_balances
+  - rule: transfer money
+    steps:
+      - intent: transfer_money
+      - action: utter_action_transfer_money
+  - rule: check balances and transfer money
+    steps:
+      - intent: check_balances+transfer_money
+      - action: utter_action_check_balances
+      - action: utter_action_transfer_money
+  - rule: xem slot
+    steps:
+      - intent: show_slot
+      - action: action_show_slot
+
   - rule: noi tam biet voi nguoi dung
     steps:
       - intent: tam_biet
@@ -53,10 +71,10 @@ rules:
       - intent: tn_hoi_loai_bang
       - action: utter_tn_hoi_loai_bang
 
-
-
- 
- 
+  - rule: hoi thoi gian dao tao
+    steps:
+      - intent: thoi_gian_dao_tao
+      - action: action_truyvan_thongtinchinh
   ######## intent cac cau hoi nganh Công nghệ thông tin
 
   # - rule: cntt - hoi ve cntt
@@ -86,7 +104,7 @@ rules:
     steps:
       - intent: cntt_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: cntt - thoi gian dao tao
     steps:
       - intent: cntt_thoi_gian_dao_tao
@@ -101,7 +119,7 @@ rules:
     steps:
       - intent: cntt_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: cntt - cntt_chuyen_nganh
     steps:
       - intent: cntt_chuyen_nganh
@@ -118,7 +136,7 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
-  
+
   - rule: ktdtvt - hoi tong quan
     steps:
       - intent: ktdtvt_tongquan
@@ -138,7 +156,7 @@ rules:
     steps:
       - intent: ktdtvt_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: ktdtvt - thoi gian dao tao
     steps:
       - intent: ktdtvt_thoi_gian_dao_tao
@@ -153,7 +171,7 @@ rules:
     steps:
       - intent: ktdtvt_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: ktdtvt - ktdtvt_chuyen_nganh
     steps:
       - intent: ktdtvt_chuyen_nganh
@@ -189,7 +207,7 @@ rules:
     steps:
       - intent: ktddt_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: ktddt - thoi gian dao tao
     steps:
       - intent: ktddt_thoi_gian_dao_tao
@@ -204,7 +222,7 @@ rules:
     steps:
       - intent: ktddt_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: ktddt - ktddt_chuyen_nganh
     steps:
       - intent: ktddt_chuyen_nganh
@@ -241,7 +259,7 @@ rules:
     steps:
       - intent: attt_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: attt - thoi gian dao tao
     steps:
       - intent: attt_thoi_gian_dao_tao
@@ -256,7 +274,7 @@ rules:
     steps:
       - intent: attt_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: attt - attt_chuyen_nganh
     steps:
       - intent: attt_chuyen_nganh
@@ -272,7 +290,7 @@ rules:
       - intent: attt_khoi_thi
       - action: action_truyvan_nganh_thongtinphu
 
-######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+  ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
   - rule: ktdkvtdh - hoi tong quan
     steps:
       - intent: ktdkvtdh_tongquan
@@ -292,7 +310,7 @@ rules:
     steps:
       - intent: ktdkvtdh_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: ktdkvtdh - thoi gian dao tao
     steps:
       - intent: ktdkvtdh_thoi_gian_dao_tao
@@ -307,7 +325,7 @@ rules:
     steps:
       - intent: ktdkvtdh_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: ktdkvtdh - ktdkvtdh_chuyen_nganh
     steps:
       - intent: ktdkvtdh_chuyen_nganh
@@ -343,7 +361,7 @@ rules:
     steps:
       - intent: iot_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: iot - thoi gian dao tao
     steps:
       - intent: iot_thoi_gian_dao_tao
@@ -358,7 +376,7 @@ rules:
     steps:
       - intent: iot_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: iot - iot_chuyen_nganh
     steps:
       - intent: iot_chuyen_nganh
@@ -374,7 +392,7 @@ rules:
       - intent: iot_khoi_thi
       - action: action_truyvan_nganh_thongtinphu
 
-######## intent cac cau hoi nganh Công nghệ đa phương tiện
+  ######## intent cac cau hoi nganh Công nghệ đa phương tiện
   - rule: cndpt - hoi tong quan
     steps:
       - intent: cndpt_tongquan
@@ -394,7 +412,7 @@ rules:
     steps:
       - intent: cndpt_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: cndpt - thoi gian dao tao
     steps:
       - intent: cndpt_thoi_gian_dao_tao
@@ -409,7 +427,7 @@ rules:
     steps:
       - intent: cndpt_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: cndpt - cndpt_chuyen_nganh
     steps:
       - intent: cndpt_chuyen_nganh
@@ -425,7 +443,7 @@ rules:
       - intent: cndpt_khoi_thi
       - action: action_truyvan_nganh_thongtinphu
 
-######## intent cac cau hoi nganh Quản trị kinh doanh
+  ######## intent cac cau hoi nganh Quản trị kinh doanh
   - rule: qtkd - hoi tong quan
     steps:
       - intent: qtkd_tongquan
@@ -445,7 +463,7 @@ rules:
     steps:
       - intent: qtkd_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: qtkd - thoi gian dao tao
     steps:
       - intent: qtkd_thoi_gian_dao_tao
@@ -460,7 +478,7 @@ rules:
     steps:
       - intent: qtkd_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: qtkd - qtkd_chuyen_nganh
     steps:
       - intent: qtkd_chuyen_nganh
@@ -476,7 +494,7 @@ rules:
       - intent: qtkd_khoi_thi
       - action: action_truyvan_nganh_thongtinphu
 
-######## intent cac cau hoi nganh Marketing
+  ######## intent cac cau hoi nganh Marketing
   - rule: mkt - hoi tong quan
     steps:
       - intent: mkt_tongquan
@@ -496,7 +514,7 @@ rules:
     steps:
       - intent: mkt_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: mkt - thoi gian dao tao
     steps:
       - intent: mkt_thoi_gian_dao_tao
@@ -511,7 +529,7 @@ rules:
     steps:
       - intent: mkt_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: mkt - mkt_chuyen_nganh
     steps:
       - intent: mkt_chuyen_nganh
@@ -526,7 +544,7 @@ rules:
     steps:
       - intent: mkt_khoi_thi
       - action: action_truyvan_nganh_thongtinphu
-######## intent cac cau hoi nganh Kế toán
+  ######## intent cac cau hoi nganh Kế toán
   - rule: kt - hoi tong quan
     steps:
       - intent: kt_tongquan
@@ -546,7 +564,7 @@ rules:
     steps:
       - intent: kt_chuong_trinh_dao_tao
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: kt - thoi gian dao tao
     steps:
       - intent: kt_thoi_gian_dao_tao
@@ -561,7 +579,7 @@ rules:
     steps:
       - intent: kt_sotc
       - action: action_truyvan_nganh_thongtinphu
-  
+
   - rule: kt - kt_chuyen_nganh
     steps:
       - intent: kt_chuyen_nganh
@@ -628,7 +646,6 @@ rules:
       - intent: tg_cap_hoc_bong
       - action: utter_tg_cap_hoc_bong
 
-
   - rule: thuong gap - utter_tg_cntt_hoc_sau_ve_lt
     steps:
       - intent: tg_cntt_hoc_sau_ve_lt
@@ -638,12 +655,11 @@ rules:
     steps:
       - intent: tg_thisinh_tudo_diem_kv
       - action: utter_tg_thisinh_tudo_diem_kv
-  
+
   - rule: thuong gap - utter_tg_bang_ra_truong
     steps:
       - intent: tg_bang_ra_truong
       - action: utter_tg_bang_ra_truong
-
 
   - rule: thuong gap - utter_tg_phiabac_xinviec
     steps:
@@ -654,10 +670,6 @@ rules:
     steps:
       - intent: tg_cntt_tg_dao_tao
       - action: utter_tg_cntt_tg_dao_tao
-  
-
-
-
 # - rule: ask school id
 #   steps:
 #   - intent: ask_school_id

@@ -10,8 +10,9 @@ assistant_id: 20231009-032740-nondeterministic-text
 # https://rasa.com/docs/rasa/nlu/components/
 language: vi
 
-pipeline: 
+pipeline:
   - name: WhitespaceTokenizer
+    intent_tokenization_flag: True
     intent_split_symbol: "+"
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
@@ -54,20 +55,19 @@ pipeline:
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
-policies: 
-- name: MemoizationPolicy
-- name: RulePolicy
-  # core_fallback_threshold: 0.4
-  # core_fallback_action_name: "action_default_fallback"
-  # enable_fallback_prediction: True
-- name: UnexpecTEDIntentPolicy
-  max_history: 5
-  epochs: 100
-- name: TEDPolicy
-  max_history: 5
-  epochs: 100
-  constrain_similarities: true
- 
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
+    # core_fallback_threshold: 0.4
+    # core_fallback_action_name: "action_default_fallback"
+    # enable_fallback_prediction: True
+  - name: UnexpecTEDIntentPolicy
+    max_history: 5
+    epochs: 100
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
@@ -80,5 +80,4 @@ policies:
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
-
 

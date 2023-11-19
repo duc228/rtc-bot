@@ -2,41 +2,57 @@
     "nganh":{
         "cntt": {
             "tong_quan": {
-                "chung": "Ngành Công nghệ thông tin (gồm có 4 chuyên ngành Máy tính và truyền thông, Khoa học máy tính, Kỹ thuật máy tính, Hệ thống thông tin, không xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành)\n1. Mã ngành: 7480201 \n2. Khối lượng chương trình: 150 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) \n3. Chi tiêu: \n- Năm 2023: 730 \n- Năm 2022: 840 \n- Năm 2021: 770 \n4. Điểm trúng tuyển: \n- Năm 2022: 27,25 \n- Năm 2021: 26,90 \n5. Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) ",
-                "bac": "Ngành Công nghệ thông tin (gồm có 4 chuyên ngành Máy tính và truyền thông, Khoa học máy tính, Kỹ thuật máy tính, Hệ thống thông tin, không xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành)\n1. Mã ngành: 7480201 \n2. Khối lượng chương trình: 150 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) \n3. Chi tiêu: \n- Năm 2023: 730 \n- Năm 2022: 840 \n- Năm 2021: 770 \n4. Điểm trúng tuyển: \n- Năm 2022: 27,25 \n- Năm 2021: 26,90 \n5. Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) ",
-                "nam": "Ngành Công nghệ thông tin (gồm có 4 chuyên ngành Máy tính và truyền thông, Khoa học máy tính, Kỹ thuật máy tính, Hệ thống thông tin, không xét tuyển theo chuyên ngành, khi vào học sinh viên tự chọn chuyên ngành)\n1. Mã ngành: 7480201 \n2. Khối lượng chương trình: 150 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) \n3. Chi tiêu: \n- Năm 2023: 730 \n- Năm 2022: 840 \n- Năm 2021: 770 \n4. Điểm trúng tuyển: \n- Năm 2022: 27,25 \n- Năm 2021: 26,90 \n5. Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) ",
+                "chung": "Ngành Công nghệ thông tin\n Mã ngành: 7480201\nThời gian đào tạo: 4,5 năm\nKhối lượng kiến thức: 152 tín chỉ\nBằng tốt nghiệp: KỸ SƯ\nGiới thiệu sơ lược:\n\nCông nghệ thông tin đã và đang thay đổi toàn diện mọi mặt của xã hội. Trong xu thế đó, chương trình đào tạo ngành Công nghệ thông tin của Học viện trang bị cho sinh viên những kiến thức, kỹ năng hiện đại về cả phần cứng, phần mềm lẫn mạng máy tính; đáp ứng các yêu cầu về nghiên cứu phát triển và ứng dụng công nghệ thông tin trong các lĩnh vực kinh tế, kỹ thuật, sản xuất, dịch vụ và quốc phòng.\n\nCác chuyên ngành:\n- Công nghệ phần mềm\n- Kỹ thuật máy tính\n- Hệ thống thông tin\n- Khoa học máy tính\n- Máy tính và truyền thông dữ liệu",
+                "bac": "Ngành Công nghệ thông tin\n Mã ngành: 7480201\nThời gian đào tạo: 4,5 năm\nKhối lượng kiến thức: 152 tín chỉ\nBằng tốt nghiệp: KỸ SƯ\nGiới thiệu sơ lược:\n\nCông nghệ thông tin đã và đang thay đổi toàn diện mọi mặt của xã hội. Trong xu thế đó, chương trình đào tạo ngành Công nghệ thông tin của Học viện trang bị cho sinh viên những kiến thức, kỹ năng hiện đại về cả phần cứng, phần mềm lẫn mạng máy tính; đáp ứng các yêu cầu về nghiên cứu phát triển và ứng dụng công nghệ thông tin trong các lĩnh vực kinh tế, kỹ thuật, sản xuất, dịch vụ và quốc phòng.\n\nCác chuyên ngành:\n- Công nghệ phần mềm\n- Kỹ thuật máy tính\n- Hệ thống thông tin\n- Khoa học máy tính\n- Máy tính và truyền thông dữ liệu",
+                "nam": "Ngành Công nghệ thông tin\n Mã ngành: 7480201\nThời gian đào tạo: 4,5 năm\nKhối lượng kiến thức: 152 tín chỉ\nBằng tốt nghiệp: KỸ SƯ\nGiới thiệu sơ lược:\n\nCông nghệ thông tin đã và đang thay đổi toàn diện mọi mặt của xã hội. Trong xu thế đó, chương trình đào tạo ngành Công nghệ thông tin của Học viện trang bị cho sinh viên những kiến thức, kỹ năng hiện đại về cả phần cứng, phần mềm lẫn mạng máy tính; đáp ứng các yêu cầu về nghiên cứu phát triển và ứng dụng công nghệ thông tin trong các lĩnh vực kinh tế, kỹ thuật, sản xuất, dịch vụ và quốc phòng.\n\nCác chuyên ngành:\n- Công nghệ phần mềm\n- Kỹ thuật máy tính\n- Hệ thống thông tin\n- Khoa học máy tính\n- Máy tính và truyền thông dữ liệu"
             },
             "ma_nganh": {
-                "chung":"",
-                "bac": "ma nganh bac",
-                "nam":"ma nganh nam"
+                "chung":"Mã ngành Công nghệ thông tin: 7480201",
+                "bac":"Mã ngành Công nghệ thông tin: 7480201",
+                "nam":"Mã ngành Công nghệ thông tin: 7480201"
             },
             "diem_chuan":{
-                "chung": "none",
-                "bac": {
-                    "chung": "",
-                    "2023": "",
-                    "2022": "",
-                    "2021": "",
-                    "2020": "",
-                    "2019": ""
+                "chung": {
+                    "chung": "Ngành Công nghệ thông tin\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1",
+                    "2023": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2023: 25,1",
+                    "2022": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2022: 25,1",
+                    "2021": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2021: 25,1",
+                    "2020": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2020: 25,1",
+                    "2019": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2019: 25,1"
                 },
-                "nam":"123"
+                "bac": {
+                    "chung": "Ngành Công nghệ thông tin\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1",
+                    "2023": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2023: 25,1",
+                    "2022": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2022: 25,1",
+                    "2021": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2021: 25,1",
+                    "2020": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2020: 25,1",
+                    "2019": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2019: 25,1"
+                },
+                "nam": {
+                    "chung": "Ngành Công nghệ thông tin\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1\n Điểm trúng tuyển năm 2023: 25,1",
+                    "2023": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2023: 25,1",
+                    "2022": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2022: 25,1",
+                    "2021": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2021: 25,1",
+                    "2020": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2020: 25,1",
+                    "2019": "Điểm trúng tuyển ngành Công nghệ thông tin năm 2019: 25,1"
+                }
             },
             "sotc": {
-                "chung": "150 tin chi"
+                "chung": "Khối lượng kiến thức: 152 tín chỉ"
             },
             "thoi_gian_dao_tao": {
-                "chung": "4.5 nam"
+                "chung": "4,5 năm"
             },
             "loai_bang": {
-                "chung": "ky su"
+                "chung": "Bằng tốt nghiệp: KỸ SƯ"
             },
             "tot_nghiep_lam_gi": {
                 "chung": "tot nghiep lam gi"
             },
             "hoc_phi": {
-                "chung": "hoc phi"
+                "chung": "hoc phi",
+                "bac": "",
+                "nam": "123"
             },
             "chuyen_nganh": {
                 "chung":"",
@@ -44,6 +60,9 @@
                 "nam":"chuyen_nganh nam"
             },
             "khoi_thi": {
+                "chung": "12123"
+            },
+            "to_hop_xet_tuyen": {
                 "chung": "12123"
             }
         },
@@ -67,6 +86,18 @@
     "nganh_dao_tao":{
         "chung": "Học viện Công nghệ Bưu chính Viễn thông hiện đang đào tạo các ngành như:\n - Kỹ thuật Điện tử viễn thông\n - Công nghệ Kỹ thuật Điện, điện tử\n - Công nghệ thông tin\n - An toàn thông tin\n - Công nghệ đa phương tiện\n - Quản trị kinh doanh\n - Marketing\n - Kế toán"
 
+    },
+    "hoc_phi": {
+        "chung": {}
+    },
+    "thoi_gian_dao_tao": {
+        "chung": "- Chương trình đào tạo được thực hiện trong 4,5 năm gồm 9 học kỳ: có 8 học kỳ tích lũy kiến thức tại Học viện và 1 kỳ thực tập chuyên sâu và thực tập thực tế tại cơ sở (đối với các ngành CNTT, CNKT Đ-ĐT, KT ĐTVT, ATTT, CNĐPT, KT ĐK&TĐH, IoT) và 4 năm gồm 8 học kỳ: có 7 học kỳ tích lũy kiến thức tại Học viện và 1 kỳ thực tập chuyên sâu và thực tập thực tế tại cơ sở (đối với các ngành QTKD, Kế toán, Marketing). Cuối khóa sinh viên làm đồ án/khóa luận tốt nghiệp hoặc học các học phần thay thế tốt nghiệp theo quy chế đào tạo.\n - Sinh viên được đào tạo theo Quy chế đào tạo đại học áp dụng theo Thông tư số 08/2021/TT-BGDĐT ngày 18 tháng 3 năm 2021 của Bộ trưởng Bộ Giáo dục và Đào tạo.\n - Thời gian học tập tối thiểu là từ 3,5-4 năm và thời gian học tập tối đa là 8-9 năm tùy theo từng ngành.  "
+    },
+    "khoa_quan_ly": {
+        
+    },
+    "truong": {
+        
     },
    
 

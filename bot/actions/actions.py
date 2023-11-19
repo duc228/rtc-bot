@@ -207,6 +207,24 @@ class ActionTruyvanNganh(Action):
                  else:
                     return [UserUttered(text="Xin lỗi, hiện tại bot chưa hiểu ý bạn hoặc chưa có dữ liệu bạn mong muốn")]
 
+
+class ActionShowSlots(Action):
+
+   def name(self):
+      return "action_show_slot"
+
+   def run(self, dispatcher, tracker, domain):
+        thongtinchinh = tracker.get_slot("thongtinchinh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+        coso = tracker.get_slot("coso")
+        namhoc = tracker.get_slot("namhoc")
+
+        print(f'action_show_slot: {thongtinchinh} - {thongtinphu} - {coso} - {namhoc}\n')
+
+
+        # dispatcher.utter_message(text=f"Xin loi, toi chua hieu y cua ban {nganh} - {thongtinphu}")
+        return []
+
 #### truy van can thongtinphu
 
 #### truy van can thongtinchinh,nganh

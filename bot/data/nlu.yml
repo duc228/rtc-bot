@@ -1,6 +1,24 @@
 version: "3.1"
 
 nlu:
+  - intent: check_balances
+    examples: |
+      - How much money do I have?
+      - what's my account balance?
+
+  - intent: transfer_money
+    examples: |
+      - I want to transfer money to my savings account
+      - transfer money
+  - intent: check_balances+transfer_money
+    examples: |
+      - How much money do I have? I want to transfer some to savings.
+      - What's the balance on my account? I need to transfer some so I want to know how much I have
+
+  - intent: show_slot
+    examples: |
+      - show_slot
+      - show slot
   - intent: chao_hoi
     examples: |
       - hey
@@ -201,7 +219,6 @@ nlu:
   ######## khoi_thi
   ######## he từ xa
   ######## thạc si
-  
 
   ######## intent cac cau hoi phuong thuc tuyen sinh
   - intent: phuong_thuc_tuyen_sinh
@@ -230,7 +247,6 @@ nlu:
       - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"} cua truong
       - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
       - các [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
-
 
   ######## intent cac cau hoi chuong trinh dao tao
   - intent: chuong_trinh_dao_tao
@@ -596,9 +612,7 @@ nlu:
       - [khối thi]{"entity":"thongtinphu","value":"khoi_thi"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
-      - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}  
-
-
+      - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
 
   ######## intent cac cau hoi nganh An toàn thông tin
   - intent: attt_tongquan
@@ -707,8 +721,6 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [attt]{"entity":"thongtinchinh","value":"attt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [attt]{"entity":"thongtinchinh","value":"attt"}
-
-
 
   ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
   - intent: ktdkvtdh_tongquan
@@ -1352,7 +1364,6 @@ nlu:
   ######## intent cac cau hoi hoc bong
   ######## intent cac cau hoi lien quan ve nganh
 
-
   ######## intent cac cau hoi thuong gap
   ########  -> https://ptithcm.edu.vn/tin-tuc/nhung-cau-hoi-thuong-gap.html
   ########  -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
@@ -1389,7 +1400,7 @@ nlu:
   - intent: tg_ut_xet_tuyen
     examples: |
       - Nếu em không trúng tuyển nguyện vọng 1 thì được xét theo nguyện vọng 2, mà nguyện vọng 2 của em vào ngành là nguyện vọng 1 của một bạn khác; vậy em với bạn ấy được xét tuyển như nhau?
- 
+
   - intent: tg_dki_nhieu_nganh
     examples: |
       - Em có được đăng ký nhiều ngành trong Học viện không ạ hay chỉ được đăng ký 1 ngành thôi?
@@ -1419,7 +1430,7 @@ nlu:
     examples: |
       - Cho em hỏi thí sinh tự do có được cộng điểm ưu tiên khu vực không ạ?
       - thí sinh tự do có được điểm ưu tiên không
-  
+
   - intent: tg_bang_ra_truong
     examples: |
       - Sinh viên sau khi tốt nghiệp, ra trường sẽ nhận được bằng kỹ sư hay là cử nhân?
@@ -1430,7 +1441,7 @@ nlu:
     examples: |
       - Em ở phía Bắc vẫn được xét tuyển chứ ạ? Trong tất cả các ngành đó thì ngành nào ra trường dễ xin việc nhất ạ?
       - ở bắc vẫn có thể xét tuyển cơ sở phía nam được phải không ạ
-  
+
   - intent: tg_cntt_tg_dao_tao
     examples: |
       - Ngành Công nghệ thông tin đào tạo trong mấy kỳ hoặc mấy năm ạ?
@@ -1446,7 +1457,6 @@ nlu:
   ######## intent các câu hỏi chuyên ngành
   ######## intent các câu hỏi số tín chỉ
   ######## intent các câu hỏi tôt nghiệp về ngành
-
 
 # - intent: ask_school_id
 #   examples: |
