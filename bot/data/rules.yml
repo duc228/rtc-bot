@@ -74,7 +74,7 @@ rules:
   - rule: hoi chuong trinh dao tao 2 mien
     steps:
       - intent: ctdt_2_mien
-      - action: action_truyvan_thongtinchinh
+      - action: utter_ctdt_2_mien
 
   - rule: hoi tot nghiep nhan loai bang nao
     steps:
@@ -132,7 +132,6 @@ rules:
   - rule: cntt - hoi tong quan
     steps:
       - intent: cntt_tongquan
-      # - action: action_cntt_tongquan
       - action: action_truyvan_nganh_thongtinphu_coso
 
   - rule: cntt - tot nghiep lam gi
