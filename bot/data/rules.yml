@@ -9,6 +9,12 @@ rules:
     steps:
       - intent: nlu_fallblack
       - action: action_default_fallback
+
+  - rule: chao hoi
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+
   - rule: transfer money
     steps:
       - intent: transfer_money

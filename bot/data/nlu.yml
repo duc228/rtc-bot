@@ -316,6 +316,16 @@ nlu:
       - cho em hỏi thêm về [khối thi]{"entity":"thongtinphu","value":"khoi_thi"}
       - em cung muon biet [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"}
       - em cũng muốn biết [khối thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"}
+      - thế còn [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"}
+      - the con [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"}
+      - vậy còn [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"}
+      - vay con [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"}
+      - cho em hoi them ve [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"}
+      - cho em hỏi thêm về [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"}
+      - em cung muon biet [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"}
+      - em cũng muốn biết [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"}
 
   ######## he từ xa
   ######## thạc si
@@ -501,6 +511,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
   - intent: ktdtvt_ktdtvt
@@ -620,6 +634,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
   - intent: ktddt_ktddt
@@ -738,6 +756,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
 
   ######## intent cac cau hoi nganh An toàn thông tin
   - intent: attt_attt
@@ -855,6 +877,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [attt]{"entity":"thongtinchinh","value":"attt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [attt]{"entity":"thongtinchinh","value":"attt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
   - intent: ktdkvtdh_ktdkvtdh
@@ -971,6 +997,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
 
   ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
   - intent: iot_iot
@@ -1089,6 +1119,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [iot]{"entity":"thongtinchinh","value":"iot"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe iot]{"entity":"thongtinchinh","value":"iot"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe iot]{"entity":"thongtinchinh","value":"iot"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cong nghe internet van vat]{"entity":"thongtinchinh","value":"iot"}
   ######## intent cac cau hoi nganh Công nghệ đa phương tiện
   - intent: cndpt_cndpt
     examples: |
@@ -1204,6 +1238,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe cndpt]{"entity":"thongtinchinh","value":"cndpt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
 
   ######## intent cac cau hoi nganh Quản trị kinh doanh
   - intent: qtkd_qtkd
@@ -1321,6 +1359,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
 
   ######## intent cac cau hoi nganh Marketing
   - intent: mkt_mkt
@@ -1437,6 +1479,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [mkt]{"entity":"thongtinchinh","value":"mkt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [marketing]{"entity":"thongtinchinh","value":"mkt"}
   ######## intent cac cau hoi nganh Kế toán
   - intent: kt_kt
     examples: |
@@ -1552,6 +1598,10 @@ nlu:
       - [khoi]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [kt]{"entity":"thongtinchinh","value":"kt"}
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [ke toan]{"entity":"thongtinchinh","value":"kt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} ngành [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} thi nganh [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [to hop xet tuyen]{"entity":"thongtinphu","value":"khoi_thi"} nganh [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ke toan]{"entity":"thongtinchinh","value":"kt"}
   ######## intent cac cau hoi hoc bong
   ######## intent cac cau hoi lien quan ve nganh
 
