@@ -1,10 +1,15 @@
 version: "3.1"
 
 stories:
+  # - story: happy path
+  #   steps:
+  #     - intent: chao_hoi
+  #     - action: utter_chao_hoi
+
   - story: happy path
     steps:
-      - intent: chao_hoi
-      - action: utter_chao_hoi
+      - intent: nlu_fallblack
+      - action: action_default_fallback
   # - intent: mood_great
   # - action: utter_happy
 

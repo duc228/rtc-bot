@@ -362,8 +362,8 @@ class ActionDefaultFallback(Action):
    def run(self, dispatcher, tracker, domain):
         nganh = tracker.get_slot("nganh")
         thongtinphu = tracker.get_slot("thongtinphu")
-        print("action default fallback toi chua hieu y ban")
-        # dispatcher.utter_message(text=f"Xin loi, toi chua hieu y cua ban {nganh} - {thongtinphu}")
+        dispatcher.utter_message(text=f"Xin lỗi, tôi chưa hiểu ý của bạn ")
+
         return []
 
 class ActionResetAllSlots(Action):

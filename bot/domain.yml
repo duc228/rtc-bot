@@ -18,6 +18,7 @@ intents:
   - check_balances
   - transfer_money
   - check_balances+transfer_money
+  - nlu_fallblack
   ######## intent cac cau hoi tot nghiep
   - tn_hoi_loai_bang
 
