@@ -42,6 +42,14 @@ import json
         }
     }
 
+    - [thongtinchinh][thongtinphu][namhoc]
+    format:
+      "thongtinchinh": {
+           "thongtinphu": {
+                "namhoc": "data"
+            }
+        }
+
     - ["nganh"][thongtinchinh][thongtinphu][coso][namhoc]
     format:
     "nganh": {
@@ -62,6 +70,7 @@ nganh_data = ["cntt", "ktdtvt", "ktddt", "attt", "ktdkvtdh", "iot", "cndpt", "qt
 coso_default = "chung"
 namhoc_data = ["2023", "2022", "2021", "2020", "2019"]
 namhoc_default = "chung"
+thongtinphu_default ="chung"
 
 def get_thong_tin_nganh(nganh, thongtinphu, coso):
     f = open('./data/collections/data_collect.json', encoding="utf8")
@@ -93,6 +102,7 @@ class ActionTruyVanThongtinchinh(Action):
             data = json.load(f)
             if thongtinchinh in data:
                 dispatcher.utter_message(text=f'{data[thongtinchinh][coso_default]}')
+                return []
             else:
                 dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
 
@@ -142,6 +152,39 @@ class ActionTruyVanNganhThongTinPhuCoSo(Action):
         print(f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}\n')
         return []
         
+#### [thongtinchinh][thongtinphu][namhoc]
+class ActionTruyvanThongtinChinhThongTinPhuNamHoc(Action):
+    def name(self):
+        return "action_truyvan_thongtinchinh_thongtinphu_namhoc"
+    def run(self, dispatcher, tracker, domain):
+            # return [UserUttered(text="/my_intent", parse_data=data)]
+        thongtinchinh = tracker.get_slot("thongtinchinh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+        namhoc = tracker.get_slot("namhoc")
+        
+        if thongtinchinh is None:
+            dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
+            return []
+        if thongtinphu is None:
+            thongtinphu = thongtinphu_default
+
+        if namhoc is None:
+            namhoc = namhoc_default
+        
+        f = open('./data/collections/data_collect.json', encoding="utf8")
+        data = json.load(f)
+
+        if thongtinchinh in data:
+            if thongtinphu in data[thongtinchinh]:
+                if namhoc in data[thongtinchinh][thongtinphu]:
+                     dispatcher.utter_message(text=f'{data[thongtinchinh][thongtinphu][namhoc]}')
+                     return []
+        # else:
+        #     dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+        #     return []
+
+        dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} {thongtinphu} {namhoc} nhưng bot chưa có dữ liệu')
+        return []
 
 #### [“nganh”][thongtinchinh][thongtinphu][coso_default]
 class ActionTruyVanNganhThongTinPhu(Action):
@@ -151,14 +194,25 @@ class ActionTruyVanNganhThongTinPhu(Action):
         thongtinchinh = tracker.get_slot("thongtinchinh")
         thongtinphu = tracker.get_slot("thongtinphu")
         
-        print(f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}\n')
+        
+        print(f'action_[“nganh”][thongtinchinh][thongtinphu][coso_default]: {thongtinchinh} - {thongtinphu}\n')
 
-        if thongtinchinh is None or thongtinphu is None:
-            dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
+        if thongtinchinh is None:
+            ## dispatch intent nganh
+            dispatcher.utter_message(text=f'ban muon hoi nganh nao')
+            dispatcher.utter_message(response="utter_chon_nganh")
+
+                # return [UserUttered(text="/utter_intent_chonthongtinphu")]
             return []
         if thongtinchinh not in nganh_data:
-            dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
+            dispatcher.utter_message(response="utter_chon_nganh")
             return []
+        
+        if thongtinphu is None:
+            dispatcher.utter_message(response="utter_chon_thongtinphu")
+            # dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+            return []
+        
 
         f = open('./data/collections/data_collect.json', encoding="utf8")
         data = json.load(f)
@@ -173,8 +227,12 @@ class ActionTruyVanNganhThongTinPhu(Action):
             if coso_default in data["nganh"][thongtinchinh][thongtinphu]:
                 dispatcher.utter_message(text=f'{data["nganh"][thongtinchinh][thongtinphu][coso_default]}')
                 return []
+            else:
+                dispatcher.utter_message(text=f'bot chưa có dữ liệu, xin bạn thông cảm')
         else:
-            dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+            dispatcher.utter_message(response="utter_chon_thongtinphu")
+            
+            # dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
             return []
 
         return []

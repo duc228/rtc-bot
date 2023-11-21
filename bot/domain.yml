@@ -12,6 +12,7 @@ intents:
   - phuong_thuc_tuyen_sinh
   - ctdt_2_mien
   - nganh_dao_tao
+  - cungcap_nganh
   - co_so
   - show_slot
   - check_balances
@@ -31,11 +32,13 @@ intents:
   # - ask_point
   # - mood_unhappy
 
+  - intent_chonthongtinphu
   ######## thoi_gian_dao_tao
   - thoi_gian_dao_tao
   ######## hoc_phi
   - hoc_phi
   ######## sotc
+  - sotc
   ######## chuyen_nganh
   ######## diem_chuan
   ######## khoi_thi
@@ -58,7 +61,7 @@ intents:
   - cntt_diem_chuan
   - cntt_khoi_thi
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
-  # - ktdtvt_ktdtvt
+  - ktdtvt_ktdtvt
   - ktdtvt_tongquan
   - ktdtvt_tot_nghiep_lam_gi
   - ktdtvt_ma_nganh
@@ -70,7 +73,7 @@ intents:
   - ktdtvt_diem_chuan
   - ktdtvt_khoi_thi
   ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
-  # - ktddtt_ktddtt
+  - ktddt_ktddt
   - ktddt_tongquan
   - ktddt_tot_nghiep_lam_gi
   - ktddt_ma_nganh
@@ -82,7 +85,7 @@ intents:
   - ktddt_diem_chuan
   - ktddt_khoi_thi
   ######## intent cac cau hoi nganh An toàn thông tin
-  # - attt_attt
+  - attt_attt
   - attt_tongquan
   - attt_tot_nghiep_lam_gi
   - attt_ma_nganh
@@ -106,6 +109,7 @@ intents:
   - ktdkvtdh_diem_chuan
   - ktdkvtdh_khoi_thi
   ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+  - iot_iot
   - iot_tongquan
   - iot_tot_nghiep_lam_gi
   - iot_ma_nganh
@@ -117,7 +121,7 @@ intents:
   - iot_diem_chuan
   - iot_khoi_thi
   ######## intent cac cau hoi nganh Công nghệ đa phương tiện
-  # - cndpt_cndpt
+  - cndpt_cndpt
   - cndpt_tongquan
   - cndpt_tot_nghiep_lam_gi
   - cndpt_ma_nganh
@@ -129,7 +133,7 @@ intents:
   - cndpt_diem_chuan
   - cndpt_khoi_thi
   ######## intent cac cau hoi nganh Quản trị kinh doanh
-  # - qtkd_qtkd
+  - qtkd_qtkd
   - qtkd_tongquan
   - qtkd_tot_nghiep_lam_gi
   - qtkd_ma_nganh
@@ -141,7 +145,7 @@ intents:
   - qtkd_diem_chuan
   - qtkd_khoi_thi
   ######## intent cac cau hoi nganh Marketing
-  # - mkt_mkt
+  - mkt_mkt
   - mkt_tongquan
   - mkt_tot_nghiep_lam_gi
   - mkt_ma_nganh
@@ -153,7 +157,7 @@ intents:
   - mkt_diem_chuan
   - mkt_khoi_thi
   ######## intent cac cau hoi nganh Kế toán
-  # - kt_kt
+  - kt_kt
   - kt_tongquan
   - kt_tot_nghiep_lam_gi
   - kt_ma_nganh
@@ -182,6 +186,7 @@ intents:
   - tg_bang_ra_truong
   - tg_phiabac_xinviec
   - tg_cntt_tg_dao_tao
+  - tg_hocphi_theo_ky
 
 entities:
   - nganh
@@ -257,6 +262,7 @@ actions:
   - action_truyvan_nganh_thongtinphu_coso
   - action_truyvan_nganh
   - action_show_slot
+  - action_truyvan_thongtinchinh_thongtinphu_namhoc
 
 #   - action_school_id
 #   - validate_request_school_id_form
@@ -338,6 +344,21 @@ responses:
         - title: "Chương trình đào tạo"
           payload: '/chuong_trinh_dao_tao{{"thongtinchinh":"chuong_trinh_dao_tao"}}'
 
+  utter_chon_thongtinphu:
+    - text: |-
+        Vui lòng chọn thông tin mà bạn muốn biết
+          - Thời gian đào tạo
+          - Chương trình đào tạo
+          - Học phí
+          - Số tín chỉ
+          - Điểm chuẩn
+          - Khối thi
+      buttons:
+        - title: "Số tín chỉ"
+          payload: '/sotc'
+        - title: "Học phí"
+          payload: '/hoc_phi'
+
   utter_phuong_thuc_tuyen_sinh:
     - text: |-
         utter_phuong_thuc_tuyen_sinh {thongtinchinh}
@@ -370,9 +391,15 @@ responses:
     - text: |-
         Sinh viên tốt nghiệp các ngành kỹ thuật thì sẽ được cấp bằng Kỹ sư. Còn sinh viên tốt nghiệp các ngành Kinh tế và Quản trị kinh doanh thì được cấp bằng Cử nhân (Đại học).
 
+  # utter_intent_chonthongtinphu:
+  #   - text: |- 
+  #       ban muon ho tro thong tin gi
+  #     buttons:
+  #        - title: "So tin chi"
+  #          payload: '/sotc{{"thongtinphu":"sotc"}}'
   ######## utter cac cau hoi hoc phi
   ######## utter cac cau hoi thu tuc nhap hoc
-  ######## utter cac cau hoi nganh Công nghệ thông tin
+ 
   utter_cntt_cntt:
     - text: |-
         Bạn muốn hỏi gì về ngành công nghệ thông tin ở Học viện
@@ -394,144 +421,28 @@ responses:
         - title: "Điểm chuẩn"
           payload: '/cntt_diem_chuan{{"nganh":"cntt"}}'
 
-  utter_cntt_tongquan:
-    - text: |-
-        utter cnnt tong quan {thongtinphu} - {nganh}
 
-  utter_cntt_tot_nghiep_lam_gi:
-    - text: |-
-        - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
-        - Có thể trở thành các lập trình viên, các nhà quản trị hệ thống, quản trị bảo mật hệ thống công nghệ thông tin trong bất kỳ doanh nghiệp nào;
-        - Có thể làm việc trong các dự án với vai trò là người quản trị dự án về công nghệ thông tin;
-        - Có thể trở thành cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các Viện, Trung tâm nghiên cứu và các Cơ sở đào tạo;
-        - Có thể tiếp tục học tiếp lên trình độ Sau đại học ở trong nước và nước ngoài.
-
-  utter_cntt_thoi_gian_dao_tao:
-    - text: |-
-        - thoi gian dao tao nganh cntt
-
-  utter_cntt_sotc:
-    - text: |-
-        - so tin chi nganh cntt
-
-  utter_cntt_chuyen_nganh:
-    - text: |-
-        - cac chuyen nganh cntt
-
-  utter_cntt_ma_nganh:
-    - text: |-
-        mã ngành công nghệ thông tin là 7480201
-  utter_cntt_chuong_trinh_dao_tao:
-    - text: |-
-        Ngành công nghệ thông tin bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
-  utter_cntt_hoc_phi:
-    - text: |-
-        Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
-  utter_cntt_diem_chuan:
-    - text: |-
-        Điểm chuẩn ngành công nghệ thông tin
-  utter_cntt_khoi:
-    - text: |-
-        utter_cntt_khoi
-  ######## utter cac cau hoi nganh Kỹ thuật điện tử viễn thông
-  utter_ktdtvt_ktdtvt:
-    - text: nganh utter_ktdtvt_ktdtvt {nganh}
-
-  utter_ktdtvt_tongquan:
-    - text: |-
-        utter cnnt tong quan {thongtinphu} - {nganh}
-
-  utter_ktdtvt_tot_nghiep_lam_gi:
-    - text: |-
-        utter_ktdtvt_tot_nghiep_lam_gi
-
-  utter_ktdtvt_thoi_gian_dao_tao:
-    - text: |-
-        - thoi gian dao tao nganh ktdtvt
-
-  utter_ktdtvt_sotc:
-    - text: |-
-        - so tin chi nganh ktdtvt
-
-  utter_ktdtvt_chuyen_nganh:
-    - text: |-
-        - cac chuyen nganh ktdtvt
-
-  utter_ktdtvt_ma_nganh:
-    - text: |-
-        mã ngành ktdtvt là 7480201
-  utter_ktdtvt_chuong_trinh_dao_tao:
-    - text: |-
-        Ngành ktdtvt bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
-  utter_ktdtvt_hoc_phi:
-    - text: |-
-        Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
-  utter_ktdtvt_diem_chuan:
-    - text: |-
-        Điểm chuẩn ngành công nghệ thông tin
-  utter_ktdtvt_khoi:
-    - text: |-
-        utter_ktdtvt_khoi
-
-  ######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
-  utter_ktdtdt_ktddtt:
-    - text: nganh utter_ktddtt_ktddtt {nganh}
-
-  utter_ktddtt_tongquan:
-    - text: |-
-        utter cnnt tong quan {thongtinphu} - {nganh}
-
-  utter_ktddtt_tot_nghiep_lam_gi:
-    - text: |-
-        utter_ktddtt_tot_nghiep_lam_gi:
-
-  utter_ktddtt_thoi_gian_dao_tao:
-    - text: |-
-        - thoi gian dao tao nganh ktddtt
-
-  utter_ktddtt_sotc:
-    - text: |-
-        - so tin chi nganh ktddtt
-
-  utter_ktddtt_chuyen_nganh:
-    - text: |-
-        - cac chuyen nganh ktddtt
-
-  utter_ktddtt_ma_nganh:
-    - text: |-
-        mã ngành ktddtt là 7480201
-  utter_ktddtt_chuong_trinh_dao_tao:
-    - text: |-
-        Ngành ktddtt bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
-  utter_ktddtt_hoc_phi:
-    - text: |-
-        Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
-  utter_ktddtt_diem_chuan:
-    - text: |-
-        Điểm chuẩn ngành công nghệ thông tin
-  utter_ktddtt_khoi:
-    - text: |-
-        utter_ktddtt_khoi
-  ######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
-  ######## utter cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
-  ######## utter cac cau hoi nganh Công nghệ đa phương tiện
-  ######## utter cac cau hoi nganh Quản trị kinh doanh
-  ######## utter cac cau hoi nganh Marketing
-  ######## utter cac cau hoi nganh Kế toán
   ######## utter cac cau hoi hoc bong
+
 
   utter_chon_nganh:
     - text: |-
         Chọn ngành bạn muốn tư vấn
       buttons:
         - title: "Công nghệ thông tin"
-          payload: /cntt_cntt{"nganh":"cntt"}
+          payload: /cntt_cntt{"thongtinchinh":"cntt"}
         - title: "Kỹ thuật điện tử viễn thông"
-          payload: /ktdtvt_ktdtvt{"nganh":"ktdtvt"}
+          payload: /ktdtvt_ktdtvt{"thongtinchinh":"ktdtvt"}
 
-  ######## các utter cần slot thongtinchinh (nếu chưa có thì cần lấy thông tin trước)
-  ######## các utter cần slot nganh (nếu chưa có thì cần lấy thông tin trước)
-
+  # utter_cungcap_nganh:
+  #   - text: |-
+  #       Chọn ngành bạn muốn tư vấn
+  #     buttons:
+  #       - title: "Công nghệ thông tin"
+  #         payload: /cntt_cntt{"thongtinchinh":"cntt"}
+  #       - title: "Kỹ thuật điện tử viễn thông"
+  #         payload: /ktdtvt_ktdtvt{"thongtinchinh":"ktdtvt"}
+  
   ######## utter các câu hỏi tổng quan
   ######## utter các câu hỏi thời gian đào tạo
   utter_thoi_gian_dao_tao:
@@ -616,6 +527,9 @@ responses:
   utter_tg_cntt_tg_dao_tao:
     - text: |-
         Ngành Công nghệ đào tạo được đào tạo trong 9 Học kỳ (4,5 năm). Học kỳ 9 các em sẽ đi thực tập và làm luận văn tốt nghiệp.
+  utter_tg_hocphi_theo_ky:
+    - text: |-
+        Học viện thu học phí theo kỳ và theo số tín chỉ mà em đăng ký học của kỳ đó.
 
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"
@@ -632,3 +546,129 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+  ######## utter cac cau hoi nganh Công nghệ thông tin
+  ######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+  ######## utter cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+  ######## utter cac cau hoi nganh Công nghệ đa phương tiện
+  ######## utter cac cau hoi nganh Quản trị kinh doanh
+  ######## utter cac cau hoi nganh Marketing
+  ######## utter cac cau hoi nganh Kế toán
+#  utter_cntt_tongquan:
+#     - text: |-
+#         utter cnnt tong quan {thongtinphu} - {nganh}
+
+#   utter_cntt_tot_nghiep_lam_gi:
+#     - text: |-
+#         - Sau khi tốt nghiệp sinh viên có thể đảm nhận tốt các vị trí là cán bộ kỹ thuật, quản lý, điều hành trong lĩnh vực công nghệ thông tin;
+#         - Có thể trở thành các lập trình viên, các nhà quản trị hệ thống, quản trị bảo mật hệ thống công nghệ thông tin trong bất kỳ doanh nghiệp nào;
+#         - Có thể làm việc trong các dự án với vai trò là người quản trị dự án về công nghệ thông tin;
+#         - Có thể trở thành cán bộ nghiên cứu, cán bộ giảng dạy về công nghệ thông tin tại các Viện, Trung tâm nghiên cứu và các Cơ sở đào tạo;
+#         - Có thể tiếp tục học tiếp lên trình độ Sau đại học ở trong nước và nước ngoài.
+
+#   utter_cntt_thoi_gian_dao_tao:
+#     - text: |-
+#         - thoi gian dao tao nganh cntt
+
+#   utter_cntt_sotc:
+#     - text: |-
+#         - so tin chi nganh cntt
+
+#   utter_cntt_chuyen_nganh:
+#     - text: |-
+#         - cac chuyen nganh cntt
+
+#   utter_cntt_ma_nganh:
+#     - text: |-
+#         mã ngành công nghệ thông tin là 7480201
+#   utter_cntt_chuong_trinh_dao_tao:
+#     - text: |-
+#         Ngành công nghệ thông tin bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
+#   utter_cntt_hoc_phi:
+#     - text: |-
+#         Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
+#   utter_cntt_diem_chuan:
+#     - text: |-
+#         Điểm chuẩn ngành công nghệ thông tin
+#   utter_cntt_khoi:
+#     - text: |-
+#         utter_cntt_khoi
+#   ######## utter cac cau hoi nganh Kỹ thuật điện tử viễn thông
+#   utter_ktdtvt_ktdtvt:
+#     - text: nganh utter_ktdtvt_ktdtvt {nganh}
+
+#   utter_ktdtvt_tongquan:
+#     - text: |-
+#         utter cnnt tong quan {thongtinphu} - {nganh}
+
+#   utter_ktdtvt_tot_nghiep_lam_gi:
+#     - text: |-
+#         utter_ktdtvt_tot_nghiep_lam_gi
+
+#   utter_ktdtvt_thoi_gian_dao_tao:
+#     - text: |-
+#         - thoi gian dao tao nganh ktdtvt
+
+#   utter_ktdtvt_sotc:
+#     - text: |-
+#         - so tin chi nganh ktdtvt
+
+#   utter_ktdtvt_chuyen_nganh:
+#     - text: |-
+#         - cac chuyen nganh ktdtvt
+
+#   utter_ktdtvt_ma_nganh:
+#     - text: |-
+#         mã ngành ktdtvt là 7480201
+#   utter_ktdtvt_chuong_trinh_dao_tao:
+#     - text: |-
+#         Ngành ktdtvt bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
+#   utter_ktdtvt_hoc_phi:
+#     - text: |-
+#         Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
+#   utter_ktdtvt_diem_chuan:
+#     - text: |-
+#         Điểm chuẩn ngành công nghệ thông tin
+#   utter_ktdtvt_khoi:
+#     - text: |-
+#         utter_ktdtvt_khoi
+
+#   ######## utter cac cau hoi nganh Kỹ thuật điện, điện tử
+#   utter_ktdtdt_ktddtt:
+#     - text: nganh utter_ktddtt_ktddtt {nganh}
+
+#   utter_ktddtt_tongquan:
+#     - text: |-
+#         utter cnnt tong quan {thongtinphu} - {nganh}
+
+#   utter_ktddtt_tot_nghiep_lam_gi:
+#     - text: |-
+#         utter_ktddtt_tot_nghiep_lam_gi:
+
+#   utter_ktddtt_thoi_gian_dao_tao:
+#     - text: |-
+#         - thoi gian dao tao nganh ktddtt
+
+#   utter_ktddtt_sotc:
+#     - text: |-
+#         - so tin chi nganh ktddtt
+
+#   utter_ktddtt_chuyen_nganh:
+#     - text: |-
+#         - cac chuyen nganh ktddtt
+
+#   utter_ktddtt_ma_nganh:
+#     - text: |-
+#         mã ngành ktddtt là 7480201
+#   utter_ktddtt_chuong_trinh_dao_tao:
+#     - text: |-
+#         Ngành ktddtt bao gồm 152 tín chỉ (không bao gồm Giáo dục thể chất, Giáo dục quốc phòng và Kỹ năng mềm) với thời gian đào tạo là 4.5 năm
+#   utter_ktddtt_hoc_phi:
+#     - text: |-
+#         Học phí 1 tín chỉ là 568.000 (đối với các ngành kỹ thuật)
+#   utter_ktddtt_diem_chuan:
+#     - text: |-
+#         Điểm chuẩn ngành công nghệ thông tin
+#   utter_ktddtt_khoi:
+#     - text: |-
+#         utter_ktddtt_khoi

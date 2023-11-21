@@ -5,6 +5,10 @@ rules:
     steps:
       - intent: check_balances
       - action: utter_action_check_balances
+  - rule: action default
+    steps:
+      - intent: nlu_fallblack
+      - action: action_default_fallback
   - rule: transfer money
     steps:
       - intent: transfer_money
@@ -71,18 +75,41 @@ rules:
       - intent: tn_hoi_loai_bang
       - action: utter_tn_hoi_loai_bang
 
+  - rule: ho tro thong tin phu
+    steps:
+      - intent: intent_chonthongtinphu
+      - action: utter_intent_chonthongtinphu
+
   - rule: hoi thoi gian dao tao
     steps:
       - intent: thoi_gian_dao_tao
       - action: action_truyvan_thongtinchinh
+  ######## sotc
+  - rule: hoi ve so tin chi
+    steps:
+      - intent: sotc
+      - action: action_truyvan_nganh_thongtinphu
+  ######## chuyen_nganh
+  ######## diem_chuan
+  ######## khoi_thi
+  ######## he từ xa
+  ######## thạc si
+  ######## intent cac cau hoi khoa quan ly
+  ######## intent cac cau hoi hoc phi
+  - rule: hoi ve hoc phi
+    steps:
+      - intent: hoc_phi
+      - action: action_truyvan_thongtinchinh_thongtinphu_namhoc
+      - action: action_reset_all_slots
+  ######## intent cac cau hoi thu tuc nhap hoc
   ######## intent cac cau hoi nganh Công nghệ thông tin
 
-  # - rule: cntt - hoi ve cntt
-  #   steps:
-  #     - intent: cntt_cntt
-  #     - action: utter_cntt_cntt
-  #     # - action: action_truyvan_nganh
-  #     - action: utter_cntt_ho_tro
+  - rule: cntt - hoi ve cntt
+    steps:
+      - intent: cntt_cntt
+      - action: action_truyvan_nganh_thongtinphu
+      # - action: action_truyvan_nganh
+      # - action: utter_cntt_ho_tro
 
   - rule: cntt - hoi tong quan
     steps:
@@ -136,6 +163,10 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+  - rule: ktdtvt - hoi ve ktdtvt
+    steps:
+      - intent: ktdtvt_ktdtvt
+      - action: action_truyvan_nganh_thongtinphu
 
   - rule: ktdtvt - hoi tong quan
     steps:
@@ -188,6 +219,11 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
+  - rule: ktddt - hoi ve ktddt
+    steps:
+      - intent: ktddt_ktddt
+      - action: action_truyvan_nganh_thongtinphu
+
   - rule: ktddt - hoi tong quan
     steps:
       - intent: ktddt_tongquan
@@ -239,6 +275,10 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh An toàn thông tin
+  - rule: attt - hoi ve attt
+    steps:
+      - intent: attt_attt
+      - action: action_truyvan_nganh_thongtinphu
 
   - rule: attt - hoi tong quan
     steps:
@@ -291,6 +331,11 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+  - rule: ktdkvtdh - hoi ve ktdkvtdh
+    steps:
+      - intent: ktdkvtdh_ktdkvtdh
+      - action: action_truyvan_nganh_thongtinphu
+
   - rule: ktdkvtdh - hoi tong quan
     steps:
       - intent: ktdkvtdh_tongquan
@@ -342,6 +387,11 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+  - rule: iot - hoi ve iot
+    steps:
+      - intent: iot_iot
+      - action: action_truyvan_nganh_thongtinphu
+
   - rule: iot - hoi tong quan
     steps:
       - intent: iot_tongquan
@@ -393,6 +443,12 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Công nghệ đa phương tiện
+  - rule: cndpt - hoi ve cndpt
+    steps:
+      - intent: cndpt_cndpt
+      - action: action_truyvan_nganh_thongtinphu
+
+
   - rule: cndpt - hoi tong quan
     steps:
       - intent: cndpt_tongquan
@@ -444,6 +500,11 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Quản trị kinh doanh
+  - rule: qtkd - hoi ve qtkd
+    steps:
+      - intent: qtkd_qtkd
+      - action: action_truyvan_nganh_thongtinphu
+
   - rule: qtkd - hoi tong quan
     steps:
       - intent: qtkd_tongquan
@@ -495,6 +556,11 @@ rules:
       - action: action_truyvan_nganh_thongtinphu
 
   ######## intent cac cau hoi nganh Marketing
+  - rule: mkt - hoi ve mkt
+    steps:
+      - intent: mkt_mkt
+      - action: action_truyvan_nganh_thongtinphu
+
   - rule: mkt - hoi tong quan
     steps:
       - intent: mkt_tongquan
@@ -545,6 +611,11 @@ rules:
       - intent: mkt_khoi_thi
       - action: action_truyvan_nganh_thongtinphu
   ######## intent cac cau hoi nganh Kế toán
+  - rule: kt - hoi ve kt
+    steps:
+      - intent: kt_kt
+      - action: action_truyvan_nganh_thongtinphu
+
   - rule: kt - hoi tong quan
     steps:
       - intent: kt_tongquan
@@ -670,6 +741,13 @@ rules:
     steps:
       - intent: tg_cntt_tg_dao_tao
       - action: utter_tg_cntt_tg_dao_tao
+
+  - rule: thuong gap - utter_tg_hocphi_theo_ky
+    steps:
+      - intent: tg_hocphi_theo_ky
+      - action: utter_tg_hocphi_theo_ky
+
+
 # - rule: ask school id
 #   steps:
 #   - intent: ask_school_id

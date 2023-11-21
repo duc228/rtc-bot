@@ -201,22 +201,87 @@ nlu:
   ######## thoi_gian_dao_tao
   - intent: thoi_gian_dao_tao
     examples: |
-      - truong dao tao may nam
-      - truong dao tao bao lau
-      - thoi gian dao tao
-      - thời gian đào tạo
-      - trường đào tạo bao lâu
-      - trường đào tạo mấy năm
+      - truong [dao tao may nam]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
+      - truong [dao tao bao lau]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
+      - [thoi gian dao tao]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
+      - [thời gian đào tạo]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
+      - trường [đào tạo bao lâu]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
+      - trường [đào tạo mấy năm]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
+      - [Thời gian đào tạo]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} kéo dài bao lâu?
+      - Cần bao nhiêu [thời gian]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} để hoàn thành đào tạo? 
+      - Khoảng [thời gian học]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} là bao lâu?
+      - [Thời gian]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} cần để tốt nghiệp là bao lâu?
+      - [Thời gian học tập]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} là bao nhiêu? 
+      - Bao nhiêu [thời gian]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} là cần thiết cho quá trình đào tạo?
+      - Đào tạo kéo dài trong khoảng [bao lâu]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}?
+      - [Thoi gian dao tao]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} keo dai bao lau?
+      - Can bao nhieu [thoi gian de hoan thanh dao tao]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}?
+      - Khoang [thoi gian hoc]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} la bao lau?
+      - [Thoi gian can de tot nghiep]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} la bao lau?
+      - [Thoi gian hoc tap]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} la bao nhieu?
+      - Bao lau [thoi gian]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} la can thiet cho qua trinh dao tao? 
+      - Thoi gian can dau tu cho dao tao la [bao lau]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
+      - [Dao tao keo dai trong khoang bao lau]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}?
+
+
+
+
+
   ######## hoc_phi
   - intent: hoc_phi
     examples: |
-      - cho em hỏi học phí của trường bao nhiêu 1 năm
-      - học phí
-      - học phí của trường bao nhiêu ạ
-  ######## sotc
-  ######## chuyen_nganh
-  ######## diem_chuan
-  ######## khoi_thi
+      - cho em hỏi [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} của trường bao nhiêu 1 năm
+      - [học phí]{"entity":"thongtinchinh","value":"hoc_phi"}
+      - [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"}
+      - [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} của trường bao nhiêu ạ
+      - [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} 1 năm bao nhiêu
+      - [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} 1 nam bao nhieu
+      - Tổng chi phí [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} một năm là bao nhiêu?
+      - Phải trả bao nhiêu tiền [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} trong vòng một năm?
+      - Những khoản phí [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} cần chi trả trong một năm là bao nhiêu?
+      - Chi phí [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} hàng năm là bao nhiêu tiền?
+      - Tổng cộng chi phí [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} một năm là bao nhiêu?
+      - Bảng giá [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} một năm là bao nhiêu tiền?
+      - Tính tổng chi phí [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} theo năm là bao nhiêu?
+      - [Học phí]{"entity":"thongtinchinh","value":"hoc_phi"} hàng năm tại trường là bao nhiêu tiền?
+      - Tính toán chi phí [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} một năm tại trường là bao nhiêu?
+      - Tính tổng số tiền [học phí]{"entity":"thongtinchinh","value":"hoc_phi"} cần thanh toán mỗi năm là bao nhiêu?
+      - Tong chi phi [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} mot nam la bao nhieu?
+      - Phai tra bao nhieu tien [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} trong vong mot nam?
+      - Nhung khoan phi [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} can chi tra trong mot nam la bao nhieu?
+      - Chi phi [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} hang nam la bao nhieu tien?
+      - Tong cong chi phi [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} mot nam la bao nhieu?
+      - Bang gia [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} mot nam la bao nhieu tien?
+      - Tinh tong chi phi [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} theo nam la bao nhieu?
+      - [Hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} hang nam tai truong la bao nhieu tien?
+      - Tinh toan chi phi [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} mot nam tai truong la bao nhieu?
+      - Tinh tong so tien [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} can thanh toan moi nam la bao nhieu?"
+  
+  - intent: intent_chonthongtinphu
+    examples: |
+      - thongtinphu
+      - intent_chonthongtinphu
+  ######## sotc -> can co thongtinchinh
+  - intent: sotc
+    examples: |
+      - [sotc]{"entity":"thongtinphu","value":"sotc"}
+      - [số tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - [so tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [tin chi]{"entity":"thongtinphu","value":"sotc"}
+      - [tín chỉ]{"entity":"thongtinphu","value":"sotc"}
+      - Cho em hỏi, để tốt nghiệp đại học thì cần phải học bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"}?
+      - Số [tín chỉ]{"entity":"thongtinphu","value":"sotc"} cần học để đủ điều kiện tốt nghiệp là bao nhiêu vậy ạ?
+      - Em muốn biết con số cụ thể về [tín chỉ]{"entity":"thongtinphu","value":"sotc"} cần học để hoàn thành chương trình đại học.
+      - Anh/chị có thể cho em biết về yêu cầu về số [tín chỉ]{"entity":"thongtinphu","value":"sotc"} cần học để đạt được bằng đại học không ạ?
+      - Cho em hoi, de tot nghiep dai hoc thi can phai hoc bao nhieu [tin chi]{"entity":"thongtinphu","value":"sotc"}?
+      - So [tin chi]{"entity":"thongtinphu","value":"sotc"} can hoc de du dieu kien tot nghiep la bao nhieu vay a?
+      - Em muon biet con so cu the ve [tin chi]{"entity":"thongtinphu","value":"sotc"} can hoc de hoan thanh chuong trinh dai hoc.
+      - Anh/chi co the cho em biet ve yeu cau ve so [tin chi]{"entity":"thongtinphu","value":"sotc"} can hoc de dat duoc bang dai hoc khong a?
+  ######## chuyen_nganh -> can co thongtinchinh
+  ######## diem_chuan -> can co thongtinchinh
+  ######## khoi_thi -> can co thongtinchinh
+
+
   ######## he từ xa
   ######## thạc si
 
@@ -247,6 +312,10 @@ nlu:
       - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"} cua truong
       - cac [nganh dao tao]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
       - các [ngành đào tạo]{"entity":"thongtinchinh","value":"nganh_dao_tao"}
+  - intent: cungcap_nganh
+    examples: |
+      - cungcap_nganh
+      - cung_cap_nganh
 
   ######## intent cac cau hoi chuong trinh dao tao
   - intent: chuong_trinh_dao_tao
@@ -399,6 +468,17 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điện tử viễn thông
+  - intent: ktdtvt_ktdtvt
+    examples: |
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [Ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [KỸ THUẬT ĐIỆN TỬ VIỄN THÔNG]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+
   - intent: ktdtvt_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
@@ -507,6 +587,16 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điện, điện tử
+  - intent: ktddt_ktddt
+    examples: |
+      - [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ky thuat dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [kỹ thuật điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+
   - intent: ktddt_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
@@ -615,6 +705,15 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
 
   ######## intent cac cau hoi nganh An toàn thông tin
+  - intent: attt_attt
+    examples: |
+      - [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - ngành [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+
   - intent: attt_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [attt]{"entity":"thongtinchinh","value":"attt"}
@@ -723,6 +822,15 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [attt]{"entity":"thongtinchinh","value":"attt"}
 
   ######## intent cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
+  - intent: ktdkvtdh_ktdkvtdh
+    examples: |
+      - [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - ngành [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+
   - intent: ktdkvtdh_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
@@ -830,6 +938,17 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
 
   ######## intent cac cau hoi nganh Công nghệ Internet vạn vật (IoT)
+  - intent: iot_iot
+    examples: |
+      - [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [cong nghe internet van vat]{"entity":"thongtinchinh","value":"iot"}
+      - [cong nghe internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - nganh [cong nghe internet van vat]{"entity":"thongtinchinh","value":"iot"}
+      - ngành [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+
   - intent: iot_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [iot]{"entity":"thongtinchinh","value":"iot"}
@@ -936,6 +1055,15 @@ nlu:
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [cong nghe iot]{"entity":"thongtinchinh","value":"iot"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [iot]{"entity":"thongtinchinh","value":"iot"}
   ######## intent cac cau hoi nganh Công nghệ đa phương tiện
+  - intent: cndpt_cndpt
+    examples: |
+      - [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - nganh [cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - ngành [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+
   - intent: cndpt_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
@@ -1043,6 +1171,16 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
 
   ######## intent cac cau hoi nganh Quản trị kinh doanh
+  - intent: qtkd_qtkd
+    examples: |
+      - [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - nganh [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - ngành [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+
+
   - intent: qtkd_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
@@ -1150,6 +1288,15 @@ nlu:
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
 
   ######## intent cac cau hoi nganh Marketing
+  - intent: mkt_mkt
+    examples: |
+      - [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - ngành [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [marketing]{"entity":"thongtinchinh","value":"mkt"}
+
   - intent: mkt_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [mkt]{"entity":"thongtinchinh","value":"mkt"}
@@ -1256,6 +1403,15 @@ nlu:
       - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"} nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
       - [khối]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [mkt]{"entity":"thongtinchinh","value":"mkt"}
   ######## intent cac cau hoi nganh Kế toán
+  - intent: kt_kt
+    examples: |
+      - [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - nganh [ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - ngành [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [kế toán]{"entity":"thongtinchinh","value":"kt"}
+
   - intent: kt_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kt]{"entity":"thongtinchinh","value":"kt"}
@@ -1446,6 +1602,11 @@ nlu:
     examples: |
       - Ngành Công nghệ thông tin đào tạo trong mấy kỳ hoặc mấy năm ạ?
       - ngành công nghệ thông tin học mấy kỳ ạ
+
+  - intent: tg_hocphi_theo_ky
+    examples: |
+      - Trường có cho nộp học phí theo học kỳ không ạ
+      - truong co cho nop hoc phi theo ky khong a
 
   ######## các intent cần slot nganh (nếu chưa có thì cần lấy thông tin trước)
 
