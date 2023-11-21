@@ -71,6 +71,7 @@ coso_default = "chung"
 namhoc_data = ["2023", "2022", "2021", "2020", "2019"]
 namhoc_default = "chung"
 thongtinphu_default ="chung"
+nganh_tq="tong_quan"
 
 def get_thong_tin_nganh(nganh, thongtinphu, coso):
     f = open('./data/collections/data_collect.json', encoding="utf8")
@@ -208,14 +209,24 @@ class ActionTruyVanNganhThongTinPhu(Action):
             dispatcher.utter_message(response="utter_chon_nganh")
             return []
         
+        f = open('./data/collections/data_collect.json', encoding="utf8")
+        data = json.load(f)
+
         if thongtinphu is None:
-            dispatcher.utter_message(response="utter_chon_thongtinphu")
+            if nganh_tq in data["nganh"][thongtinchinh]:
+                if coso_default in data["nganh"][thongtinchinh][nganh_tq]:
+                    dispatcher.utter_message(text=f'{data["nganh"][thongtinchinh][nganh_tq][coso_default]}')
+                    return []
+                else:
+                    dispatcher.utter_message(response="utter_chon_thongtinphu")
+            else:
+                dispatcher.utter_message(response="utter_chon_thongtinphu")
+        
             # dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
             return []
         
 
-        f = open('./data/collections/data_collect.json', encoding="utf8")
-        data = json.load(f)
+        
 
         if thongtinchinh not in data["nganh"]:
             dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')

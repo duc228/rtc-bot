@@ -40,8 +40,11 @@ intents:
   ######## sotc
   - sotc
   ######## chuyen_nganh
+  - chuyen_nganh
   ######## diem_chuan
+  - diem_chuan
   ######## khoi_thi
+  - khoi_thi
   ######## he từ xa
   ######## thạc si
   ######## intent cac cau hoi khoa quan ly

@@ -75,10 +75,10 @@ rules:
       - intent: tn_hoi_loai_bang
       - action: utter_tn_hoi_loai_bang
 
-  - rule: ho tro thong tin phu
-    steps:
-      - intent: intent_chonthongtinphu
-      - action: utter_intent_chonthongtinphu
+  # - rule: ho tro thong tin phu
+  #   steps:
+  #     - intent: intent_chonthongtinphu
+  #     - action: utter_intent_chonthongtinphu
 
   - rule: hoi thoi gian dao tao
     steps:
@@ -90,8 +90,20 @@ rules:
       - intent: sotc
       - action: action_truyvan_nganh_thongtinphu
   ######## chuyen_nganh
+  - rule: hoi ve chuyen nganh
+    steps:
+      - intent: chuyen_nganh
+      - action: action_truyvan_nganh_thongtinphu
   ######## diem_chuan
+  - rule: hoi ve diem chuan
+    steps:
+      - intent: diem_chuan
+      - action: action_truyvan_nganh_thongtinphu
   ######## khoi_thi
+  - rule: hoi ve khoi thi
+    steps:
+      - intent: khoi_thi
+      - action: action_truyvan_nganh_thongtinphu
   ######## he từ xa
   ######## thạc si
   ######## intent cac cau hoi khoa quan ly
@@ -125,7 +137,7 @@ rules:
   - rule: cntt - ma nganh
     steps:
       - intent: cntt_ma_nganh
-      - action: action_truyvan_nganh_thongtinphu_coso
+      - action: action_truyvan_nganh_thongtinphu
 
   - rule: cntt - chuong trinh dao tao
     steps:

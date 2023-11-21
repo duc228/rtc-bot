@@ -278,9 +278,44 @@ nlu:
       - Em muon biet con so cu the ve [tin chi]{"entity":"thongtinphu","value":"sotc"} can hoc de hoan thanh chuong trinh dai hoc.
       - Anh/chi co the cho em biet ve yeu cau ve so [tin chi]{"entity":"thongtinphu","value":"sotc"} can hoc de dat duoc bang dai hoc khong a?
   ######## chuyen_nganh -> can co thongtinchinh
+  - intent: chuyen_nganh
+    examples: |
+      - [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - [CHUYEN NGANH]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - cho em hỏi [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"}
+      - cho em hoi [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} cua truong
+      - cho em hỏi [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} của trường
+      - vay con [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} thi sao
+      - the con [chuyen nganh]{"entity":"thongtinphu","value":"chuyen_nganh"} thi sao
+      - vậy còn [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} thì sao
+      - thế còn [chuyên ngành]{"entity":"thongtinphu","value":"chuyen_nganh"} thì sao
   ######## diem_chuan -> can co thongtinchinh
+  - intent: diem_chuan
+    examples: |
+      - [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"}
+      - [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"}
+      - thế còn [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"}
+      - the con [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"}
+      - vậy còn [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"}
+      - vay con [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"}
+      - cho em hoi them ve [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"}
+      - cho em hỏi thêm về [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"}
+      - em cung muon biet [diem chuan]{"entity":"thongtinphu","value":"diem_chuan"}
+      - em cũng muốn biết [điểm chuẩn]{"entity":"thongtinphu","value":"diem_chuan"}
   ######## khoi_thi -> can co thongtinchinh
-
+  - intent: khoi_thi
+    examples: |
+      - [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - [khối thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - thế còn [khối thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - the con [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - vậy còn [khối thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - vay con [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - cho em hoi them ve [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - cho em hỏi thêm về [khối thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - em cung muon biet [khoi thi]{"entity":"thongtinphu","value":"khoi_thi"}
+      - em cũng muốn biết [khối thi]{"entity":"thongtinphu","value":"khoi_thi"}
 
   ######## he từ xa
   ######## thạc si
