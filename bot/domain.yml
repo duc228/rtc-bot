@@ -332,36 +332,50 @@ responses:
     - text: |-
         Tôi có thể hỗ trợ trả lời các thông tin liên quan tới quản lý đào tạo của Học viện như:
         - Các ngành đào tạo
+        - Một số thông tin về ngành đào tạo như tổng quan, điểm chuẩn, học phí, số tín chỉ, khối thi, chuyên ngành
         - Điểm chuẩn
         - Phương thức tuyển sinh
-        - Chương trình đào tạo
-        - Học bổng
-        - Khoa quản lý
-        - Đội ngũ giảng viên
-        - Điều kiện tốt nghiệp
         - Học phí
       buttons:
         - title: "Phương thức tuyển sinh"
           payload: '/phuong_thuc_tuyen_sinh{{"thongtinchinh":"phuong_thuc_tuyen_sinh"}}'
         - title: "Các ngành đào tạo"
           payload: '/nganh_dao_tao{{"thongtinchinh":"nganh_dao_tao"}}'
-        - title: "Chương trình đào tạo"
-          payload: '/chuong_trinh_dao_tao{{"thongtinchinh":"chuong_trinh_dao_tao"}}'
+        - title: "Điểm chuẩn"
+          payload: '/diem_chuan{{"thongtinphu":"diem_chuan"}}'
+        - title: "Học phí"
+          payload: '/hoc_phi{{"thongtinphu":"hoc_phi"}}'
+        # - title: "Chương trình đào tạo"
+        #   payload: '/chuong_trinh_dao_tao{{"thongtinchinh":"chuong_trinh_dao_tao"}}'
+
+  # - Chương trình đào tạo
+  #         - Học bổng
+  #         - Khoa quản lý
+  #         - Đội ngũ giảng viên
+  #         - Điều kiện tốt nghiệp
 
   utter_chon_thongtinphu:
     - text: |-
         Vui lòng chọn thông tin mà bạn muốn biết
           - Thời gian đào tạo
-          - Chương trình đào tạo
           - Học phí
           - Số tín chỉ
           - Điểm chuẩn
           - Khối thi
+          - Chuyên ngành
       buttons:
-        - title: "Số tín chỉ"
-          payload: '/sotc'
+        - title: "Thời gian đào tạo"
+          payload: '/thoi_gian_dao_tao'
         - title: "Học phí"
           payload: '/hoc_phi'
+        - title: "Số tín chỉ"
+          payload: '/sotc'
+        - title: "Điểm chuẩn"
+          payload: '/diem_chuan'
+        - title: "Chuyên ngành"
+          payload: '/chuyen_nganh'
+        - title: "Khối thi"
+          payload: '/khoi_thi'
 
   utter_phuong_thuc_tuyen_sinh:
     - text: |-
@@ -372,12 +386,12 @@ responses:
         Dưới đây là một số gợi ý mà mình có thể hỗ trợ
         - Tổng quan về ngành
         - Mã ngành
-        - Chương trình đào tạo
         - Học phí
         - Điểm chuẩn
         - Thời gian đào tạo
         - Số tin chỉ
         - Học phí
+        - Tổ hợp xét tuyển
 
   utter_chuong_trinh_dao_tao:
     - text: |-
@@ -437,6 +451,24 @@ responses:
           payload: /cntt_cntt{"thongtinchinh":"cntt"}
         - title: "Kỹ thuật điện tử viễn thông"
           payload: /ktdtvt_ktdtvt{"thongtinchinh":"ktdtvt"}
+        - title: "Kỹ thuật điện điện tử"
+          payload: /ktddt_ktddt{"thongtinchinh":"ktddt"}
+        - title: "Công nghệ internet vạn vật (iot)"
+          payload: /iot_iot{"thongtinchinh":"iot"}
+        - title: "Kỹ thuật điện tử viễn thông"
+          payload: /ktdtvt_ktdtvt{"thongtinchinh":"ktdtvt"}
+        - title: "An toàn thông tin"
+          payload: /attt_attt{"thongtinchinh":"attt"}
+        - title: "Kỹ thuật điều khiển và tự động hoá"
+          payload: /ktdkvtdh_ktdkvtdh{"thongtinchinh":"ktdkvtdh"}
+        - title: "Công nghệ đa phương tiện"
+          payload: /cndpt_cndpt{"thongtinchinh":"cndpt"}
+        - title: "Quản trị kinh doanh"
+          payload: /qtkd_qtkd{"thongtinchinh":"qtkd"}
+        - title: "Marketing"
+          payload: /mkt_mkt{"thongtinchinh":"mkt"}
+        - title: "Kế toán"
+          payload: /kt_kt{"thongtinchinh":"kt"}
 
   # utter_cungcap_nganh:
   #   - text: |-
