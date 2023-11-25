@@ -206,12 +206,12 @@ slots:
     mappings:
       - type: from_entity
         entity: thongtinchinh
-  nganh:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: nganh
+  # nganh:
+  #   type: text
+  #   influence_conversation: true
+  #   mappings:
+  #     - type: from_entity
+  #       entity: nganh
   coso:
     type: text
     influence_conversation: true
@@ -374,17 +374,17 @@ responses:
           - Chuyên ngành
       buttons:
         - title: "Thời gian đào tạo"
-          payload: '/thoi_gian_dao_tao'
+          payload: "/thoi_gian_dao_tao"
         - title: "Học phí"
-          payload: '/hoc_phi'
+          payload: "/hoc_phi"
         - title: "Số tín chỉ"
-          payload: '/sotc'
+          payload: "/sotc"
         - title: "Điểm chuẩn"
-          payload: '/diem_chuan'
+          payload: "/diem_chuan"
         - title: "Chuyên ngành"
-          payload: '/chuyen_nganh'
+          payload: "/chuyen_nganh"
         - title: "Khối thi"
-          payload: '/khoi_thi'
+          payload: "/khoi_thi"
 
   utter_phuong_thuc_tuyen_sinh:
     - text: |-
@@ -419,14 +419,14 @@ responses:
         Sinh viên tốt nghiệp các ngành kỹ thuật thì sẽ được cấp bằng Kỹ sư. Còn sinh viên tốt nghiệp các ngành Kinh tế và Quản trị kinh doanh thì được cấp bằng Cử nhân (Đại học).
 
   # utter_intent_chonthongtinphu:
-  #   - text: |- 
+  #   - text: |-
   #       ban muon ho tro thong tin gi
   #     buttons:
   #        - title: "So tin chi"
   #          payload: '/sotc{{"thongtinphu":"sotc"}}'
   ######## utter cac cau hoi hoc phi
   ######## utter cac cau hoi thu tuc nhap hoc
- 
+
   utter_cntt_cntt:
     - text: |-
         Bạn muốn hỏi gì về ngành công nghệ thông tin ở Học viện
@@ -448,9 +448,7 @@ responses:
         - title: "Điểm chuẩn"
           payload: '/cntt_diem_chuan{{"nganh":"cntt"}}'
 
-
   ######## utter cac cau hoi hoc bong
-
 
   utter_chon_nganh:
     - text: |-
@@ -487,7 +485,7 @@ responses:
   #         payload: /cntt_cntt{"thongtinchinh":"cntt"}
   #       - title: "Kỹ thuật điện tử viễn thông"
   #         payload: /ktdtvt_ktdtvt{"thongtinchinh":"ktdtvt"}
-  
+
   ######## utter các câu hỏi tổng quan
   ######## utter các câu hỏi thời gian đào tạo
   utter_thoi_gian_dao_tao:
@@ -589,8 +587,8 @@ responses:
   # - text: "Đối với các ngành kinh tế như Marketing, kế toán, quản trị kinh doanh,... sẽ được đào tạo trong 4 năm. Các ngành kĩ thuật như Công nghệ thông tin, an toàn thông tin, điện tử đào tạo trong 4.5 nâm"
 
 session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  session_expiration_time: 10
+  carry_over_slots_to_new_session: false
 
   ######## utter cac cau hoi nganh Công nghệ thông tin
   ######## utter cac cau hoi nganh Kỹ thuật điều khiển và tự động hoá
