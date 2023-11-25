@@ -351,8 +351,17 @@ responses:
   # - Chương trình đào tạo
   #         - Học bổng
   #         - Khoa quản lý
-  #         - Đội ngũ giảng viên
-  #         - Điều kiện tốt nghiệp
+  #   khoa quan ly ->
+  # to hop xet tuyen ->’’’
+  # doi ngu giang vien ->
+  # ki tuc xa -> https://ptithcm.edu.vn/ki-tuc-xa ->
+  # cac cau hoi ve truong (dia chi, co so, nam thanh lap) ->
+  # dieu kien tot nghiep
+  # thu tuc nhap hoc
+  # hoc bong
+  # chuong trinh chat luong cao
+  # dao tao tu xa
+  # dao tao sau dai hoc
 
   utter_chon_thongtinphu:
     - text: |-
