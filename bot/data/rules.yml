@@ -164,6 +164,12 @@ rules:
       - intent: cntt_sotc
       - action: action_truyvan_nganh_thongtinphu
 
+  - rule: cntt test sotc va hoc phi
+    steps:
+      - intent: cntt_sotc+cntt_hocphi
+      - action: action_truyvan_nganh_thongtinphu
+      - action: action_truyvan_nganh_thongtinphu
+
   - rule: cntt - cntt_chuyen_nganh
     steps:
       - intent: cntt_chuyen_nganh
@@ -465,7 +471,6 @@ rules:
       - intent: cndpt_cndpt
       - action: action_truyvan_nganh_thongtinphu
 
-
   - rule: cndpt - hoi tong quan
     steps:
       - intent: cndpt_tongquan
@@ -763,8 +768,6 @@ rules:
     steps:
       - intent: tg_hocphi_theo_ky
       - action: utter_tg_hocphi_theo_ky
-
-
 # - rule: ask school id
 #   steps:
 #   - intent: ask_school_id

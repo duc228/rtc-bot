@@ -61,6 +61,7 @@ intents:
   - cntt_chuong_trinh_dao_tao
   - cntt_hoc_phi
   - cntt_sotc
+  - cntt_sotc+cntt_hocphi
   - cntt_chuyen_nganh
   - cntt_diem_chuan
   - cntt_khoi_thi
@@ -278,9 +279,9 @@ actions:
 
 responses:
   utter_action_check_balances:
-    - text: action_check_balances
+    - text: action_check_balances123123
   utter_action_transfer_money:
-    - text: action_transfer_money
+    - text: action_transfer_money123123
   utter_default:
     - text: "Yo what mean bro just said"
   utter_chao_hoi:

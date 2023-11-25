@@ -223,10 +223,6 @@ nlu:
       - Thoi gian can dau tu cho dao tao la [bao lau]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
       - [Dao tao keo dai trong khoang bao lau]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}?
 
-
-
-
-
   ######## hoc_phi
   - intent: hoc_phi
     examples: |
@@ -256,7 +252,7 @@ nlu:
       - [Hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} hang nam tai truong la bao nhieu tien?
       - Tinh toan chi phi [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} mot nam tai truong la bao nhieu?
       - Tinh tong so tien [hoc phi]{"entity":"thongtinchinh","value":"hoc_phi"} can thanh toan moi nam la bao nhieu?"
-  
+
   - intent: intent_chonthongtinphu
     examples: |
       - thongtinphu
@@ -415,6 +411,33 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cntt]{"entity":"thongtinchinh","value":"cntt"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [CNTT]{"entity":"thongtinchinh","value":"cntt"} o co so phia [bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [CNTT]{"entity":"thongtinchinh","value":"cntt"} o co so phia [nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ thông tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cntt]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [it]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe thong tin]{"entity":"thongtinchinh","value":"cntt"}
 
   - intent: cntt_tot_nghiep_lam_gi
     examples: |
@@ -538,6 +561,26 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} o co so phia [bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"} o co so phia [nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử viễn thông]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdtvt]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu vien thong]{"entity":"thongtinchinh","value":"ktdtvt"}
 
   - intent: ktdtvt_tot_nghiep_lam_gi
     examples: |
@@ -660,6 +703,34 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"} o co so phia [bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"} o co so phia [nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điện tử]{"entity":"thongtinchinh","value":"ktddt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktddt]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien dien tu]{"entity":"thongtinchinh","value":"ktddt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dien tu]{"entity":"thongtinchinh","value":"ktddt"}
 
   - intent: ktddt_tot_nghiep_lam_gi
     examples: |
@@ -781,6 +852,30 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [attt]{"entity":"thongtinchinh","value":"attt"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ATTT]{"entity":"thongtinchinh","value":"attt"} o [co so phia bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ATTT]{"entity":"thongtinchinh","value":"attt"} o [co so phia nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [An toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [An toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [An toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [an toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [An toàn thông tin]{"entity":"thongtinchinh","value":"attt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [An toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [An toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [An toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [attt]{"entity":"thongtinchinh","value":"attt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [an toan thong tin]{"entity":"thongtinchinh","value":"attt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [An toan thong tin]{"entity":"thongtinchinh","value":"attt"}
 
   - intent: attt_tot_nghiep_lam_gi
     examples: |
@@ -902,6 +997,30 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"} o [co so phia bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"} o [co so phia nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kỹ thuật điều khiển và tự động hoá]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ktdkvtdh]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ky thuat dieu khien va tu dong hoa]{"entity":"thongtinchinh","value":"ktdkvtdh"}
 
   - intent: ktdkvtdh_tot_nghiep_lam_gi
     examples: |
@@ -1024,6 +1143,42 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [iot]{"entity":"thongtinchinh","value":"iot"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [iot]{"entity":"thongtinchinh","value":"iot"} o [co so phia bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [iot]{"entity":"thongtinchinh","value":"iot"} o [co so phia nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ internet vạn vật]{"entity":"thongtinchinh","value":"iot"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet van vat]{"entity":"thongtinchinh","value":"iot"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet van vat]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet van vat]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet van vat]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe internet iot]{"entity":"thongtinchinh","value":"iot"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Công nghệ internet iot]{"entity":"thongtinchinh","value":"iot"}
 
   - intent: iot_tot_nghiep_lam_gi
     examples: |
@@ -1143,6 +1298,30 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"} o [co so phia bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"} o [co so phia nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Công nghệ đa phương tiện]{"entity":"thongtinchinh","value":"cndpt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cndpt]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Cong nghe da phuong tien]{"entity":"thongtinchinh","value":"cndpt"}
 
   - intent: cndpt_tot_nghiep_lam_gi
     examples: |
@@ -1253,7 +1432,6 @@ nlu:
       - [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
       - [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
 
-
   - intent: qtkd_tongquan
     examples: |
       - [tổng quan]{"entity":"thongtinphu","value":"tong_quan"} về ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
@@ -1264,6 +1442,34 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"} o [co so phia bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"} o [co so phia nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [qtkd]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [quản trị kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Quan tri kinh doanh]{"entity":"thongtinchinh","value":"qtkd"}
 
   - intent: qtkd_tot_nghiep_lam_gi
     examples: |
@@ -1384,6 +1590,30 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [mkt]{"entity":"thongtinchinh","value":"mkt"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [mkt]{"entity":"thongtinchinh","value":"mkt"} o [co so phia bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [mkt]{"entity":"thongtinchinh","value":"mkt"} o [co so phia nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [mkt]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [marketing]{"entity":"thongtinchinh","value":"mkt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Marketing]{"entity":"thongtinchinh","value":"mkt"}
 
   - intent: mkt_tot_nghiep_lam_gi
     examples: |
@@ -1503,6 +1733,30 @@ nlu:
       - [khai quat]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [kt]{"entity":"thongtinchinh","value":"kt"} duoc khong
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [kt]{"entity":"thongtinchinh","value":"kt"} o [co so phia bac]{"entity":"coso","value":"bac"}
       - [tong quan]{"entity":"thongtinphu","value":"tong_quan"} nganh [kt]{"entity":"thongtinchinh","value":"kt"} o [co so phia nam]{"entity":"coso","value":"nam"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [giới thiệu]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [cho em hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [em muốn biết]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [em muốn hỏi]{"entity":"thongtinphu","value":"tong_quan"} về ngành [Kế toán]{"entity":"thongtinchinh","value":"kt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [gioi thieu]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [cho em hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [em muon biet]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [kt]{"entity":"thongtinchinh","value":"kt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [ke toan]{"entity":"thongtinchinh","value":"kt"}
+      - [em muon hoi]{"entity":"thongtinphu","value":"tong_quan"} ve nganh [Ke toan]{"entity":"thongtinchinh","value":"kt"}
 
   - intent: kt_tot_nghiep_lam_gi
     examples: |
@@ -1698,7 +1952,6 @@ nlu:
       - Trường có cho nộp học phí theo học kỳ không ạ
       - truong co cho nop hoc phi theo ky khong a
 
-
   ######## intent các câu hỏi tổng quan
   ######## intent các câu hỏi thời gian đào tạo
   ######## intent các câu hỏi mã ngành
@@ -1707,4 +1960,3 @@ nlu:
   ######## intent các câu hỏi chuyên ngành
   ######## intent các câu hỏi số tín chỉ
   ######## intent các câu hỏi tôt nghiệp về ngành
-
