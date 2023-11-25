@@ -1858,7 +1858,77 @@ nlu:
       - [tổ hợp xét tuyển]{"entity":"thongtinphu","value":"khoi_thi"} thi ngành [ke toan]{"entity":"thongtinchinh","value":"kt"}
   ######## intent cac cau hoi hoc bong
   ######## intent cac cau hoi lien quan ve nganh
+  ######## intent cac cau hoi lien quan ve vua hoc vua lam
+  - intent: vhvl_tong_quan
+    examples: |
+      - [Đại học vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Dai hoc vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Đại học vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là gì
+      - [Dai hoc vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la gi
+      - [đại học vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}
+      - [dai hoc vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}
+      - [đại học vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là gì
+      - [dai hoc vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la gi
 
+  - intent: vhvl_phu_hop
+    examples: |
+      - Chương trình đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} [phù hợp]{"entity":"thongtinchinh","value":"phu_hop"} với những ai?
+      - Chuong trinh dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} [phu hop]{"entity":"thongtinchinh","value":"phu_hop"} voi nhung ai?
+      - [Ai có thể học]{"entity":"thongtinnphu","value":"phu_hop"} chương trình đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}?
+      - [Ai co the hoc]{"entity":"thongtinnphu","value":"phu_hop"} chuong trinh dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}?
+      - [Ai có thể học]{"entity":"thongtinnphu","value":"phu_hop"} đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}?
+      - [Ai co the hoc]{"entity":"thongtinnphu","value":"phu_hop"} dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}?
+  - intent: vhvl_ly_do
+    examples: |
+      - Chương trình đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} tại Học viện Công nghệ Bưu chính Viễn thông có gì [khác biệt]{"entity":"thongtinnphu","value":"ly_do"}?
+      - Chuong trinh dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} tai Hoc vien Cong nghe Buu chinh Vien thong co gi [khac biet]{"entity":"thongtinnphu","value":"ly_do"}?
+      - [Lý do]{"entity":"thongtinnphu","value":"ly_do"} chọn chương trình đào tạo Đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} của PTIT
+      - [Ly do]{"entity":"thongtinnphu","value":"ly_do"} chon chuong trinh dao tao Dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} cua PTIT
+  - intent: vhvl_nganh_dao_tao
+    examples: |
+      - Đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} tuyển sinh những [ngành]{"entity":"thongtinnphu","value":"nganh_dao_tao"} nào?
+      - Dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} tuyen sinh nhung [nganh]{"entity":"thongtinnphu","value":"nganh_dao_tao"} nao?
+      - đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} đào tạo những [ngành]{"entity":"thongtinnphu","value":"nganh_dao_tao"} nào
+      - Dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} dao tao nhung [nganh]{"entity":"thongtinnphu","value":"nganh_dao_tao"} nao?
+      - các [ngành]{"entity":"thongtinnphu","value":"nganh_dao_tao"} đào tạo của đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}
+      - Cac [nganh]{"entity":"thongtinnphu","value":"nganh_dao_tao"} dao tao cua dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la gi?
+  - intent: vhvl_sotc
+    examples: |
+      - Chương trình đào tạo [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} có bao nhiêu [tín chỉ]{"entity":"thongtinphu","value":"sotc"}?
+      - Chuong trinh dao tao [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} co bao nhieu [tin chi]{"entity":"thongtinphu","value":"sotc"}?
+      - Số [tín chỉ]{"entity":"thongtinphu","value":"sotc"} đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là bao nhiêu
+      - số [tín chỉ]{"entity":"thongtinphu","value":"sotc"} chương trình [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là bao nhiêu
+      - số [tín chỉ]{"entity":"thongtinphu","value":"sotc"} chương trình đào tạo [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là bao nhiêu
+      - So [tin chi]{"entity":"thongtinphu","value":"sotc"} dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la bao nhieu?
+      - So [tin chi]{"entity":"thongtinphu","value":"sotc"} chuong trinh [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la bao nhieu?
+      - So [tin chi]{"entity":"thongtinphu","value":"sotc"} chuong trinh dao tao [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la bao nhieu?
+  - intent: vhvl_hoc_phi
+    examples: |
+      - [Học phí]{"entity":"thongtinphu","value":"hoc_phi"} đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là bao nhiêu?
+      - [Hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la bao nhieu?
+      - Một [tín chỉ]{"entity":"thongtinphu","value":"hoc_phi"} chương trình [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} bao nhiêu tiền?
+      - Mot [tin chi]{"entity":"thongtinphu","value":"hoc_phi"} chuong trinh [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} bao nhieu tien?
+      - [Học phí]{"entity":"thongtinphu","value":"hoc_phi"} đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Học phí]{"entity":"thongtinphu","value":"hoc_phi"} chương trình đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Hoc phi]{"entity":"thongtinphu","value":"hoc_phi"} chuong trinh dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}
+
+  - intent: vhvl_dieu_kien_tot_nghiep
+    examples: |
+      - Điều kiện để được [xét tốt nghiệp]{"entity":"thongtinphu","value":"dieu_kien_tot_nghiep"} đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là gì?
+      - Điều kiện để được [xét tốt nghiệp]{"entity":"thongtinphu","value":"dieu_kien_tot_nghiep"} chương trình [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"} là gì?
+      - Dieu kien de duoc [xet tot nghiep]{"entity":"thongtinphu","value":"dieu_kien_tot_nghiep"} dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la gi?
+      - Dieu kien de duoc [xet tot nghiep]{"entity":"thongtinphu","value":"dieu_kien_tot_nghiep"} chuong trinh [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"} la gi?
+  - intent: vhvl_loai_bang
+    examples: |
+      - Khi kết thúc chương trình đào tạo [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}, sinh viên sẽ được nhận [bằng]{"entity":"thongtinphu","value":"loai_bang"} đại học hay chứng chỉ?
+      - Khi ket thuc chuong trinh dao tao [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}, sinh vien se duoc nhan [bang]{"entity":"thongtinphu","value":"loai_bang"} dai hoc hay chung chi?
+  - intent: vhvl_co_hoi_viec_lam
+    examples: |
+      - [Cơ hội việc làm]{"entity":"thongtinphu","value":"co_hoi_viec_lam"} đại học [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Cơ hội việc làm]{"entity":"thongtinphu","value":"co_hoi_viec_lam"} chương trình [vừa làm vừa học]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Co hoi viec lam]{"entity":"thongtinphu","value":"co_hoi_viec_lam"} dai hoc [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}
+      - [Co hoi viec lam]{"entity":"thongtinphu","value":"co_hoi_viec_lam"} chuong trinh [vua lam vua hoc]{"entity":"thongtinchinh","value":"vhvl"}
   ######## intent cac cau hoi thuong gap
   ########  -> https://ptithcm.edu.vn/tin-tuc/nhung-cau-hoi-thuong-gap.html
   ########  -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
@@ -1900,6 +1970,7 @@ nlu:
     examples: |
       - Em có được đăng ký nhiều ngành trong Học viện không ạ hay chỉ được đăng ký 1 ngành thôi?
       - em có thể đăng ký được nhiều ngành không ạ
+      - em co the dang ky duoc nhieu nganh khong a
 
   - intent: tg_cntt_nam_cuoi_phan_chuyen_nganh
     examples: |
@@ -1928,7 +1999,7 @@ nlu:
 
   - intent: tg_bang_ra_truong
     examples: |
-      - Sinh viên sau khi tốt nghiệp, ra trường sẽ nhận được bằng kỹ sư hay là cử nhân?
+      - Sinh viên sau khi tốt nghiệp, ra trường sẽ nhận được [bằng]{"entity":"thongtinphu","value":"dieu_kien_tot_nghiep"} kỹ sư hay là cử nhân?
       - sinh viên tốt nghiệp nhận bằng kỹ sư hay cử nhân
       - sinh vien tot nghiep nhan bang ky su hay cu nhan
       - sau khi tot nghiep, sinh vien se nhan duoc bang gi?
@@ -1958,5 +2029,5 @@ nlu:
   ######## intent các câu hỏi học phí
   ######## intent các câu hỏi điểm chuẩn
   ######## intent các câu hỏi chuyên ngành
-  ######## intent các câu hỏi số tín chỉ
+  ######## intent các câu hỏi số [tín chỉ]{"entity":"thongtinphu","value":"hoc_phi"}
   ######## intent các câu hỏi tôt nghiệp về ngành

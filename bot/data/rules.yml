@@ -768,6 +768,43 @@ rules:
     steps:
       - intent: tg_hocphi_theo_ky
       - action: utter_tg_hocphi_theo_ky
+  ######## intent cac cau hoi lien quan ve vua hoc vua lam
+  - rule: vua hoc vua lam - vhvl_tong_quan
+    steps:
+      - intent: vhvl_tong_quan
+      - action: action_truyvan_thongtinchinh
+  - rule: vua hoc vua lam - vhvl_phu_hop
+    steps:
+      - intent: vhvl_phu_hop
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: vua hoc vua lam - vhvl_ly_do
+    steps:
+      - intent: vhvl_ly_do
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: vua hoc vua lam - vhvl_nganh_dao_tao
+    steps:
+      - intent: vhvl_nganh_dao_tao
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: vua hoc vua lam - vhvl_sotc
+    steps:
+      - intent: vhvl_sotc
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: vua hoc vua lam - vhvl_hoc_phi
+    steps:
+      - intent: vhvl_hoc_phi
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: vua hoc vua lam - vhvl_dieu_kien_tot_nghiep
+    steps:
+      - intent: vhvl_dieu_kien_tot_nghiep
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: vua hoc vua lam - vhvl_loai_bang
+    steps:
+      - intent: vhvl_loai_bang
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: vua hoc vua lam - vhvl_co_hoi_viec_lam
+    steps:
+      - intent: vhvl_co_hoi_viec_lam
+      - action: action_truyvan_thongtinchinh_thongtinphu
 # - rule: ask school id
 #   steps:
 #   - intent: ask_school_id

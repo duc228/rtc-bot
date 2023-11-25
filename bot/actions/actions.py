@@ -22,6 +22,12 @@ import json
         "coso_default" : "data"
     }
 
+     - [thongtinchinh][thongtinphu]
+    format:
+    "thongtinchinh": {
+        "thongtinphu" : "data"
+    }
+
     - [“nganh"][thongtinchinh][thongtinphu][coso]
     format: 
     "nganh": {
@@ -108,6 +114,38 @@ class ActionTruyVanThongtinchinh(Action):
                 dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
 
         return []
+
+#### [thongtinchinh][thongtinphu]
+class ActionTruyVanThongtinchinhThongThongTinPhu(Action):
+    def name(self):
+        return "action_truyvan_thongtinchinh_thongtinphu"
+    def run(self, dispatcher, tracker, domain):
+        thongtinchinh = tracker.get_slot("thongtinchinh")
+        thongtinphu = tracker.get_slot("thongtinphu")
+
+        if thongtinchinh is None:
+            return [FollowupAction("utter_hoi_chuc_nang")]
+        else:
+            f = open('./data/collections/data_collect.json', encoding="utf8")
+            data = json.load(f)
+            if thongtinchinh in data:
+                if thongtinphu is None:
+                    if thongtinchinh in data:
+                        dispatcher.utter_message(text=f'{data[thongtinchinh][coso_default]}')
+                        return []
+                else:
+                    if thongtinphu in data[thongtinchinh]:
+                        dispatcher.utter_message(text=f'{data[thongtinchinh][thongtinphu]}')
+                        return []
+                    else:
+                        dispatcher.utter_message(text=f'bot chưa có thông tin về vấn đề này')
+                        return []
+
+            else:
+                dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+
+        return []
+
 
 #### [“nganh"][thongtinchinh][thongtinphu][coso]
 class ActionTruyVanNganhThongTinPhuCoSo(Action):
