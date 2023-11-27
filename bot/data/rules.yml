@@ -113,6 +113,36 @@ rules:
   ######## he từ xa
   ######## thạc si
   ######## intent cac cau hoi khoa quan ly
+  - rule: hoi ve khoa quan ly
+    steps:
+      - intent: khoa_quan_ly
+      - action: action_truyvan_nganh_thongtinphu
+  ######## intent cac cau hoi ki tuc xa
+  - rule: hoi ve ki tuc xa
+    steps:
+      - intent: ki_tuc_xa
+      - action: action_truyvan_thongtinchinh
+  - rule: hoi ve loai phong ki tuc xa
+    steps:
+      - intent: ki_tuc_xa_loai_phong
+      - action: utter_ki_tuc_xa_loai_phong
+  - rule: hoi ve ki tuc xa phong dich vu
+    steps:
+      - intent: ki_tuc_xa_phong_dich_vu
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: hoi ve ki tuc xa phong dich vu clc
+    steps:
+      - intent: ki_tuc_xa_phong_dich_vu_clc
+      - action: action_truyvan_thongtinchinh_thongtinphu
+  - rule: hoi ve ki tuc xa noi quy
+    steps:
+      - intent: ki_tuc_xa_noi_quy
+      - action: utter_ki_tuc_xa_noi_quy
+  ######## intent cac cua hoi tot nghiep
+  - rule: hoi ve tot nghiep
+    steps:
+      - intent: dieu_kien_tot_nghiep
+      - action: action_truyvan_thongtinchinh
   ######## intent cac cau hoi hoc phi
   - rule: hoi ve hoc phi
     steps:

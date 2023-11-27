@@ -101,6 +101,8 @@ class ActionTruyVanThongtinchinh(Action):
     def run(self, dispatcher, tracker, domain):
         thongtinchinh = tracker.get_slot("thongtinchinh")
         # [UserUttered(text="/utter_hoi_chuc_nang")]
+        print(f'action_truyvan_thongtinchinh: {thongtinchinh} \n')
+
 
         if thongtinchinh is None:
             return [FollowupAction("utter_hoi_chuc_nang")]
@@ -111,7 +113,7 @@ class ActionTruyVanThongtinchinh(Action):
                 dispatcher.utter_message(text=f'{data[thongtinchinh][coso_default]}')
                 return []
             else:
-                dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+                dispatcher.utter_message(text=f'Bot chưa có dữ liệu')
 
         return []
 
@@ -122,6 +124,8 @@ class ActionTruyVanThongtinchinhThongThongTinPhu(Action):
     def run(self, dispatcher, tracker, domain):
         thongtinchinh = tracker.get_slot("thongtinchinh")
         thongtinphu = tracker.get_slot("thongtinphu")
+        print(f'action_truyvan_thongtinchinh_thongtinphu: {thongtinchinh} - {thongtinphu} \n')
+
 
         if thongtinchinh is None:
             return [FollowupAction("utter_hoi_chuc_nang")]
@@ -142,7 +146,7 @@ class ActionTruyVanThongtinchinhThongThongTinPhu(Action):
                         return []
 
             else:
-                dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
+                dispatcher.utter_message(text=f'Bot chưa có dữ liệu')
 
         return []
 
@@ -156,7 +160,7 @@ class ActionTruyVanNganhThongTinPhuCoSo(Action):
         thongtinphu = tracker.get_slot("thongtinphu")
         coso = tracker.get_slot("coso")
         namhoc = tracker.get_slot("namhoc")
-        print(f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso}\n')
+        print(f'action_truyvan_nganh_thongtinphu_coso: {thongtinchinh} - {thongtinphu} - {coso} - {namhoc}\n')
 
         if thongtinchinh is None or thongtinphu is None:
             dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
@@ -208,7 +212,9 @@ class ActionTruyvanThongtinChinhThongTinPhuNamHoc(Action):
         thongtinchinh = tracker.get_slot("thongtinchinh")
         thongtinphu = tracker.get_slot("thongtinphu")
         namhoc = tracker.get_slot("namhoc")
+        print(f'action_truyvan_thongtinchinh_thongtinphu_namhoc: {thongtinchinh} - {thongtinphu}  - {namhoc}\n')
         
+
         if thongtinchinh is None:
             dispatcher.utter_message(text=f'xin loi toi chua hieu ban noi gi')
             return []
@@ -230,7 +236,7 @@ class ActionTruyvanThongtinChinhThongTinPhuNamHoc(Action):
         #     dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} nhưng bot chưa có dữ liệu')
         #     return []
 
-        dispatcher.utter_message(text=f'bot hiểu ý bạn là lấy thông tin ngành {thongtinchinh} {thongtinphu} {namhoc} nhưng bot chưa có dữ liệu')
+        dispatcher.utter_message(text=f'Bot chưa có dữ liệu')
         return []
 
 #### [“nganh”][thongtinchinh][thongtinphu][coso_default]
@@ -242,7 +248,7 @@ class ActionTruyVanNganhThongTinPhu(Action):
         thongtinphu = tracker.get_slot("thongtinphu")
         
         
-        print(f'action_[“nganh”][thongtinchinh][thongtinphu][coso_default]: {thongtinchinh} - {thongtinphu}\n')
+        print(f'action_truyvan_nganh_thongtinphu: {thongtinchinh} - {thongtinphu}\n')
 
         if thongtinchinh is None:
             ## dispatch intent nganh

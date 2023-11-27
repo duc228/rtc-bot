@@ -64,6 +64,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": ""
             }
         },
         "ktdtvt": {
@@ -705,7 +708,13 @@
         "chung": "- Chương trình đào tạo được thực hiện trong 4,5 năm gồm 9 học kỳ: có 8 học kỳ tích lũy kiến thức tại Học viện và 1 kỳ thực tập chuyên sâu và thực tập thực tế tại cơ sở (đối với các ngành CNTT, CNKT Đ-ĐT, KT ĐTVT, ATTT, CNĐPT, KT ĐK&TĐH, IoT) và 4 năm gồm 8 học kỳ: có 7 học kỳ tích lũy kiến thức tại Học viện và 1 kỳ thực tập chuyên sâu và thực tập thực tế tại cơ sở (đối với các ngành QTKD, Kế toán, Marketing). Cuối khóa sinh viên làm đồ án/khóa luận tốt nghiệp hoặc học các học phần thay thế tốt nghiệp theo quy chế đào tạo.\n - Sinh viên được đào tạo theo Quy chế đào tạo đại học áp dụng theo Thông tư số 08/2021/TT-BGDĐT ngày 18 tháng 3 năm 2021 của Bộ trưởng Bộ Giáo dục và Đào tạo.\n - Thời gian học tập tối thiểu là từ 3,5-4 năm và thời gian học tập tối đa là 8-9 năm tùy theo từng ngành.  "
     },
     "khoa_quan_ly": {
-        
+        "chung": "Các phòng, trung tâm và khoa của Học viện: \nPhòng Giáo vụ\nPhòng Công tác Sinh viên\nPhòng Đào tạo & Khoa học Công nghệ\nPhòng Tổ chức - Hành chính – Quản trị\nPhòng Kinh tế - Tài chính\nTrung tâm Khảo thí & Đảm bảo chất lượng giáo dục\nKhoa Cơ Bản 2\nKhoa Công Nghệ Thông Tin 2\nKhoa Kỹ thuật Điện tử 2\nKhoa Viễn thông 2\nKhoa Quản trị Kinh doanh 2\n",
+        "cntt": {
+            "chung": "",
+            "phu_trach": "",
+            "chuc_nang": "",
+            "giang_vien": ""
+        }
     },
     "sotc": {
         "chung": {}
@@ -722,6 +731,14 @@
         "dieu_kien_tot_nghiep": "Để được xét tốt nghiệp, Anh/Chị cần hoàn thành tất cả các học phần trong chương trình đào tạo (bao gồm cả Tin học và Ngoại ngữ). Bên cạnh đó, Anh/Chị cũng cần phải hoàn thành đầy đủ hồ sơ mà Học viện yêu cầu.",
         "loai_bang": "Người hoàn thành chương trình học được cấp Bằng Cử nhân/Kỹ sư do Học viện Công nghệ Bưu chính Viễn thông cấp. Văn bằng được Bộ GD&ĐT công nhận, có trị suốt đời, có thể học lên các bậc học cao hơn, thi công chức, nâng ngạch, thăng hạng,… theo đúng quy định của Nhà nước. \nXem mẫu phôi bằng: https://eript.ptit.edu.vn/wp-content/uploads/2021/08/IMG_9358.jpg",
         "co_hoi_viec_lam":"Hiện tại Học viện đã ký các thỏa thuận hợp tác về cung cấp nguồn nhân lực cho các doanh nghiệp như Samsung, VNPT, Mobifone, Viettel, CMC… do đó trong quá trình học tập sinh viên được tham gia các chương trình định hướng, tư vấn nghề nghiệp, chương trình thực tập sinh, các hội thảo, chương trình tư vấn tuyển dụng trực tiếp ngay từ những năm học cuối. Các thông tin tuyển dụng mới nhất thường xuyên được thông báo đến sinh viên. Đồng thời, sau học kỳ 6 các em thực tập tại các doanh nghiệp mà Học viện đã ký kết hợp tác. Vì vậy, cơ hội thực hành và việc làm sau khi tốt nghiệp tại Học viện là rất rộng mở, Học viện cam kết hỗ trợ việc làm sau khi sinh viên tốt nghiệp đạt chuẩn đầu ra."
+    },
+    "ktx": {
+        "chung": "Ký túc xá Học viện Công nghệ Bưu chính Viễn thông Cơ sở tại TP. Hồ Chí Minh nằm trong khuôn viên Cơ sở đào tạo tại TP. Thủ Đức,  số 97, đường Man Thiện, Phường Hiệp Phú, TP. Thủ Đức, TP. Hồ Chí Minh.\nKý túc xá có 97 phòng dịch vụ với sức chứa gần 1.000 sinh viên. Là một trong số ít ký túc xá sinh viên tại TP. Thủ Đức nói riêng và TP. Hồ Chí Minh nói chung nằm cạnh các tòa nhà giảng đường, khu thực hành, thí nghiệm; có khuôn viên cây xanh, sân chơi thể thao thuận tiện cho sinh viên sinh hoạt, học tập và rèn luyện.\nTiếp giáp với Khu Công nghệ cao TP. Hồ Chí Minh, gần Trung tâm thương mại lớn nhất TP. Thủ Đức, sinh viên ở tại Ký túc xá có cơ hội trải nghiệm học tập, làm thêm, vui chơi giải trí hữu ích.",
+        "phong_dich_vu": "Phí: 360.000đ/SV/tháng\n(đóng theo học kỳ 1.800.000đ/SV)\nSố người: 10 – 12 sinh viên/ phòng\nNhà vệ sinh, nhà tắm khép kín trong phòng, có người phục vụ vệ sinh trong phòng. Nhân viên phục vụ vệ sinh trong phòng ở và các khu công cộng.\nNhà vệ sinh, nhà tắm khép kín trong phòng, có người phục vụ vệ sinh trong phòng. Nhân viên phục vụ vệ sinh trong phòng ở và các khu công cộng. Có ti vi truyền hình cáp\nNước được hỗ trợ;\nĐiện định mức 14 KWh/SV/tháng, sinh viên phải trả tiền vượt định mức.\nWifi miễn phí toàn bộ khu KTX, camera quan sát giám sát an ninh trật tự toàn bộ hành lang khu nội trú.",
+        "phong_dich_vu_clc": "Phí: 430.000đ/SV/tháng (đóng theo học kỳ 2.150.000đ/SV)\nSố người: 6 – 10 sinh viên/ phòng\nNhà vệ sinh, nhà tắm khép kín trong phòng, có người phục vụ vệ sinh trong phòng. Nhân viên phục vụ vệ sinh trong phòng ở và các khu công cộng. Có ti vi truyền hình cáp\nNước được hỗ trợ;Điện định mức 14 KWh/SV/tháng, sinh viên phải trả tiền vượt định mức.\nWifi miễn phí toàn bộ khu KTX, camera quan sát giám sát an ninh trật tự toàn bộ hành lang khu nội trú."
+    },
+    "dieu_kien_tot_nghiep": {
+        "chung": "Sinh viên được đào tạo học theo học chế tín chỉ, áp dụng theo Quy chế đào tạo tín chỉ của Bộ Giáo dục và Đào tạo của và của Học Viện.\nKết thúc khoá học, sinh viên được công nhận tốt nghiệp và được cấp bằng Đại học khi hội tụ đủ các tiêu chuẩn theo Quy chế đào tạo đại học theo học chế tín chỉ."
     }
    
 

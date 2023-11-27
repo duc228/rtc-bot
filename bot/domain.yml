@@ -50,6 +50,18 @@ intents:
   ######## thạc si
   ######## intent cac cau hoi khoa quan ly
   - khoa_quan_ly
+  - khoa_quan_ly_cntt
+  - khoa_quan_ly_truong_khoa_cntt
+  - khoa_quan_ly_chuc_nang_cntt
+  - khoa_quan_ly_giang_vien_cntt
+  ######## intent cac cau hoi ki tuc xa
+  - ki_tuc_xa
+  - ki_tuc_xa_loai_phong
+  - ki_tuc_xa_phong_dich_vu
+  - ki_tuc_xa_phong_dich_vu_clc
+  - ki_tuc_xa_noi_quy
+  ######## intent cac cua hoi tot nghiep
+  - dieu_kien_tot_nghiep
   ######## intent cac cau hoi hoc phi
   ######## intent cac cau hoi thu tuc nhap hoc
   ######## intent cac cau hoi nganh Công nghệ thông tin
@@ -519,7 +531,43 @@ responses:
   ######## utter các câu hỏi điểm chuẩn
   ######## utter các câu hỏi chuyên ngành
   ######## utter các câu hỏi số tín chỉ
-
+  utter_ki_tuc_xa_loai_phong:
+    - text: |-
+        Kí túc xá có 2 loại phòng là phòng dịch vụ và phòng dịch vụ chất lượng cao
+  utter_ki_tuc_xa_noi_quy:
+    - text: |-
+        (Trích nội quy KTX Ban hành kèm theo Quyết định số 361/QĐ-CSVC&DV ngày
+        08/11/2012 của Phó Giám đốc Học viện Phụ trách Cơ sở tại Tp. Hồ Chí Minh) 
+        Điều 2: Nghĩa vụ của HSSV nội trú
+        1. Thực hiện đăng ký tạm trú theo đúng quy định của Luật Cư trú hiện hành.
+        2. Chấp hành các quy định của khu nội trú về việc tiếp khách trong phòng ở, giờ
+        tự học, tổ chức các sinh hoạt văn hóa, văn nghệ, không gây ảnh hưởng đến việc học tập,
+        sinh hoạt của HSSV khác trong phòng ở và khu nội trú.
+        3. Tiết kiệm điện, nước, phòng chống cháy nổ, có ý thức giữ gìn và bảo vệ tài sản
+        chung trong khu nội trú. Nộp đủ và đúng hạn phí nội trú theo quy định trong hợp đồng.
+        4. Nếu làm hư hỏng, mất mát tài sản của khu nội trú phải bồi thường theo quy định.
+        5. Phản ánh kịp thời các vụ việc xảy ra trong khu nội trú liên quan đến HSSV vi
+        phạm nội quy, quy chế và các đề xuất, kiến nghị chính đáng với Trung tâm CSVC&DV.
+        6. Tích cực tham gia các hoạt động văn hóa, văn nghệ, thể dục thể thao, phòng
+        chống ma túy, phòng chống tội phạm và các tệ nạn xã hội, các hoạt động khác do nhà
+        trường tổ chức; tích cực tham gia xây dựng khu nội trú văn minh, sạch đẹp, an toàn.
+        Điều 3: Các hành vi nghiêm cấm trong khu nội trú
+        1. Cải tạo phòng ở, câu móc điện, thay đổi hoặc tự ý di chuyển trang thiết bị trong
+        phòng ở; gây mất trật tự, an ninh, vệ sinh môi trường; viết vẽ, che chắn làm mất mỹ quan
+        trong phòng ở và khu sinh hoạt chung của khu nội trú. 
+        SỔ TAY SINH VIÊN KHÓA 2023
+        https://ptithcm.edu.vn 26
+        2. Uống rượu bia trong phòng ở và khu nội trú. Nấu ăn trong phòng ở. Tụ tập đông
+        người khi chưa được sự cho phép của nhà trường, gây ồn ào mất an ninh trật tự khu nội
+        trú.
+        3. Tự ý đưa người lạ vào phòng ở của khu nội trú khi chưa được phép của Trung
+        tâm CSVC&DV.
+        4. Sản xuất, tàng trữ, sử dụng, buôn bán, vận chuyển, phát tán các loại vũ khí, chất
+        gây cháy, gây nổ, hóa chất độc hại, ma túy và các chế phẩm của ma túy, các tài liệu, ấn
+        phẩm, phim ảnh, thông tin phản động, đồi trụy và các tài liệu cấm khác theo quy định của
+        Nhà nước; tổ chức hoặc tham gia đánh bạc, mại dâm dưới mọi hình thức.
+        5. Truyền bá các hoạt động mê tín dị đoan, các hoạt động tôn giáo và các hành vi
+        bị cấm khác tại quy chế HSSV trong khu nội trú. 
   ######## intent cac cau hoi thuong gap
   ########  -> https://ptithcm.edu.vn/tin-tuc/nhung-cau-hoi-thuong-gap.html
   ########  -> https://tuyensinh.ptit.edu.vn/cauhoithuonggap
