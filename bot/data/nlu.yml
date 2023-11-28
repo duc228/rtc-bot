@@ -361,10 +361,10 @@ nlu:
   ######## intent cac cau hoi chuong trinh dao tao
   - intent: chuong_trinh_dao_tao
     examples: |
-      - chuong trinh dao tao cua trương
-      - chương trình đào tạo
-      - em muốn biết về chương trình đào tạo
-      - cho em hoi ve chuong trinh dao tao
+      - [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"}
+      - [chương trình đào tạo]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"}
+      - em muốn biết về [chương trình đào tạo]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"}
+      - cho em hoi ve [chuong trinh dao tao]{"entity":"thongtinphu","value":"chuong_trinh_dao_tao"}
 
   - intent: ctdt_2_mien
     examples: |
@@ -504,6 +504,8 @@ nlu:
       - cho em hoi ra truong nhan bang ky su hay cu nhan
   - intent: dieu_kien_tot_nghiep
     examples: |
+      - [điều kiện tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"}
+      - [dieu kien tot nghiep]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"}
       - [Điều kiện để tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} là gì ạ?
       - [dieu kien tot nghiep]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"}
       - [dieu kien de tot nghiep]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"}
@@ -512,8 +514,8 @@ nlu:
       - [dieu kien de tot nghiep]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} la gi a
       - [điều kiện để ra trường]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"}
       - [điều kiện tôt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"}
-      - cho em hỏi[ điều kiện tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} là gì ạ
-      - cho em hỏi[ điều kiện tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} ạ
+      - cho em hỏi[điều kiện tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} là gì ạ
+      - cho em hỏi[điều kiện tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} ạ
       - cho em hỏi [điều kiện để tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} là gì ạ
       - cho em hỏi [điều kiện để tốt nghiệp]{"entity":"thongtinchinh","value":"dieu_kien_tot_nghiep"} ạ
   ######## intent cac cau hoi hoc bong

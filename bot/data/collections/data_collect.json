@@ -66,7 +66,7 @@
                 "chung": "Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
             },
             "chuong_trinh_dao_tao": {
-                "chung": ""
+                "chung": "Thông tin chương trình đào tạo ngành Công nghệ thông tin:\nThời gian đào tạo 4,5 năm\nKhối lượng kiến thức 150 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-CNTT_684_QD-HV.pdf "
             }
         },
         "ktdtvt": {
@@ -133,6 +133,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển Ngành Kỹ thuật điện tử viễn thông: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Kỹ thuật điện tử viễn thông:\nThời gian đào tạo 4,5 năm\nKhối lượng kiến thức 150 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-KTDTVT_984_QD-HV.pdf"
             }
         },
         "ktddt": {
@@ -199,6 +202,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển Ngành Kỹ thuật điện điện tử: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Kỹ thuật điện điện tử:\nThời gian đào tạo 4,5 năm\nKhối lượng kiến thức 150 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2021/07/20230718_BanHanhChuongTrinhDaoTaoTrinhDoDaiHoc_CNKTDDT_944_QD-HV.pdf"
             }
         },
         "iot": {
@@ -265,6 +271,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển Ngành Công nghệ Internet vạn vật(iot): Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Công nghệ Internet vạn vật(iot):\nThời gian đào tạo 4,5 năm\nKhối lượng kiến thức 150 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2020/02/20211209_BanHanhChuongTrinhKhung_DHCQ-CNIoT_1206_QD-HV.pdf"
             }
         },
         "attt": {
@@ -330,7 +339,10 @@
                 "nam":"Ngành An toàn thông tin chưa có chuyên ngành"
             },
             "khoi_thi": {
-                "chung": "Tổ hợp xét tuyển Ngành An toàn thông: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+                "chung": "Tổ hợp xét tuyển Ngành An toàn thông tin: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành An toàn thông tin:\nThời gian đào tạo 4,5 năm\nKhối lượng kiến thức 150 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhKhung_DHCQ-ATTT_686_QD-HV.pdf"
             }
         },
         "ktdkvtdh": {
@@ -397,6 +409,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Kỹ thuật điều khiển và tự động hoá:\nThời gian đào tạo 4,5 năm\nKhối lượng kiến thức 150 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2021/01/20230831_BanHanhChuongTrinhGiaoDucDaiHoc_KTDKTDH_1245_QD-HV.pdf"
             }
         },
         "cndpt": {
@@ -463,6 +478,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển Ngành Công nghệ đa phương tiện: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Công nghệ đa phương tiện:\nThời gian đào tạo 4,5 năm\nKhối lượng kiến thức 150 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2014/03/20230823_BanHanhChuongTrinhGiaoDucDaiHocHeChinhQuy_CNDPT_1172_QD-HV.pdf"
             }
         },
         "qtkd": {
@@ -529,6 +547,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển Ngành Quản trị kinh doanh: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01)  hoặc Toán – Văn – Anh (D01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Quản trị kinh doanh:\nThời gian đào tạo 4 năm\nKhối lượng kiến thức 129 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2014/03/20210730_BanHanhChuongTrinhKhung_DHCQ-QTKD_644_QD-HV.pdf"
             }
         },
         "mkt": {
@@ -595,6 +616,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển Ngành Marketing: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) hoặc Toán – Văn – Anh (D01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Marketing:\nThời gian đào tạo 4 năm\nKhối lượng kiến thức 129 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2014/03/20221027_BanHanhChuongTrinhGiaoDucDaiHoc_DHCQ-MAR_1454_QD-HV.pdf"
             }
         },
         "kt": {
@@ -661,6 +685,9 @@
             },
             "khoi_thi": {
                 "chung": "Tổ hợp xét tuyển Ngành Kế toán: Toán – Lý – Hóa (A00) hoặc Toán – Lý – Anh (A01) hoặc Toán – Văn – Anh (D01)"
+            },
+            "chuong_trinh_dao_tao": {
+                "chung": "Thông tin chương trình đào tạo ngành Kế toán:\nThời gian đào tạo 4 năm\nKhối lượng kiến thức 129 tín chỉ\nSinh viên được trang bị kiến thức về giáo dục đại cương, kiến thức cơ sở ngành, kiến thức chuyên ngành và cả kỹ năng mềm.\nChi tiết xem thêm tại: https://ptithcm.edu.vn/wp-content/uploads/2014/03/BanHanhChuongTrinhDaoTao_DHCQ-KT_222_QD-HV_24022022.pdf"
             }
         }
         
@@ -720,6 +747,7 @@
         "chung": {}
     },
     "truong": {
+        "chung":""
     },
     "vhvl": {
         "chung": "Đại học Vừa làm vừa học là hình thức đào tạo mà Học viện đưa ra nhằm tạo điều kiện cho những sinh viên:\n– Có nhu cầu làm việc sớm, tự lập về tài chính và tích lũy kinh nghiệm làm việc;\n– Hoặc các sinh viên muốn theo học cùng lúc 2 chương trình đào tạo đại học (chính quy và VLVH);\n– Hoặc những sinh viên không có điều kiện tham gia học tập như hệ chính quy.",

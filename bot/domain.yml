@@ -34,6 +34,8 @@ intents:
   # - mood_unhappy
 
   - intent_chonthongtinphu
+  ######## chuong_trinh_dao_tao
+  - chuong_trinh_dao_tao
   ######## thoi_gian_dao_tao
   - thoi_gian_dao_tao
   ######## hoc_phi
@@ -360,6 +362,12 @@ responses:
         - Điểm chuẩn
         - Phương thức tuyển sinh
         - Học phí
+        - Chương trình đào tạo
+        - Kí túc xá
+        - Điều kiện tốt nghiệp
+        - Tổ hợp xét tuyển
+        - Đại học vừa làm vừa học
+        
       buttons:
         - title: "Phương thức tuyển sinh"
           payload: '/phuong_thuc_tuyen_sinh{{"thongtinchinh":"phuong_thuc_tuyen_sinh"}}'
@@ -367,10 +375,18 @@ responses:
           payload: '/nganh_dao_tao{{"thongtinchinh":"nganh_dao_tao"}}'
         - title: "Điểm chuẩn"
           payload: '/diem_chuan{{"thongtinphu":"diem_chuan"}}'
+        - title: "Tổ hợp xét tuyển"
+          payload: '/diem_chuan{{"thongtinphu":"khoi_thi"}}'
         - title: "Học phí"
           payload: '/hoc_phi{{"thongtinphu":"hoc_phi"}}'
-        # - title: "Chương trình đào tạo"
-        #   payload: '/chuong_trinh_dao_tao{{"thongtinchinh":"chuong_trinh_dao_tao"}}'
+        - title: "Chương trình đào tạo"
+          payload: '/chuong_trinh_dao_tao{{"thongtinchinh":"chuong_trinh_dao_tao"}}'
+        - title: "Kí túc xá"
+          payload: '/ki_tuc_xa{{"thongtinchinh":"ktx"}}'
+        - title: "Kí túc xá"
+          payload: '/dieu_kien_tot_nghiep{{"thongtinchinh":"dieu_kien_tot_nghiep"}}'
+        - title: "Đại học vừa làm vừa học"
+          payload: '/vhvl_tong_quan{{"thongtinchinh":"vhvl"}}'
 
   # - Chương trình đào tạo
   #         - Học bổng
@@ -396,6 +412,7 @@ responses:
           - Điểm chuẩn
           - Khối thi
           - Chuyên ngành
+          - Chương trình đào tạo
       buttons:
         - title: "Thời gian đào tạo"
           payload: "/thoi_gian_dao_tao"
@@ -409,6 +426,8 @@ responses:
           payload: "/chuyen_nganh"
         - title: "Khối thi"
           payload: "/khoi_thi"
+        - title: "Chương trình đào tạo"
+          payload: "/chuong_trinh_dao_tao"
 
   utter_phuong_thuc_tuyen_sinh:
     - text: |-

@@ -6,10 +6,19 @@ stories:
   #     - intent: chao_hoi
   #     - action: utter_chao_hoi
 
-  - story: happy path
+  - story: default fallback
     steps:
       - intent: nlu_fallblack
       - action: action_default_fallback
+
+  - story: chao hoi_chuc_nang
+    steps:
+      - intent: chao_hoi
+      - action: utter_chao_hoi
+      - intent: hoi_chuc_nang
+      - action: utter_hoi_chuc_nang
+
+  
   # - intent: mood_great
   # - action: utter_happy
 

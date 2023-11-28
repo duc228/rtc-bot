@@ -90,6 +90,10 @@ rules:
     steps:
       - intent: thoi_gian_dao_tao
       - action: action_truyvan_thongtinchinh
+  - rule: hoi chuong trinh dao tao
+    steps:
+      - intent: chuong_trinh_dao_tao
+      - action: action_truyvan_nganh_thongtinphu
   ######## sotc
   - rule: hoi ve so tin chi
     steps:

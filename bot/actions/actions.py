@@ -301,32 +301,32 @@ class ActionTruyVanNganhThongTinPhu(Action):
         return []
 
 #### truy van can nganh
-class ActionTruyvanNganh(Action):
-    def name(self):
-        return "action_truyvan_nganh"
-    def run(self, dispatcher, tracker, domain):
-            # return [UserUttered(text="/my_intent", parse_data=data)]
-        nganh = tracker.get_slot("nganh")
+# class ActionTruyvanNganh(Action):
+#     def name(self):
+#         return "action_truyvan_nganh"
+#     def run(self, dispatcher, tracker, domain):
+#             # return [UserUttered(text="/my_intent", parse_data=data)]
+#         nganh = tracker.get_slot("nganh")
         
-        if nganh is None:
-            dispatcher.utter_message(text=f"Bot chưa hiểu ý bạn")
-            f = open('./data/collections/data_collect.json', encoding="utf8")
-            data = json.load(f)
-            if data["chung"]["nganh_dao_tao"]["tong_quan"]:
-                dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"]["tong_quan"]}')
-                return [UserUttered(text="/nganh_dao_tao")]
-        else:    
-            thongtinphu = tracker.get_slot("thongtinphu")
-            f = open('./data/collections/data_collect.json', encoding="utf8")
-            data = json.load(f)
-            if thongtinphu is None:
-                if data["chung"]["nganh_dao_tao"][nganh]["tong_quan"]:
-                    dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"][nganh]["tong_quan"]}')
-            else:
-                 if data["chung"]["nganh_dao_tao"][nganh][thongtinphu]:
-                    dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"][nganh][thongtinphu]}')
-                 else:
-                    return [UserUttered(text="Xin lỗi, hiện tại bot chưa hiểu ý bạn hoặc chưa có dữ liệu bạn mong muốn")]
+#         if nganh is None:
+#             dispatcher.utter_message(text=f"Bot chưa hiểu ý bạn")
+#             f = open('./data/collections/data_collect.json', encoding="utf8")
+#             data = json.load(f)
+#             if data["chung"]["nganh_dao_tao"]["tong_quan"]:
+#                 dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"]["tong_quan"]}')
+#                 return [UserUttered(text="/nganh_dao_tao")]
+#         else:    
+#             thongtinphu = tracker.get_slot("thongtinphu")
+#             f = open('./data/collections/data_collect.json', encoding="utf8")
+#             data = json.load(f)
+#             if thongtinphu is None:
+#                 if data["chung"]["nganh_dao_tao"][nganh]["tong_quan"]:
+#                     dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"][nganh]["tong_quan"]}')
+#             else:
+#                  if data["chung"]["nganh_dao_tao"][nganh][thongtinphu]:
+#                     dispatcher.utter_message(text=f'{data["chung"]["nganh_dao_tao"][nganh][thongtinphu]}')
+#                  else:
+#                     return [UserUttered(text="Xin lỗi, hiện tại bot chưa hiểu ý bạn hoặc chưa có dữ liệu bạn mong muốn")]
 
 
 class ActionShowSlots(Action):
@@ -412,7 +412,6 @@ class ActionDefaultFallback(Action):
       return "action_default_fallback"
 
    def run(self, dispatcher, tracker, domain):
-        nganh = tracker.get_slot("nganh")
         thongtinphu = tracker.get_slot("thongtinphu")
         dispatcher.utter_message(text=f"Xin lỗi, tôi chưa hiểu ý của bạn ")
 
