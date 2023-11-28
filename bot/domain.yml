@@ -217,6 +217,11 @@ intents:
   - tg_cntt_tg_dao_tao
   - tg_hocphi_theo_ky
 
+    ######## intent các câu hỏi về trường
+  - trg
+  - trg_ten
+  - trg_dia_chi
+
 entities:
   - nganh
   - thongtinchinh
@@ -367,7 +372,7 @@ responses:
         - Điều kiện tốt nghiệp
         - Tổ hợp xét tuyển
         - Đại học vừa làm vừa học
-        
+
       buttons:
         - title: "Phương thức tuyển sinh"
           payload: '/phuong_thuc_tuyen_sinh{{"thongtinchinh":"phuong_thuc_tuyen_sinh"}}'
@@ -652,6 +657,48 @@ responses:
   utter_tg_hocphi_theo_ky:
     - text: |-
         Học viện thu học phí theo kỳ và theo số tín chỉ mà em đăng ký học của kỳ đó.
+
+  utter_trg:
+    - text: |-
+        Học viện Công nghệ Bưu chính Viễn thông là đơn vị sự nghiệp công lập trực thuộc
+        Bộ Thông tin & Truyền thông. Trải qua 70 năm xây dựng và phát triển từ Trường Bưu điện
+        - Vô tuyến điện, nay là Học viện Công nghệ Bưu chính Viễn thông đã trở thành một trong
+        những tổ chức Giáo dục Đào tạo và Khoa học Công nghệ hàng đầu, có uy tín trong lĩnh
+        vực Thông tin và Truyền thông.
+        Năm 1997, Học viện được thành lập trên cơ sở sắp xếp lại 4 đơn vị thành viên của
+        Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT) bao gồm: Trung tâm Đào tạo Bưu
+        chính Viễn thông 1, Trung tâm Đào tạo Bưu chính Viễn thông 2, Viện Khoa học Kỹ thuật
+        Bưu điện và Viện Kinh tế Bưu điện, và thành lập mới: Trung tâm Công nghệ thông tin. Học
+        viện được tổ chức và hoạt động theo tinh thần nghị quyết TW2 khóa 8, thí điểm thực hiện
+        gắn kết Đào tạo (trường Đại học)- Nghiên cứu (các Viện nghiên cứu)- Sản xuất kinh
+        doanh (Mạng lưới), với mục tiêu đào tạo nguồn nhân lực chất lượng cao và tạo ra những
+        sản phẩm khoa học công nghệ tiên tiến đáp ứng nhu cầu của thị trường công nghệ thông
+        tin và truyền thông.
+        Từ ngày 01/07/2014, Học viện được điều chuyển từ Tập đoàn Bưu chính Viễn thông
+        Việt Nam về Bộ Thông tin và Truyền thông, là đơn vị sự nghiệp trực thuộc Bộ với vị thế
+        là trường đại học, trung tâm nghiên cứu trọng điểm của Ngành Thông tin và Truyền thông
+        Việt Nam.
+        Thực hiện chủ trương định hướng về xã hội hóa giáo dục - đào tạo của Đảng và Nhà
+        nước, Học viện đã và đang mở rộng các ngành, hệ và các hình thức đào tạo nhằm tạo điều
+        kiện thuận lợi cho người học tham gia học tập nâng cao trình độ. Hiện Học viện đào tạo
+        các cấp học từ Đại học, Thạc sĩ, Tiến sĩ với gần 30 chương trình đào tạo các ngành/hệ. 
+  utter_trg_ten:
+    - text: |-
+        - Tên tiếng Việt : Học viện Công nghệ Bưu chính Viễn thông
+        - Tên tiếng Anh :Posts and Telecommunications Institute of Technology
+        - Viết tắt: PTIT
+
+  utter_trg_dia_chi:
+    - text: |-
+        - Trụ sở chính: 122, Hoàng Quốc Việt, Cầu Giấy, Hà Nội
+          Điện thoại: 024.37562186. Fax: 024.37562036
+          Website: www.ptit.edu.vn
+        - Cơ sở đào tạo Hà Nội: Km10, Đường Nguyễn Trãi, Hà Đông, Hà Nội
+          Ðiện thoại: 024.38544451. Fax: 024.33829236
+        - Cơ sở đào tạo Thành phố Hồ Chí Minh:
+          + Số 11, Nguyễn Đình Chiểu, P. Đa Kao, Quận 1, TP. Hồ Chí Minh
+          Ðiện thoại: 028.38295258. Fax: 028.39105510
+          + Số 97, Man Thiện, P. Hiệp Phú, TP. Thủ Đức, TP. Hồ Chí Minh 
 
   # utter_ask_branch:
   # - text: "Bạn muốn hỏi mã trường ở cơ sở miền nam hay bắc"

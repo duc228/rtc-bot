@@ -2156,7 +2156,45 @@ nlu:
       - Trường có cho nộp học phí theo học kỳ không ạ
       - truong co cho nop hoc phi theo ky khong a
 
-  ######## intent các câu hỏi tổng quan
+  ######## intent các câu hỏi về trường
+  - intent: trg
+    examples: |
+      - giới thiệu về trường
+      - giới thiệu trường
+      - tổng quan trường học
+      - tong quan
+      - học viện công nghệ bưu chính viễn thông
+      - ptit
+      - ptit hcm
+      - học viện
+      - học viện cơ sở
+      - hoc vien cong nghe buu chinh vien thong
+      - học viện công nghệ bưu chính viễn thông cơ sở tại hcm
+      - hoc vien cong nghe buu chinh vien thong co so tai hcm
+  - intent: trg_ten
+    examples: |
+      - tên trường
+      - ten truong
+      - cho em hỏi tên trường
+      - tên trường là gì
+      - trường tên là gì
+      - trường tên gì
+      - trường tên là gì ạ
+      - trường tên gì ạ
+      - trường tên là gì vậy
+      - trường tên gì vậy
+      - trường tên là gì vậy ạ
+      - trường tên gì vậy ạ
+  - intent: trg_dia_chi
+    examples: |
+      - địa chỉ của trường
+      - cho em hỏi địa chỉ của trường
+      - dia chi cua truong
+      - em muốn biết địa chỉ của trường
+      - cho em hoi dia chi cua truong
+      - dia chi
+      - địa chỉ
+      - nơi đào tạo     
   ######## intent các câu hỏi thời gian đào tạo
   ######## intent các câu hỏi mã ngành
   ######## intent các câu hỏi học phí

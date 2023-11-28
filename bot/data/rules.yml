@@ -839,6 +839,20 @@ rules:
     steps:
       - intent: vhvl_co_hoi_viec_lam
       - action: action_truyvan_thongtinchinh_thongtinphu
+  ######## intent các câu hỏi về trường
+  - rule: cac cau hoi ve truong
+    steps:
+      - intent: trg
+      - action: utter_trg
+  - rule: hoi ten truong
+    steps:
+      - intent: trg_ten
+      - action: utter_trg_ten
+      
+  - rule: hoi dia chi truong
+    steps:
+      - intent: trg_dia_chi
+      - action: utter_trg_dia_chi
 # - rule: ask school id
 #   steps:
 #   - intent: ask_school_id
