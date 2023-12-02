@@ -198,6 +198,8 @@ nlu:
       - ở [nam]{"entity":"coso","value":"nam"} ạ
       - ở [bắc]{"entity":"coso","value":"bắc"} ạ
 
+ 
+  
   ######## thoi_gian_dao_tao
   - intent: thoi_gian_dao_tao
     examples: |
@@ -222,6 +224,19 @@ nlu:
       - Bao lau [thoi gian]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"} la can thiet cho qua trinh dao tao? 
       - Thoi gian can dau tu cho dao tao la [bao lau]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}
       - [Dao tao keo dai trong khoang bao lau]{"entity":"thongtinchinh","value":"thoi_gian_dao_tao"}?
+
+  - synonym: thoi_gian_dao_tao
+    examples: |
+      - thoi gian dao tao
+      - tgian dao tao
+      - thời gian đào tạo
+      - thời gian học tập
+      - thời gian học
+      - thời gian
+      - thoi gian
+      - đào tạo mấy năm
+      - đào tạo bao lâu
+      - bao lau
 
   ######## hoc_phi
   - intent: hoc_phi
