@@ -77,19 +77,6 @@ và tự động hóa
     examples: |
       - 
 
-- synonym: thoi_gian_dao_tao
-    examples: |
-      - thoi gian dao tao
-      - tgian dao tao
-      - thời gian đào tạo
-      - thời gian học tập
-      - thời gian học
-      - thời gian
-      - thoi gian
-      - đào tạo mấy năm
-      - đào tạo bao lâu
-      - bao lau
-
 - synonym: bac
     examples: |
       - bac
@@ -117,6 +104,32 @@ và tự động hóa
       - Nam
       - Cơ sở phía nam
       - Co so phía nam
+
+- synonym: thoi_gian_dao_tao
+    examples: |
+      - thoi gian dao tao
+      - thời gian đào tạo
+      - Thời gian đào tạo
+      - Thoi gian dao tao
+      - thời gian học
+      - thoi gian hoc
+      - Thời gian học
+      - Thoi gian hoc
+      - thời gian
+      - Thoi gian
+      - Thời gian
+      - học mấy năm
+      - hoc may nam
+      - đào tạo mấy năm
+      - dao tao may nam
+      - đào tạo bao lâu
+      - dao tao bao lau
+      - Đào tạo bao lâu
+      - Đao tao bao lau
+      - thời gian học tập
+      - thoi gian hoc tap
+      - Thời gian học tập
+      - Thoi gian hoc tap
 
 - synonym: hoc_phi
     examples: |
@@ -205,4 +218,278 @@ và tự động hóa
       - ngành đào tạo
       - Ngành đào tạo
       - Nganh dao tao
-      - phương thức tuyển sinh
+      - ngành
+      - nganh
+      - Ngành
+      - nganh
+      - các ngành đào tạo
+      - cac nganh dao tao
+      - Các ngành đào tạo
+      - Cac nganh
+      - Các ngành
+
+- synonym: chuong_trinh_dao_tao
+    examples: |
+      - chuong trinh dao tao
+      - chương trình đào tạo
+      - Chuong trinh dao tao
+      - Chương trình đào tạo
+
+- synonym: ktx
+    examples: |
+      - ktx
+      - kí túc xá
+      - kí túc
+      - Kí túc xá
+      - Ki tuc xa
+      - ki Tuc xa
+      - ki tuc Xa
+      - ki tuc
+      - KTX
+
+- synonym: phong_dich_vu
+    examples: |
+      - phong dich vu
+      - phòng dịch vụ
+      - Phòng dịch vụ
+      - Phong dich vu
+
+- synonym: phong_dich_vu_clc
+    examples: |
+      - phong dich vu clc
+      - phong dich vu chat luong cao
+      - phòng dịch vụ clc
+      - phòng dịch vụ chất lượng cao
+      - Phòng dịch vụ clc
+      - Phòng dịch vụ chất lượng cao
+      - Phong dich vu clc
+      - Phong dich vu chat luong cao
+      - Phong dich vu chat luong
+
+- synonym: dieu_kien_tot_nghiep
+    examples: |
+      - dk tot nghiep
+      - điều kiện tốt nghiệp
+      - dieu kien tot nghiep
+      - dieu kien de tot nghiep
+      - điều kiện để tốt nghiệp
+      - dieu kien de duoc tot nghiep
+      - điều kiện để được tốt nghiệp
+      - Điều kiện để tốt nghiệp
+      - Dieu kien de tot nghiep
+      - Dieu kien de duoc tot nghiep
+      - dk tot nghiep la gi
+      - đk tốt nghiệp là gì
+      - dk ra truong
+      - đk ra trường
+      - dk de ra truong
+      - đk để ra trường
+
+- synonym: cntt
+    examples: |
+      - cntt
+      - it
+      - CNTT
+      - IT
+      - iT
+      - It
+      - cong nghe thong tin
+      - cong nghe tt
+      - công nghệ thông tin
+      - Công nghệ thông tin
+      - Cong nghe thong tin
+      - công nghệ tt
+      - cn thông tin
+      - Cn thong tin
+      - cn thong tin
+      - Cn thông tin
+
+- synonym: ktdtvt
+    examples: |
+      - ktdtvt
+      - KTDTVT
+      - ky thuat dien tu vien thong
+      - kỹ thuật điện tử viễn thông
+      - kt dien tu vien thong
+      - kt điện tử viễn thông
+      - ki thuat dien tu vien thong
+      - kĩ thuật điện tử viễn thông
+      - Kỹ thuật điện tử viễn thông
+      - Ky thuat dien tu vien thong
+      - Ki thuat dien tu vien thông
+      - ki thuat dien tu vien thong
+      - Kt dien tu vien thong
+
+- synonym: ktddt
+    examples: |
+      - ktddt
+      - KTDDT
+      - điện điện tử
+      - điện tử
+      - ki thuat dien dien tu
+      - Ki thuat dien dien tu
+      - ky thuat dien dien tu
+      - Ky thuat dien dien tu
+      - kt dien dien tu
+      - Kt dien dien tu
+      - kt điện điện tử
+      - dien tu
+      - dien dien tu
+      - kĩ thuật điện điện tử
+      - Kĩ thuật điện điện tử
+      - kỹ thuật điện điện tử
+      - Kỹ thuật điện điện tử
+      - kt điện điện tử
+      - Kt điện điện tử
+
+- synonym: attt
+    examples: |
+      - attt
+      - ATTT
+      - Attt
+      - an toan thong tin
+      - an toan tt
+      - bao mat
+      - An toan thong tin
+      - An toan tt
+      - an toàn thông tin
+      - an toàn tt
+      - An toàn thông tin
+      - An toàn tt
+
+- synonym: iot
+    examples: |
+      - iot
+      - IOt
+      - ioT
+      - IOT
+      - cong nghe iot
+      - cn iot
+      - Cong nghe IOT
+      - Cong nghe iot
+      - Cong nghe Iot
+      - cong nghe iot
+      - cong nghe Iot
+      - cong nghe internet van vat
+      - Cong nghe internet van vat
+      - cong nghe Internet van vat
+      - cn internet van vat
+      - Công nghệ IOT
+      - Cộng nghệ iot
+      - Cộng nghệ Iot
+      - công nghệ iot
+      - công nghệ Iot
+      - công nghệ internet vạn vật
+      - Công nghệ internet vạn vật
+      - công nghệ Internet vạn vật
+      - cn internet vạn vật
+      
+- synonym: ktdkvtdh
+    examples: |
+      - ktdkvtdh
+      - kt dieu khien va tu dong hoa
+      - ki thuat dieu khien va tu dong hoa
+      - ky thuat dieu khien va tu dong hoa
+      - Ki thuat dieu khien va tu dong hoa
+      - Ky thuat dieu khien va tu dong hoa
+      - kt điều khiển và tự động hóa
+      - kĩ thuật điều khiển và tự động hóa
+      - kỹ thuật điều khiển và tự động hóa
+      - Kỹ thuật điều khiển và tự động hóa
+      - Kĩ thuật thuật điều khiển và tự động hóa
+      - kt điều khiển tự động
+      - ki thuat dieu khiển tự động
+      - ky thuat dieu khien tu dong
+      - kĩ thuật điều khiển tự động
+      - ky thuat điều khiển tự động
+
+- synonym: cndpt
+    examples: |
+      - cndpt
+      - cn da phuong tien
+      - Cn da phuong tien
+      - cong nghe da phuong tien
+      - Cong nghe da phuong tien
+      - công nghệ đa phương tiện
+      - Công nghệ đa phương tiện
+      - Cn đa phương tiện
+      - cn đa phương tiện
+
+- synonym: qtkd
+    examples: |
+      - qtkd
+      - qt kinh doanh
+      - quan tri kinh doanh
+      - Quan tri kinh doanh
+      - Qt kinh doanh
+      - Qt trị kinh doanh
+      - quản trị kinh doanh
+      - Quản trị kinh doanh
+
+- synonym: mkt
+    examples: |
+      - mkt
+      - Mkt
+      - MKT
+      - Marketing
+      - marketing
+
+- synonym: kt
+    examples: |
+      - kt
+      - KT
+      - Kt
+      - ke toan
+      - Ke toan
+      - kế toán
+      - Kế toán
+
+- synonym: tong_quan
+    examples: |
+      - tong quan
+      - tổng quan
+      - Tong quan
+      - Tổng quan
+      - khái quát
+      - khai quat
+      - Khái quát
+      - Khai quat
+      - gioi thieu
+      - giới thiệu
+      - Giới thiệu
+      - Gioi thieu
+      - tom tat
+      - tóm tắt
+      - Tom tat
+      - Tóm tắt
+      - em muon biet
+      - em muốn biết
+      - Em muon biet
+      - Em muốn biết
+      - Cho em hoi
+      - cho em hoi
+      - Cho em hỏi
+      - cho em hỏi
+      - em muon hỏi
+      - em muon hoi
+      - Em muon hoi
+      - Em muốn hỏi
+
+- synonym: ma_nganh
+    examples: |
+      - ma nganh
+      - Mã ngành
+      - mã ngành
+      - Mã Ngành
+      - Ma nganh
+      - Ma Nganh
+
+
+- synonym: chuyen_nganh
+    examples: |
+      - chuyen nganh
+      - Chuyen nganh
+      - Chuyen Nganh
+      - chuyên ngành
+      - Chuyên Ngành
+      - Chuyên ngành
