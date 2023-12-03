@@ -69,3 +69,140 @@ và tự động hóa
 - tên viết tắt
 - mấy cơ sở
 - địa chỉ
+
+
+## Synonyms
+
+- synonym: abc
+    examples: |
+      - 
+
+- synonym: thoi_gian_dao_tao
+    examples: |
+      - thoi gian dao tao
+      - tgian dao tao
+      - thời gian đào tạo
+      - thời gian học tập
+      - thời gian học
+      - thời gian
+      - thoi gian
+      - đào tạo mấy năm
+      - đào tạo bao lâu
+      - bao lau
+
+- synonym: bac
+    examples: |
+      - bac
+      - bắc
+      - cơ sở phía bắc
+      - co so phia bac
+      - ở bắc
+      - o bac
+      - Bac
+      - Bắc
+      - phia bac
+      - phía bắc
+      - Cơ sở phía bắc
+      - Co so phía bắc
+
+- synonym: nam
+    examples: |
+      - nam
+      - cơ sở phía nam
+      - co so phia nam
+      - ở nam
+      - o nam
+      - phía nam
+      - phia nam
+      - Nam
+      - Cơ sở phía nam
+      - Co so phía nam
+
+- synonym: hoc_phi
+    examples: |
+      - hoc phi
+      - học phí
+      - Học phí
+      - tiền
+      - Tiền
+      - Hoc phi
+      - tien
+      - Tien
+      - chi phí
+      - Chi phí
+      - chi phi
+      - Chi phi
+      - tổng tiền
+      - tong tien
+      - Tong tien
+      - Tổng tiền
+      - số tiền
+      - so tien
+      - Số tiền
+      - So tien
+
+- synonym: sotc
+    examples: |
+      - sotc
+      - số tín chỉ
+      - Số tín chỉ
+      - so tin chi
+      - So tin chi
+      - Tín chỉ
+      - tin chi
+
+- synonym: chuyen_nganh
+    examples: |
+      - chuyên ngành
+      - chuyen nganh
+      - Chuyên ngành
+      - Chuyen nganh
+
+- synonym: diem_chuan
+    examples: |
+      - diem chuan
+      - điểm chuẩn
+      - Điểm chuẩn
+      - Diem chuan
+
+- synonym: khoi_thi
+    examples: |
+      - khoi thi
+      - khối thi
+      - Khoi thi
+      - Khối thi
+      - to hop xet tuyen
+      - tổ hợp xét tuyển
+      - To hop xet tuyen
+      - Tổ hợp xét tuyển
+      - Tổ hợp môn
+      - To hop mon
+      - tổ hợp môn
+      - to hop mon
+
+- synonym: phuong_thuc_tuyen_sinh
+    examples: |
+      - phuong thuc tuyen sinh
+      - phương thức tuyển sinh
+      - phương thức xét tuyển
+      - phuong thuc xet tuyen
+      - Phuong thuc tuyen sinh
+      - Phương thức tuyển sinh
+      - Phuong thuc xet tuyen
+      - Phương thức xét tuyển
+      - Hình thức tuyển sinh
+      - Hinh thuc tuyen sinh
+      - hình thức tuyển sinh
+      - hinh thuc tuyen sinh
+      - Hình thức xét tuyển
+      - hinh thuc xet tuyen
+      - hình thức xét tuyển
+      - Hinh thuc xet tuyen
+
+- synonym: nganh_dao_tao
+    examples: |
+      - nganh dao tao
+      - ngành đào tạo
+      - Ngành đào tạo
+      - Nganh dao tao
+      - phương thức tuyển sinh
